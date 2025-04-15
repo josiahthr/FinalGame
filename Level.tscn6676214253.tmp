@@ -1,10 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dubk573c10i0h"]
+[gd_scene load_steps=10 format=3 uid="uid://dubk573c10i0h"]
 
 [ext_resource type="Texture2D" uid="uid://bll6vqx76yduv" path="res://textures/coast_sand_rocks_02_diff_4k.jpg" id="1_t7iv1"]
 [ext_resource type="Script" uid="uid://dpqxo0vy6ndvj" path="res://interactable.gd" id="2_2nifc"]
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://1stplayer.tscn" id="2_t7iv1"]
-[ext_resource type="Script" uid="uid://b333fesmbjb1c" path="res://interactable_2.gd" id="4_wkftn"]
-[ext_resource type="Script" uid="uid://vj0xno42kj5l" path="res://talk.gd" id="5_q4iis"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkftn"]
 albedo_texture = ExtResource("1_t7iv1")
@@ -52,24 +50,4 @@ script = ExtResource("2_2nifc")
 mesh = SubResource("BoxMesh_2nifc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="interactable"]
-shape = SubResource("BoxShape3D_wkftn")
-
-[node name="interactable2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31538, 1.17, -3.433)
-script = ExtResource("4_wkftn")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="interactable2"]
-mesh = SubResource("BoxMesh_2nifc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="interactable2"]
-shape = SubResource("BoxShape3D_wkftn")
-
-[node name="talk" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99559, 1.17, -3.433)
-script = ExtResource("5_q4iis")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="talk"]
-mesh = SubResource("BoxMesh_2nifc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="talk"]
 shape = SubResource("BoxShape3D_wkftn")

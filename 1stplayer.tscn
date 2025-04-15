@@ -23,3 +23,32 @@ shape = SubResource("ConvexPolygonShape3D_xnnci")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621444, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Neck"]
+
+[node name="SeeCast" type="RayCast3D" parent="CharacterBody3D/Neck/Camera3D"]
+transform = Transform3D(1.2576, 0, 0, 0, -1.4049e-07, -1.2576, 0, 3.21405, -5.49714e-08, 0, -0.0214442, 0)
+
+[node name="Panel" type="Panel" parent="CharacterBody3D"]
+offset_top = 476.0
+offset_right = 1151.0
+offset_bottom = 646.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody3D"]
+offset = Vector2(4, 230)
+transform = Transform2D(1, 0, 0, 1, 4, 230)
+
+[node name="BoxContainer" type="BoxContainer" parent="CharacterBody3D/CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CharacterBody3D/CanvasLayer/BoxContainer"]
+layout_mode = 2
+text = "Press \"E\" to interact"

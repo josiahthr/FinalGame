@@ -7,6 +7,7 @@ const JUMP_VELOCITY = 4.5
 
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
+@onready var interaction_label := $CanvasLayer/BoxContainer/Label
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -17,9 +18,21 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * 0.002)
 			camera.rotate_x(-event.relative.y * 0.002)
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(30))
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(40))
 
 func _physics_process(delta: float) -> void:
+	#interact collisions
+	$Panel.hide()
+	$CanvasLayer/BoxContainer/Label.hide()
+	if $Neck/Camera3D/SeeCast.is_colliding():
+		var target = $Neck/Camera3D/SeeCast.get_collider()
+		if target != null and target.has_method("interact"):
+			interaction_label.text = target.get_interaction_text()
+			interaction_label.show()
+			$Panel.show()
+		if Input.is_action_just_pressed("interact"):
+			target.interact()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
