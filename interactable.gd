@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-@export var interaction_text: String = "Box 1"
+@export var interaction_text: String = "Box One"
 
 func interact():
 	print("interacted with Box 1")

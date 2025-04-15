@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cad3lpjl4vw7o"
-path.s3tc="res://.godot/imported/coast_sand_rocks_02_disp_4k.png-ce59d341587f6af8a077bed48e1aa6b4.s3tc.ctex"
+uid="uid://bahyb06l536jt"
+path.s3tc="res://.godot/imported/click.png-2227f170a83a5d91b6ee4da0852cc4d6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/coast_sand_rocks_02_disp_4k.png"
-dest_files=["res://.godot/imported/coast_sand_rocks_02_disp_4k.png-ce59d341587f6af8a077bed48e1aa6b4.s3tc.ctex"]
+source_file="res://Images/click.png"
+dest_files=["res://.godot/imported/click.png-2227f170a83a5d91b6ee4da0852cc4d6.s3tc.ctex"]
 
 [params]
 
