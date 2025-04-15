@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dubk573c10i0h"]
+[gd_scene load_steps=9 format=3 uid="uid://dubk573c10i0h"]
 
-[ext_resource type="PackedScene" uid="uid://cghnvunifj4of" path="res://player.tscn" id="1_bexhn"]
 [ext_resource type="Texture2D" uid="uid://bll6vqx76yduv" path="res://textures/coast_sand_rocks_02_diff_4k.jpg" id="1_t7iv1"]
+[ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://1stplayer.tscn" id="2_t7iv1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkftn"]
 albedo_texture = ExtResource("1_t7iv1")
@@ -16,6 +16,10 @@ size = Vector2(100, 100)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bexhn"]
 data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t7iv1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2nifc"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -34,7 +38,14 @@ mesh = SubResource("PlaneMesh_qhyq2")
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_bexhn")
 
-[node name="Player" parent="." instance=ExtResource("1_bexhn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3686, 0)
-top_level = true
-linear_damp = 3.0
+[node name="Interactable" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.280674, 1.16336, -3.07367)
+mesh = SubResource("BoxMesh_t7iv1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Interactable"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable/StaticBody3D"]
+shape = SubResource("BoxShape3D_2nifc")
+
+[node name="Node3D" parent="." instance=ExtResource("2_t7iv1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66779, 0)
