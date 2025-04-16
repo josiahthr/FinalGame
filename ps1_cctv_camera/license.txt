@@ -1,0 +1,11 @@
+Model Information:
+* title:	PS1 CCTV Camera
+* source:	https://sketchfab.com/3d-models/ps1-cctv-camera-d70a860c74f84fedb22d0c6e1d7d8574
+* author:	ivanovartem826 (https://sketchfab.com/ivanovartem826)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "PS1 CCTV Camera" (https://sketchfab.com/3d-models/ps1-cctv-camera-d70a860c74f84fedb22d0c6e1d7d8574) by ivanovartem826 (https://sketchfab.com/ivanovartem826) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnohws3g1gswm"]
+
+[ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://1stplayer.tscn" id="1_spr11"]
+[ext_resource type="Texture2D" uid="uid://bll6vqx76yduv" path="res://textures/coast_sand_rocks_02_diff_4k.jpg" id="1_xtttg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nf6qs"]
+albedo_texture = ExtResource("1_xtttg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xtttg"]
+material = SubResource("StandardMaterial3D_nf6qs")
+size = Vector2(100, 100)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nf6qs"]
+points = PackedVector3Array(-50, 0, -50, -50, 0, 50, 50, 0, -50, 50, 0, 50)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.5, -2.18557e-08, 0, -4.37114e-08, 1, -0.5, 0.866025, 3.78552e-08, 0, 0, 0)
+light_energy = 0.4
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_xtttg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_nf6qs")
+
+[node name="Player" parent="." instance=ExtResource("1_spr11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.910082, 4.76837e-07, 22.9604)
