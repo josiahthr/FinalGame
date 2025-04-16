@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcp3vuvthaeb5"]
+
+[ext_resource type="Texture2D" uid="uid://kdjouc07yand" path="res://Images/door.png" id="1_ba8gm"]
+[ext_resource type="Script" uid="uid://djtx5oit8fyu2" path="res://door.gd" id="2_v6xrn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6xrn"]
+albedo_texture = ExtResource("1_ba8gm")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0phs7"]
+material = SubResource("StandardMaterial3D_v6xrn")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_50cdl"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -8.74228e-08, -1.5, 0, 2, -6.55671e-08, 0, 1.5, 0)
+mesh = SubResource("PlaneMesh_0phs7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+script = ExtResource("2_v6xrn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_50cdl")
