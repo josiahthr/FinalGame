@@ -1,0 +1,11 @@
+Model Information:
+* title:	Old dirty mattress
+* source:	https://sketchfab.com/3d-models/old-dirty-mattress-e914df64a021484a91613b38c28ee538
+* author:	KIFIR (https://sketchfab.com/kifir)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Old dirty mattress" (https://sketchfab.com/3d-models/old-dirty-mattress-e914df64a021484a91613b38c28ee538) by KIFIR (https://sketchfab.com/kifir) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

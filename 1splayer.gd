@@ -1,9 +1,10 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+var SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 @export var mouse_sensitivity: float = 0.002
+var indialogue = false
 
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
@@ -22,8 +23,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	#interact collisions
-	$Panel.hide()
-	$CanvasLayer/BoxContainer/Label.hide()
+
 	if $Neck/Camera3D/SeeCast.is_colliding():
 		var target = $Neck/Camera3D/SeeCast.get_collider()
 		if target != null and target.has_method("interact"):
@@ -32,7 +32,22 @@ func _physics_process(delta: float) -> void:
 			$Panel.show()
 		if target.has_method("interact") and Input.is_action_just_pressed("interact"):
 			target.interact()
-	
+			
+	if $Neck/Camera3D/SeeCast.is_colliding():
+		var target = $Neck/Camera3D/SeeCast.get_collider()
+		if target != null and target.has_method("interact_light"):
+			interaction_label.show()
+		if target.has_method("interact_light") and Input.is_action_just_pressed("interact"):
+			var indialogue = true
+			print("indialogue: ", indialogue)
+			interaction_label.text = target.get_interaction_text()
+			target.interact_light()
+	if Input.is_action_just_pressed("interact"):
+		print("indialogue: ", indialogue)
+	if indialogue == true:
+		var SPEED = 0.0
+		
+			
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
