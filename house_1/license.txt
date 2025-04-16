@@ -1,0 +1,11 @@
+Model Information:
+* title:	House_1
+* source:	https://sketchfab.com/3d-models/house-1-286f2decf02f4a3091a4d811bafa5813
+* author:	kirsel91 (https://sketchfab.com/kirsel91)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "House_1" (https://sketchfab.com/3d-models/house-1-286f2decf02f4a3091a4d811bafa5813) by kirsel91 (https://sketchfab.com/kirsel91) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
