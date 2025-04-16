@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 			interaction_label.text = target.get_interaction_text()
 			interaction_label.show()
 			$Panel.show()
-		if Input.is_action_just_pressed("interact"):
+		if target.has_method("interact") and Input.is_action_just_pressed("interact"):
 			target.interact()
 	
 	# Add the gravity.
