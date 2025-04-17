@@ -8,7 +8,8 @@ var indialogue = false
 
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
-@onready var interaction_label := $CanvasLayer/BoxContainer/Label
+@onready var _dialog : Control = $"../CanvasLayer/Dialog"
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -26,32 +27,20 @@ func _physics_process(delta: float) -> void:
 
 	if $Neck/Camera3D/SeeCast.is_colliding():
 		var target = $Neck/Camera3D/SeeCast.get_collider()
-		if target != null and target.has_method("interact"):
-			interaction_label.text = target.get_interaction_text()
-			interaction_label.show()
-			$Panel.show()
+		#uncomment for hovers
+		#if target != null and target.has_method("interact"):
+
 		if target.has_method("interact") and Input.is_action_just_pressed("interact"):
 			target.interact()
+			_dialog.display_line("[wave]hello[/wave]")
 			
-	if $Neck/Camera3D/SeeCast.is_colliding():
-		var target = $Neck/Camera3D/SeeCast.get_collider()
-		if target != null and target.has_method("interact_light"):
-			interaction_label.show()
-		if target.has_method("interact_light") and Input.is_action_just_pressed("interact"):
-			var indialogue = true
-			print("indialogue: ", indialogue)
-			interaction_label.text = target.get_interaction_text()
-			target.interact_light()
-	if Input.is_action_just_pressed("interact"):
-		print("indialogue: ", indialogue)
-	if indialogue == true:
-		var SPEED = 0.0
-		
+		#
 			
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	#[wave], [shake], [color]
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
