@@ -4,12 +4,15 @@ extends CharacterBody3D
 var SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 @export var mouse_sensitivity: float = 0.002
-var indialogue = false
+var in_dialogue = false
+var current_target = null
 
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
 @onready var _dialog : Control = $"../CanvasLayer/Dialog"
 
+func _ready():
+	_dialog.continue_pressed.connect(_on_dialog_continue)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -22,17 +25,30 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera.rotate_x(-event.relative.y * mouse_sensitivity)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(40))
 
+func _on_dialog_continue():
+	if current_target and current_target.has_method("get_dialogue_data"):
+		var data = current_target.get_dialogue_data()
+		if data != null:
+			_dialog.display_line(data["text"], data["speaker"])
+		else:
+			_dialog.close()
+			in_dialogue = false
+			current_target = null
+
 func _physics_process(delta: float) -> void:
-	#interact collisions
 
 	if $Neck/Camera3D/SeeCast.is_colliding():
 		var target = $Neck/Camera3D/SeeCast.get_collider()
 		#uncomment for hovers
 		#if target != null and target.has_method("interact"):
-		if target.has_method("interact") and Input.is_action_just_pressed("interact"):
+		if target.has_method("interact") and Input.is_action_just_pressed("interact") and not in_dialogue:
 			target.interact()
-			_dialog.display_line(target.dialogue_text, target.speaker_name)
-			#_dialog.display_line("[wave]hello[/wave]", "SPEAKER")
+			if target.has_method("get_dialogue_data"):
+				var data = target.get_dialogue_data()
+				if data != null:
+					_dialog.display_line(data["text"], data["speaker"])
+					in_dialogue = true
+					current_target = target
 			
 			
 	if not is_on_floor():

@@ -1,5 +1,7 @@
 extends Control
 
+signal continue_pressed
+
 @onready var _speaker : Label = $VBoxContainer/Speaker
 @onready var _dialogue : RichTextLabel = $VBoxContainer/Dialogue
 @onready var _continue : Button = $Box/Continue
@@ -18,5 +20,5 @@ func close():
 	visible = false
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("confirm"):
-		close()
+	if visible and Input.is_action_just_pressed("confirm"):
+		continue_pressed.emit()
