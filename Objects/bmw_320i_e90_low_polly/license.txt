@@ -1,0 +1,11 @@
+Model Information:
+* title:	BMW 320i E90 Low Polly
+* source:	https://sketchfab.com/3d-models/bmw-320i-e90-low-polly-28f0bc2f0083417a8e521150529034d6
+* author:	rifdanzz (https://sketchfab.com/rifdanzz)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "BMW 320i E90 Low Polly" (https://sketchfab.com/3d-models/bmw-320i-e90-low-polly-28f0bc2f0083417a8e521150529034d6) by rifdanzz (https://sketchfab.com/rifdanzz) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
