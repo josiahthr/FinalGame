@@ -221,9 +221,9 @@ size = Vector3(0.01, 20, 4)
 material = SubResource("StandardMaterial3D_1wpjv")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(0.870933, 0, 0, 0, 1, 0, 0, 0, 1, 0.00594616, 0, 2.77256)
+transform = Transform3D(0.870933, 0, 0, 0, 1, 0, 0, 0, 1, 0.00594616, -6.10829, -0.0516209)
 operation = 2
-size = Vector3(0.0380859, 1, 1)
+size = Vector3(0.0380859, 2.11682, 1)
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.42032, 13.2114, 6.07376)
