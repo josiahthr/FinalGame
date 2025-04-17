@@ -1,0 +1,11 @@
+Model Information:
+* title:	American 80s Station Wagon - Low poly model
+* source:	https://sketchfab.com/3d-models/american-80s-station-wagon-low-poly-model-680e4ad1090f4e738bbd46e618f3a01f
+* author:	Daniel Zhabotinsky (https://sketchfab.com/DanielZhabotinsky)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "American 80s Station Wagon - Low poly model" (https://sketchfab.com/3d-models/american-80s-station-wagon-low-poly-model-680e4ad1090f4e738bbd46e618f3a01f) by Daniel Zhabotinsky (https://sketchfab.com/DanielZhabotinsky) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
