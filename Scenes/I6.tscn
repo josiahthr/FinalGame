@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://sghm614u5ja7"]
+[gd_scene load_steps=33 format=3 uid="uid://sghm614u5ja7"]
 
 [ext_resource type="Texture2D" uid="uid://cuv4jr4is3rq3" path="res://textures/istockphoto-576726498-612x612.jpg" id="1_32gps"]
+[ext_resource type="Script" uid="uid://cplvs00sy4iy7" path="res://Scenes/TitleScreen6.gd" id="1_vinic"]
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="2_ccda6"]
 [ext_resource type="PackedScene" uid="uid://drd3ji2w5081l" path="res://Objects/american_80s_station_wagon_-_low_poly_model/scene.gltf" id="3_hsoue"]
 [ext_resource type="Script" uid="uid://bve1td84ttrbh" path="res://Scripts/iancar.gd" id="4_t3sis"]
@@ -10,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://buv0myucfqby4" path="res://textures/sunset_jhbcentral_4k.png" id="7_ccda6"]
 [ext_resource type="Script" uid="uid://bscywdkxe6c5v" path="res://Scenes/notian3.gd" id="8_fm1ft"]
 [ext_resource type="PackedScene" uid="uid://chhtpqovupkvh" path="res://Objects/bmw_320i_e90_low_polly/scene.gltf" id="8_hsoue"]
+[ext_resource type="Texture2D" uid="uid://kdjouc07yand" path="res://Images/door.png" id="11_kxnfi"]
+[ext_resource type="Script" uid="uid://dvb660gomcn8i" path="res://Scenes/I6Forward.gd" id="12_nwd70"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcc8i"]
 albedo_texture = ExtResource("1_32gps")
@@ -52,7 +55,23 @@ size = Vector2(80, 25)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hsoue"]
 points = PackedVector3Array(-40, 0, -12.5, -40, 0, 12.5, 40, 0, -12.5, 40, 0, 12.5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwd70"]
+albedo_texture = ExtResource("11_kxnfi")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fm1ft"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vinic"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vinic"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wgbwy"]
+font_size = 80
+font_color = Color(1, 0.337255, 0.286275, 1)
+
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_vinic")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.0868241, 0.492404, 0, 0.984808, 0.173648, -0.5, 0.150384, -0.852868, 0, 0, 0)
@@ -225,7 +244,6 @@ mesh = SubResource("PlaneMesh_hsoue")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_hsoue")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="."]
@@ -236,7 +254,6 @@ mesh = SubResource("PlaneMesh_hsoue")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D13"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D13/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_hsoue")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
@@ -247,7 +264,6 @@ mesh = SubResource("PlaneMesh_hsoue")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_hsoue")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
@@ -258,8 +274,35 @@ mesh = SubResource("PlaneMesh_hsoue")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_hsoue")
 
 [node name="Sketchfab_Scene6" parent="." instance=ExtResource("8_hsoue")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -20.1669, 0.251706, 42.0008)
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 2, -6.55671e-08, 0, -8.74228e-08, -1.5, -1, -8.74228e-08, 2.86603e-15, -19.27, 1.499, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_nwd70")
+mesh = SubResource("PlaneMesh_fm1ft")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D14"]
+script = ExtResource("12_nwd70")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D14/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_vinic")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1154.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vinic")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 651.0
+text = "FIND YOUR CAR"
+label_settings = SubResource("LabelSettings_wgbwy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Panel"]

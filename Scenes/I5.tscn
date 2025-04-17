@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://bbnhqh5q6jb73"]
+[gd_scene load_steps=22 format=3 uid="uid://bbnhqh5q6jb73"]
 
+[ext_resource type="Script" uid="uid://bu1nriht2roba" path="res://Scenes/TitleScreen5.gd" id="1_po0ur"]
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="1_tkew7"]
 [ext_resource type="Texture2D" uid="uid://cnfat7vxyxyxa" path="res://textures/asphalt_06_disp_4k.png" id="1_xlm41"]
 [ext_resource type="Texture2D" uid="uid://cnp0qwkk83ae0" path="res://textures/docklands_02_4k.png" id="2_xlm41"]
@@ -43,7 +44,15 @@ albedo_texture = ExtResource("5_tel7h")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1al44"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_po0ur"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hjpge"]
+font_size = 80
+font_color = Color(1, 0.337255, 0.286275, 1)
+
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_po0ur")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.234736, 0.441474, 0, 0.882948, 0.469472, -0.5, 0.406574, -0.764655, 0, 0, 0)
@@ -60,7 +69,7 @@ mesh = SubResource("PlaneMesh_c8dpk")
 shape = SubResource("ConvexPolygonShape3D_xlm41")
 
 [node name="Node3D" parent="." instance=ExtResource("1_tkew7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2845, 0, 20.3439)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5782, 0, -42.2269)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tel7h")
@@ -219,3 +228,19 @@ script = ExtResource("6_0m50m")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
 transform = Transform3D(1, 7.10543e-15, 4.23516e-22, -7.10543e-15, 1, 0, -4.23516e-22, -3.00927e-36, 1, 0, -0.00131321, 0.104248)
 shape = SubResource("ConcavePolygonShape3D_1al44")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1160.0
+offset_bottom = 655.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_po0ur")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 655.0
+text = "FIND THE DOOR"
+label_settings = SubResource("LabelSettings_hjpge")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Panel"]

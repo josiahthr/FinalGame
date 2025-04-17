@@ -1,5 +1,7 @@
 extends StaticBody3D
 
+@onready var ShowDoor: MeshInstance3D = $"../../../MeshInstance3D14"
+
 @export var interaction_text: String = "iancar"
 @export var dialogue_line: Array[String] = [
 	"Yeah I'm not starting",
@@ -12,7 +14,9 @@ extends StaticBody3D
 var dialogue_index := 0
 
 func interact():
+	ShowDoor.show()
 	print("interacted with Iancar")
+
 	
 func get_dialogue_data():
 	if dialogue_index < dialogue_line.size():

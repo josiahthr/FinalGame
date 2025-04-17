@@ -2,10 +2,7 @@ extends StaticBody3D
 
 @export var interaction_text: String = "notian3"
 @export var dialogue_line: Array[String] = [
-	"You know looking at this poster...",
-	"It truly does remind me of humanity...",
-	"And the fact that I can interact with E...",
-	"And walk with the WASD keys."
+	"This isn't my car"
 ]
 @export var speaker_name: String = " " 
 

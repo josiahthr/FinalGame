@@ -1,12 +1,21 @@
-[gd_scene load_steps=29 format=3 uid="uid://dnohws3g1gswm"]
+[gd_scene load_steps=34 format=3 uid="uid://dnohws3g1gswm"]
 
+[ext_resource type="Script" uid="uid://dh452b5g4vd30" path="res://Scenes/TitleScreen3.gd" id="1_l8tbs"]
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="1_spr11"]
 [ext_resource type="Texture2D" uid="uid://bll6vqx76yduv" path="res://textures/coast_sand_rocks_02_diff_4k.jpg" id="1_xtttg"]
 [ext_resource type="Texture2D" uid="uid://c0len776wm6ex" path="res://textures/red_bricks_04_diff_4k.jpg" id="3_nf6qs"]
 [ext_resource type="Texture2D" uid="uid://cceivexeovrby" path="res://Images/pngtree-isolated-3d-rendering-of(2).png" id="4_rvhh2"]
 [ext_resource type="Texture2D" uid="uid://c41oif7o8cnf4" path="res://Images/farmhouse-french-full-glass-exterior-double-door_r2_copy.jpg" id="5_w213a"]
 [ext_resource type="Texture2D" uid="uid://dn72jb517qj36" path="res://textures/rural_asphalt_road_4k.png" id="6_7b4h1"]
+[ext_resource type="Script" uid="uid://bw4m5rcyc2xx5" path="res://Scenes/I3Back.gd" id="6_avpu6"]
 [ext_resource type="PackedScene" uid="uid://bcp3vuvthaeb5" path="res://Scenes/door.tscn" id="7_jsr6k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djjby"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_itdx7"]
+font_size = 80
+font_color = Color(1, 0.337255, 0.286275, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nf6qs"]
 albedo_texture = ExtResource("1_xtttg")
@@ -41,6 +50,9 @@ material = SubResource("StandardMaterial3D_w213a")
 albedo_texture = ExtResource("5_w213a")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jsr6k"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_l8tbs"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_w213a"]
 size = Vector3(30, 1, 40)
@@ -77,6 +89,23 @@ sky = SubResource("Sky_w213a")
 ambient_light_color = Color(1, 0, 0, 1)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_l8tbs")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1154.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_djjby")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+text = "Get to class"
+label_settings = SubResource("LabelSettings_itdx7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Panel"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.499315, 0.026168, 0, 0.052336, 0.99863, -0.5, 0.864838, -0.0453243, 0, 0, 0)
@@ -453,6 +482,12 @@ mesh = SubResource("PlaneMesh_7b4h1")
 transform = Transform3D(-1.49246, -1.33137, 5.81961e-08, 0, -8.74228e-08, -2, 1.33137, -1.49246, 6.52376e-08, 0.20338, 2.01003, 44.0556)
 material_override = SubResource("StandardMaterial3D_7b4h1")
 mesh = SubResource("PlaneMesh_jsr6k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FrontDoor"]
+script = ExtResource("6_avpu6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FrontDoor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_l8tbs")
 
 [node name="MeshInstance3D66" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.741976, 0, -0.670427, 0, 1, 0, 0.670427, 0, -0.741976, -9.395, 8.2, 26.058)

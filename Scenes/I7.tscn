@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://csced4smqa7te"]
+
+[ext_resource type="PackedScene" uid="uid://bct3coqhwxbx2" path="res://Scenes/I3noplayer.tscn" id="1_20d3t"]
+[ext_resource type="Script" uid="uid://ccl5qv6rnewjs" path="res://Scenes/TitleScreen7.gd" id="1_46igw"]
+[ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="2_46igw"]
+[ext_resource type="Script" uid="uid://r72g75arp1bb" path="res://Scenes/I7Door.gd" id="4_cdneb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20d3t"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_20d3t"]
+font_size = 80
+font_color = Color(1, 0.337255, 0.286275, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ac8qg"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2cde5"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_46igw")
+
+[node name="Node3D" parent="." instance=ExtResource("1_20d3t")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.28354, 0, 33.738)
+
+[node name="Node3D2" parent="." instance=ExtResource("2_46igw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.55374, 0, 77.8991)
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1154.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_20d3t")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 648.0
+text = "MAIN CAMPUS
+(DEFINITELY NOT REUSED)"
+label_settings = SubResource("LabelSettings_20d3t")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Panel"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.193914, 2.85497, -0.0609217, -1.83942e-10, -0.0652026, -4.2139, -0.254687, -2.17373, 0.0463847, -6.24157, 1.90012, -10.0758)
+visible = false
+mesh = SubResource("BoxMesh_ac8qg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+script = ExtResource("4_cdneb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_2cde5")

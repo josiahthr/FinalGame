@@ -1,5 +1,6 @@
-[gd_scene load_steps=43 format=3 uid="uid://b8oq2my2j5qbw"]
+[gd_scene load_steps=46 format=3 uid="uid://b8oq2my2j5qbw"]
 
+[ext_resource type="Script" uid="uid://oq0e75d0iwqc" path="res://Scenes/TitleScreen2.gd" id="1_0lkpx"]
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="1_uo7xa"]
 [ext_resource type="Texture2D" uid="uid://d1hs0cmti0cs3" path="res://textures/white-painted-brick-stretcher-5197-in-architextures.jpg" id="2_qej70"]
 [ext_resource type="Texture2D" uid="uid://kdjouc07yand" path="res://Images/door.png" id="3_4erp6"]
@@ -13,6 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://bll6vqx76yduv" path="res://textures/coast_sand_rocks_02_diff_4k.jpg" id="11_4erp6"]
 [ext_resource type="Script" uid="uid://dtxy2k4e507en" path="res://Scenes/lightning.gd" id="12_fk2g4"]
 [ext_resource type="AudioStream" uid="uid://dcgbjh5ju6hoq" path="res://thunder-cracking-ftus-1-00-36.wav" id="13_tqtuj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lkpx"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y7vj3"]
+font_size = 80
+font_color = Color(1, 0.337255, 0.286275, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ylsfi"]
 size = Vector2(20, 10)
@@ -110,6 +118,24 @@ density = 5.0093
 emission = Color(0.277528, 0.277528, 0.277528, 1)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_0lkpx")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1157.0
+offset_bottom = 653.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0lkpx")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 1159.0
+offset_bottom = 654.0
+text = "TALK TO WAYNE"
+label_settings = SubResource("LabelSettings_y7vj3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Panel/Label"]
+wait_time = 5.0
 
 [node name="SubViewport" type="SubViewport" parent="."]
 
