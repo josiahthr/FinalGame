@@ -2,9 +2,10 @@ extends StaticBody3D
 
 @export var interaction_text: String = "poster"
 @export var dialogue_line: Array[String] = [
-	"poster1.",
-	"poster2.",
-	"poster3."
+	"You know looking at this poster...",
+	"It truly does remind me of humanity...",
+	"And the fact that I can interact with E...",
+	"And walk with the WASD keys."
 ]
 @export var speaker_name: String = " " 
 

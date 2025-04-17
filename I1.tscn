@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://css4ux5gbyjr0"]
+[gd_scene load_steps=30 format=3 uid="uid://css4ux5gbyjr0"]
 
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://1stplayer.tscn" id="1_12njm"]
 [ext_resource type="Texture2D" uid="uid://cvxwamcv2nck0" path="res://textures/grey-barcode-carpet-stack-7087-in-architextures.jpg" id="2_gv5sj"]
@@ -62,6 +62,9 @@ points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_i2e5a"]
 viewport_path = NodePath("SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i2e5a"]
+size = Vector3(7.98701, 3.13135, 4.59436)
 
 [node name="Node3D" type="Node3D"]
 
@@ -163,18 +166,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.666553, -2.55887)
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("9_7dsh2")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.313266, -5.81488)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="Mattress" type="MeshInstance3D" parent="."]
 transform = Transform3D(7.26477, 0, 0, 0, 0.196844, 0, 0, 0, 3.27073, 0, 0.10511, -5.87961)
 visible = false
 mesh = SubResource("BoxMesh_7dsh2")
 surface_material_override/0 = SubResource("StandardMaterial3D_snymg")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mattress"]
 script = ExtResource("10_i2e5a")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mattress/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_hveko")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.000838161, 0, -0.997504, 0, 0.481253, 0, 0.302036, 0, 0.00276811, -5.89489, 1.28568, -0.0979676)
 texture = SubResource("ViewportTexture_i2e5a")
+
+[node name="MattressArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MattressArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111591, 1.77244, -4.83296)
+shape = SubResource("BoxShape3D_i2e5a")
+
+[connection signal="body_exited" from="MattressArea" to="Door/StaticBody3D2" method="_on_mattress_area_body_exited"]
+[connection signal="body_exited" from="MattressArea" to="Mattress/StaticBody3D" method="_on_mattress_area_body_exited"]

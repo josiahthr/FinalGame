@@ -2,12 +2,11 @@ extends StaticBody3D
 
 @export var interaction_text: String = "Mattress"
 @export var dialogue_line: Array[String] = [
-	"mattress1.",
-	"mattress2.",
-	"mattress3."
+	"I really cant go to sleep right now...",
+	"I have to go to class."
 ]
 @export var speaker_name: String = " " 
-
+@onready var _dialog : Control = $CanvasLayer/Dialog
 var dialogue_index := 0
 
 func interact():
@@ -24,6 +23,6 @@ func get_dialogue_data():
 	else:
 		dialogue_index = 0
 		return null
-
+	
 func get_interaction_text():
 	return interaction_text
