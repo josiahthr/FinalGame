@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b8oq2my2j5qbw"]
+[gd_scene load_steps=32 format=3 uid="uid://b8oq2my2j5qbw"]
 
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://1stplayer.tscn" id="1_aa2d3"]
 [ext_resource type="Texture2D" uid="uid://d1hs0cmti0cs3" path="res://textures/white-painted-brick-stretcher-5197-in-architextures.jpg" id="2_ylsfi"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://du4bb0fbrvji5" path="res://I2DoorBack.gd" id="4_hpkq0"]
 [ext_resource type="PackedScene" uid="uid://xj3wru2rxhun" path="res://ps1_cctv_camera/scene.gltf" id="4_nr0xh"]
 [ext_resource type="Script" uid="uid://u64e01w687ho" path="res://I2DoorForward.gd" id="5_3j1i7"]
+[ext_resource type="PackedScene" uid="uid://bp6f7ougwgxe4" path="res://teacher_desk/scene.gltf" id="7_n6nh0"]
+[ext_resource type="PackedScene" uid="uid://rtqmyy4adt1h" path="res://ef8ba8e14e314e1dbce36e73be47bcad/scene.gltf" id="8_dj1h0"]
+[ext_resource type="PackedScene" uid="uid://b25xyf61qm4it" path="res://I1noplayer.tscn" id="9_1wpjv"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ylsfi"]
 size = Vector2(20, 10)
@@ -63,7 +66,10 @@ points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
 points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_nr0xh"]
-viewport_path = NodePath("SubViewport")
+viewport_path = NodePath("SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1wpjv"]
+albedo_texture = ExtResource("2_ylsfi")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dj1h0"]
 albedo_color = Color(0.164706, 1, 1, 1)
@@ -72,12 +78,20 @@ albedo_color = Color(0.164706, 1, 1, 1)
 material = SubResource("StandardMaterial3D_dj1h0")
 size = Vector3(0.05, 0.05, 0.05)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_o1mue"]
+viewport_path = NodePath("SubViewport")
+
 [node name="Node3D" type="Node3D"]
 
 [node name="SubViewport" type="SubViewport" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(0.772849, -0.116372, 0.623829, -0.0127391, 0.979999, 0.198596, -0.634462, -0.161432, 0.755908, 4.36677, 3.68692, 9.50041)
+transform = Transform3D(-0.608709, 0.213565, -0.76411, -0.0408377, 0.95338, 0.298998, 0.792342, 0.213207, -0.571609, -57.3601, 3.68692, 1.79189)
+
+[node name="SubViewport2" type="SubViewport" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport2"]
+transform = Transform3D(0.909801, -0.0710406, 0.40892, -0.0127391, 0.979999, 0.198596, -0.414849, -0.185892, 0.890699, 4.36677, 3.68692, 9.50041)
 
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
@@ -198,12 +212,13 @@ shape = SubResource("ConvexPolygonShape3D_n6nh0")
 transform = Transform3D(0.127536, 0, -0.15406, 0, 0.2, 0, 0.15406, 0, 0.127536, 4.64919, 3.8059, 9.67212)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(-0.199999, 0, 0.000530559, 0, 0.2, 0, -0.000530559, 0, -0.199999, 4.39253, 1.58844, -1.94433)
+transform = Transform3D(-0.180649, 0, -0.0688342, 0, 0.128652, 0, 0.0653939, 0, -0.190152, 4.09148, 1.82667, -2.34799)
 texture = SubResource("ViewportTexture_nr0xh")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(2.172, 0, 0, 0, 2.172, 0, 0, 0, 2.172, 5, 2, 0)
-size = Vector3(0.01, 4, 20)
+transform = Transform3D(1, 0, 0, 0, 0.00246091, 2.17199, 0, -0.999997, 0.0053451, 5, 2, 0)
+size = Vector3(0.01, 20, 4)
+material = SubResource("StandardMaterial3D_1wpjv")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(0.870933, 0, 0, 0, 1, 0, 0, 0, 1, 0.00594616, 0, 2.77256)
@@ -219,3 +234,19 @@ emission_shape = 1
 emission_sphere_radius = 2.34
 anim_speed_min = 2.27
 anim_speed_max = 2.27
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("7_n6nh0")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.30984, 4.45097e-07, -2.12398)
+
+[node name="Sketchfab_Scene3" parent="." instance=ExtResource("8_dj1h0")]
+transform = Transform3D(-2.82174, 0, -1.01873, 0, 3, 0, 1.01873, 0, -2.82174, 4.21029, 1.77147, -1.89194)
+
+[node name="Sketchfab_Scene4" parent="." instance=ExtResource("8_dj1h0")]
+transform = Transform3D(-2.94026, 0, 0.595692, 0, 3, 0, -0.595692, 0, -2.94026, 2.63573, 1.77147, -1.89194)
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.178194, 0, 0.228337, 0, 0.150542, 0, -0.036254, 0, -1.12231, 2.80887, 1.81969, -2.28815)
+texture = SubResource("ViewportTexture_o1mue")
+
+[node name="Node3D" parent="." instance=ExtResource("9_1wpjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.3815, -9.53674e-07, 9.53109)

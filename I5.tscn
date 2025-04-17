@@ -60,7 +60,7 @@ mesh = SubResource("PlaneMesh_c8dpk")
 shape = SubResource("ConvexPolygonShape3D_xlm41")
 
 [node name="Node3D" parent="." instance=ExtResource("1_tkew7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.9066, 0, -33.0267)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2845, 0, 20.3439)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tel7h")
@@ -209,7 +209,7 @@ mesh = SubResource("BoxMesh_42sor")
 shape = SubResource("ConvexPolygonShape3D_8pvuc")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, -1.74846e-07, 5.73206e-15, 0, -8.74228e-08, -1.5, 8.74228e-08, -2, 6.55671e-08, 14.0452, 1.68536, 31.8129)
+transform = Transform3D(-1, -1.74846e-07, 5.73206e-15, 0, -8.74228e-08, -1.5, 8.74228e-08, -2, 6.55671e-08, 14.0452, 1.68536, 31.5265)
 material_override = SubResource("StandardMaterial3D_uit7u")
 mesh = SubResource("PlaneMesh_y81ai")
 
@@ -217,5 +217,5 @@ mesh = SubResource("PlaneMesh_y81ai")
 script = ExtResource("6_0m50m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
-transform = Transform3D(1, 2.84217e-14, -8.47033e-22, -1.42109e-14, 1, -7.10543e-15, -4.23516e-22, 0, 1, 0, 0, 0.104248)
+transform = Transform3D(1, 7.10543e-15, 4.23516e-22, -7.10543e-15, 1, 0, -4.23516e-22, -3.00927e-36, 1, 0, -0.00131321, 0.104248)
 shape = SubResource("ConcavePolygonShape3D_1al44")
