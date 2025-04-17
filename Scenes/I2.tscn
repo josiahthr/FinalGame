@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b8oq2my2j5qbw"]
+[gd_scene load_steps=43 format=3 uid="uid://b8oq2my2j5qbw"]
 
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="1_uo7xa"]
 [ext_resource type="Texture2D" uid="uid://d1hs0cmti0cs3" path="res://textures/white-painted-brick-stretcher-5197-in-architextures.jpg" id="2_qej70"]
@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://bp6f7ougwgxe4" path="res://Objects/teacher_desk/scene.gltf" id="7_y7vj3"]
 [ext_resource type="PackedScene" uid="uid://rtqmyy4adt1h" path="res://Objects/ef8ba8e14e314e1dbce36e73be47bcad/scene.gltf" id="8_81m0a"]
 [ext_resource type="PackedScene" uid="uid://b25xyf61qm4it" path="res://Scenes/I1noplayer.tscn" id="9_1ryoj"]
+[ext_resource type="Texture2D" uid="uid://bbhbcaw0iut8a" path="res://textures/black-rain-abstract-dark-power.jpg" id="10_qej70"]
+[ext_resource type="Texture2D" uid="uid://bll6vqx76yduv" path="res://textures/coast_sand_rocks_02_diff_4k.jpg" id="11_4erp6"]
+[ext_resource type="Script" uid="uid://dtxy2k4e507en" path="res://Scenes/lightning.gd" id="12_fk2g4"]
+[ext_resource type="AudioStream" uid="uid://dcgbjh5ju6hoq" path="res://thunder-cracking-ftus-1-00-36.wav" id="13_tqtuj"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ylsfi"]
 size = Vector2(20, 10)
@@ -76,10 +80,34 @@ albedo_color = Color(0.164706, 1, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1wpjv"]
 material = SubResource("StandardMaterial3D_dj1h0")
-size = Vector3(0.05, 0.05, 0.05)
+size = Vector3(0.08, 0.08, 0.08)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_o1mue"]
 viewport_path = NodePath("SubViewport")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4erp6"]
+panorama = ExtResource("10_qej70")
+
+[sub_resource type="Sky" id="Sky_fk2g4"]
+sky_material = SubResource("PanoramaSkyMaterial_4erp6")
+
+[sub_resource type="Environment" id="Environment_tqtuj"]
+background_mode = 2
+background_energy_multiplier = 0.89
+sky = SubResource("Sky_fk2g4")
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fk2g4"]
+albedo_texture = ExtResource("11_4erp6")
+
+[sub_resource type="BoxMesh" id="BoxMesh_qej70"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4erp6"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_fk2g4"]
+density = 5.0093
+emission = Color(0.277528, 0.277528, 0.277528, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -228,8 +256,8 @@ operation = 2
 size = Vector3(0.0380859, 2.11682, 1)
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.42032, 13.2114, 6.07376)
-amount = 50
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.12983, 9.42032, 13.2114, 6.07376)
+amount = 100
 lifetime = 1.87
 mesh = SubResource("BoxMesh_1wpjv")
 emission_shape = 1
@@ -252,3 +280,37 @@ texture = SubResource("ViewportTexture_o1mue")
 
 [node name="Node3D" parent="." instance=ExtResource("9_1ryoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.3815, -9.53674e-07, 9.53109)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tqtuj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.01312, 0, 0, 0, 1.23502, 0, 0, 0, 18.7396, 9.56478, -1.44981, 5.89194)
+material_override = SubResource("StandardMaterial3D_fk2g4")
+mesh = SubResource("BoxMesh_qej70")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.1008, 0, 0)
+shape = SubResource("BoxShape3D_4erp6")
+
+[node name="FogVolume" type="FogVolume" parent="Area3D"]
+transform = Transform3D(516.321, 0, 0, 0, 2.37612, 0, 0, 0, 4.86966, 10.8353, 5.24408, 6.21197)
+size = Vector3(0.01, 8.02258, 15.3937)
+material = SubResource("FogMaterial_fk2g4")
+
+[node name="Lightning" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.999478, -0.000605757, -0.0323123, 0.0323179, 0.0187339, 0.999302, 4.42034e-10, -0.999824, 0.0187437, 84.086, 5.06496, -91.382)
+visible = false
+light_energy = 4.201
+light_indirect_energy = 1.323
+light_volumetric_fog_energy = 0.0
+script = ExtResource("12_fk2g4")
+
+[node name="Timer" type="Timer" parent="Lightning"]
+wait_time = 6.056
+autostart = true
+
+[node name="ThunderSound" type="AudioStreamPlayer3D" parent="Lightning"]
+stream = ExtResource("13_tqtuj")
