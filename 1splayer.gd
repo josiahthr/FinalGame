@@ -29,24 +29,19 @@ func _physics_process(delta: float) -> void:
 		var target = $Neck/Camera3D/SeeCast.get_collider()
 		#uncomment for hovers
 		#if target != null and target.has_method("interact"):
-
 		if target.has_method("interact") and Input.is_action_just_pressed("interact"):
 			target.interact()
-			_dialog.display_line("[wave]hello[/wave]")
+			_dialog.display_line(target.dialogue_text, target.speaker_name)
+			#_dialog.display_line("[wave]hello[/wave]", "SPEAKER")
 			
-		#
 			
-	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
 	#[wave], [shake], [color]
-	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
