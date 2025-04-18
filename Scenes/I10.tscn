@@ -1,7 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://u1l8ijq845w2"]
+[gd_scene load_steps=21 format=3 uid="uid://u1l8ijq845w2"]
 
 [ext_resource type="Texture2D" uid="uid://bpmm2417t0xo3" path="res://Images/images.png" id="1_3u44n"]
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="2_doyv6"]
+[ext_resource type="Script" uid="uid://bcc7c70ffnpfy" path="res://Scenes/walkpath.gd" id="3_doyv6"]
+[ext_resource type="Script" uid="uid://6e6npto71aqx" path="res://Scenes/walkpath1.gd" id="4_fh0ba"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fh0ba"]
 albedo_texture = ExtResource("1_3u44n")
@@ -44,6 +46,18 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_dr6p7"]
 material = SubResource("StandardMaterial3D_0mfmm")
 size = Vector2(100, 100)
+
+[sub_resource type="Curve3D" id="Curve3D_fh0ba"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.4, 0, 0, 0, 0, 0, 0, 0, 0, -65, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_rie0r"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rtjjs"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="Node3D" type="Node3D"]
 
@@ -103,3 +117,71 @@ shape = SubResource("ConvexPolygonShape3D_rtjjs")
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 99.8832, 0)
 mesh = SubResource("PlaneMesh_dr6p7")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.4344, 0, 8.06308)
+curve = SubResource("Curve3D_fh0ba")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.59962, 0, 0)
+progress = 2.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -0.588611, 2.10229, 11.2481)
+mesh = SubResource("BoxMesh_rie0r")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/PathFollow3D/MeshInstance3D"]
+shape = SubResource("ConcavePolygonShape3D_rtjjs")
+
+[node name="Path3D2" type="Path3D" parent="."]
+transform = Transform3D(0.999988, 0, 0.00490436, 0, 1, 0, -0.00490436, 0, 0.999988, 27.4344, 0, 15.7478)
+curve = SubResource("Curve3D_fh0ba")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.59962, 0, 0)
+progress = 2.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D2/PathFollow3D"]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -0.0442295, 2.10229, -16.5839)
+mesh = SubResource("BoxMesh_rie0r")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D2/PathFollow3D/MeshInstance3D"]
+shape = SubResource("ConcavePolygonShape3D_rtjjs")
+
+[node name="Path3D3" type="Path3D" parent="."]
+transform = Transform3D(0.999988, 0, 0.00490436, 0, 1, 0, -0.00490436, 0, 0.999988, 27.4344, 0, 22.5804)
+curve = SubResource("Curve3D_fh0ba")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.59962, 0, 0)
+progress = 2.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D3/PathFollow3D"]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -0.588611, 2.10229, 11.2481)
+mesh = SubResource("BoxMesh_rie0r")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D3/PathFollow3D/MeshInstance3D"]
+shape = SubResource("ConcavePolygonShape3D_rtjjs")
+
+[node name="Path3D4" type="Path3D" parent="."]
+transform = Transform3D(0.999988, 0, 0.00490436, 0, 1, 0, -0.00490436, 0, 0.999988, 27.4344, 0, 29.97)
+curve = SubResource("Curve3D_fh0ba")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.59962, 0, 0)
+progress = 2.0
+script = ExtResource("4_fh0ba")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D4/PathFollow3D"]
+transform = Transform3D(-1.30385e-07, 0, -3, 0, 3, 0, 3, 0, -1.30385e-07, -0.234756, 2.10229, -60.9012)
+mesh = SubResource("BoxMesh_rie0r")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D4/PathFollow3D/MeshInstance3D"]
+shape = SubResource("ConcavePolygonShape3D_rtjjs")
