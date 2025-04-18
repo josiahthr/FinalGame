@@ -1,5 +1,11 @@
 extends StaticBody3D
 
+signal Kyle_talk
+
+@onready var I8Door: MeshInstance3D = $"../../MeshInstance3D11"
+
+@export var speaker_name: String = "Kyle" 
+
 @export var interaction_text: String = "Kyle"
 @export var dialogue_line: Array[String] = [
 	"no space",
@@ -11,12 +17,13 @@ extends StaticBody3D
 	"Its a one seater",
 	"Just walk to work"
 ]
-@export var speaker_name: String = "Kyle" 
+
 
 var dialogue_index := 0
 
 func interact():
 	print("interacted with Kyle")
+	emit_signal("Kyle_talk")
 	
 func get_dialogue_data():
 	if dialogue_index < dialogue_line.size():

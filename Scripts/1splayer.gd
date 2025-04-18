@@ -35,6 +35,10 @@ func _on_dialog_continue():
 			in_dialogue = false
 			current_target = null
 
+func _on_area_connect():
+	if current_target and current_target.has_method("change_area"):
+		get_tree().change_scene_to_file("res://Scenes/I7.tscn")
+
 func _physics_process(delta: float) -> void:
 
 	if $Neck/Camera3D/SeeCast.is_colliding():

@@ -19,6 +19,7 @@ func interact():
 	print("interacted with Jamian")
 	emit_signal("jamian_talk")
 	
+	
 func get_dialogue_data():
 	if dialogue_index < dialogue_line.size():
 		var line = dialogue_line[dialogue_index]

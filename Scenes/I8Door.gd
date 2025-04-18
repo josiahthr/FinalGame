@@ -1,10 +1,13 @@
 extends StaticBody3D
 
 
-@export var interaction_text: String = "I8Door"
+@export var dialogue_line: Array[String] = [
+	"I should talk to jamian before I go"
+]
+@export var speaker_name: String = "Jamian" 
 @export var jamian_node_path: NodePath
 var has_jamian_talked = false
-
+var dialogue_index := 0
 func _ready():
 	print("Door's jamian_node_path:", jamian_node_path)
 	var jamian_node = get_node(jamian_node_path)
@@ -22,7 +25,17 @@ func interact():
 		print("interacted with I8Door")
 		get_tree().change_scene_to_file("res://Scenes/I9.tscn")
 	else:
-		print("talk to jamian first")
+		pass
 
-func get_interaction_text():
-	return interaction_text
+
+func get_dialogue_data():
+	if dialogue_index < dialogue_line.size():
+		var line = dialogue_line[dialogue_index]
+		dialogue_index += 1
+		return {
+			"text": line,
+			"speaker": speaker_name
+		}
+	else:
+		dialogue_index = 0
+		return null
