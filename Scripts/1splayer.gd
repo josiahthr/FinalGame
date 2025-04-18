@@ -2,7 +2,8 @@ extends CharacterBody3D
 
 
 var SPEED = 10.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 10
+
 @export var mouse_sensitivity: float = 0.002
 var in_dialogue = false
 var current_target = null
