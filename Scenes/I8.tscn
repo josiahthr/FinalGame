@@ -1,8 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://da80bli4ae06o"]
+[gd_scene load_steps=23 format=3 uid="uid://da80bli4ae06o"]
 
 [ext_resource type="Texture2D" uid="uid://cvxwamcv2nck0" path="res://textures/grey-barcode-carpet-stack-7087-in-architextures.jpg" id="1_03tuf"]
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="2_5gbm1"]
 [ext_resource type="Texture2D" uid="uid://cna2in20dcyng" path="res://textures/tiles_0013_color_4k.jpg" id="3_5gbm1"]
+[ext_resource type="PackedScene" uid="uid://bp6f7ougwgxe4" path="res://Objects/teacher_desk/scene.gltf" id="4_lths2"]
+[ext_resource type="Script" uid="uid://dbd6s27vf8soq" path="res://Scenes/JAMIAN.gd" id="5_33hro"]
+[ext_resource type="Texture2D" uid="uid://kdjouc07yand" path="res://Images/door.png" id="6_33hro"]
+[ext_resource type="Script" uid="uid://g5dxpvn1x6wi" path="res://Scenes/I8Door.gd" id="7_376g7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sfm50"]
 albedo_texture = ExtResource("1_03tuf")
@@ -34,6 +38,19 @@ albedo_texture = ExtResource("3_5gbm1")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5gbm1"]
 size = Vector2(20, 20)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_376g7"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a7bvp"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_376g7"]
+albedo_texture = ExtResource("6_33hro")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_id4lt"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rhfkg"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -82,7 +99,7 @@ mesh = SubResource("PlaneMesh_lths2")
 shape = SubResource("ConvexPolygonShape3D_wtife")
 
 [node name="Node3D" parent="." instance=ExtResource("2_5gbm1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163834, 0, -0.125687)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163834, 0, -7.85779)
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 0, 3.82137e-15, 8.74228e-08, -1, -10, 2.25, 0)
@@ -104,3 +121,28 @@ mesh = SubResource("PlaneMesh_03tuf")
 transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 4.5, 0)
 material_override = SubResource("StandardMaterial3D_lths2")
 mesh = SubResource("PlaneMesh_5gbm1")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("4_lths2")]
+transform = Transform3D(1.47912, 0, 0.249379, 0, 1.5, 0, -0.249379, 0, 1.47912, -5.84536, 8.74688e-08, 4.59352)
+
+[node name="jamian" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.65306, 1.22393, 5.42907)
+mesh = SubResource("PlaneMesh_376g7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="jamian"]
+script = ExtResource("5_33hro")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="jamian/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_a7bvp")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -8.74228e-08, -1.5, 0, 2, -6.55671e-08, 0, 1.49507, -9.91063)
+material_override = SubResource("StandardMaterial3D_376g7")
+mesh = SubResource("PlaneMesh_id4lt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D11"]
+script = ExtResource("7_376g7")
+jamian_node_path = NodePath("../../jamian/StaticBody3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D11/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_rhfkg")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://8tixarx4p0ue"]
+
+[ext_resource type="PackedScene" uid="uid://b1bk8drffev1h" path="res://Scenes/I6noplayer.tscn" id="1_47w3j"]
+[ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="2_qbrpg"]
+[ext_resource type="Texture2D" uid="uid://csc0tfyvi7nbl" path="res://Images/kyle-removebg-preview(2).png" id="3_045r6"]
+[ext_resource type="Script" uid="uid://buwyqh8sc0v7f" path="res://Scenes/Kyle.gd" id="4_ipmfu"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qbrpg"]
+size = Vector2(424, 148)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipmfu"]
+transparency = 1
+albedo_texture = ExtResource("3_045r6")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oa0o5"]
+points = PackedVector3Array(-212, 0, -74, -212, 0, 73.9855, 212, 0, -74, 212, 0, 73.9855)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node3D" parent="." instance=ExtResource("1_47w3j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.844202, 0, -0.34173)
+
+[node name="Node3D2" parent="." instance=ExtResource("2_qbrpg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.87276, 0, 19.8106)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.025, 0, 0, 0, -4.37114e-08, -0.02, 0, 1, -8.74228e-10, 2.23745, 1.13553, -25.4503)
+mesh = SubResource("PlaneMesh_qbrpg")
+surface_material_override/0 = SubResource("StandardMaterial3D_ipmfu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+transform = Transform3D(1.04546, 0, 0, 0, -62.0225, -3.33067e-16, 0, 7.27596e-11, 0.805843, 0, 0.237663, -3.8147e-06)
+script = ExtResource("4_ipmfu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_oa0o5")
