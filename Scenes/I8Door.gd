@@ -4,7 +4,7 @@ extends StaticBody3D
 @export var dialogue_line: Array[String] = [
 	"I should talk to jamian before I go"
 ]
-@export var speaker_name: String = "Jamian" 
+@export var speaker_name: String = "Ian" 
 @export var jamian_node_path: NodePath
 var has_jamian_talked = false
 var dialogue_index := 0

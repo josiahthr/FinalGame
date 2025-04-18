@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://daimmbmsjjmsn"]
+
+[ext_resource type="Texture2D" uid="uid://bpmm2417t0xo3" path="res://Images/images.png" id="1_6m2wc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us5gl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m431v"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1172.0
+offset_bottom = 671.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_us5gl")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(3.52829, 2.78285)
+scale = Vector2(-2.35037, 1)
+mesh = SubResource("PlaneMesh_m431v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(549, 323)
+scale = Vector2(2.5619, 2.69167)
+texture = ExtResource("1_6m2wc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 324)
