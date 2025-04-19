@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://u1l8ijq845w2"]
+[gd_scene load_steps=73 format=3 uid="uid://u1l8ijq845w2"]
 
 [ext_resource type="Texture2D" uid="uid://bpmm2417t0xo3" path="res://Images/images.png" id="1_3u44n"]
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="2_doyv6"]
@@ -45,61 +45,6 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_dr6p7"]
 material = SubResource("StandardMaterial3D_0mfmm")
 size = Vector2(100, 100)
-
-[sub_resource type="Curve3D" id="Curve3D_fh0ba"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 15, 0, 0, 0, 0, 0, 0, 0, 0, -90, 0, 0),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
-
-[sub_resource type="BoxMesh" id="BoxMesh_rie0r"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rtjjs"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
-[sub_resource type="Curve3D" id="Curve3D_rie0r"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 300, 0, 0),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
-
-[sub_resource type="BoxMesh" id="BoxMesh_0mfmm"]
-size = Vector3(3, 3, 3)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fh0ba"]
-data = PackedVector3Array(-1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, -1.5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_dr6p7"]
-size = Vector3(3, 3, 3)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_y8qh5"]
-data = PackedVector3Array(-1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, -1.5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ofukr"]
-size = Vector3(3, 3, 3)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mwdnk"]
-data = PackedVector3Array(-1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, -1.5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_dp7rf"]
-size = Vector3(3, 3, 3)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8aiwb"]
-data = PackedVector3Array(-1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, -1.5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_odgmt"]
-size = Vector3(3, 3, 3)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qlijv"]
-data = PackedVector3Array(-1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, -1.5)
-
-[sub_resource type="BoxMesh" id="BoxMesh_8aiwb"]
-size = Vector3(3, 3, 3)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fo8ru"]
-data = PackedVector3Array(-1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, -1.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fh0ba"]
 size = Vector3(85, 1, 29)
@@ -227,6 +172,71 @@ size = Vector2(111, 111)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rie0r"]
 data = PackedVector3Array(55.5, 0, 55.5, -55.5, 0, 55.5, 55.5, 0, -55.5, -55.5, 0, 55.5, -55.5, 0, -55.5, 55.5, 0, -55.5)
 
+[sub_resource type="Curve3D" id="Curve3D_rtjjs"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 110, 0, 0, 0, 0, 0, 0, 0, 0, 110, -20, 0, 0, 0, 0, 0, 0, 0, 0, -20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="BoxMesh" id="BoxMesh_g5xbt"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mdqnu"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ksnkf"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ywia4"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_77wgu"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m0y7v"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lpt7s"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="Curve3D" id="Curve3D_dr6p7"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 110, 0, 0, 0, 0, 0, 0, 0, 0, 110, -20, 0, 0, 0, 0, 0, 0, 0, 0, -20, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="BoxMesh" id="BoxMesh_rie0r"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1qt35"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="Curve3D" id="Curve3D_fh0ba"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -110, 0, 0, 0, 0, 0, 0, 0, 0, -110, -20, 0, 0, 0, 0, 0, 0, 0, 0, -20, 0),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="BoxMesh" id="BoxMesh_0mfmm"]
+size = Vector3(3, 3, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dr6p7"]
+size = Vector3(3, 3, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ofukr"]
+size = Vector3(3, 3, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dp7rf"]
+size = Vector3(3, 3, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_odgmt"]
+size = Vector3(3, 3, 10)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -285,111 +295,6 @@ shape = SubResource("ConvexPolygonShape3D_rtjjs")
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 99.8832, 0)
 mesh = SubResource("PlaneMesh_dr6p7")
-
-[node name="Car3" type="Path3D" parent="."]
-transform = Transform3D(0.999988, 0, 0.00490436, 0, 1, 0, -0.00490436, 0, 0.999988, 27.4344, 0, 15.7478)
-curve = SubResource("Curve3D_fh0ba")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Car3"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.0001, 0, 0)
-progress = 2.0
-script = ExtResource("3_doyv6")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Car3/PathFollow3D"]
-transform = Transform3D(-1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, -0.044, 2, -16.584)
-mesh = SubResource("BoxMesh_rie0r")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Car3/PathFollow3D/MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car3/PathFollow3D/MeshInstance3D/StaticBody3D"]
-transform = Transform3D(1, 0, 4.65661e-10, 0, 1, 0, -4.65661e-10, 0, 1, 0, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_rtjjs")
-
-[node name="Car22" type="Path3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -46.3855, 0, 22.5804)
-curve = SubResource("Curve3D_fh0ba")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Car22"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.0001, 0, 0)
-progress = 2.0
-script = ExtResource("3_doyv6")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Car22/PathFollow3D"]
-transform = Transform3D(-1.31316e-07, 0, -3, 0, 3, 0, 3, 0, -1.31316e-07, -0.312, 2, -45.14)
-mesh = SubResource("BoxMesh_rie0r")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Car22/PathFollow3D/MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car22/PathFollow3D/MeshInstance3D/StaticBody3D"]
-transform = Transform3D(1, 0, 4.65661e-10, 0, 1, 0, -4.65661e-10, 0, 1, 0, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_rtjjs")
-
-[node name="Car4" type="Path3D" parent="."]
-transform = Transform3D(-0.999999, 0, -0.00141373, 0, 1, 0, 0.00141373, 0, -0.999999, 258.795, 0, 9.37309)
-curve = SubResource("Curve3D_rie0r")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Car4"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-script = ExtResource("3_doyv6")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Car4/PathFollow3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.291, 0.025, 2, -17.643)
-mesh = SubResource("BoxMesh_0mfmm")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Car4/PathFollow3D/MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car4/PathFollow3D/MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_fh0ba")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Car4/PathFollow3D"]
-transform = Transform3D(-1.00143e-07, 0, 1, 0, 1, 0, -2.291, 0, -4.37114e-08, 0.093, 2, -65.93)
-mesh = SubResource("BoxMesh_dr6p7")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Car4/PathFollow3D/MeshInstance3D2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car4/PathFollow3D/MeshInstance3D2/StaticBody3D"]
-transform = Transform3D(1, 0, 5.82077e-11, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_y8qh5")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Car4/PathFollow3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.291, 0.179, 2, -126.945)
-mesh = SubResource("BoxMesh_ofukr")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Car4/PathFollow3D/MeshInstance3D3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car4/PathFollow3D/MeshInstance3D3/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_mwdnk")
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Car4/PathFollow3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.291, 0.254, 2, -179.886)
-mesh = SubResource("BoxMesh_dp7rf")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Car4/PathFollow3D/MeshInstance3D5"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car4/PathFollow3D/MeshInstance3D5/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_8aiwb")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="Car4/PathFollow3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.291, 0.333, 2, -235.493)
-mesh = SubResource("BoxMesh_odgmt")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Car4/PathFollow3D/MeshInstance3D6"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car4/PathFollow3D/MeshInstance3D6/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_qlijv")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="Car4/PathFollow3D"]
-transform = Transform3D(0.998175, 0, 0, 0, 1, 0, 0, 0, 2.29119, 0.394, 2, -278.669)
-mesh = SubResource("BoxMesh_8aiwb")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Car4/PathFollow3D/MeshInstance3D7"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car4/PathFollow3D/MeshInstance3D7/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 5.82077e-11, 0, 1, 0, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_fo8ru")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -646,87 +551,271 @@ mesh = SubResource("BoxMesh_qlijv")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Log3/PathFollow3D/MeshInstance3D8/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_1tiih")
 
-[node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.1438, 0, 29.2407)
+[node name="Car1" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.1438, 0, 33.2323)
 curve = SubResource("Curve3D_doyv6")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+[node name="PathFollow3D" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -30, 0, 0)
 progress = 30.0
 script = ExtResource("3_doyv6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D"]
 mesh = SubResource("BoxMesh_doyv6")
 
-[node name="PathFollow3D2" type="PathFollow3D" parent="Path3D"]
+[node name="PathFollow3D2" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -60, 0, 0)
 progress = 60.0
 script = ExtResource("3_doyv6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D2"]
 mesh = SubResource("BoxMesh_fh0ba")
 
-[node name="PathFollow3D3" type="PathFollow3D" parent="Path3D"]
+[node name="PathFollow3D3" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -90, 0, 0)
 progress = 90.0
 script = ExtResource("3_doyv6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D3"]
 mesh = SubResource("BoxMesh_rtjjs")
 
-[node name="PathFollow3D4" type="PathFollow3D" parent="Path3D"]
+[node name="PathFollow3D4" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, -100, -20, 0)
 progress = 140.0
 script = ExtResource("3_doyv6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D4"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D4"]
 mesh = SubResource("BoxMesh_y8qh5")
 
-[node name="PathFollow3D5" type="PathFollow3D" parent="Path3D"]
+[node name="PathFollow3D5" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, -60.0001, -20, 0)
 progress = 180.0
 script = ExtResource("3_doyv6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D5"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D5"]
 mesh = SubResource("BoxMesh_mwdnk")
 
-[node name="PathFollow3D6" type="PathFollow3D" parent="Path3D"]
+[node name="PathFollow3D6" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, -30.0001, -20, 0)
 progress = 210.0
 script = ExtResource("3_doyv6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D6"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D6"]
 mesh = SubResource("BoxMesh_h52je")
 
-[node name="PathFollow3D7" type="PathFollow3D" parent="Path3D"]
+[node name="PathFollow3D7" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -110, -10, 0)
 progress = 120.0
 script = ExtResource("3_doyv6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D7"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D7"]
 mesh = SubResource("BoxMesh_fo8ru")
 
-[node name="PathFollow3D8" type="PathFollow3D" parent="Path3D"]
+[node name="PathFollow3D8" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, -6.10463e-05, 0)
 progress = 260.0
 script = ExtResource("3_doyv6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D8"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D8"]
 mesh = SubResource("BoxMesh_s8oih")
 
-[node name="PathFollow3D9" type="PathFollow3D" parent="Path3D"]
+[node name="PathFollow3D9" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, -7.6551e-05, -20.0001, 0)
 progress = 240.0
 script = ExtResource("3_doyv6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D9"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D9"]
 mesh = SubResource("BoxMesh_4ygfe")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.7636, -48.9948, 0)
+transform = Transform3D(3.14177, 0, 0, 0, 1, 0, 0, 0, 1, 39.7636, -48.9948, 0)
 mesh = SubResource("PlaneMesh_fh0ba")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_rie0r")
+
+[node name="Car2" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.8354, 0, 27.251)
+curve = SubResource("Curve3D_rtjjs")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Car2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 0, 0)
+progress = 14.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car2/PathFollow3D"]
+mesh = SubResource("BoxMesh_g5xbt")
+
+[node name="PathFollow3D2" type="PathFollow3D" parent="Car2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 0, 0)
+progress = 35.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car2/PathFollow3D2"]
+mesh = SubResource("BoxMesh_mdqnu")
+
+[node name="PathFollow3D3" type="PathFollow3D" parent="Car2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 74, 0, 0)
+progress = 74.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car2/PathFollow3D3"]
+mesh = SubResource("BoxMesh_ksnkf")
+
+[node name="PathFollow3D4" type="PathFollow3D" parent="Car2"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 110, -10, 0)
+progress = 120.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car2/PathFollow3D4"]
+mesh = SubResource("BoxMesh_ywia4")
+
+[node name="PathFollow3D5" type="PathFollow3D" parent="Car2"]
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 65.0001, -20, 0)
+progress = 175.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car2/PathFollow3D5"]
+mesh = SubResource("BoxMesh_77wgu")
+
+[node name="PathFollow3D6" type="PathFollow3D" parent="Car2"]
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 20.0001, -20, 0)
+progress = 220.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car2/PathFollow3D6"]
+mesh = SubResource("BoxMesh_m0y7v")
+
+[node name="PathFollow3D7" type="PathFollow3D" parent="Car2"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, -10.0001, 0)
+progress = 250.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car2/PathFollow3D7"]
+mesh = SubResource("BoxMesh_lpt7s")
+
+[node name="Car3" type="Path3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 54.599, 0, 20.7171)
+curve = SubResource("Curve3D_rtjjs")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Car3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 0, 0)
+progress = 14.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car3/PathFollow3D"]
+mesh = SubResource("BoxMesh_g5xbt")
+
+[node name="PathFollow3D2" type="PathFollow3D" parent="Car3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 0, 0)
+progress = 35.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car3/PathFollow3D2"]
+mesh = SubResource("BoxMesh_mdqnu")
+
+[node name="PathFollow3D3" type="PathFollow3D" parent="Car3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 74, 0, 0)
+progress = 74.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car3/PathFollow3D3"]
+mesh = SubResource("BoxMesh_ksnkf")
+
+[node name="PathFollow3D4" type="PathFollow3D" parent="Car3"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 110, -10, 0)
+progress = 120.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car3/PathFollow3D4"]
+mesh = SubResource("BoxMesh_ywia4")
+
+[node name="PathFollow3D5" type="PathFollow3D" parent="Car3"]
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 65.0001, -20, 0)
+progress = 175.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car3/PathFollow3D5"]
+mesh = SubResource("BoxMesh_77wgu")
+
+[node name="PathFollow3D6" type="PathFollow3D" parent="Car3"]
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 20.0001, -20, 0)
+progress = 220.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car3/PathFollow3D6"]
+mesh = SubResource("BoxMesh_m0y7v")
+
+[node name="PathFollow3D7" type="PathFollow3D" parent="Car3"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, -10.0001, 0)
+progress = 250.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car3/PathFollow3D7"]
+mesh = SubResource("BoxMesh_lpt7s")
+
+[node name="Car4" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.2826, 0, 15.077)
+curve = SubResource("Curve3D_dr6p7")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Car4"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.99986, 0, 0)
+progress = 10.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car4/PathFollow3D"]
+mesh = SubResource("BoxMesh_rie0r")
+
+[node name="PathFollow3D2" type="PathFollow3D" parent="Car4"]
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 90, -20, 0)
+progress = 150.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Car4/PathFollow3D2"]
+mesh = SubResource("BoxMesh_1qt35")
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.47, 0, 9.81993)
+curve = SubResource("Curve3D_fh0ba")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -60, 0, 0)
+progress = 60.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D"]
+mesh = SubResource("BoxMesh_0mfmm")
+
+[node name="PathFollow3D2" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 0, 0)
+progress = 25.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D2"]
+mesh = SubResource("BoxMesh_dr6p7")
+
+[node name="PathFollow3D3" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -110, -4.99992, 0)
+progress = 115.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D3"]
+mesh = SubResource("BoxMesh_ofukr")
+
+[node name="PathFollow3D4" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, -80.0001, -20, 0)
+progress = 160.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D4"]
+mesh = SubResource("BoxMesh_dp7rf")
+
+[node name="PathFollow3D5" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, -30.0001, -20, 0)
+progress = 210.0
+script = ExtResource("3_doyv6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D/PathFollow3D5"]
+mesh = SubResource("BoxMesh_odgmt")
