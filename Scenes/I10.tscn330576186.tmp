@@ -1,8 +1,8 @@
-[gd_scene load_steps=100 format=3 uid="uid://u1l8ijq845w2"]
+[gd_scene load_steps=99 format=3 uid="uid://u1l8ijq845w2"]
 
 [ext_resource type="Texture2D" uid="uid://bpmm2417t0xo3" path="res://Images/images.png" id="1_3u44n"]
-[ext_resource type="Script" uid="uid://vvau4bdtjva0" path="res://Scenes/badobstacle.gd" id="2_fh0ba"]
 [ext_resource type="Script" uid="uid://bcc7c70ffnpfy" path="res://Scenes/walkpath.gd" id="3_doyv6"]
+[ext_resource type="Script" uid="uid://dy8oge4i4mnbm" path="res://Scenes/characterreset.gd" id="4_fh0ba"]
 [ext_resource type="Script" uid="uid://v6mxa4vs31tt" path="res://Scenes/1splayer.gd" id="5_rie0r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fh0ba"]
@@ -127,8 +127,6 @@ point_count = 5
 
 [sub_resource type="BoxMesh" id="BoxMesh_g5xbt"]
 size = Vector3(3, 3, 3)
-
-[sub_resource type="GDScript" id="GDScript_doyv6"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dp7rf"]
 data = PackedVector3Array(-1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, -1.5)
@@ -384,13 +382,14 @@ curve = SubResource("Curve3D_doyv6")
 [node name="PathFollow3D" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -30, 0, 0)
 progress = 30.0
-script = ExtResource("2_fh0ba")
+script = ExtResource("3_doyv6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D"]
 mesh = SubResource("BoxMesh_doyv6")
 
 [node name="Area3D" type="Area3D" parent="Car1/PathFollow3D/MeshInstance3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("4_fh0ba")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_doyv6")
@@ -523,7 +522,7 @@ script = ExtResource("3_doyv6")
 mesh = SubResource("BoxMesh_g5xbt")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Car2/PathFollow3D/MeshInstance3D"]
-script = SubResource("GDScript_doyv6")
+script = ExtResource("4_fh0ba")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Car2/PathFollow3D/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_dp7rf")
@@ -1177,7 +1176,7 @@ transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0, 0, 0
 shape = SubResource("ConcavePolygonShape3D_hqn34")
 
 [node name="Character" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0747318, 0, 43.0651)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1361, 0, 32.9448)
 script = ExtResource("5_rie0r")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Character"]
@@ -1194,4 +1193,3 @@ shape = SubResource("ConvexPolygonShape3D_0mfmm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24217, 0)
 
 [connection signal="area_entered" from="Car1/PathFollow3D/MeshInstance3D/Area3D" to="Character" method="_on_area_3d_area_entered"]
-[connection signal="body_entered" from="Car1/PathFollow3D/MeshInstance3D/Area3D" to="Car1/PathFollow3D" method="_on_area_3d_body_entered"]
