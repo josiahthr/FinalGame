@@ -1,9 +1,12 @@
-[gd_scene load_steps=99 format=3 uid="uid://u1l8ijq845w2"]
+[gd_scene load_steps=105 format=3 uid="uid://u1l8ijq845w2"]
 
 [ext_resource type="Texture2D" uid="uid://bpmm2417t0xo3" path="res://Images/images.png" id="1_3u44n"]
 [ext_resource type="Script" uid="uid://vvau4bdtjva0" path="res://Scenes/badobstacle.gd" id="2_fh0ba"]
 [ext_resource type="Script" uid="uid://bcc7c70ffnpfy" path="res://Scenes/walkpath.gd" id="3_doyv6"]
 [ext_resource type="Script" uid="uid://v6mxa4vs31tt" path="res://Scenes/1splayer.gd" id="5_rie0r"]
+[ext_resource type="Script" uid="uid://fb6va233kvd2" path="res://Scenes/end.gd" id="5_rtjjs"]
+[ext_resource type="Script" uid="uid://bxa48fv4alivj" path="res://Scenes/water.gd" id="6_rtjjs"]
+[ext_resource type="AudioStream" uid="uid://bp6u4usx0v6w1" path="res://frog - Copy.mp3" id="7_0mfmm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fh0ba"]
 albedo_texture = ExtResource("1_3u44n")
@@ -46,9 +49,6 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_dr6p7"]
 material = SubResource("StandardMaterial3D_0mfmm")
 size = Vector2(100, 100)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fh0ba"]
-size = Vector3(85, 1, 29)
 
 [sub_resource type="Curve3D" id="Curve3D_doyv6"]
 closed = true
@@ -313,6 +313,18 @@ data = PackedVector3Array(-1, 0.5, 7, 1, 0.5, 7, -1, -0.5, 7, 1, 0.5, 7, 1, -0.5
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0mfmm"]
 points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
 
+[sub_resource type="BoxMesh" id="BoxMesh_rj2bd"]
+size = Vector3(100, 1, 30)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1qt35"]
+data = PackedVector3Array(-50, 0.5, 15, 50, 0.5, 15, -50, -0.5, 15, 50, 0.5, 15, 50, -0.5, 15, -50, -0.5, 15, 50, 0.5, -15, -50, 0.5, -15, 50, -0.5, -15, -50, 0.5, -15, -50, -0.5, -15, 50, -0.5, -15, 50, 0.5, 15, 50, 0.5, -15, 50, -0.5, 15, 50, 0.5, -15, 50, -0.5, -15, 50, -0.5, 15, -50, 0.5, -15, -50, 0.5, 15, -50, -0.5, -15, -50, 0.5, 15, -50, -0.5, 15, -50, -0.5, -15, 50, 0.5, 15, -50, 0.5, 15, 50, 0.5, -15, -50, 0.5, 15, -50, 0.5, -15, 50, 0.5, -15, -50, -0.5, 15, 50, -0.5, 15, -50, -0.5, -15, 50, -0.5, 15, 50, -0.5, -15, -50, -0.5, -15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qlijv"]
+size = Vector3(90, 1, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lpt7s"]
+data = PackedVector3Array(-45, 0.5, 10, 45, 0.5, 10, -45, -0.5, 10, 45, 0.5, 10, 45, -0.5, 10, -45, -0.5, 10, 45, 0.5, -10, -45, 0.5, -10, 45, -0.5, -10, -45, 0.5, -10, -45, -0.5, -10, 45, -0.5, -10, 45, 0.5, 10, 45, 0.5, -10, 45, -0.5, 10, 45, 0.5, -10, 45, -0.5, -10, 45, -0.5, 10, -45, 0.5, -10, -45, 0.5, 10, -45, -0.5, -10, -45, 0.5, 10, -45, -0.5, 10, -45, -0.5, -10, 45, 0.5, 10, -45, 0.5, 10, 45, 0.5, -10, -45, 0.5, 10, -45, 0.5, -10, 45, 0.5, -10, -45, -0.5, 10, 45, -0.5, 10, -45, -0.5, -10, 45, -0.5, 10, 45, -0.5, -10, -45, -0.5, -10)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -368,12 +380,6 @@ shape = SubResource("ConvexPolygonShape3D_rtjjs")
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 99.8832, 0)
 mesh = SubResource("PlaneMesh_dr6p7")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="Water" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13901, -14.795)
-shape = SubResource("BoxShape3D_fh0ba")
 
 [node name="Car1" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.1438, 0, 33.2323)
@@ -1175,7 +1181,7 @@ transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0, 0, 0
 shape = SubResource("ConcavePolygonShape3D_hqn34")
 
 [node name="Character" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.199, 0, 14.9052)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.887482, 43)
 script = ExtResource("5_rie0r")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Character"]
@@ -1190,6 +1196,34 @@ shape = SubResource("ConvexPolygonShape3D_0mfmm")
 
 [node name="Camera" type="Camera3D" parent="Character/Neck"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24217, 0)
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.44928, -14.4703)
+visible = false
+mesh = SubResource("BoxMesh_rj2bd")
+script = ExtResource("6_rtjjs")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D8/Area3D"]
+shape = SubResource("ConcavePolygonShape3D_1qt35")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.853137, 0, 0, 0, 1, 0, 0, 0, 0.759261, 0, 1.2092, -38.0176)
+visible = false
+mesh = SubResource("BoxMesh_qlijv")
+script = ExtResource("5_rtjjs")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D7/Area3D"]
+shape = SubResource("ConcavePolygonShape3D_lpt7s")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0mfmm")
+volume_db = -20.613
+autoplay = true
+parameters/looping = true
 
 [connection signal="area_entered" from="Car1/PathFollow3D/MeshInstance3D/Area3D" to="Character" method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Car1/PathFollow3D/MeshInstance3D/Area3D" to="Car1/PathFollow3D" method="_on_area_3d_body_entered"]
