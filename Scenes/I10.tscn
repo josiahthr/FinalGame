@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://u1l8ijq845w2"]
+[gd_scene load_steps=99 format=3 uid="uid://u1l8ijq845w2"]
 
 [ext_resource type="Texture2D" uid="uid://bpmm2417t0xo3" path="res://Images/images.png" id="1_3u44n"]
 [ext_resource type="Script" uid="uid://vvau4bdtjva0" path="res://Scenes/badobstacle.gd" id="2_fh0ba"]
@@ -127,8 +127,6 @@ point_count = 5
 
 [sub_resource type="BoxMesh" id="BoxMesh_g5xbt"]
 size = Vector3(3, 3, 3)
-
-[sub_resource type="GDScript" id="GDScript_doyv6"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dp7rf"]
 data = PackedVector3Array(-1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, -1.5, 1.5, -1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, 1.5, -1.5, 1.5, 1.5, 1.5, 1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, 1.5, 1.5, -1.5, 1.5, -1.5, -1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, -1.5, -1.5, -1.5, -1.5)
@@ -393,112 +391,113 @@ mesh = SubResource("BoxMesh_doyv6")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D/MeshInstance3D/Area3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_doyv6")
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -60, 0, 0)
 progress = 60.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D2"]
 mesh = SubResource("BoxMesh_fh0ba")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car1/PathFollow3D2/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car1/PathFollow3D2/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D2/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D2/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_fh0ba")
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -90, 0, 0)
 progress = 90.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D3"]
 mesh = SubResource("BoxMesh_rtjjs")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car1/PathFollow3D3/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car1/PathFollow3D3/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D3/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D3/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_rtjjs")
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, -100, -20, 0)
 progress = 140.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D4"]
 mesh = SubResource("BoxMesh_y8qh5")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car1/PathFollow3D4/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car1/PathFollow3D4/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D4/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D4/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_0mfmm")
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, -60.0001, -20, 0)
 progress = 180.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D5"]
 mesh = SubResource("BoxMesh_mwdnk")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car1/PathFollow3D5/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car1/PathFollow3D5/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D5/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D5/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_dr6p7")
 
 [node name="PathFollow3D6" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, -30.0001, -20, 0)
 progress = 210.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D6"]
 mesh = SubResource("BoxMesh_h52je")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car1/PathFollow3D6/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car1/PathFollow3D6/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D6/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D6/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_ofukr")
 
 [node name="PathFollow3D7" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -110, -10, 0)
 progress = 120.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D7"]
 mesh = SubResource("BoxMesh_fo8ru")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car1/PathFollow3D7/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car1/PathFollow3D7/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D7/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D7/MeshInstance3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_y8qh5")
 
 [node name="PathFollow3D8" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, -6.10463e-05, 0)
 progress = 260.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D8"]
 mesh = SubResource("BoxMesh_s8oih")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car1/PathFollow3D8/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car1/PathFollow3D8/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D8/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D8/MeshInstance3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_mwdnk")
 
 [node name="PathFollow3D9" type="PathFollow3D" parent="Car1"]
 transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, -7.6551e-05, -20.0001, 0)
 progress = 240.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car1/PathFollow3D9"]
 mesh = SubResource("BoxMesh_4ygfe")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car1/PathFollow3D9/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car1/PathFollow3D9/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D9/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car1/PathFollow3D9/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_h52je")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -517,94 +516,93 @@ curve = SubResource("Curve3D_rtjjs")
 [node name="PathFollow3D" type="PathFollow3D" parent="Car2"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 0, 0)
 progress = 14.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car2/PathFollow3D"]
 mesh = SubResource("BoxMesh_g5xbt")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car2/PathFollow3D/MeshInstance3D"]
-script = SubResource("GDScript_doyv6")
+[node name="Area3D" type="Area3D" parent="Car2/PathFollow3D/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car2/PathFollow3D/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car2/PathFollow3D/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_dp7rf")
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Car2"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 0, 0)
 progress = 35.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car2/PathFollow3D2"]
 mesh = SubResource("BoxMesh_mdqnu")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car2/PathFollow3D2/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car2/PathFollow3D2/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car2/PathFollow3D2/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car2/PathFollow3D2/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_odgmt")
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Car2"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 74, 0, 0)
 progress = 74.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car2/PathFollow3D3"]
 mesh = SubResource("BoxMesh_ksnkf")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car2/PathFollow3D3/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car2/PathFollow3D3/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car2/PathFollow3D3/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car2/PathFollow3D3/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_8aiwb")
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Car2"]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 110, -10, 0)
 progress = 120.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car2/PathFollow3D4"]
 mesh = SubResource("BoxMesh_ywia4")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car2/PathFollow3D4/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car2/PathFollow3D4/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car2/PathFollow3D4/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car2/PathFollow3D4/MeshInstance3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_qlijv")
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Car2"]
 transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 65.0001, -20, 0)
 progress = 175.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car2/PathFollow3D5"]
 mesh = SubResource("BoxMesh_77wgu")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car2/PathFollow3D5/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car2/PathFollow3D5/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car2/PathFollow3D5/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car2/PathFollow3D5/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_fo8ru")
 
 [node name="PathFollow3D6" type="PathFollow3D" parent="Car2"]
 transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 20.0001, -20, 0)
 progress = 220.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car2/PathFollow3D6"]
 mesh = SubResource("BoxMesh_m0y7v")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car2/PathFollow3D6/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car2/PathFollow3D6/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car2/PathFollow3D6/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car2/PathFollow3D6/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_wm62p")
 
 [node name="PathFollow3D7" type="PathFollow3D" parent="Car2"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, -10.0001, 0)
 progress = 250.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car2/PathFollow3D7"]
 mesh = SubResource("BoxMesh_lpt7s")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car2/PathFollow3D7/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car2/PathFollow3D7/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car2/PathFollow3D7/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car2/PathFollow3D7/MeshInstance3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1rybg")
 
@@ -615,96 +613,96 @@ curve = SubResource("Curve3D_rtjjs")
 [node name="PathFollow3D" type="PathFollow3D" parent="Car3"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14, 0, 0)
 progress = 14.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car3/PathFollow3D"]
 mesh = SubResource("BoxMesh_g5xbt")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car3/PathFollow3D/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car3/PathFollow3D/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car3/PathFollow3D/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car3/PathFollow3D/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_lyb5m")
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Car3"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 0, 0)
 progress = 35.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car3/PathFollow3D2"]
 mesh = SubResource("BoxMesh_mdqnu")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car3/PathFollow3D2/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car3/PathFollow3D2/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car3/PathFollow3D2/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car3/PathFollow3D2/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_sqhf6")
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Car3"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 74, 0, 0)
 progress = 74.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car3/PathFollow3D3"]
 mesh = SubResource("BoxMesh_ksnkf")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car3/PathFollow3D3/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car3/PathFollow3D3/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car3/PathFollow3D3/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car3/PathFollow3D3/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_ac3uv")
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Car3"]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 110, -10, 0)
 progress = 120.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car3/PathFollow3D4"]
 mesh = SubResource("BoxMesh_ywia4")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car3/PathFollow3D4/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car3/PathFollow3D4/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car3/PathFollow3D4/MeshInstance3D/StaticBody3D"]
-transform = Transform3D(1, 0, -2.11758e-22, 0, 1, 8.35187e-23, 0, -3.55271e-15, 1, 0, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car3/PathFollow3D4/MeshInstance3D/Area3D"]
+transform = Transform3D(1, 0, -2.11758e-22, 0, 1, 8.35188e-23, 0, -3.55271e-15, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_fhidq")
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Car3"]
 transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 65.0001, -20, 0)
 progress = 175.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car3/PathFollow3D5"]
 mesh = SubResource("BoxMesh_77wgu")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car3/PathFollow3D5/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car3/PathFollow3D5/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car3/PathFollow3D5/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car3/PathFollow3D5/MeshInstance3D/Area3D"]
 transform = Transform3D(1, 0, 0, 7.10543e-15, 1, -8.47033e-22, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_jwddx")
 
 [node name="PathFollow3D6" type="PathFollow3D" parent="Car3"]
 transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 20.0001, -20, 0)
 progress = 220.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car3/PathFollow3D6"]
 mesh = SubResource("BoxMesh_m0y7v")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car3/PathFollow3D6/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car3/PathFollow3D6/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car3/PathFollow3D6/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car3/PathFollow3D6/MeshInstance3D/Area3D"]
 transform = Transform3D(1, 0, 0, 7.10543e-15, 1, -8.47033e-22, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_3h4xr")
 
 [node name="PathFollow3D7" type="PathFollow3D" parent="Car3"]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0, -10.0001, 0)
 progress = 250.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car3/PathFollow3D7"]
 mesh = SubResource("BoxMesh_lpt7s")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car3/PathFollow3D7/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car3/PathFollow3D7/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car3/PathFollow3D7/MeshInstance3D/StaticBody3D"]
-transform = Transform3D(1, 0, -2.11758e-22, 0, 1, -8.35187e-23, 0, 3.55271e-15, 1, 0, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car3/PathFollow3D7/MeshInstance3D/Area3D"]
+transform = Transform3D(1, 0, -2.11758e-22, 0, 1, -8.35188e-23, 0, 3.55271e-15, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_jkrhh")
 
 [node name="Car4" type="Path3D" parent="."]
@@ -714,27 +712,27 @@ curve = SubResource("Curve3D_dr6p7")
 [node name="PathFollow3D" type="PathFollow3D" parent="Car4"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.99986, 0, 0)
 progress = 10.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car4/PathFollow3D"]
 mesh = SubResource("BoxMesh_rie0r")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car4/PathFollow3D/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car4/PathFollow3D/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car4/PathFollow3D/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car4/PathFollow3D/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_yab1u")
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Car4"]
 transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 90, -20, 0)
 progress = 150.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car4/PathFollow3D2"]
 mesh = SubResource("BoxMesh_1qt35")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car4/PathFollow3D2/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car4/PathFollow3D2/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car4/PathFollow3D2/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car4/PathFollow3D2/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_3a31h")
 
 [node name="Car5" type="Path3D" parent="."]
@@ -744,67 +742,67 @@ curve = SubResource("Curve3D_fh0ba")
 [node name="PathFollow3D" type="PathFollow3D" parent="Car5"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -60, 0, 0)
 progress = 60.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car5/PathFollow3D"]
 mesh = SubResource("BoxMesh_0mfmm")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car5/PathFollow3D/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car5/PathFollow3D/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car5/PathFollow3D/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car5/PathFollow3D/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_2q63q")
 
 [node name="PathFollow3D2" type="PathFollow3D" parent="Car5"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 0, 0)
 progress = 25.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car5/PathFollow3D2"]
 mesh = SubResource("BoxMesh_dr6p7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car5/PathFollow3D2/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car5/PathFollow3D2/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car5/PathFollow3D2/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car5/PathFollow3D2/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_gurrq")
 
 [node name="PathFollow3D3" type="PathFollow3D" parent="Car5"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -110, -4.99992, 0)
 progress = 115.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car5/PathFollow3D3"]
 mesh = SubResource("BoxMesh_ofukr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car5/PathFollow3D3/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car5/PathFollow3D3/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car5/PathFollow3D3/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car5/PathFollow3D3/MeshInstance3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_vbkrj")
 
 [node name="PathFollow3D4" type="PathFollow3D" parent="Car5"]
 transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, -80.0001, -20, 0)
 progress = 160.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car5/PathFollow3D4"]
 mesh = SubResource("BoxMesh_dp7rf")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car5/PathFollow3D4/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car5/PathFollow3D4/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car5/PathFollow3D4/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car5/PathFollow3D4/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_rebab")
 
 [node name="PathFollow3D5" type="PathFollow3D" parent="Car5"]
 transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, -30.0001, -20, 0)
 progress = 210.0
-script = ExtResource("3_doyv6")
+script = ExtResource("2_fh0ba")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Car5/PathFollow3D5"]
 mesh = SubResource("BoxMesh_odgmt")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Car5/PathFollow3D5/MeshInstance3D"]
+[node name="Area3D" type="Area3D" parent="Car5/PathFollow3D5/MeshInstance3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Car5/PathFollow3D5/MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Car5/PathFollow3D5/MeshInstance3D/Area3D"]
 shape = SubResource("ConcavePolygonShape3D_33snv")
 
 [node name="Log1" type="Path3D" parent="."]
@@ -1177,7 +1175,7 @@ transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0, 0, 0
 shape = SubResource("ConcavePolygonShape3D_hqn34")
 
 [node name="Character" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0747318, 0, 43.0651)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.199, 0, 14.9052)
 script = ExtResource("5_rie0r")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Character"]
