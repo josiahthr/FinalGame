@@ -6,7 +6,7 @@ signal jamian_talk
 
 @export var interaction_text: String = "Jamian"
 @export var dialogue_line: Array[String] = [
-	"Ian you completely missed it...",
+	"[wave]Ian[/wave] you completely missed it...",
 	"Class has been over for like 3 hours...",
 	"You better start walking to work...",
 	"You don't want to be too late"

@@ -1,12 +1,20 @@
-[gd_scene load_steps=105 format=3 uid="uid://u1l8ijq845w2"]
+[gd_scene load_steps=108 format=3 uid="uid://u1l8ijq845w2"]
 
 [ext_resource type="Texture2D" uid="uid://bpmm2417t0xo3" path="res://Images/images.png" id="1_3u44n"]
+[ext_resource type="Script" uid="uid://dknk1vvoko8a0" path="res://Scenes/titlecard.gd" id="1_dr6p7"]
 [ext_resource type="Script" uid="uid://vvau4bdtjva0" path="res://Scenes/badobstacle.gd" id="2_fh0ba"]
 [ext_resource type="Script" uid="uid://bcc7c70ffnpfy" path="res://Scenes/walkpath.gd" id="3_doyv6"]
 [ext_resource type="Script" uid="uid://v6mxa4vs31tt" path="res://Scenes/1splayer.gd" id="5_rie0r"]
 [ext_resource type="Script" uid="uid://fb6va233kvd2" path="res://Scenes/end.gd" id="5_rtjjs"]
 [ext_resource type="Script" uid="uid://bxa48fv4alivj" path="res://Scenes/water.gd" id="6_rtjjs"]
 [ext_resource type="AudioStream" uid="uid://bp6u4usx0v6w1" path="res://frog - Copy.mp3" id="7_0mfmm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dr6p7"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dr6p7"]
+font_size = 80
+font_color = Color(1, 0.337255, 0.286275, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fh0ba"]
 albedo_texture = ExtResource("1_3u44n")
@@ -326,6 +334,24 @@ size = Vector3(90, 1, 20)
 data = PackedVector3Array(-45, 0.5, 10, 45, 0.5, 10, -45, -0.5, 10, 45, 0.5, 10, 45, -0.5, 10, -45, -0.5, 10, 45, 0.5, -10, -45, 0.5, -10, 45, -0.5, -10, -45, 0.5, -10, -45, -0.5, -10, 45, -0.5, -10, 45, 0.5, 10, 45, 0.5, -10, 45, -0.5, 10, 45, 0.5, -10, 45, -0.5, -10, 45, -0.5, 10, -45, 0.5, -10, -45, 0.5, 10, -45, -0.5, -10, -45, 0.5, 10, -45, -0.5, 10, -45, -0.5, -10, 45, 0.5, 10, -45, 0.5, 10, 45, 0.5, -10, -45, 0.5, 10, -45, 0.5, -10, 45, 0.5, -10, -45, -0.5, 10, 45, -0.5, 10, -45, -0.5, -10, 45, -0.5, 10, 45, -0.5, -10, -45, -0.5, -10)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_dr6p7")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1156.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dr6p7")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 650.0
+text = "CROSS THE ROAD
+ TO GET TO WORK"
+label_settings = SubResource("LabelSettings_dr6p7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Panel"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -1181,7 +1207,7 @@ transform = Transform3D(1, 0, 0, 0, 1, -8.35187e-23, 0, -8.35187e-23, 1, 0, 0, 0
 shape = SubResource("ConcavePolygonShape3D_hqn34")
 
 [node name="Character" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.887482, 43)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.442325, 43)
 script = ExtResource("5_rie0r")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Character"]

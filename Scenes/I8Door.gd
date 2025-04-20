@@ -2,7 +2,7 @@ extends StaticBody3D
 
 
 @export var dialogue_line: Array[String] = [
-	"I should talk to jamian before I go"
+	"I should talk to [wave]Jamian[/wave] before I go"
 ]
 @export var speaker_name: String = "Ian" 
 @export var jamian_node_path: NodePath

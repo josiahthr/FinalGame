@@ -1,6 +1,7 @@
-[gd_scene load_steps=34 format=3 uid="uid://da80bli4ae06o"]
+[gd_scene load_steps=43 format=3 uid="uid://da80bli4ae06o"]
 
 [ext_resource type="Texture2D" uid="uid://cvxwamcv2nck0" path="res://textures/grey-barcode-carpet-stack-7087-in-architextures.jpg" id="1_03tuf"]
+[ext_resource type="Script" uid="uid://dknk1vvoko8a0" path="res://Scenes/titlecard.gd" id="1_o6yui"]
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="2_5gbm1"]
 [ext_resource type="Texture2D" uid="uid://cna2in20dcyng" path="res://textures/tiles_0013_color_4k.jpg" id="3_5gbm1"]
 [ext_resource type="PackedScene" uid="uid://bp6f7ougwgxe4" path="res://Objects/teacher_desk/scene.gltf" id="4_lths2"]
@@ -8,6 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://kdjouc07yand" path="res://Images/door.png" id="6_33hro"]
 [ext_resource type="Script" uid="uid://g5dxpvn1x6wi" path="res://Scenes/I8Door.gd" id="7_376g7"]
 [ext_resource type="Texture2D" uid="uid://bbq7shut3c065" path="res://Images/20250418_115302.jpg" id="7_id4lt"]
+[ext_resource type="Script" uid="uid://bd1wb2ebklljc" path="res://Scenes/rene1.gd" id="9_wtife"]
+[ext_resource type="Script" uid="uid://dnwonu0j6m665" path="res://Scenes/rene2.gd" id="10_a7bvp"]
+[ext_resource type="Script" uid="uid://d0k2vmx7oso33" path="res://Scenes/rene3.gd" id="11_rhfkg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6yui"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o6yui"]
+font_size = 80
+font_color = Color(1, 0.337255, 0.286275, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sfm50"]
 albedo_texture = ExtResource("1_03tuf")
@@ -66,6 +77,9 @@ albedo_texture = ExtResource("3_5gbm1")
 [sub_resource type="PlaneMesh" id="PlaneMesh_5gbm1"]
 size = Vector2(20, 20)
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ey3sq"]
+points = PackedVector3Array(10.1548, 0.158668, 10.1548, -10.1548, -0.158668, -10.1548, -10.1548, 0.158668, -10.1548, 10.1548, -0.158668, -10.1548, -10.1548, -0.158668, 10.1548, -10.1548, 0.158668, 10.1548, 10.1548, 0.158668, -10.1548, 10.1548, -0.158668, 10.1548)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_376g7"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a7bvp"]
@@ -81,7 +95,30 @@ points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
 
 [sub_resource type="Environment" id="Environment_rhfkg"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_id4lt"]
+size = Vector3(2, 2, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_q5wql"]
+points = PackedVector3Array(-0.985089, -0.985089, -0.5, 0.954305, 0.954305, 0.5, 0.954305, -0.954305, 0.5, 0.985089, 0.985089, -0.5, -0.954305, 0.954305, 0.5, 0.985089, -0.985089, -0.5, -0.985089, 0.985089, -0.5, -0.954305, -0.954305, 0.5)
+
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_o6yui")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1156.0
+offset_bottom = 655.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_o6yui")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 650.0
+text = "CNSA CLASSROOM"
+label_settings = SubResource("LabelSettings_o6yui")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Panel"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.659818, 0.650754, -0.375713, 0, 0.5, 0.866025, 0.751426, -0.571419, 0.329909, 0, 5.25528, 0)
@@ -181,6 +218,11 @@ transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 4.5
 material_override = SubResource("StandardMaterial3D_lths2")
 mesh = SubResource("PlaneMesh_5gbm1")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D9/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ey3sq")
+
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("4_lths2")]
 transform = Transform3D(1.47912, 0, 0.249379, 0, 1.5, 0, -0.249379, 0, 1.47912, -5.84536, 8.74688e-08, 4.59352)
 
@@ -208,3 +250,36 @@ shape = SubResource("ConvexPolygonShape3D_rhfkg")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_rhfkg")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.88055, 1.97298, 9.62599)
+visible = false
+mesh = SubResource("BoxMesh_id4lt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D10"]
+script = ExtResource("9_wtife")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D10/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_q5wql")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0784417, 0, 0.996919, 0, 1, 0, -0.996919, 0, 0.0784417, -9.661, 1.97298, -8.32717)
+visible = false
+mesh = SubResource("BoxMesh_id4lt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D12"]
+script = ExtResource("10_a7bvp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D12/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_q5wql")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99166, 0, -0.128882, 0, 1, 0, 0.128882, 0, 0.99166, -6.50021, 1.35184, -9.54369)
+visible = false
+mesh = SubResource("BoxMesh_id4lt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D13"]
+script = ExtResource("11_rhfkg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D13/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_q5wql")
