@@ -1,12 +1,22 @@
-[gd_scene load_steps=29 format=3 uid="uid://c05rcbl6qhemr"]
+[gd_scene load_steps=33 format=3 uid="uid://c05rcbl6qhemr"]
 
 [ext_resource type="Texture2D" uid="uid://cvxwamcv2nck0" path="res://textures/grey-barcode-carpet-stack-7087-in-architextures.jpg" id="1_afdoe"]
+[ext_resource type="Script" uid="uid://dknk1vvoko8a0" path="res://Scenes/titlecard.gd" id="1_c0bmx"]
 [ext_resource type="Texture2D" uid="uid://cna2in20dcyng" path="res://textures/tiles_0013_color_4k.jpg" id="1_n5ums"]
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="1_ws1l8"]
 [ext_resource type="Texture2D" uid="uid://kdjouc07yand" path="res://Images/door.png" id="2_d3jv8"]
 [ext_resource type="Texture2D" uid="uid://pxa4afdhhv8" path="res://Images/The-Uniform-Outlet-Logo_300x300.png" id="4_qrpcf"]
 [ext_resource type="Script" uid="uid://b3wwxvq5065ws" path="res://Scenes/doorI11.gd" id="5_0o1lm"]
 [ext_resource type="PackedScene" uid="uid://nqsmbtgo1yd6" path="res://wardrobe_rack/scene.gltf" id="6_p8edm"]
+
+[sub_resource type="Theme" id="Theme_0o1lm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0o1lm"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0o1lm"]
+font_size = 80
+font_color = Color(1, 0.337255, 0.286275, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8edm"]
 albedo_texture = ExtResource("1_afdoe")
@@ -75,6 +85,24 @@ albedo_texture = ExtResource("4_qrpcf")
 [sub_resource type="PlaneMesh" id="PlaneMesh_p8edm"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_c0bmx")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1160.0
+offset_bottom = 655.0
+theme = SubResource("Theme_0o1lm")
+theme_override_styles/panel = SubResource("StyleBoxFlat_0o1lm")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 651.0
+text = "YOU MADE IT TO WORK"
+label_settings = SubResource("LabelSettings_0o1lm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Panel"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -160,6 +188,12 @@ mesh = SubResource("PlaneMesh_p8edm")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("6_p8edm")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.78479, 0.13698, 1.84435)
+
+[node name="Sketchfab_Scene3" parent="." instance=ExtResource("6_p8edm")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.89618, 0.13698, 1.84435)
+
+[node name="Sketchfab_Scene4" parent="." instance=ExtResource("6_p8edm")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.89618, 0.13698, -1.73028)
 
 [node name="Sketchfab_Scene2" parent="." instance=ExtResource("6_p8edm")]
 transform = Transform3D(-0.299996, 0, 0.00150794, 0, 0.3, 0, -0.00150794, 0, -0.299996, -4.83615, 0.107298, -2.32392)

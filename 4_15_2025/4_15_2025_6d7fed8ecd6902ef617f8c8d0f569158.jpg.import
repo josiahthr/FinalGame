@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b22v3hsnd1e14"
+path.s3tc="res://.godot/imported/4_15_2025_6d7fed8ecd6902ef617f8c8d0f569158.jpg-88d265da6549d2179fe0b5960b614b9f.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "3b524991c40486773fa857d04464d6cc"
+}
+
+[deps]
+
+source_file="res://4_15_2025/4_15_2025_6d7fed8ecd6902ef617f8c8d0f569158.jpg"
+dest_files=["res://.godot/imported/4_15_2025_6d7fed8ecd6902ef617f8c8d0f569158.jpg-88d265da6549d2179fe0b5960b614b9f.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=8
+roughness/src_normal="res://Images/4_15_2025/4_15_2025_ff6d1e34f1344e79cb879edfa6662f85.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

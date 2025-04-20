@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://b8oq2my2j5qbw"]
+[gd_scene load_steps=52 format=3 uid="uid://b8oq2my2j5qbw"]
 
 [ext_resource type="Script" uid="uid://oq0e75d0iwqc" path="res://Scenes/TitleScreen2.gd" id="1_0lkpx"]
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="1_uo7xa"]
@@ -89,6 +89,21 @@ albedo_color = Color(0.164706, 1, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_1wpjv"]
 material = SubResource("StandardMaterial3D_dj1h0")
 size = Vector3(0.08, 0.08, 0.08)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0lkpx"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y7vj3"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_81m0a"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1ryoj"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_70qsy"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8ofxt"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_o1mue"]
 viewport_path = NodePath("SubViewport")
@@ -294,11 +309,41 @@ anim_speed_max = 2.27
 [node name="Sketchfab_Scene2" parent="." instance=ExtResource("7_y7vj3")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.30984, 4.45097e-07, -2.12398)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_Scene2"]
+transform = Transform3D(2.13194, 0, 0, 0, 1.78389, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_0lkpx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene2/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene2/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_y7vj3")
+
 [node name="Sketchfab_Scene3" parent="." instance=ExtResource("8_81m0a")]
 transform = Transform3D(-2.82174, 0, -1.01873, 0, 3, 0, 1.01873, 0, -2.82174, 4.21029, 1.77147, -1.89194)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_Scene3"]
+transform = Transform3D(0.373349, 0, 0, 0, 0.261786, 0, -1.49012e-08, 0, 0.259005, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_81m0a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene3/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene3/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_1ryoj")
+
 [node name="Sketchfab_Scene4" parent="." instance=ExtResource("8_81m0a")]
 transform = Transform3D(-2.94026, 0, 0.595692, 0, 3, 0, -0.595692, 0, -2.94026, 2.63573, 1.77147, -1.89194)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_Scene4"]
+transform = Transform3D(0.280931, 0, 3.72529e-09, 0, 0.305436, 0, -7.45058e-09, 0, 0.26887, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_70qsy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene4/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene4/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_8ofxt")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(-0.178194, 0, 0.228337, 0, 0.150542, 0, -0.036254, 0, -1.12231, 2.80887, 1.81969, -2.28815)
