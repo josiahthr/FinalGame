@@ -42,5 +42,5 @@ func get_dialogue_data():
 func get_interaction_text():
 	return interaction_text
 	
-func this_is_kyle():
+func this_is_random():
 	pass

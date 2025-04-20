@@ -21,7 +21,7 @@ var in_dialogue = false
 var dialogue_index := 0
 
 func interact():
-	print("interacted with Kyle")
+	print("interacted with Ian's car")
 	if in_dialogue:
 		in_dialogue = false
 	else:
@@ -40,5 +40,5 @@ func get_dialogue_data():
 func get_interaction_text():
 	return interaction_text
 	
-func this_is_kyle():
+func this_is_random():
 	pass
