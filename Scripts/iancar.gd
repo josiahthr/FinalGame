@@ -1,8 +1,12 @@
 extends StaticBody3D
 
-@onready var ShowDoor: MeshInstance3D = $"../../../MeshInstance3D14"
+signal Kyle_talk
 
-@export var interaction_text: String = "iancar"
+@onready var I8Door: MeshInstance3D = $"../../MeshInstance3D11"
+
+@export var speaker_name: String = "Ian's Car" 
+
+@export var interaction_text: String = "IanCar"
 @export var dialogue_line: Array[String] = [
 	"nah man",
 	"yeah thats not happening",
@@ -12,26 +16,29 @@ extends StaticBody3D
 	"I think the shifters broken",
 	"Someone put 3 nails in my tire"
 ]
-@export var speaker_name: String = "Ian's Car" 
 
+var in_dialogue = false
 var dialogue_index := 0
 
 func interact():
-	ShowDoor.show()
-	print("interacted with Iancar")
-
+	print("interacted with Kyle")
+	if in_dialogue:
+		in_dialogue = false
+	else:
+		in_dialogue = true
 	
 func get_dialogue_data():
-	if dialogue_index < dialogue_line.size():
-		var line = dialogue_line[dialogue_index]
-		dialogue_index += 1
+	if dialogue_line.size() > 0:
+		var random_index = randi() % dialogue_line.size()
+		var line = dialogue_line[random_index]
 		return {
 			"text": line,
 			"speaker": speaker_name
 		}
-	else:
-		dialogue_index = 0
-		return null
+	return null
 
 func get_interaction_text():
 	return interaction_text
+	
+func this_is_kyle():
+	pass
