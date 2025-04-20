@@ -1,7 +1,7 @@
 [gd_scene load_steps=108 format=3 uid="uid://u1l8ijq845w2"]
 
 [ext_resource type="Texture2D" uid="uid://bpmm2417t0xo3" path="res://Images/images.png" id="1_3u44n"]
-[ext_resource type="Script" uid="uid://dknk1vvoko8a0" path="res://Scenes/titlecard.gd" id="1_dr6p7"]
+[ext_resource type="Script" uid="uid://dknk1vvoko8a0" path="res://Scenes/TitleCard.gd" id="1_dr6p7"]
 [ext_resource type="Script" uid="uid://vvau4bdtjva0" path="res://Scenes/badobstacle.gd" id="2_fh0ba"]
 [ext_resource type="Script" uid="uid://bcc7c70ffnpfy" path="res://Scenes/walkpath.gd" id="3_doyv6"]
 [ext_resource type="Script" uid="uid://v6mxa4vs31tt" path="res://Scenes/1splayer.gd" id="5_rie0r"]
