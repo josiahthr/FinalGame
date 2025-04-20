@@ -18,24 +18,29 @@ signal Kyle_talk
 	"Just walk to work"
 ]
 
-
+var in_dialogue = false
 var dialogue_index := 0
 
 func interact():
 	print("interacted with Kyle")
-	emit_signal("Kyle_talk")
+	if in_dialogue:
+		in_dialogue = false
+	else:
+		in_dialogue = true
+		emit_signal("Kyle_talk")
 	
 func get_dialogue_data():
-	if dialogue_index < dialogue_line.size():
-		var line = dialogue_line[dialogue_index]
-		dialogue_index += 1
+	if dialogue_line.size() > 0:
+		var random_index = randi() % dialogue_line.size()
+		var line = dialogue_line[random_index]
 		return {
 			"text": line,
 			"speaker": speaker_name
 		}
-	else:
-		dialogue_index = 0
-		return null
+	return null
 
 func get_interaction_text():
 	return interaction_text
+	
+func this_is_kyle():
+	pass

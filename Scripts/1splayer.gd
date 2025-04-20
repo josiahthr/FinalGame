@@ -35,6 +35,10 @@ func _on_dialog_continue():
 			_dialog.close()
 			in_dialogue = false
 			current_target = null
+	if current_target.has_method("this_is_kyle") and in_dialogue:
+		in_dialogue = false
+		_dialog.close()
+		
 
 func _on_area_connect():
 	if current_target and current_target.has_method("change_area"):
