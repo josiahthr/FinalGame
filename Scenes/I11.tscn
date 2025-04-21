@@ -170,6 +170,12 @@ shape = SubResource("ConvexPolygonShape3D_0o1lm")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.75856, 0)
 
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.75856, 5.41546)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.75856, -5.16418)
+
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, -1.74846e-07, 5.73206e-15, 0, -8.74228e-08, -1.5, 8.74228e-08, -2, 6.55671e-08, 0, 1.5132, 9.97033)
 mesh = SubResource("PlaneMesh_afdoe")

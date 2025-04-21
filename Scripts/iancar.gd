@@ -35,7 +35,6 @@ func get_dialogue_data():
 		if dialogue_line.size() > 0:
 			var random_index = randi() % dialogue_line.size()
 			var line = dialogue_line[random_index]
-			# Immediately set has_spoken_once to false after providing the line
 			has_spoken_once = false
 			return {
 				"text": line,
