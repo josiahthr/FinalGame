@@ -1,11 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dthlcsk5o5un6"]
+[gd_scene load_steps=3 format=3 uid="uid://dthlcsk5o5un6"]
 
 [ext_resource type="Script" uid="uid://bpkqg0jmsw3y4" path="res://Scripts/titlescreen.gd" id="1_p3fck"]
-[ext_resource type="FontFile" uid="uid://ddk7sbjn2qits" path="res://Fonts/QuentonSerif_PERSONAL_USE_ONLY.ttf" id="2_4gxqj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ig5kc"]
-font = ExtResource("2_4gxqj")
-font_size = 35
+font_size = 60
 font_color = Color(0.902675, 0.55783, 0.110225, 1)
 
 [node name="TitleScreen" type="Control"]
@@ -25,33 +23,34 @@ color = Color(0, 0, 0, 1)
 
 [node name="Start" type="Button" parent="."]
 layout_mode = 0
-offset_left = 471.0
-offset_top = 166.0
-offset_right = 635.0
-offset_bottom = 273.0
+offset_left = 410.0
+offset_top = 161.0
+offset_right = 710.0
+offset_bottom = 261.0
 text = "START"
 
 [node name="settings" type="Button" parent="."]
 layout_mode = 0
-offset_left = 470.0
-offset_top = 300.0
-offset_right = 647.0
-offset_bottom = 392.0
-text = "Settings"
+offset_left = 410.0
+offset_top = 299.0
+offset_right = 710.0
+offset_bottom = 399.0
+text = "SETTINGS"
+icon_alignment = 1
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 471.0
+offset_left = 410.0
 offset_top = 444.0
-offset_right = 648.0
-offset_bottom = 532.0
-text = "Exit"
+offset_right = 710.0
+offset_bottom = 544.0
+text = "EXIT"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 419.0
+offset_left = 390.0
 offset_top = 36.0
-offset_right = 701.0
+offset_right = 721.0
 offset_bottom = 142.0
 text = "Main Menu"
 label_settings = SubResource("LabelSettings_ig5kc")
@@ -60,3 +59,4 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

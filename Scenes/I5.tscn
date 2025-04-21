@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bbnhqh5q6jb73"]
+[gd_scene load_steps=23 format=3 uid="uid://bbnhqh5q6jb73"]
 
 [ext_resource type="Script" uid="uid://bu1nriht2roba" path="res://Scenes/TitleScreen5.gd" id="1_po0ur"]
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="1_tkew7"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c5kot55mfmqu" path="res://Objects/house_1/scene.gltf" id="4_42sor"]
 [ext_resource type="Texture2D" uid="uid://kdjouc07yand" path="res://Images/door.png" id="5_tel7h"]
 [ext_resource type="Script" uid="uid://tc4mh3esil3c" path="res://Scripts/I5door.gd" id="6_0m50m"]
+[ext_resource type="AudioStream" uid="uid://rsydsimee00m" path="res://city.mp3" id="8_hjpge"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42sor"]
 albedo_texture = ExtResource("1_xlm41")
@@ -244,3 +245,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="Panel"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_hjpge")
+volume_db = -13.117
+autoplay = true
+parameters/looping = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://8tixarx4p0ue"]
+[gd_scene load_steps=17 format=3 uid="uid://8tixarx4p0ue"]
 
 [ext_resource type="PackedScene" uid="uid://b1bk8drffev1h" path="res://Scenes/I6noplayer.tscn" id="1_47w3j"]
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="2_qbrpg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://i6qi8fdkjwsi" path="res://Scenes/Highway.gd" id="5_oa0o5"]
 [ext_resource type="Texture2D" uid="uid://cbj6u6gwsxesp" path="res://Images/highway.png" id="6_b5a3y"]
 [ext_resource type="Texture2D" uid="uid://bg7pco5ufiu81" path="res://Images/shuttle.png" id="6_yyep3"]
+[ext_resource type="AudioStream" uid="uid://bn4vornp50xjc" path="res://car.mp3" id="8_s4cal"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_qbrpg"]
 size = Vector2(424, 148)
@@ -67,3 +68,10 @@ transform = Transform3D(0.0472328, 0.881155, 0.435284, 0.0321337, 0.429303, -0.8
 material_override = SubResource("StandardMaterial3D_s4cal")
 mesh = SubResource("PlaneMesh_s4cal")
 surface_material_override/0 = SubResource("StandardMaterial3D_osjjm")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28872, 0, -25.3249)
+stream = ExtResource("8_s4cal")
+autoplay = true
+max_distance = 30.0
+parameters/looping = true

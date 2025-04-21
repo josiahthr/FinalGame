@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://0mrouwnaqixr"]
+[gd_scene load_steps=12 format=3 uid="uid://0mrouwnaqixr"]
 
 [ext_resource type="Script" uid="uid://dc2eadqnjsrb2" path="res://Scripts/1splayer.gd" id="1_xnnci"]
 [ext_resource type="Script" uid="uid://hy0xdtxgld6t" path="res://Scripts/dialog.gd" id="2_go18b"]
@@ -12,14 +12,23 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5q3n8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sglnf"]
-bg_color = Color(0.959865, 0.680385, 0.540326, 1)
+bg_color = Color(0.369701, 0.0005626, 0.484942, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r17xc"]
 texture = ExtResource("3_y2bmi")
 
 [sub_resource type="LabelSettings" id="LabelSettings_2w7go"]
 font_size = 25
-font_color = Color(0.00424378, 0.512507, 0.812071, 1)
+font_color = Color(0.993368, 0.993367, 1.46317e-05, 1)
+outline_color = Color(0, 0, 0.756863, 1)
+shadow_size = 80
+shadow_color = Color(0.960007, 0.000111471, 0.764409, 0)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="Theme" id="Theme_y2bmi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5q3n8"]
+bg_color = Color(1, 1, 0, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -91,10 +100,12 @@ label_settings = SubResource("LabelSettings_2w7go")
 
 [node name="Dialogue" type="RichTextLabel" parent="CanvasLayer/Dialog/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_selected_color = Color(0.00392157, 0.513726, 0.811765, 1)
-theme_override_colors/font_outline_color = Color(0.00392157, 0.513726, 0.811765, 1)
-theme_override_colors/font_shadow_color = Color(0.00392157, 0.513726, 0.811765, 1)
+theme = SubResource("Theme_y2bmi")
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.348983, 0.348983, 1.92523e-07, 1)
 theme_override_font_sizes/normal_font_size = 25
+theme_override_styles/fill = SubResource("StyleBoxFlat_5q3n8")
 bbcode_enabled = true
 text = "asfasfasfasfasfasfasdfglkjbasdropikgj zssddfkgjhzs;dgfn nziseutr/l;znsdriuhAWOIfjOAIjf09sadjfZ SJngf9iAWEIgtASDJgpoiSDjgzoJSdg09SGJ"
 fit_content = true

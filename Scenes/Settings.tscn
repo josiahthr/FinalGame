@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnt72rm6geo0j"]
+[gd_scene load_steps=8 format=3 uid="uid://bnt72rm6geo0j"]
 
 [ext_resource type="FontFile" uid="uid://ddk7sbjn2qits" path="res://Fonts/QuentonSerif_PERSONAL_USE_ONLY.ttf" id="1_bvb5x"]
 [ext_resource type="Texture2D" uid="uid://cc8ktasvwsl17" path="res://Images/Untitled.png" id="2_mx4kw"]
 [ext_resource type="Texture2D" uid="uid://bahyb06l536jt" path="res://Images/click.png" id="3_37a8j"]
 [ext_resource type="Script" uid="uid://ca3jq50mdyjkh" path="res://Scripts/h_slider.gd" id="4_37a8j"]
+[ext_resource type="Script" uid="uid://du4fggmi1gih5" path="res://Scenes/settingsescape.gd" id="5_mjqtt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2fv1l"]
 font = ExtResource("1_bvb5x")
 font_size = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_mjqtt"]
+font_size = 30
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -44,4 +48,23 @@ theme_override_icons/grabber = ExtResource("2_mx4kw")
 theme_override_icons/grabber_highlight = ExtResource("3_37a8j")
 script = ExtResource("4_37a8j")
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 28.0
+offset_right = 163.0
+offset_bottom = 67.0
+text = "RETURN"
+script = ExtResource("5_mjqtt")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 133.0
+offset_right = 606.0
+offset_bottom = 175.0
+text = "Sensitivity"
+label_settings = SubResource("LabelSettings_mjqtt")
+
 [connection signal="mouse_exited" from="HSlider" to="HSlider" method="_on_mouse_exited"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
