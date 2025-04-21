@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=3 uid="uid://c05rcbl6qhemr"]
 
 [ext_resource type="Texture2D" uid="uid://cvxwamcv2nck0" path="res://textures/grey-barcode-carpet-stack-7087-in-architextures.jpg" id="1_afdoe"]
-[ext_resource type="Script" uid="uid://dknk1vvoko8a0" path="res://Scenes/titlecard.gd" id="1_c0bmx"]
+[ext_resource type="Script" uid="uid://dknk1vvoko8a0" path="res://Scenes/TitleCard.gd" id="1_c0bmx"]
 [ext_resource type="Texture2D" uid="uid://cna2in20dcyng" path="res://textures/tiles_0013_color_4k.jpg" id="1_n5ums"]
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="1_ws1l8"]
 [ext_resource type="Texture2D" uid="uid://kdjouc07yand" path="res://Images/door.png" id="2_d3jv8"]

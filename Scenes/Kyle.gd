@@ -5,7 +5,6 @@ signal Kyle_talk
 @onready var I8Door: MeshInstance3D = $"../../MeshInstance3D11"
 
 @export var speaker_name: String = "Kyle" 
-
 @export var interaction_text: String = "Kyle"
 @export var dialogue_line: Array[String] = [
 	"no space",
@@ -20,23 +19,29 @@ signal Kyle_talk
 
 var in_dialogue = false
 var dialogue_index := 0
+var has_spoken_once = false
 
 func interact():
 	print("interacted with Kyle")
 	if in_dialogue:
 		in_dialogue = false
+		has_spoken_once = false
 	else:
 		in_dialogue = true
 		emit_signal("Kyle_talk")
+		has_spoken_once = true
 	
 func get_dialogue_data():
-	if dialogue_line.size() > 0:
-		var random_index = randi() % dialogue_line.size()
-		var line = dialogue_line[random_index]
-		return {
-			"text": line,
-			"speaker": speaker_name
-		}
+	if in_dialogue and has_spoken_once:
+		if dialogue_line.size() > 0:
+			var random_index = randi() % dialogue_line.size()
+			var line = dialogue_line[random_index]
+			# Immediately set has_spoken_once to false after providing the line
+			has_spoken_once = false
+			return {
+				"text": line,
+				"speaker": speaker_name
+			}
 	return null
 
 func get_interaction_text():

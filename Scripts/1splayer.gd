@@ -7,7 +7,7 @@ const JUMP_VELOCITY = 4
 @export var mouse_sensitivity: float = 0.002
 var in_dialogue = false
 var current_target = null
-
+var end_dialogue = false
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
 @onready var _dialog : Control = $"../CanvasLayer/Dialog"
@@ -27,18 +27,23 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(40))
 
 func _on_dialog_continue():
-	if current_target and current_target.has_method("get_dialogue_data"):
+	if not in_dialogue or current_target == null:
+		return
+	var end_dialogue := false
+	if current_target.has_method("get_dialogue_data"):
 		var data = current_target.get_dialogue_data()
 		if data != null:
 			_dialog.display_line(data["text"], data["speaker"])
+			return
 		else:
-			_dialog.close()
-			in_dialogue = false
-			current_target = null
-	if current_target.has_method("this_is_random") and in_dialogue:
-		in_dialogue = false
+			end_dialogue = true
+	if current_target.has_method("this_is_random"):
+		end_dialogue = true
+	if end_dialogue == true:
 		_dialog.close()
-		
+		in_dialogue = false
+		end_dialogue = false
+		current_target = null
 
 func _on_area_connect():
 	if current_target and current_target.has_method("change_area"):
