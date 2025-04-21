@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqxvovs04y3s"]
+[gd_scene load_steps=5 format=3 uid="uid://cqxvovs04y3s"]
 
 [ext_resource type="Script" uid="uid://cje814fwywq25" path="res://Scripts/game_select.gd" id="1_iixqj"]
+[ext_resource type="AudioStream" uid="uid://bddnpm6vwdmhh" path="res://menu.mp3" id="2_s38gf"]
 
 [sub_resource type="Theme" id="Theme_3a0pa"]
 
@@ -48,6 +49,10 @@ offset_bottom = 625.0
 text = "Ian's EPIC and 
 AWESOME journey to 
 CNSA and Work"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_s38gf")
+volume_db = -7.924
 
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dthlcsk5o5un6"]
+[gd_scene load_steps=4 format=3 uid="uid://dthlcsk5o5un6"]
 
 [ext_resource type="Script" uid="uid://bpkqg0jmsw3y4" path="res://Scripts/titlescreen.gd" id="1_p3fck"]
+[ext_resource type="AudioStream" uid="uid://bddnpm6vwdmhh" path="res://menu.mp3" id="2_p3fck"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ig5kc"]
 font_size = 60
@@ -56,6 +57,10 @@ text = "Main Menu"
 label_settings = SubResource("LabelSettings_ig5kc")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_p3fck")
+volume_db = -7.924
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]

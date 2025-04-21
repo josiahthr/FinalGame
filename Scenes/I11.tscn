@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://kdjouc07yand" path="res://Images/door.png" id="2_d3jv8"]
 [ext_resource type="Texture2D" uid="uid://pxa4afdhhv8" path="res://Images/The-Uniform-Outlet-Logo_300x300.png" id="4_qrpcf"]
 [ext_resource type="Script" uid="uid://b3wwxvq5065ws" path="res://Scenes/doorI11.gd" id="5_0o1lm"]
-[ext_resource type="PackedScene" uid="uid://nqsmbtgo1yd6" path="res://wardrobe_rack/scene.gltf" id="6_p8edm"]
+[ext_resource type="PackedScene" uid="uid://nqsmbtgo1yd6" path="res://Objects/wardrobe_rack/scene.gltf" id="6_p8edm"]
 
 [sub_resource type="Theme" id="Theme_0o1lm"]
 

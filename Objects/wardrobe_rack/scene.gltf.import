@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://nqsmbtgo1yd6"
-path="res://.godot/imported/scene.gltf-45d5f3e09b53ecc0aef10aa427b46f59.scn"
+path="res://.godot/imported/scene.gltf-22ad603fa8d86d5d0c9c42f69f5ed338.scn"
 
 [deps]
 
-source_file="res://wardrobe_rack/scene.gltf"
-dest_files=["res://.godot/imported/scene.gltf-45d5f3e09b53ecc0aef10aa427b46f59.scn"]
+source_file="res://Objects/wardrobe_rack/scene.gltf"
+dest_files=["res://.godot/imported/scene.gltf-22ad603fa8d86d5d0c9c42f69f5ed338.scn"]
 
 [params]
 
