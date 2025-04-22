@@ -1,0 +1,11 @@
+Model Information:
+* title:	Silent Hill 1 Meshes - Entire Normal School
+* source:	https://sketchfab.com/3d-models/silent-hill-1-meshes-entire-normal-school-5be8708fe0ef45fcbd35410449ef06fd
+* author:	SilentQuest (https://sketchfab.com/SilentQuest)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Silent Hill 1 Meshes - Entire Normal School" (https://sketchfab.com/3d-models/silent-hill-1-meshes-entire-normal-school-5be8708fe0ef45fcbd35410449ef06fd) by SilentQuest (https://sketchfab.com/SilentQuest) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

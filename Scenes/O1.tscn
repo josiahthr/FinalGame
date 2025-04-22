@@ -1,16 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8i6h5k3jw76h"]
+[gd_scene load_steps=3 format=3 uid="uid://b8i6h5k3jw76h"]
 
-[ext_resource type="PackedScene" uid="uid://cghnvunifj4of" path="res://Scenes/3rdplayer.tscn" id="1_pmd57"]
-[ext_resource type="Texture2D" uid="uid://cvxwamcv2nck0" path="res://textures/grey-barcode-carpet-stack-7087-in-architextures.jpg" id="1_rv8w6"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w3eih"]
-albedo_texture = ExtResource("1_rv8w6")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_rv8w6"]
-size = Vector2(100, 100)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pmd57"]
-points = PackedVector3Array(50.7837, 0.793495, 50.7837, -50.7837, -0.793495, -50.7837, -50.7837, 0.793495, -50.7837, 50.7837, -0.793495, -50.7837, -50.7837, -0.793495, 50.7837, -50.7837, 0.793495, 50.7837, 50.7837, 0.793495, -50.7837, 50.7837, -0.793495, 50.7837)
+[ext_resource type="PackedScene" uid="uid://by3wuf5blof6k" path="res://Objects/silent_hill_1_meshes_-_entire_normal_school/textures/scene.tscn" id="2_rv8w6"]
+[ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="2_w3eih"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -18,14 +9,7 @@ points = PackedVector3Array(50.7837, 0.793495, 50.7837, -50.7837, -0.793495, -50
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_w3eih")
-mesh = SubResource("PlaneMesh_rv8w6")
+[node name="Node3D" parent="." instance=ExtResource("2_w3eih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0805413, 0.553513, -63.5086)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_pmd57")
-
-[node name="Player" parent="." instance=ExtResource("1_pmd57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11717, 1.02101, -0.0114539)
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("2_rv8w6")]
