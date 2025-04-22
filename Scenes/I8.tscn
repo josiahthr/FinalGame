@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://da80bli4ae06o"]
+[gd_scene load_steps=44 format=3 uid="uid://da80bli4ae06o"]
 
 [ext_resource type="Texture2D" uid="uid://cvxwamcv2nck0" path="res://textures/grey-barcode-carpet-stack-7087-in-architextures.jpg" id="1_03tuf"]
 [ext_resource type="Script" uid="uid://dknk1vvoko8a0" path="res://Scenes/TitleCard.gd" id="1_o6yui"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bd1wb2ebklljc" path="res://Scenes/rene1.gd" id="9_wtife"]
 [ext_resource type="Script" uid="uid://dnwonu0j6m665" path="res://Scenes/rene2.gd" id="10_a7bvp"]
 [ext_resource type="Script" uid="uid://d0k2vmx7oso33" path="res://Scenes/rene3.gd" id="11_rhfkg"]
+[ext_resource type="PackedScene" uid="uid://btkvi4ug3iui1" path="res://Jamian2.glb" id="12_o6yui"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6yui"]
 bg_color = Color(0, 0, 0, 1)
@@ -80,7 +81,7 @@ size = Vector2(20, 20)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ey3sq"]
 points = PackedVector3Array(10.1548, 0.158668, 10.1548, -10.1548, -0.158668, -10.1548, -10.1548, 0.158668, -10.1548, 10.1548, -0.158668, -10.1548, -10.1548, -0.158668, 10.1548, -10.1548, 0.158668, 10.1548, 10.1548, 0.158668, -10.1548, 10.1548, -0.158668, 10.1548)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_376g7"]
+[sub_resource type="BoxMesh" id="BoxMesh_pcgux"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a7bvp"]
 points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
@@ -226,9 +227,13 @@ shape = SubResource("ConvexPolygonShape3D_ey3sq")
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("4_lths2")]
 transform = Transform3D(1.47912, 0, 0.249379, 0, 1.5, 0, -0.249379, 0, 1.47912, -5.84536, 8.74688e-08, 4.59352)
 
+[node name="Jamian2" parent="." instance=ExtResource("12_o6yui")]
+transform = Transform3D(-2.95139, 7.10543e-15, 0.537849, 3.55271e-15, 3, 0, -0.537849, 0, -2.95139, 5.76244, 0, 5.25562)
+
 [node name="jamian" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.65306, 1.22393, 5.42907)
-mesh = SubResource("PlaneMesh_376g7")
+transform = Transform3D(1.48312, 0, 0, 0, -4.37114e-08, 2.20512, 0, -1, -9.6389e-08, 5.65306, 1.22393, 5.42907)
+visible = false
+mesh = SubResource("BoxMesh_pcgux")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="jamian"]
 script = ExtResource("5_33hro")
