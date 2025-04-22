@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://b8oq2my2j5qbw"]
+[gd_scene load_steps=56 format=3 uid="uid://b8oq2my2j5qbw"]
 
 [ext_resource type="Script" uid="uid://oq0e75d0iwqc" path="res://Scenes/TitleScreen2.gd" id="1_0lkpx"]
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="1_uo7xa"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://bll6vqx76yduv" path="res://textures/coast_sand_rocks_02_diff_4k.jpg" id="11_4erp6"]
 [ext_resource type="Script" uid="uid://dtxy2k4e507en" path="res://Scenes/lightning.gd" id="12_fk2g4"]
 [ext_resource type="AudioStream" uid="uid://dcgbjh5ju6hoq" path="res://thunder-cracking-ftus-1-00-36.wav" id="13_tqtuj"]
+[ext_resource type="PackedScene" uid="uid://co2yro188j7at" path="res://Objects/Wayne.glb" id="15_y7vj3"]
+[ext_resource type="Script" uid="uid://d1ei88nlcmkqs" path="res://Scenes/wayne.gd" id="16_81m0a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lkpx"]
 bg_color = Color(0, 0, 0, 1)
@@ -131,6 +133,11 @@ albedo_texture = ExtResource("11_4erp6")
 [sub_resource type="FogMaterial" id="FogMaterial_fk2g4"]
 density = 5.0093
 emission = Color(0.277528, 0.277528, 0.277528, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1ryoj"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_70qsy"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_0lkpx")
@@ -385,3 +392,17 @@ autostart = true
 
 [node name="ThunderSound" type="AudioStreamPlayer3D" parent="Lightning"]
 stream = ExtResource("13_tqtuj")
+
+[node name="Wayne" parent="." instance=ExtResource("15_y7vj3")]
+transform = Transform3D(-1.75673, 0, 2.67468, 0, 3.2, 0, -2.67468, 0, -1.75673, 3.2203, -0.115232, -4.17367)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.17028, 0, 0, 0, 2.27003, 0, 0, 0, 1.49267, 3.16556, 1.18524, -3.86054)
+visible = false
+mesh = SubResource("BoxMesh_1ryoj")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="MeshInstance3D2"]
+script = ExtResource("16_81m0a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D2"]
+shape = SubResource("ConvexPolygonShape3D_70qsy")

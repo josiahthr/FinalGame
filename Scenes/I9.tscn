@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://0mrouwnaqixr" path="res://Scenes/1stplayer.tscn" id="2_qbrpg"]
 [ext_resource type="Texture2D" uid="uid://csc0tfyvi7nbl" path="res://Images/kyle-removebg-preview(2).png" id="3_045r6"]
 [ext_resource type="Script" uid="uid://buwyqh8sc0v7f" path="res://Scenes/Kyle.gd" id="4_ipmfu"]
-[ext_resource type="Script" uid="uid://i6qi8fdkjwsi" path="res://Scenes/Highway.gd" id="5_oa0o5"]
+[ext_resource type="Script" uid="uid://b7yxhq4q3qkvl" path="res://Scenes/Highway.gd" id="5_oa0o5"]
 [ext_resource type="Texture2D" uid="uid://cbj6u6gwsxesp" path="res://Images/highway.png" id="6_b5a3y"]
 [ext_resource type="Texture2D" uid="uid://bg7pco5ufiu81" path="res://Images/shuttle.png" id="6_yyep3"]
 [ext_resource type="AudioStream" uid="uid://bn4vornp50xjc" path="res://car.mp3" id="8_s4cal"]

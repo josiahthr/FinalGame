@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://7iqqphst6rva"
+path.s3tc="res://.godot/imported/wayne_798f1f2f1fbf5d7e4c25e6c9c62f9ffe.jpg-0317fbd5e8bdf5c46639fabf1c532495.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "cfd46420cd0c6abe5d2b71eb80ad9428"
+}
+
+[deps]
+
+source_file="res://Objects/88_american_sedan_-_low_poly_model/wayne_798f1f2f1fbf5d7e4c25e6c9c62f9ffe.jpg"
+dest_files=["res://.godot/imported/wayne_798f1f2f1fbf5d7e4c25e6c9c62f9ffe.jpg-0317fbd5e8bdf5c46639fabf1c532495.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

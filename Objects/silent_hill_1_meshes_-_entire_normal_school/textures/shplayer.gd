@@ -29,6 +29,12 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_dialog_continue():
 	if current_target and current_target.has_method("get_dialogue_data"):
 		var data = current_target.get_dialogue_data()
+		if data != null and current_target == $"../Sketchfab_model/root/GLTF_SceneRootNode/SM_FirstFloor_Lobby_80/Map":
+			_dialog.display_line(data["text"], data["speaker"])
+		else:
+			_dialog.close()
+			in_dialogue = false
+			current_target = null
 		if data != null:
 			_dialog.display_line(data["text"], data["speaker"])
 		else:
@@ -41,6 +47,27 @@ func _on_area_connect():
 		get_tree().change_scene_to_file("res://Scenes/I7.tscn")
 
 func _physics_process(delta: float) -> void:
+	# Pause movement if in dialogue
+	if in_dialogue:
+		velocity.x = 0
+		velocity.z = 0
+	else:
+		# Apply movement if not in dialogue
+		if not is_on_floor():
+			velocity += get_gravity() * delta
+
+		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
+
+		var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+		var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if direction:
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.z = move_toward(velocity.z, 0, SPEED)
+
 	if $Neck/Camera3D/Seecast.is_colliding():
 		var target = $Neck/Camera3D/Seecast.get_collider()
 		if is_instance_valid(target):
@@ -57,29 +84,11 @@ func _physics_process(delta: float) -> void:
 						_dialog.close()
 						in_dialogue = false
 						current_target = null
-		elif in_dialogue and Input.is_action_just_pressed("interact") and target == current_target and target.has_method("get_dialogue_data"):
-
+			elif in_dialogue and Input.is_action_just_pressed("interact") and target == current_target and target.has_method("get_dialogue_data"):
 				_on_dialog_continue()
 	else:
 		_dialog.close()
 		in_dialogue = false
 		current_target = null
-			
-			
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	#[wave], [shake], [color]
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
