@@ -2,7 +2,7 @@ extends StaticBody3D
 
 @export var interaction_text: String = "MidwichSign"
 @export var dialogue_line: Array[String] = [
-	"Just a wall."
+	"[color=#0cebc2]Midwich Elementary School[/color]"
 ]
 @export var speaker_name: String = " " 
 
