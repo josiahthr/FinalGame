@@ -6,15 +6,30 @@ signal map_chosen(picked_up: bool)
 @onready var _map_panel : Panel = $"../../../../../../CanvasLayer/Dialog/Map"
 @onready var yes_button := $"../../../../../../CanvasLayer/Dialog/Yes"
 @onready var no_button := $"../../../../../../CanvasLayer/Dialog/Button2"
+@onready var text := $"../../../../../../CanvasLayer/Dialog/VBoxContainer/Dialogue"
+@onready var mapgone := $"../../../../../../mapgone"
 @export var dialogue_line: Array[String] = [
-	"[left]          There is a [color=#0cebc2]School Map[/color][/left].	
-	[left]          Take it?[/left]",
+	"[left]          
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			  There is a [color=#0cebc2]School Map[/color][/left].	
+	[left]              Take it?[/left]",
 
 ]
 @export var speaker_name: String = " "
 
 var dialogue_index := 0
-var can_interact := true # Add a flag to prevent multiple interactions
+var can_interact := true
 
 func interact():
 	if can_interact:
@@ -23,7 +38,7 @@ func interact():
 		yes_button.visible = true
 		no_button.visible = true
 		yes_button.grab_focus()
-		can_interact = false # Prevent further interactions until a choice is made
+		can_interact = false
 
 func get_dialogue_data():
 	if dialogue_index < dialogue_line.size():
@@ -50,10 +65,14 @@ func _reset_interaction_ui():
 func _on_yes_pressed() -> void:
 	emit_signal("map_chosen", true)
 	_reset_interaction_ui()
-	queue_free()
+	text.hide()
+	#"I was chosen by God because I am the best programmer 
+	#on the planet and God boosted my IQ with divine intellect." -Terry A. Davis
+	mapgone.show()
 
 
 func _on_button_2_pressed() -> void:
 	emit_signal("map_chosen", false)
 	_reset_interaction_ui()
+	text.hide()
 	can_interact = true

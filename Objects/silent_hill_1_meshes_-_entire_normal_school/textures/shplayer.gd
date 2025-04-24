@@ -23,8 +23,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		if in_dialogue and is_instance_valid(current_target) and current_target.has_signal("map_chosen"):
-			# If in map dialog, treat "cancel" as "No"
-			current_target._on_no_button_pressed()
+			current_target._on_button_2_pressed()
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * mouse_sensitivity)
@@ -36,7 +35,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif event.is_action_just_pressed("ui_down"):
 			no_button.grab_focus()
 		elif event.is_action_just_pressed("ui_accept"):
-			# Trigger the pressed signal of the focused button
 			if yes_button.has_focus():
 				yes_button.emit_signal("pressed")
 			elif no_button.has_focus():
@@ -63,12 +61,10 @@ func _on_area_connect():
 		get_tree().change_scene_to_file("res://Scenes/I7.tscn")
 
 func _physics_process(delta: float) -> void:
-	# Pause movement if in dialogue
 	if in_dialogue:
 		velocity.x = 0
 		velocity.z = 0
 	else:
-		# Apply movement if not in dialogue
 		if not is_on_floor():
 			velocity += get_gravity() * delta
 
