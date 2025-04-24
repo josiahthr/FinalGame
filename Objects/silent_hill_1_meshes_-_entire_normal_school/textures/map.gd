@@ -5,8 +5,21 @@ extends StaticBody3D
 @onready var yes_button := $"../../../../../../CanvasLayer/Dialog/Yes"
 @onready var no_button := $"../../../../../../CanvasLayer/Dialog/Button2"
 @export var dialogue_line: Array[String] = [
-	"There is a [color=#0cebc2]School Map[/color].
-	[left]         Take it?[/left]"
+	"[left]           
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			 There is a [color=#0cebc2]School Map[/color][/left].
+	[left]             Take it?[/left]"
 ]
 @export var speaker_name: String = " " 
 
@@ -20,6 +33,7 @@ func get_dialogue_data():
 		_map_panel.visible = true 
 		yes_button.visible = true
 		no_button.visible = true
+		yes_button.grab_focus()
 		var line = dialogue_line[dialogue_index]
 		dialogue_index += 1
 		return {
