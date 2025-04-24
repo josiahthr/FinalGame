@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-@export var interaction_text: String = "MidwichSign"
+@export var interaction_text: String = "Note3"
 @onready var Note2 := $"../../../../../../CanvasLayer/Dialog/Note2"
 @onready var text := $"../../../../../../CanvasLayer/Dialog/VBoxContainer/Dialogue"
 @export var dialogue_line: Array[String] = [
@@ -36,7 +36,7 @@ extends StaticBody3D
 var dialogue_index := 0
 
 func interact():
-	print("interacted with MidwichSign")
+	print("interacted with Note3")
 	text.show()
 	
 func get_dialogue_data():
