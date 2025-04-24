@@ -42,3 +42,4 @@ func get_dialogue_data():
 
 func get_interaction_text():
 	return interaction_text
+# Replace with function body.

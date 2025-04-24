@@ -11,6 +11,8 @@ var current_target = null
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
 @onready var _dialog : Control = $"../CanvasLayer/Dialog"
+@onready var yes_button := $"../CanvasLayer/Dialog/Yes"
+@onready var no_button := $"../CanvasLayer/Dialog/Button2"
 
 func _ready():
 	_dialog.continue_pressed.connect(_on_dialog_continue)
@@ -20,11 +22,25 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if in_dialogue and is_instance_valid(current_target) and current_target.has_signal("map_chosen"):
+			# If in map dialog, treat "cancel" as "No"
+			current_target._on_no_button_pressed()
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * mouse_sensitivity)
 			camera.rotate_x(-event.relative.y * mouse_sensitivity)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(40))
+	elif in_dialogue and current_target and current_target.has_signal("map_chosen"):
+		if event.is_action_just_pressed("ui_up"):
+			yes_button.grab_focus()
+		elif event.is_action_just_pressed("ui_down"):
+			no_button.grab_focus()
+		elif event.is_action_just_pressed("ui_accept"):
+			# Trigger the pressed signal of the focused button
+			if yes_button.has_focus():
+				yes_button.emit_signal("pressed")
+			elif no_button.has_focus():
+				no_button.emit_signal("pressed")
 
 func _on_dialog_continue():
 	if current_target and current_target.has_method("get_dialogue_data"):
@@ -80,6 +96,8 @@ func _physics_process(delta: float) -> void:
 						_dialog.display_line(data["text"], data["speaker"])
 						in_dialogue = true
 						current_target = target
+						if target.has_signal("map_chosen"):
+							target.map_chosen.connect(_on_map_chosen)
 					else:
 						_dialog.close()
 						in_dialogue = false
@@ -92,3 +110,8 @@ func _physics_process(delta: float) -> void:
 		current_target = null
 
 	move_and_slide()
+	
+func _on_map_chosen(picked_up: bool):
+	in_dialogue = false
+	current_target = null
+	print("Map picked up:", picked_up)
