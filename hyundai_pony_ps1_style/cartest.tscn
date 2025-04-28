@@ -1,0 +1,320 @@
+[gd_scene load_steps=24 format=4 uid="uid://cg386p8aegn4j"]
+
+[ext_resource type="Texture2D" uid="uid://b54f2h788d2f7" path="res://hyundai_pony_ps1_style/textures/Tyres_baseColor.png" id="2_no0b8"]
+[ext_resource type="Script" uid="uid://dsy312e5e5c08" path="res://hyundai_pony_ps1_style/car.gd" id="4_hkt2a"]
+[ext_resource type="PackedScene" uid="uid://bmng84bq06kcy" path="res://track.tscn" id="5_1pp2q"]
+[ext_resource type="Script" uid="uid://dih680dev3wpn" path="res://hyundai_pony_ps1_style/vehicle_wheel_3d.gd" id="5_hkt2a"]
+[ext_resource type="PackedScene" uid="uid://cse1xwny5w37f" path="res://hyundai_pony_ps1_style/scene.tscn" id="5_no0b8"]
+[ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="7_gkglb"]
+[ext_resource type="AudioStream" uid="uid://bqxaotq7ofq3l" path="res://Garbage - As Heaven Is Wide.mp3" id="7_hkt2a"]
+[ext_resource type="FontFile" uid="uid://b116j0xgr4xw1" path="res://pixelpro_2p/pixelpro-2p.ttf" id="7_incj8"]
+[ext_resource type="Script" uid="uid://eqx2beu0o47h" path="res://hyundai_pony_ps1_style/checkerflag.gd" id="9_incj8"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tyvmk"]
+points = PackedVector3Array(0.75, 0.25, 1.5, 0.75, -0.25, 1.5, 0.75, 0.25, -1.5, -0.75, 0.25, 1.5, -0.75, -0.25, 1.5, 0.75, -0.25, -1.5, -0.75, 0.25, -1.5, -0.75, -0.25, -1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n75mt"]
+resource_name = "Tyres"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("2_no0b8")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gkglb"]
+_surfaces = [{
+"aabb": AABB(-0.866025, -1, -1, 1.73205, 2, 2),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAAEAAEABAAGAAEAAgABAAYABAAHAAYABwAEAAAAAgAGAAMABwADAAYACAAAAAIABwAFAAMABQAHAAAABQAJAAMACgACAAMACAACAAoAAwAJAAoAAAAIAAsACwAFAAAACwAIAAoABQALAAkACwAKAAkA"),
+"lods": [0.916888, PackedByteArray("AAABAAIAAgABAAMAAAAEAAEABQACAAMABQAAAAIABQADAAEABQAEAAAABAAFAAEA")],
+"name": "Tyres",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/3///wAAAAD///+///8AAP9//////wAA/38AAP//AAD///+/AAAAAP9/AAAAAAAA////P///AAD///8/AAAAAAAA/78AAAAAAAD/P///AAAAAP+///8AAAAA/z8AAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hupdd"]
+resource_name = "Sketchfab_Scene_tyre_Tyres_0"
+_surfaces = [{
+"aabb": AABB(-0.866025, -1, -1, 1.73205, 2, 2),
+"attribute_data": PackedByteArray("//8/x6/c////////r9w/x6/cP8cRlj/Hr9z//xGW//8Rlj/HIyz//xGW//8jLD/Hg4uwwpmVzrGDiyZ/FKgMhfiqk5MUqGuYYLn//2C5P8dguT/HYLn//8Fy///Bcj/HwXI/x3JP///Bcv//ck8/x3JPP8dyT///boEIkG6BzrGZlQiQMKWTkzCl5In4quSJ"),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAASAAYABAATABIAFAAHABUAFAAFAAcACAAWAAoACAAXABYAGAAZABoAGAAbABkAHAAJAB0AHAALAAkADgAeAB8AHwAMAA4ADAAgAA4ADAANACAAEQAhACIAIgAPABEADwAjABEAIwAQABEA"),
+"lods": [0.916888, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAHAAYACAAJAAoACAALAAkADAANAA4ADwAQABEA")],
+"material": SubResource("StandardMaterial3D_n75mt"),
+"name": "Tyres",
+"primitive": 3,
+"uv_scale": Vector4(5.8, 2, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("/3///wAA/w7///+/////Dv9///////8O////vwAA/w7///+/AACqKv9/AAAAAEQ9////v///qir/fwAA//9EPf9/AAAAAEQ9/3///////w7/fwAA//9EPf9///8AAP8O/3///////n////+////+f/9/AAD///5//38AAAAA//////+/AAD///9///8AAP//////P///qir///8/AACqKv///z8AAEQ9////P///RD0AAP8///9EPQAA/z8AAEQ9AAD/PwAAqioAAP+///+qKgAA/z///6oqAAD/vwAAqioAAP+/AAD/DgAA/7////8OAAD/P////n8AAP+////+f////z////5/AAD/vwAA//8AAP8/AAD//////z8AAP//cDgfD3A4Hw9wOB8PcDgfD6oqqipUFlZTqiqqKlQWVlOpLFSW4HBvuKksVJbgcG+4/3////9/////f///////f////3////9/qiqqKqoqqipUFlZTVBZWU6ksVJapLFSWVFWqqlRVqqpUVaqqVFWqquBwb7jgcG+4/3////9/////f////v//f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gkglb")
+
+[sub_resource type="LabelSettings" id="LabelSettings_hkt2a"]
+font = ExtResource("7_gkglb")
+font_size = 45
+font_color = Color(0.917647, 0.470588, 0.0862745, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gkglb"]
+font = ExtResource("7_gkglb")
+font_size = 25
+font_color = Color(0.917647, 0.470588, 0.0862745, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_incj8"]
+font = ExtResource("7_gkglb")
+font_size = 20
+font_color = Color(0.917647, 0.470588, 0.0862745, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wi6l0"]
+font = ExtResource("7_gkglb")
+font_size = 45
+font_color = Color(0.917647, 0.470588, 0.0862745, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_adloo"]
+font = ExtResource("7_gkglb")
+font_size = 45
+font_color = Color(0.917647, 0.470588, 0.0862745, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_arjbi"]
+font = ExtResource("7_gkglb")
+font_size = 20
+font_color = Color(0.917647, 0.470588, 0.0862745, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bapmy"]
+font = ExtResource("7_incj8")
+font_size = 80
+font_color = Color(1, 1, 0.180392, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_incj8"]
+size = Vector3(0.0546875, 3.10498, 24.9572)
+
+[sub_resource type="Animation" id="Animation_incj8"]
+resource_name = "camera_intro"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VehicleBody3D/Node3D/Camera3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array()
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VehicleBody3D/Node3D/Camera3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array()
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wi6l0"]
+_data = {
+&"camera_intro": SubResource("Animation_incj8")
+}
+
+[node name="Sketchfab_Scene" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="VehicleBody3D" type="VehicleBody3D" parent="."]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 27.8534, 2.21698, -2.3569)
+gravity_scale = 5.0
+steering = 0.174533
+script = ExtResource("4_hkt2a")
+
+[node name="Sketchfab_Scene" parent="VehicleBody3D" instance=ExtResource("5_no0b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.576665, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D"]
+shape = SubResource("ConvexPolygonShape3D_tyvmk")
+
+[node name="VehicleWheel3D" type="VehicleWheel3D" parent="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.617175, -0.404969, -0.982817)
+use_as_traction = true
+wheel_radius = 0.4
+suspension_stiffness = 100.0
+damping_compression = 25.0
+damping_relaxation = 2.0
+script = ExtResource("5_hkt2a")
+
+[node name="tyre_Tyres_0" type="MeshInstance3D" parent="VehicleBody3D/VehicleWheel3D"]
+transform = Transform3D(-1.31134e-08, 0, 0.1, 0, 0.3, 0, -0.3, 0, -4.37114e-09, -0.134469, 0.0104065, 0.00306022)
+mesh = SubResource("ArrayMesh_hupdd")
+skeleton = NodePath("")
+
+[node name="VehicleWheel3D2" type="VehicleWheel3D" parent="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.731, -0.40532, -0.983)
+use_as_traction = true
+wheel_radius = 0.4
+suspension_stiffness = 100.0
+damping_compression = 25.0
+damping_relaxation = 2.0
+script = ExtResource("5_hkt2a")
+
+[node name="tyre_Tyres_0" type="MeshInstance3D" parent="VehicleBody3D/VehicleWheel3D2"]
+transform = Transform3D(-1.31134e-08, 0, -0.1, 0, 0.3, 0, 0.3, 0, -4.37114e-09, 0.1, 0.01, 0.003)
+mesh = SubResource("ArrayMesh_hupdd")
+skeleton = NodePath("")
+
+[node name="VehicleWheel3D3" type="VehicleWheel3D" parent="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.718, -0.444598, 1.05379)
+steering = 3.14159
+use_as_steering = true
+wheel_radius = 0.4
+suspension_stiffness = 100.0
+damping_compression = 25.0
+damping_relaxation = 2.0
+script = ExtResource("5_hkt2a")
+
+[node name="tyre_Tyres_1" type="MeshInstance3D" parent="VehicleBody3D/VehicleWheel3D3"]
+transform = Transform3D(-1.31134e-08, 0, -0.1, 0, 0.3, 0, 0.3, 0, -4.37114e-09, 0.115, 0.01, 0.005)
+mesh = SubResource("ArrayMesh_hupdd")
+skeleton = NodePath("")
+
+[node name="VehicleWheel3D4" type="VehicleWheel3D" parent="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.613, -0.466223, 1.065)
+steering = 3.14159
+use_as_steering = true
+wheel_radius = 0.4
+suspension_stiffness = 100.0
+damping_compression = 25.0
+damping_relaxation = 2.0
+script = ExtResource("5_hkt2a")
+
+[node name="tyre_Tyres_1" type="MeshInstance3D" parent="VehicleBody3D/VehicleWheel3D4"]
+transform = Transform3D(-1.31134e-08, 0, 0.1, 0, 0.3, 0, -0.3, 0, -4.37114e-09, -0.134, 0.01, -0.004)
+mesh = SubResource("ArrayMesh_hupdd")
+skeleton = NodePath("")
+
+[node name="Node3D" type="Node3D" parent="VehicleBody3D"]
+
+[node name="Camera3D" type="Camera3D" parent="VehicleBody3D/Node3D"]
+transform = Transform3D(0.99811, 0.00984659, 0.060653, -0.0179456, 0.990755, 0.134471, -0.0587682, -0.135306, 0.989059, 0.106242, 0.242998, 4.42415)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("5_1pp2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -10)
+
+[node name="HUDLayer" type="CanvasLayer" parent="."]
+
+[node name="speedometer_label" type="Label" parent="HUDLayer"]
+offset_left = 1015.0
+offset_top = 501.0
+offset_right = 1078.0
+offset_bottom = 564.0
+text = "144"
+label_settings = SubResource("LabelSettings_hkt2a")
+
+[node name="Label" type="Label" parent="HUDLayer"]
+offset_left = 1034.0
+offset_top = 550.0
+offset_right = 1078.0
+offset_bottom = 573.0
+text = "km/h"
+label_settings = SubResource("LabelSettings_gkglb")
+
+[node name="Lap" type="Label" parent="HUDLayer"]
+offset_left = 41.0
+offset_top = 27.0
+offset_right = 173.0
+offset_bottom = 87.0
+text = "L A P"
+label_settings = SubResource("LabelSettings_incj8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Max Lap" type="Label" parent="HUDLayer/Lap"]
+offset_left = 58.0
+offset_top = 42.0
+offset_right = 105.0
+offset_bottom = 97.0
+text = "/2"
+label_settings = SubResource("LabelSettings_wi6l0")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Current Lap" type="Label" parent="HUDLayer/Lap/Max Lap"]
+offset_left = -34.0
+offset_top = -3.0
+offset_right = 6.0
+offset_bottom = 59.0
+text = "0"
+label_settings = SubResource("LabelSettings_adloo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="HUDLayer"]
+offset_left = 32.0
+offset_top = 144.0
+offset_right = 211.0
+offset_bottom = 182.0
+text = "Total     Time"
+label_settings = SubResource("LabelSettings_arjbi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="HUDLayer"]
+offset_left = 27.0
+offset_top = 228.0
+offset_right = 206.0
+offset_bottom = 266.0
+text = "Lap     Time"
+label_settings = SubResource("LabelSettings_arjbi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartTimer" type="Label" parent="HUDLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = 58.0
+offset_right = 46.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = SubResource("LabelSettings_bapmy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RaceTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_hkt2a")
+autoplay = true
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(-0.927243, 0, 0.374461, 0, 1, 0, -0.374461, 0, -0.927243, 0, 2.58446, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.79946, 0, 0.600747, 0, 1, 0, -0.600747, 0, 0.79946, 0.978345, -1.05843, 1.51897)
+shape = SubResource("BoxShape3D_incj8")
+script = ExtResource("9_incj8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wi6l0")
+}
+
+[connection signal="body_entered" from="Area3D" to="VehicleBody3D" method="_on_area_3d_body_entered"]

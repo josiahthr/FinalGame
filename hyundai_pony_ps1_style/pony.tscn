@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=4 uid="uid://b8xbo2nvtywkt"]
+
+[ext_resource type="Texture2D" uid="uid://b54f2h788d2f7" path="res://hyundai_pony_ps1_style/textures/Tyres_baseColor.png" id="1_end15"]
+[ext_resource type="PackedScene" uid="uid://cse1xwny5w37f" path="res://hyundai_pony_ps1_style/scene.tscn" id="2_eqnru"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n75mt"]
+resource_name = "Tyres"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_end15")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1l2uu"]
+_surfaces = [{
+"aabb": AABB(-0.866025, -1, -1, 1.73205, 2, 2),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAAEAAEABAAGAAEAAgABAAYABAAHAAYABwAEAAAAAgAGAAMABwADAAYACAAAAAIABwAFAAMABQAHAAAABQAJAAMACgACAAMACAACAAoAAwAJAAoAAAAIAAsACwAFAAAACwAIAAoABQALAAkACwAKAAkA"),
+"lods": [0.916888, PackedByteArray("AAABAAIAAgABAAMAAAAEAAEABQACAAMABQAAAAIABQADAAEABQAEAAAABAAFAAEA")],
+"name": "Tyres",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/3///wAAAAD///+///8AAP9//////wAA/38AAP//AAD///+/AAAAAP9/AAAAAAAA////P///AAD///8/AAAAAAAA/78AAAAAAAD/P///AAAAAP+///8AAAAA/z8AAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6a1to"]
+resource_name = "Sketchfab_Scene_tyre_Tyres_0"
+_surfaces = [{
+"aabb": AABB(-0.866025, -1, -1, 1.73205, 2, 2),
+"attribute_data": PackedByteArray("//8/x6/c////////r9w/x6/cP8cRlj/Hr9z//xGW//8Rlj/HIyz//xGW//8jLD/Hg4uwwpmVzrGDiyZ/FKgMhfiqk5MUqGuYYLn//2C5P8dguT/HYLn//8Fy///Bcj/HwXI/x3JP///Bcv//ck8/x3JPP8dyT///boEIkG6BzrGZlQiQMKWTkzCl5In4quSJ"),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAASAAYABAATABIAFAAHABUAFAAFAAcACAAWAAoACAAXABYAGAAZABoAGAAbABkAHAAJAB0AHAALAAkADgAeAB8AHwAMAA4ADAAgAA4ADAANACAAEQAhACIAIgAPABEADwAjABEAIwAQABEA"),
+"lods": [0.916888, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABQAHAAYACAAJAAoACAALAAkADAANAA4ADwAQABEA")],
+"material": SubResource("StandardMaterial3D_n75mt"),
+"name": "Tyres",
+"primitive": 3,
+"uv_scale": Vector4(5.8, 2, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("/3///wAA/w7///+/////Dv9///////8O////vwAA/w7///+/AACqKv9/AAAAAEQ9////v///qir/fwAA//9EPf9/AAAAAEQ9/3///////w7/fwAA//9EPf9///8AAP8O/3///////n////+////+f/9/AAD///5//38AAAAA//////+/AAD///9///8AAP//////P///qir///8/AACqKv///z8AAEQ9////P///RD0AAP8///9EPQAA/z8AAEQ9AAD/PwAAqioAAP+///+qKgAA/z///6oqAAD/vwAAqioAAP+/AAD/DgAA/7////8OAAD/P////n8AAP+////+f////z////5/AAD/vwAA//8AAP8/AAD//////z8AAP//cDgfD3A4Hw9wOB8PcDgfD6oqqipUFlZTqiqqKlQWVlOpLFSW4HBvuKksVJbgcG+4/3////9/////f///////f////3////9/qiqqKqoqqipUFlZTVBZWU6ksVJapLFSWVFWqqlRVqqpUVaqqVFWqquBwb7jgcG+4/3////9/////f////v//f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_1l2uu")
+
+[sub_resource type="BoxMesh" id="BoxMesh_rvmpc"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2wqit"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="tyre_Tyres_0" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, -7.10542e-15, 6.77626e-21, 1, 2.13163e-14, 5.68434e-14, 5.68434e-14, 1, 4.14764, 0, 0)
+mesh = SubResource("ArrayMesh_6a1to")
+skeleton = NodePath("")
+
+[node name="VehicleBody3D" type="VehicleBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VehicleBody3D"]
+transform = Transform3D(0.347895, 0, 0, 0, 1, 0, 0, 0, 3.26621, 0.21174, 0.702942, -0.0642993)
+visible = false
+mesh = SubResource("BoxMesh_rvmpc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="VehicleBody3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_2wqit")
+
+[node name="Sketchfab_Scene" parent="VehicleBody3D" instance=ExtResource("2_eqnru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29872, 0, -0.0125971)

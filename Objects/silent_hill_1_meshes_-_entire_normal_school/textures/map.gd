@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-signal map_chosen(picked_up: bool)
+signal choice(picked_up: bool)
 
 @export var interaction_text: String = "SchoolMap"
 @onready var _map_panel : Panel = $"../../../../../../CanvasLayer/Dialog/Map"
@@ -65,7 +65,7 @@ func _reset_interaction_ui():
 
 
 func _on_yes_pressed() -> void:
-	emit_signal("map_chosen", true)
+	emit_signal("choice", true)
 	_reset_interaction_ui()
 	text.hide()
 	#"I was chosen by God because I am the best programmer 
@@ -75,7 +75,7 @@ func _on_yes_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
-	emit_signal("map_chosen", false)
+	emit_signal("choice", false)
 	_reset_interaction_ui()
 	text.hide()
 	can_interact = true

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bfarrgynw2ejg"
+path="res://.godot/imported/dojyo.obj-5e5f2805e3d70b39831cc3bacfae59eb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/dojyo.obj-5e5f2805e3d70b39831cc3bacfae59eb.mesh"]
+
+source_file="res://PlayStation 2 - PaRappa the Rapper 2 - Fruites Dojo/Fruites Dojo/dojyo.obj"
+dest_files=["res://.godot/imported/dojyo.obj-5e5f2805e3d70b39831cc3bacfae59eb.mesh", "res://.godot/imported/dojyo.obj-5e5f2805e3d70b39831cc3bacfae59eb.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

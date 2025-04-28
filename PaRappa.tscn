@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://jerew3mi1vkn"]
+
+[ext_resource type="ArrayMesh" uid="uid://bfarrgynw2ejg" path="res://PlayStation 2 - PaRappa the Rapper 2 - Fruites Dojo/Fruites Dojo/dojyo.obj" id="1_o5in6"]
+[ext_resource type="ArrayMesh" uid="uid://dnffg68hj4vli" path="res://PlayStation 2 - PaRappa the Rapper 2 - Fruites Dojo/Fruites Dojo/PlayStation 2 - PaRappa the Rapper 2 - Kotamanegi/Onion/ktmA.spmout.obj" id="2_3b8si"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Dojyo" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.526495, 0, -0.298198)
+mesh = ExtResource("1_o5in6")
+
+[node name="KtmA_spmout" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.24931, -1.19209e-07, -26.6096)
+mesh = ExtResource("2_3b8si")

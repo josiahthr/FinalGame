@@ -1,0 +1,56 @@
+# Material file for ktmA.spmout.obj
+
+newmtl foot
+	Ns 0
+	d 1
+	illum 2
+	Kd 0.8 0.8 0.8
+	Ks 0.0 0.0 0.0
+	Ka 0.2 0.2 0.2
+	map_Kd PCSX2-R5875.EXE_0x2AA29998_result.png
+
+newmtl headback
+	Ns 0
+	d 1
+	illum 2
+	Kd 0.8 0.8 0.8
+	Ks 0.0 0.0 0.0
+	Ka 0.2 0.2 0.2
+	map_Kd PCSX2-R5875.EXE_0x62EB0BBB_result.png
+
+newmtl headfront
+	Ns 0
+	d 1
+	illum 2
+	Kd 0.8 0.8 0.8
+	Ks 0.0 0.0 0.0
+	Ka 0.2 0.2 0.2
+	map_Kd PCSX2-R5875.EXE_0x62EB0BCB_result.png
+
+newmtl hand
+	Ns 0
+	d 1
+	illum 2
+	Kd 0.8 0.8 0.8
+	Ks 0.0 0.0 0.0
+	Ka 0.2 0.2 0.2
+	map_Kd PCSX2-R5875.EXE_0x477A567B_result.png
+
+newmtl shirtback
+	Ns 0
+	d 1
+	illum 2
+	Kd 0.8 0.8 0.8
+	Ks 0.0 0.0 0.0
+	Ka 0.2 0.2 0.2
+	map_Kd PCSX2-R5875.EXE_0xD026E98F_result.png
+
+newmtl shirtfront
+	Ns 0
+	d 1
+	illum 2
+	Kd 0.8 0.8 0.8
+	Ks 0.0 0.0 0.0
+	Ka 0.2 0.2 0.2
+	map_Kd PCSX2-R5875.EXE_0xF13EB4D6_result.png
+

@@ -22,14 +22,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		if in_dialogue and is_instance_valid(current_target) and current_target.has_signal("map_chosen"):
+		if in_dialogue and is_instance_valid(current_target) and current_target.has_signal("choice"):
 			current_target._on_button_2_pressed()
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * mouse_sensitivity)
 			camera.rotate_x(-event.relative.y * mouse_sensitivity)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(40))
-	elif in_dialogue and current_target and current_target.has_signal("map_chosen"):
+	elif in_dialogue and current_target and current_target.has_signal("choice"):
 		if event.is_action_just_pressed("ui_up"):
 			yes_button.grab_focus()
 		elif event.is_action_just_pressed("ui_down"):
@@ -92,7 +92,7 @@ func _physics_process(delta: float) -> void:
 						_dialog.display_line(data["text"], data["speaker"])
 						in_dialogue = true
 						current_target = target
-						if target.has_signal("map_chosen"):
+						if target.has_signal("choice"):
 							target.map_chosen.connect(_on_map_chosen)
 					else:
 						_dialog.close()
