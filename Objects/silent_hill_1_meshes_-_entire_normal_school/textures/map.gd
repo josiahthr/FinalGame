@@ -27,7 +27,7 @@ signal choice(picked_up: bool)
 	
 	
 	
-			  There is a [color=#0cebc2]School Map[/color][/left].	
+			  There is a [color=#2ffd4f]School Map[/color][/left].	
 	[left]              Take it?[/left]",
 
 ]

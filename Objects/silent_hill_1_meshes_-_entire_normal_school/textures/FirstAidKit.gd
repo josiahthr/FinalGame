@@ -6,6 +6,7 @@ signal choice(picked_up: bool)
 @onready var yes_button := $"../../../CanvasLayer/Dialog/YesFAK"
 @onready var no_button := $"../../../CanvasLayer/Dialog/Button3"
 @onready var text := $"../../../CanvasLayer/Dialog/VBoxContainer/Dialogue"
+@onready var FAK := $"../../../CanvasLayer/TextureRect"
 @onready var FAKcol := $"../.."
 @export var dialogue_line: Array[String] = [
 	"[left]          
@@ -21,7 +22,7 @@ signal choice(picked_up: bool)
 	
 	
 	
-			  There is a [color=#0cebc2]First Aid Kit[/color][/left].	
+			  There is a [color=#2ffd4f]First Aid Kit[/color][/left].	
 	[left]              Take it?[/left]",
 
 ]
@@ -36,6 +37,7 @@ func interact():
 	yes_button.visible = true
 	no_button.visible = true
 	text.visible = true
+	FAK.visible = true
 	yes_button.grab_focus()
 	can_interact = false
 
@@ -59,7 +61,8 @@ func _reset_interaction_ui():
 	yes_button.visible = false
 	no_button.visible = false
 	text.visible = false
-
+	FAK.visible = false
+	
 func _on_yes_fak_pressed() -> void:
 	emit_signal("choice", true)
 	_reset_interaction_ui()
