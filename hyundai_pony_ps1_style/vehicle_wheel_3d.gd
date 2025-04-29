@@ -1,7 +1,7 @@
 extends VehicleWheel3D
 
-@export var normal_friction_slip = 0.1 # Base grip
-@export var high_slip_friction = 0.5  # Increased slip during hard turns
+@export var normal_friction_slip = 2
+@export var high_slip_friction = 2
 
 var vehicle_body: VehicleBody3D
 

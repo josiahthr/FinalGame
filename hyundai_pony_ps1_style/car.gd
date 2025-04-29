@@ -1,6 +1,6 @@
 extends VehicleBody3D
 
-@export var max_steering_angle = 0.4
+@export var max_steering_angle = 0.30
 @export var steering_speed = 2
 @export var engine_power = 100.0
 @export var speed_scale = 3.6 
@@ -18,8 +18,8 @@ var current_steering = 0.0
 var is_animating_camera: bool = true
 
 func _ready():
-	set_physics_process(false)
-	set_process_input(false)
+	set_physics_process(true)
+	set_process_input(true)
 	camera_pivot.global_position = global_position + Vector3(0, 1, 0)
 	camera.transform.origin = Vector3(0.106, 0.243, 4.424)
 	var tween = create_tween()
@@ -33,6 +33,8 @@ func _ready():
 	is_animating_camera = false
 	timer.start()
 	timer.timeout.connect(_on_timer_timeout)
+	set_physics_process(true)
+	set_process_input(true)
 	if not speedometer_label:
 		printerr("Error: SpeedometerLabel not found in HUDLayer!")
 

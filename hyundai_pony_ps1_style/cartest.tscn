@@ -135,7 +135,7 @@ shadow_enabled = true
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
 transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 27.8534, 2.21698, -2.3569)
-gravity_scale = 5.0
+gravity_scale = 2.0
 steering = 0.174533
 script = ExtResource("4_hkt2a")
 
@@ -150,7 +150,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.617175, -0.404969, -0.98281
 use_as_traction = true
 wheel_radius = 0.4
 suspension_stiffness = 100.0
-damping_compression = 25.0
+damping_compression = 2.0
 damping_relaxation = 2.0
 script = ExtResource("5_hkt2a")
 
@@ -164,7 +164,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.731, -0.40532, -0.983)
 use_as_traction = true
 wheel_radius = 0.4
 suspension_stiffness = 100.0
-damping_compression = 25.0
+damping_compression = 2.0
 damping_relaxation = 2.0
 script = ExtResource("5_hkt2a")
 
@@ -179,7 +179,7 @@ steering = 3.14159
 use_as_steering = true
 wheel_radius = 0.4
 suspension_stiffness = 100.0
-damping_compression = 25.0
+damping_compression = 2.0
 damping_relaxation = 2.0
 script = ExtResource("5_hkt2a")
 
@@ -194,7 +194,7 @@ steering = 3.14159
 use_as_steering = true
 wheel_radius = 0.4
 suspension_stiffness = 100.0
-damping_compression = 25.0
+damping_compression = 2.0
 damping_relaxation = 2.0
 script = ExtResource("5_hkt2a")
 
