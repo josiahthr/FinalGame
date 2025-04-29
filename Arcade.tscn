@@ -1,0 +1,145 @@
+[gd_scene load_steps=11 format=3 uid="uid://clmik3757q11s"]
+
+[ext_resource type="Texture2D" uid="uid://b5dh0am6wgfs1" path="res://image-Photoroom_cleanup_cleanup.png" id="1_pk7nq"]
+[ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="2_hvwyj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hvwyj"]
+texture = ExtResource("1_pk7nq")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ilclh"]
+font = ExtResource("2_hvwyj")
+font_size = 70
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvwyj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ilclh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6jwj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8j8rp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82stj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khq6o"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1156.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_hvwyj")
+
+[node name="ArcadeMode" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -223.0
+offset_top = 20.0
+offset_right = 223.0
+offset_bottom = 106.0
+grow_horizontal = 2
+text = "Arcade Mode"
+label_settings = SubResource("LabelSettings_ilclh")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.0
+offset_top = 100.0
+offset_right = 84.0
+offset_bottom = 183.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_hvwyj")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_hvwyj")
+text = "Single Race"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.0
+offset_top = 200.0
+offset_right = 84.0
+offset_bottom = 283.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_hvwyj")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ilclh")
+text = "Time Trial"
+
+[node name="Button3" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -179.0
+offset_top = 260.0
+offset_right = 179.0
+offset_bottom = 343.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_hvwyj")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_t6jwj")
+text = "2 Player Battle"
+
+[node name="Button4" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -149.5
+offset_top = 320.0
+offset_right = 149.5
+offset_bottom = 403.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_hvwyj")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_8j8rp")
+text = "Bonus Items"
+
+[node name="Button5" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = 75.5
+offset_right = 132.0
+offset_bottom = 158.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_hvwyj")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_82stj")
+text = "Load Game"
+
+[node name="Button6" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = 175.5
+offset_right = 129.0
+offset_bottom = 258.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_hvwyj")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_khq6o")
+text = "Save Game"
