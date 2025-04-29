@@ -10,6 +10,7 @@ func display_line( line : String, speaker : String = ""):
 	_dialogue.text = line
 	open()
 	
+	
 func open():
 	visible = true
 	

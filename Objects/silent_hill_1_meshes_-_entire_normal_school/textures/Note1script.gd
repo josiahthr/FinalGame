@@ -41,7 +41,7 @@ func interact():
 	
 func get_dialogue_data():
 	if dialogue_index < dialogue_line.size():
-		Note1.show() 
+		Note1.show()
 		var line = dialogue_line[dialogue_index]
 		dialogue_index += 1
 		return {

@@ -107,7 +107,10 @@ func _physics_process(delta: float) -> void:
 							current_yes_button.grab_focus()
 						if target.has_signal("choice"):
 							target.choice.connect(_on_map_chosen)
-
+					else:
+						_dialog.close()
+						in_dialogue = false
+						current_target = null
 							
 			elif in_dialogue and Input.is_action_just_pressed("interact") and target == current_target and target.has_method("get_dialogue_data"):
 				_on_dialog_continue()
