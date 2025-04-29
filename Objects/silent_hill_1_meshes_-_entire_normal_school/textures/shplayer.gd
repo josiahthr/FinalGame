@@ -13,6 +13,8 @@ var current_target = null
 @onready var _dialog : Control = $"../CanvasLayer/Dialog"
 @onready var yes_button := $"../CanvasLayer/Dialog/Yes"
 @onready var no_button := $"../CanvasLayer/Dialog/Button2"
+var current_yes_button : Button
+var current_no_button : Button
 
 func _ready():
 	_dialog.continue_pressed.connect(_on_dialog_continue)
@@ -23,22 +25,23 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		if in_dialogue and is_instance_valid(current_target) and current_target.has_signal("choice"):
-			current_target._on_button_2_pressed()
+			if current_no_button and is_instance_valid(current_no_button):
+				current_no_button.emit_signal("pressed")
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * mouse_sensitivity)
 			camera.rotate_x(-event.relative.y * mouse_sensitivity)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(40))
-	elif in_dialogue and current_target and current_target.has_signal("choice"):
-		if event.is_action_just_pressed("ui_up"):
-			yes_button.grab_focus()
-		elif event.is_action_just_pressed("ui_down"):
-			no_button.grab_focus()
-		elif event.is_action_just_pressed("ui_accept"):
-			if yes_button.has_focus():
-				yes_button.emit_signal("pressed")
-			elif no_button.has_focus():
-				no_button.emit_signal("pressed")
+	elif in_dialogue and current_target:
+		if Input.is_action_just_pressed("ui_up") and current_yes_button:
+			current_yes_button.grab_focus()
+		elif Input.is_action_just_pressed("ui_down") and current_no_button:
+			current_no_button.grab_focus()
+		elif Input.is_action_just_pressed("ui_accept"):
+			if current_yes_button and current_yes_button.has_focus():
+				current_yes_button.emit_signal("pressed")
+			elif current_no_button and current_no_button.has_focus():
+				current_no_button.emit_signal("pressed")
 
 func _on_dialog_continue():
 	if current_target and current_target.has_method("get_dialogue_data"):
@@ -85,19 +88,30 @@ func _physics_process(delta: float) -> void:
 		if is_instance_valid(target):
 			if target.has_method("interact") and Input.is_action_just_pressed("interact"):
 				target.interact()
-
+				print("Set current_target:", target)
 				if target.has_method("get_dialogue_data"):
 					var data = target.get_dialogue_data()
 					if data != null:
 						_dialog.display_line(data["text"], data["speaker"])
 						in_dialogue = true
 						current_target = target
+						
+						if target.has_node("../CanvasLayer/Dialog/YesFAK"):
+							current_yes_button = target.get_node("../CanvasLayer/Dialog/YesFAK")
+							current_no_button = target.get_node("../CanvasLayer/Dialog/Button3")
+							current_yes_button.focus_mode = Control.FOCUS_ALL
+							current_no_button.focus_mode = Control.FOCUS_ALL
+							current_yes_button.grab_focus()
+						elif target.has_node("../CanvasLayer/Dialog/Yes"):
+							current_yes_button = target.get_node("../CanvasLayer/Dialog/Yes")
+							current_no_button = target.get_node("../CanvasLayer/Dialog/Button2")
+							target.choice.connect(_on_map_chosen)
+							current_yes_button.focus_mode = Control.FOCUS_ALL
+							current_no_button.focus_mode = Control.FOCUS_ALL
+							current_yes_button.grab_focus()
 						if target.has_signal("choice"):
-							target.map_chosen.connect(_on_map_chosen)
-					else:
-						_dialog.close()
-						in_dialogue = false
-						current_target = null
+							target.choice.connect(_on_map_chosen)
+							
 			elif in_dialogue and Input.is_action_just_pressed("interact") and target == current_target and target.has_method("get_dialogue_data"):
 				_on_dialog_continue()
 	else:

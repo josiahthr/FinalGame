@@ -27,10 +27,8 @@ func _ready():
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.set_trans(Tween.TRANS_LINEAR)
 
-	# Wait for the orbit duration before starting the timer
 	await get_tree().create_timer(orbit_duration).timeout
 
-	# Stop the orbit animation
 	tween.kill()
 	is_animating_camera = false
 	timer.start()

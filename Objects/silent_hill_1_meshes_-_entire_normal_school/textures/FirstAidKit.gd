@@ -3,9 +3,10 @@ extends StaticBody3D
 signal choice(picked_up: bool)
 
 @export var interaction_text: String = "FirstAidKit"
-@onready var yes_button := $"../../../CanvasLayer/Dialog/Yes"
-@onready var no_button := $"../../../CanvasLayer/Dialog/Button2"
+@onready var yes_button := $"../../../CanvasLayer/Dialog/YesFAK"
+@onready var no_button := $"../../../CanvasLayer/Dialog/Button3"
 @onready var text := $"../../../CanvasLayer/Dialog/VBoxContainer/Dialogue"
+@onready var FAKcol := $"../.."
 @export var dialogue_line: Array[String] = [
 	"[left]          
 	
@@ -35,9 +36,9 @@ func interact():
 		text.show()
 		yes_button.visible = true
 		no_button.visible = true
+		text.visible = true
 		yes_button.grab_focus()
 		can_interact = false
-
 
 func get_dialogue_data():
 	if dialogue_index < dialogue_line.size():
@@ -58,17 +59,20 @@ func get_interaction_text():
 func _reset_interaction_ui():
 	yes_button.visible = false
 	no_button.visible = false
+	text.visible = false
 
-
-func _on_yes_pressed() -> void:
+func _on_yes_fak_pressed() -> void:
 	emit_signal("choice", true)
 	_reset_interaction_ui()
 	text.hide()
 	#"I was chosen by God because I am the best programmer 
 	#on the planet and God boosted my IQ with divine intellect." -Terry A. Davis
+	FAKcol.queue_free()
 
 
-func _on_button_2_pressed() -> void:
+
+
+func _on_button_3_pressed() -> void:
 	emit_signal("choice", false)
 	_reset_interaction_ui()
 	text.hide()

@@ -9,7 +9,11 @@ signal choice(picked_up: bool)
 @onready var no_button := $"../../../../../../CanvasLayer/Dialog/Button2"
 @onready var text := $"../../../../../../CanvasLayer/Dialog/VBoxContainer/Dialogue"
 @onready var mapgone := $"../../../../../../mapgone"
+@export var target = null
+
+
 @export var dialogue_line: Array[String] = [
+
 	"[left]          
 	
 	
@@ -38,6 +42,7 @@ func interact():
 		_map_panel.visible = true
 		yes_button.visible = true
 		no_button.visible = true
+		text.visible = true
 		yes_button.grab_focus()
 		can_interact = false
 
@@ -62,16 +67,17 @@ func _reset_interaction_ui():
 	_map_panel.visible = false
 	yes_button.visible = false
 	no_button.visible = false
+	text.visible = false
 
 
 func _on_yes_pressed() -> void:
-	emit_signal("choice", true)
-	_reset_interaction_ui()
-	text.hide()
-	#"I was chosen by God because I am the best programmer 
-	#on the planet and God boosted my IQ with divine intellect." -Terry A. Davis
-	mapgone.show()
-	mapcol.queue_free()
+		emit_signal("choice", true)
+		_reset_interaction_ui()
+		text.hide()
+		#"I was chosen by God because I am the best programmer 
+		#on the planet and God boosted my IQ with divine intellect." -Terry A. Davis
+		mapgone.show()
+		mapcol.queue_free()
 
 
 func _on_button_2_pressed() -> void:
