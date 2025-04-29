@@ -124,4 +124,6 @@ func _physics_process(delta: float) -> void:
 func _on_map_chosen(picked_up: bool):
 	in_dialogue = false
 	current_target = null
+	current_yes_button = null
+	current_no_button = null
 	print("Map picked up:", picked_up)

@@ -31,14 +31,13 @@ var dialogue_index := 0
 var can_interact := true
 
 func interact():
-	if can_interact == true:
-		print("interacted with FirstAidKit")
-		text.show()
-		yes_button.visible = true
-		no_button.visible = true
-		text.visible = true
-		yes_button.grab_focus()
-		can_interact = false
+	print("interacted with FirstAidKit")
+	text.show()
+	yes_button.visible = true
+	no_button.visible = true
+	text.visible = true
+	yes_button.grab_focus()
+	can_interact = false
 
 func get_dialogue_data():
 	if dialogue_index < dialogue_line.size():

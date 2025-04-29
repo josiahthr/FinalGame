@@ -36,15 +36,18 @@ signal choice(picked_up: bool)
 var dialogue_index := 0
 var can_interact := true
 
+
 func interact():
-	if can_interact == true:
-		print("interacted with SchoolMap")
-		_map_panel.visible = true
-		yes_button.visible = true
-		no_button.visible = true
-		text.visible = true
-		yes_button.grab_focus()
-		can_interact = false
+	print("interacted with SchoolMap")
+	_map_panel.visible = true
+	yes_button.visible = true
+	no_button.visible = true
+	text.visible = true
+	yes_button.focus_mode = Control.FOCUS_ALL
+	no_button.focus_mode = Control.FOCUS_ALL
+	yes_button.grab_focus()
+	can_interact = false
+	print ("cant interact")
 
 
 func get_dialogue_data():
@@ -68,6 +71,8 @@ func _reset_interaction_ui():
 	yes_button.visible = false
 	no_button.visible = false
 	text.visible = false
+	yes_button.focus_mode = Control.FOCUS_NONE
+	no_button.focus_mode = Control.FOCUS_NONE
 
 
 func _on_yes_pressed() -> void:
@@ -85,3 +90,7 @@ func _on_button_2_pressed() -> void:
 	_reset_interaction_ui()
 	text.hide()
 	can_interact = true
+	print ("can interact")
+	yes_button.grab_focus()
+	no_button.grab_focus()
+	
