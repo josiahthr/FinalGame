@@ -46,18 +46,14 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_dialog_continue():
 	if current_target and current_target.has_method("get_dialogue_data"):
 		var data = current_target.get_dialogue_data()
-		if data != null and current_target == $"../Sketchfab_model/root/GLTF_SceneRootNode/SM_FirstFloor_Lobby_80/Map":
-			_dialog.display_line(data["text"], data["speaker"])
-		else:
-			_dialog.close()
-			in_dialogue = false
-			current_target = null
 		if data != null:
 			_dialog.display_line(data["text"], data["speaker"])
 		else:
 			_dialog.close()
 			in_dialogue = false
 			current_target = null
+			if current_target.has_method("reset_dialogue"):
+				current_target.reset_dialogue()
 
 func _on_area_connect():
 	if current_target and current_target.has_method("change_area"):
@@ -111,8 +107,7 @@ func _physics_process(delta: float) -> void:
 							current_yes_button.grab_focus()
 						if target.has_signal("choice"):
 							target.choice.connect(_on_map_chosen)
-					elif data == null:
-						print("bro this shits null")
+
 							
 			elif in_dialogue and Input.is_action_just_pressed("interact") and target == current_target and target.has_method("get_dialogue_data"):
 				_on_dialog_continue()

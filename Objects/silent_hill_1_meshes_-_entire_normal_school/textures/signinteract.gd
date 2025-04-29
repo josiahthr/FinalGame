@@ -24,8 +24,11 @@ extends StaticBody3D
 var dialogue_index := 0
 
 func interact():
-	print("interacted with MidwichSign")
-	text.show()
+	if dialogue_index == 0:
+		text.hide()
+	else:
+		print("interacted with MidwichSign")
+		text.show()
 	
 func get_dialogue_data():
 	if dialogue_index < dialogue_line.size():
