@@ -10,4 +10,4 @@ func _ready():
 
 func _on_area_body_entered(body):
 	print("we goin")
-	get_tree().change_scene_to_file("res://Scenes/I11.tscn")
+	get_tree().change_scene_to_file("res://GTTITLE.tscn")

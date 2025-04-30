@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b718f6mwl0oo5"]
+
+[ext_resource type="PackedScene" uid="uid://sv3wnmojmjqg" path="res://nissan_silvia_varietta_s15_00/scene.gltf" id="1_exnfh"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_exnfh")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, -4.37114e-06, 100, 0, -100, -4.37114e-06, 0, 0, 0)

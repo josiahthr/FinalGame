@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cg386p8aegn4j"]
+[gd_scene load_steps=25 format=4 uid="uid://cg386p8aegn4j"]
 
 [ext_resource type="Texture2D" uid="uid://b54f2h788d2f7" path="res://hyundai_pony_ps1_style/textures/Tyres_baseColor.png" id="2_no0b8"]
 [ext_resource type="Script" uid="uid://dsy312e5e5c08" path="res://hyundai_pony_ps1_style/car.gd" id="4_hkt2a"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bqxaotq7ofq3l" path="res://Garbage - As Heaven Is Wide.mp3" id="7_hkt2a"]
 [ext_resource type="FontFile" uid="uid://b116j0xgr4xw1" path="res://pixelpro_2p/pixelpro-2p.ttf" id="7_incj8"]
 [ext_resource type="Script" uid="uid://eqx2beu0o47h" path="res://hyundai_pony_ps1_style/checkerflag.gd" id="9_incj8"]
+[ext_resource type="PackedScene" uid="uid://sv3wnmojmjqg" path="res://nissan_silvia_varietta_s15_00/scene.gltf" id="10_wi6l0"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tyvmk"]
 points = PackedVector3Array(0.75, 0.25, 1.5, 0.75, -0.25, 1.5, 0.75, 0.25, -1.5, -0.75, 0.25, 1.5, -0.75, -0.25, 1.5, 0.75, -0.25, -1.5, -0.75, 0.25, -1.5, -0.75, -0.25, -1.5)
@@ -318,5 +319,8 @@ one_shot = true
 libraries = {
 &"": SubResource("AnimationLibrary_wi6l0")
 }
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("10_wi6l0")]
+transform = Transform3D(-31.4804, 0, 94.9157, 0, 100, 0, -94.9157, 0, -31.4804, 26.7978, 3.23263, -8.25575)
 
 [connection signal="body_entered" from="Area3D" to="VehicleBody3D" method="_on_area_3d_body_entered"]

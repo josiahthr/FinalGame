@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://00h06705xypr"
+path="res://.godot/imported/Gran Turismo 1 Menu Soundtrack - Arcade Mode Select [EURUSA].mp3-91e5a18e0ea0941845b36c8db6530779.mp3str"
+
+[deps]
+
+source_file="res://Gran Turismo 1 Menu Soundtrack - Arcade Mode Select [EURUSA].mp3"
+dest_files=["res://.godot/imported/Gran Turismo 1 Menu Soundtrack - Arcade Mode Select [EURUSA].mp3-91e5a18e0ea0941845b36c8db6530779.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
