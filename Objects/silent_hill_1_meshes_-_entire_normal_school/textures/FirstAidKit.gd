@@ -67,8 +67,6 @@ func _on_yes_fak_pressed() -> void:
 	emit_signal("choice", true)
 	_reset_interaction_ui()
 	text.hide()
-	#"I was chosen by God because I am the best programmer 
-	#on the planet and God boosted my IQ with divine intellect." -Terry A. Davis
 	FAKcol.queue_free()
 
 

@@ -7,6 +7,7 @@ const JUMP_VELOCITY = 10
 @export var mouse_sensitivity: float = 0.002
 var in_dialogue = false
 var current_target = null
+var has_key: bool = false
 
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
@@ -91,7 +92,8 @@ func _physics_process(delta: float) -> void:
 						_dialog.display_line(data["text"], data["speaker"])
 						in_dialogue = true
 						current_target = target
-						
+						if target.has_signal("key_taken"):
+							target.connect("key_taken", Callable(self, "_on_key_taken"))
 						if target.has_node("../CanvasLayer/Dialog/YesFAK"):
 							current_yes_button = target.get_node("../CanvasLayer/Dialog/YesFAK")
 							current_no_button = target.get_node("../CanvasLayer/Dialog/Button3")
@@ -127,3 +129,13 @@ func _on_map_chosen(picked_up: bool):
 	current_yes_button = null
 	current_no_button = null
 	print("Map picked up:", picked_up)
+	
+func _on_key_taken(picked_up: bool):
+	has_key = picked_up
+	print("Key taken! has_key is now: ", has_key)
+	
+	var door = get_tree().get_current_scene().get_node_or_null("Sketchfab_model/root/GLTF_SceneRootNode/SM_DoorSchoolInnerCourtyard_002_14/CourtyardDoor2/StaticBody3D")
+	if door and door.has_method("set_has_key"):
+		door.set_has_key(true)
+	else:
+		print("Could not find the door or method missing.")

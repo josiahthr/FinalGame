@@ -1,0 +1,11 @@
+Model Information:
+* title:	Silent Hill 1 Meshes - K. Gordon Key
+* source:	https://sketchfab.com/3d-models/silent-hill-1-meshes-k-gordon-key-3e0d55149af84fbe92cfc0655076df34
+* author:	SilentQuest (https://sketchfab.com/SilentQuest)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Silent Hill 1 Meshes - K. Gordon Key" (https://sketchfab.com/3d-models/silent-hill-1-meshes-k-gordon-key-3e0d55149af84fbe92cfc0655076df34) by SilentQuest (https://sketchfab.com/SilentQuest) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

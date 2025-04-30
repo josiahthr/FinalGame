@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://u64e01w687ho" path="res://Scripts/I2DoorForward.gd" id="5_tqtuj"]
 [ext_resource type="PackedScene" uid="uid://xj3wru2rxhun" path="res://Objects/ps1_cctv_camera/scene.gltf" id="6_0lkpx"]
 [ext_resource type="PackedScene" uid="uid://bp6f7ougwgxe4" path="res://Objects/teacher_desk/scene.gltf" id="7_y7vj3"]
-[ext_resource type="PackedScene" uid="uid://rtqmyy4adt1h" path="res://Objects/ef8ba8e14e314e1dbce36e73be47bcad/scene.gltf" id="8_81m0a"]
+[ext_resource type="PackedScene" uid="uid://rtqmyy4adt1h" path="res://Objects/TV/scene.gltf" id="8_81m0a"]
 [ext_resource type="PackedScene" uid="uid://b25xyf61qm4it" path="res://Scenes/I1noplayer.tscn" id="9_1ryoj"]
 [ext_resource type="Texture2D" uid="uid://bbhbcaw0iut8a" path="res://textures/black-rain-abstract-dark-power.jpg" id="10_qej70"]
 [ext_resource type="Texture2D" uid="uid://bll6vqx76yduv" path="res://textures/coast_sand_rocks_02_diff_4k.jpg" id="11_4erp6"]
