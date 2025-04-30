@@ -14,6 +14,7 @@ var has_key: bool = false
 @onready var _dialog : Control = $"../CanvasLayer/Dialog"
 @onready var yes_button := $"../CanvasLayer/Dialog/Yes"
 @onready var no_button := $"../CanvasLayer/Dialog/Button2"
+@onready var god_light := $"../Sketchfab_model/root/GLTF_SceneRootNode/SM_InnerCourtyard_83/OmniLight3D"
 var current_yes_button : Button
 var current_no_button : Button
 
@@ -133,7 +134,7 @@ func _on_map_chosen(picked_up: bool):
 func _on_key_taken(picked_up: bool):
 	has_key = picked_up
 	print("Key taken! has_key is now: ", has_key)
-	
+	god_light.show()
 	var door = get_tree().get_current_scene().get_node_or_null("Sketchfab_model/root/GLTF_SceneRootNode/SM_DoorSchoolInnerCourtyard_002_14/CourtyardDoor2/StaticBody3D")
 	if door and door.has_method("set_has_key"):
 		door.set_has_key(true)
