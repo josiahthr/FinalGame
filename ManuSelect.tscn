@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bdfucqaunr4ku"]
+[gd_scene load_steps=29 format=3 uid="uid://bdfucqaunr4ku"]
 
 [ext_resource type="Texture2D" uid="uid://cel34agjrkbpq" path="res://image-Photoroom.png" id="1_3sisg"]
 [ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="2_vakvn"]
@@ -28,10 +28,22 @@ font_size = 70
 [sub_resource type="Theme" id="Theme_lo4os"]
 Button/colors/font_color = Color(0.831373, 0.803922, 0.831373, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4q2w5"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2to41"]
+bg_color = Color(0, 0, 0.384314, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sn7sb"]
 
 [sub_resource type="Theme" id="Theme_6ky6s"]
 Button/colors/font_color = Color(0, 0.239216, 0.67451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5nhm"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7atio"]
+bg_color = Color(0, 0, 0.384314, 1)
 
 [sub_resource type="Theme" id="Theme_0s3fw"]
 Button/colors/font_color = Color(0.854902, 0, 0, 1)
@@ -82,6 +94,8 @@ theme_override_constants/icon_max_width = 80
 theme_override_fonts/font = ExtResource("3_sn7sb")
 theme_override_font_sizes/font_size = 40
 theme_override_icons/icon = ExtResource("4_6ky6s")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4q2w5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2to41")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_sn7sb")
 text = "NISSAN"
 flat = true
@@ -90,12 +104,14 @@ flat = true
 layout_mode = 0
 offset_left = 266.0
 offset_top = 242.0
-offset_right = 561.0
+offset_right = 562.0
 offset_bottom = 300.0
 theme = SubResource("Theme_6ky6s")
 theme_override_constants/icon_max_width = 45
 theme_override_fonts/font = ExtResource("4_h8k41")
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_u5nhm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7atio")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_sn7sb")
 text = "HONDA"
 icon = ExtResource("6_0s3fw")
