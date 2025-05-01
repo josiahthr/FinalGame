@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ohjpu0a7ruu"]
+[gd_scene load_steps=28 format=3 uid="uid://ohjpu0a7ruu"]
 
 [ext_resource type="PackedScene" uid="uid://1hhansk38k7e" path="res://nissan_fairlady_300zx_z32_1989/scene.gltf" id="1_uaxmc"]
 [ext_resource type="Script" uid="uid://viby6qc61roi" path="res://NissanSelect.gd" id="1_wlja0"]
@@ -56,6 +56,12 @@ bg_color = Color(0, 0, 0.384314, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqkqr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jujh"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5ajk"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksi66"]
 bg_color = Color(0, 0, 0.384314, 1)
 
 [node name="Node2D" type="Node2D"]
@@ -307,5 +313,17 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8jujh")
 text = "NISSAN"
 flat = true
 
+[node name="Button" type="Button" parent="."]
+offset_left = 821.0
+offset_top = 519.0
+offset_right = 1140.0
+offset_bottom = 628.0
+theme_override_fonts/font = ExtResource("3_8jujh")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/hover = SubResource("StyleBoxFlat_g5ajk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ksi66")
+text = "START"
+
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
