@@ -1,0 +1,184 @@
+[gd_scene load_steps=23 format=3 uid="uid://ohjpu0a7ruu"]
+
+[ext_resource type="PackedScene" uid="uid://1hhansk38k7e" path="res://nissan_fairlady_300zx_z32_1989/scene.gltf" id="1_uaxmc"]
+[ext_resource type="Script" uid="uid://cmvykqosbjij0" path="res://nissan_fairlady_300zx_z32_1989/spin.gd" id="2_1ttyt"]
+[ext_resource type="FontFile" uid="uid://db654gvwuv7yr" path="res://CarFonts/NissanOpti.otf" id="3_8jujh"]
+[ext_resource type="Texture2D" uid="uid://dtuwqre56miw4" path="res://CarFonts/flat800x800070f.png" id="4_v1aji"]
+[ext_resource type="FontFile" uid="uid://cn46clxwe5nq3" path="res://CarFonts/NissanOpti-Italic.otf" id="5_v1aji"]
+[ext_resource type="PackedScene" uid="uid://caea0poj4ak8b" path="res://1997_nissan_skyline_gt-r_v-spec_r33/scene.gltf" id="6_1ttyt"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uaxmc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uaxmc"]
+transparency = 1
+albedo_color = Color(0.52549, 0.52549, 0.52549, 0.647059)
+metallic = 1.0
+roughness = 0.0
+refraction_enabled = true
+
+[sub_resource type="Environment" id="Environment_uaxmc"]
+background_mode = 3
+background_energy_multiplier = 0.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_uaxmc"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="Theme" id="Theme_1ttyt"]
+Button/colors/font_color = Color(0.831373, 0.803922, 0.831373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlja0"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1aji"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ttyt"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dy4g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35ssq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03smx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61hu4"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fycxc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ebeu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqkqr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8jujh"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.14702, 0, 0, 0, 1, 0, 0, 0, 10.013, -0.398246, 0, -0.0968595)
+mesh = SubResource("PlaneMesh_uaxmc")
+skeleton = NodePath("../Sketchfab_Scene")
+surface_material_override/0 = SubResource("StandardMaterial3D_uaxmc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.28355, 0)
+light_energy = 7.02
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38974, 1.76309, 0)
+light_energy = 7.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.08606, 1.76309, 0)
+light_energy = 7.0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50428, 2.60401, -6.41122)
+light_energy = 7.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13688, 2.60401, -8.30065)
+light_energy = 7.0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.448557, 1.78101, -1.7227)
+light_energy = 7.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89402, 1.76309, 6.32944)
+light_energy = 7.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.740989, 1.76309, -10.5757)
+light_energy = 7.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.740989, 1.76309, 7.8168)
+light_energy = 7.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.740335, 0.672238, 0, -0.672238, 0.740335, 0, 4.94202, 6.00634)
+light_energy = 4.0
+spot_range = 8.195
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_uaxmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.398246, 0.108699, -0.0968595)
+script = ExtResource("2_1ttyt")
+
+[node name="Sketchfab_Scene2" parent="." instance=ExtResource("1_uaxmc")]
+transform = Transform3D(-0.999743, 0.0226873, 0, -0.0226873, -0.999743, 0, 0, 0, 1, -0.398246, -0.03906, -0.0968595)
+script = ExtResource("2_1ttyt")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_uaxmc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 348.0
+offset_top = 135.0
+offset_right = 860.0
+offset_bottom = 647.0
+texture = SubResource("ViewportTexture_uaxmc")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(-0.0140377, -0.319284, 0.947555, -0.00134302, 0.947654, 0.319297, -0.999901, 0.00320961, -0.0137317, 9.45335, 5.69921, -0.915972)
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 452.0
+offset_top = 103.0
+offset_right = 753.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_1ttyt")
+theme_override_constants/icon_max_width = 80
+theme_override_fonts/font = ExtResource("3_8jujh")
+theme_override_font_sizes/font_size = 40
+theme_override_icons/icon = ExtResource("4_v1aji")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wlja0")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_v1aji")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1ttyt")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_5dy4g")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_35ssq")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_03smx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_61hu4")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_fycxc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2ebeu")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_iqkqr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8jujh")
+text = "NISSAN"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 355.0
+offset_top = 172.0
+offset_right = 838.0
+offset_bottom = 271.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_v1aji")
+theme_override_font_sizes/font_size = 80
+text = "Fairlady Z"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 465.0
+offset_top = 284.0
+offset_right = 751.0
+offset_bottom = 308.0
+theme_override_fonts/font = ExtResource("5_v1aji")
+text = "Version S Twin Turbo 2seater"
+horizontal_alignment = 1
+
+[node name="Sketchfab_Scene3" parent="." instance=ExtResource("6_1ttyt")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0.997002, 4.76837e-07, -17.9209)

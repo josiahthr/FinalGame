@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://bdfucqaunr4ku"]
+[gd_scene load_steps=30 format=3 uid="uid://bdfucqaunr4ku"]
 
+[ext_resource type="Script" uid="uid://2d5khp0516v6" path="res://manu_select.gd" id="1_2to41"]
 [ext_resource type="Texture2D" uid="uid://cel34agjrkbpq" path="res://image-Photoroom.png" id="1_3sisg"]
 [ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="2_vakvn"]
 [ext_resource type="FontFile" uid="uid://db654gvwuv7yr" path="res://CarFonts/NissanOpti.otf" id="3_sn7sb"]
@@ -52,6 +53,7 @@ Button/colors/font_color = Color(0.854902, 0, 0, 1)
 Button/colors/font_color = Color(0, 0.603922, 0.831373, 1)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_2to41")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1154.0
@@ -194,3 +196,5 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxEmpty_sn7sb")
 text = "BMW"
 icon = ExtResource("16_im1x7")
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

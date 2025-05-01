@@ -23,3 +23,7 @@ func _on_button_7_mouse_entered() -> void:
 
 func _on_button_7_pressed() -> void:
 	get_tree().change_scene_to_file("res://Arcade.tscn")
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://ManuSelect.tscn")
