@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cfu02eihpxut"]
+[gd_scene load_steps=33 format=3 uid="uid://cfu02eihpxut"]
 
 [ext_resource type="Texture2D" uid="uid://c4u8cr575dhtf" path="res://image_cleanup.png" id="1_631t6"]
 [ext_resource type="Script" uid="uid://bepea1qw17b1l" path="res://gttitle.gd" id="1_iuoff"]
@@ -21,6 +21,8 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8cth5"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4fi6j"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2y3s"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
@@ -28,6 +30,8 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8uh0c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nlpve"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iuoff"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -39,6 +43,8 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x3aqc"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gcaq8"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cth5"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
@@ -46,6 +52,8 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10yl6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_muokb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8uh0c"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -105,6 +113,7 @@ theme_override_fonts/font = ExtResource("2_md8o1")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxFlat_x3aqc")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_8cth5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4fi6j")
 theme_override_styles/normal = SubResource("StyleBoxFlat_t2y3s")
 text = "Quick Arcade"
 
@@ -126,6 +135,7 @@ theme_override_fonts/font = ExtResource("2_md8o1")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxFlat_10yl6")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_8uh0c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nlpve")
 theme_override_styles/normal = SubResource("StyleBoxFlat_iuoff")
 text = "Simulation Mode"
 
@@ -148,6 +158,7 @@ theme_override_fonts/font = ExtResource("2_md8o1")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxFlat_4fi6j")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_x3aqc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gcaq8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8cth5")
 text = "Replay Theater"
 
@@ -160,6 +171,7 @@ theme_override_fonts/font = ExtResource("2_md8o1")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxFlat_nlpve")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_10yl6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_muokb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8uh0c")
 text = "Options"
 alignment = 0
@@ -193,6 +205,7 @@ offset_bottom = 40.0
 script = ExtResource("7_t2y3s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 1151.0
 offset_bottom = 651.0
 mouse_filter = 2

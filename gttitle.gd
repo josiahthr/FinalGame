@@ -5,6 +5,8 @@ extends Node2D
 @onready var theme: AudioStreamPlayer = $AudioStreamPlayer
 @onready var click: AudioStreamPlayer = $AudioStreamPlayer2
 var fade_in_done = false
+var gt_theme_stream = preload("res://Gran Turismo 1 Menu Soundtrack - Arcade Mode Select [EURUSA].mp3")
+
 
 func _on_quick_arcade_pressed() -> void:
 	get_tree().change_scene_to_file("res://Arcade.tscn")
@@ -25,8 +27,9 @@ func _ready() -> void:
 	animation_player.play("fade_in")
 	delay_timer.start()
 	await delay_timer.timeout
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	fade_in_done = true
-	theme.play()
+	MainMenu.play_music(gt_theme_stream)
 
 
 func _on_quick_arcade_mouse_entered() -> void:

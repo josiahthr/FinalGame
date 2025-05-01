@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://clmik3757q11s"]
+[gd_scene load_steps=31 format=3 uid="uid://clmik3757q11s"]
 
+[ext_resource type="Script" uid="uid://cn6uijtdcp6f8" path="res://Arcade.gd" id="1_ilclh"]
 [ext_resource type="Texture2D" uid="uid://b5dh0am6wgfs1" path="res://image-Photoroom_cleanup_cleanup.png" id="1_pk7nq"]
 [ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="2_hvwyj"]
+[ext_resource type="AudioStream" uid="uid://dwrkivqgfs77" path="res://mainmenu.wav" id="4_t6jwj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hvwyj"]
 texture = ExtResource("1_pk7nq")
@@ -10,25 +12,62 @@ texture = ExtResource("1_pk7nq")
 font = ExtResource("2_hvwyj")
 font_size = 70
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hvwyj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ilclh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t6jwj"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hvwyj"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8j8rp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_82stj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_khq6o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ilclh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qo8q5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gna1g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4nrk"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6jwj"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_my7yy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rkmnv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qunk7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8j8rp"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1chmk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23xhq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nkbtn"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82stj"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0b4pn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1xdqw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ng2ny"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khq6o"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ilclh")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1156.0
@@ -53,13 +92,17 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -84.0
-offset_top = 100.0
-offset_right = 84.0
-offset_bottom = 183.0
+offset_left = -193.0
+offset_top = 130.0
+offset_right = 193.0
+offset_bottom = 216.0
 grow_horizontal = 2
+theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("2_hvwyj")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hvwyj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ilclh")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_t6jwj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hvwyj")
 text = "Single Race"
 
@@ -68,13 +111,17 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -84.0
-offset_top = 200.0
-offset_right = 84.0
-offset_bottom = 283.0
+offset_left = -154.5
+offset_top = 210.0
+offset_right = 154.5
+offset_bottom = 296.0
 grow_horizontal = 2
+theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("2_hvwyj")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8j8rp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_82stj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_khq6o")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ilclh")
 text = "Time Trial"
 
@@ -83,13 +130,17 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -179.0
-offset_top = 260.0
-offset_right = 179.0
-offset_bottom = 343.0
+offset_left = -251.0
+offset_top = 285.0
+offset_right = 251.0
+offset_bottom = 371.0
 grow_horizontal = 2
+theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("2_hvwyj")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qo8q5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gna1g")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v4nrk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_t6jwj")
 text = "2 Player Battle"
 
@@ -98,13 +149,17 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -149.5
-offset_top = 320.0
-offset_right = 149.5
-offset_bottom = 403.0
+offset_left = -209.5
+offset_top = 355.0
+offset_right = 209.5
+offset_bottom = 441.0
 grow_horizontal = 2
+theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("2_hvwyj")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_my7yy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rkmnv")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_qunk7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8j8rp")
 text = "Bonus Items"
 
@@ -115,14 +170,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -132.0
-offset_top = 75.5
-offset_right = 132.0
-offset_bottom = 158.5
+offset_left = -185.0
+offset_top = 105.5
+offset_right = 185.0
+offset_bottom = 191.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("2_hvwyj")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1chmk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_23xhq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_nkbtn")
 theme_override_styles/normal = SubResource("StyleBoxFlat_82stj")
 text = "Load Game"
 
@@ -133,13 +192,105 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -129.0
-offset_top = 175.5
-offset_right = 129.0
-offset_bottom = 258.5
+offset_left = -180.5
+offset_top = 180.5
+offset_right = 180.5
+offset_bottom = 266.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("2_hvwyj")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0b4pn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1xdqw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ng2ny")
 theme_override_styles/normal = SubResource("StyleBoxFlat_khq6o")
 text = "Save Game"
+
+[node name="Button7" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -445.0
+offset_top = -277.5
+offset_right = -290.0
+offset_bottom = -210.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_hvwyj")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0b4pn")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1xdqw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ng2ny")
+theme_override_styles/normal = SubResource("StyleBoxFlat_khq6o")
+text = "Return"
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 150.0
+offset_right = 280.0
+offset_bottom = 190.0
+color = Color(0, 0.513726, 0.545098, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 230.0
+offset_right = 280.0
+offset_bottom = 270.0
+color = Color(0.705882, 0.0941176, 0.0941176, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 310.0
+offset_right = 280.0
+offset_bottom = 350.0
+color = Color(1, 0.580392, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 380.0
+offset_right = 280.0
+offset_bottom = 420.0
+color = Color(0.321569, 0.321569, 0.611765, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 455.0
+offset_right = 280.0
+offset_bottom = 495.0
+color = Color(0.384314, 0.384314, 0.384314, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 530.0
+offset_right = 280.0
+offset_bottom = 570.0
+color = Color(0.192157, 0.192157, 0.192157, 1)
+
+[node name="Line2D" type="Line2D" parent="Panel"]
+points = PackedVector2Array(339, 103, 783, 103)
+width = 5.0
+default_color = Color(0.862745, 0.0431373, 0.117647, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Panel"]
+stream = ExtResource("4_t6jwj")
+
+[connection signal="mouse_entered" from="Panel/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="Panel/Button2" to="." method="_on_button_2_mouse_entered"]
+[connection signal="mouse_entered" from="Panel/Button3" to="." method="_on_button_3_mouse_entered"]
+[connection signal="mouse_entered" from="Panel/Button4" to="." method="_on_button_4_mouse_entered"]
+[connection signal="mouse_entered" from="Panel/Button5" to="." method="_on_button_5_mouse_entered"]
+[connection signal="mouse_entered" from="Panel/Button6" to="." method="_on_button_6_mouse_entered"]
+[connection signal="mouse_entered" from="Panel/Button7" to="." method="_on_button_6_mouse_entered"]
+[connection signal="pressed" from="Panel/Button7" to="." method="_on_button_7_pressed"]
