@@ -1,18 +1,18 @@
-[gd_scene load_steps=33 format=3 uid="uid://cfu02eihpxut"]
+[gd_scene load_steps=30 format=3 uid="uid://cntp5bik4heie"]
 
-[ext_resource type="Texture2D" uid="uid://c4u8cr575dhtf" path="res://image_cleanup.png" id="1_631t6"]
-[ext_resource type="Script" uid="uid://bepea1qw17b1l" path="res://gttitle.gd" id="1_iuoff"]
-[ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="2_md8o1"]
-[ext_resource type="Script" uid="uid://0o7ya7t6514h" path="res://control.gd" id="3_wi06b"]
-[ext_resource type="Script" uid="uid://cvg1dcacf6n7d" path="res://control_2.gd" id="4_md8o1"]
-[ext_resource type="Texture2D" uid="uid://bbshc2nmap0so" path="res://Checkerboard_pattern.svg" id="6_em4a5"]
-[ext_resource type="Script" uid="uid://fjuhcxut61w7" path="res://outline.gd" id="6_t2y3s"]
-[ext_resource type="Script" uid="uid://b6611fhn16jb8" path="res://outline2.gd" id="7_t2y3s"]
-[ext_resource type="AudioStream" uid="uid://00h06705xypr" path="res://Gran Turismo 1 Menu Soundtrack - Arcade Mode Select [EURUSA].mp3" id="9_c717f"]
-[ext_resource type="AudioStream" uid="uid://dwrkivqgfs77" path="res://mainmenu.wav" id="10_8cth5"]
+[ext_resource type="Script" uid="uid://cuuqlwyjdjiow" path="res://gttitle2.gd" id="1_ildcc"]
+[ext_resource type="Texture2D" uid="uid://c4u8cr575dhtf" path="res://image_cleanup.png" id="2_67lwa"]
+[ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="3_5c0jm"]
+[ext_resource type="Script" uid="uid://0o7ya7t6514h" path="res://control.gd" id="4_qjtbx"]
+[ext_resource type="Script" uid="uid://cvg1dcacf6n7d" path="res://control_2.gd" id="5_bjsw2"]
+[ext_resource type="Texture2D" uid="uid://bbshc2nmap0so" path="res://Checkerboard_pattern.svg" id="6_cjj3t"]
+[ext_resource type="Script" uid="uid://fjuhcxut61w7" path="res://outline.gd" id="7_f6dvr"]
+[ext_resource type="Script" uid="uid://b6611fhn16jb8" path="res://outline2.gd" id="8_aiqmj"]
+[ext_resource type="AudioStream" uid="uid://00h06705xypr" path="res://Gran Turismo 1 Menu Soundtrack - Arcade Mode Select [EURUSA].mp3" id="9_j7tbh"]
+[ext_resource type="AudioStream" uid="uid://dwrkivqgfs77" path="res://mainmenu.wav" id="10_6km2y"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_em4a5"]
-texture = ExtResource("1_631t6")
+texture = ExtResource("2_67lwa")
 
 [sub_resource type="Theme" id="Theme_md8o1"]
 
@@ -58,45 +58,8 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8uh0c"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="Animation" id="Animation_c717f"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_iuoff"]
-resource_name = "fade_in"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.05, 3.07, 4.02, 5.03, 10),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.905882), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8cth5"]
-_data = {
-&"RESET": SubResource("Animation_c717f"),
-&"fade_in": SubResource("Animation_iuoff")
-}
-
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_iuoff")
+script = ExtResource("1_ildcc")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1152.0
@@ -109,7 +72,7 @@ offset_top = 447.0
 offset_right = 556.0
 offset_bottom = 503.0
 theme = SubResource("Theme_md8o1")
-theme_override_fonts/font = ExtResource("2_md8o1")
+theme_override_fonts/font = ExtResource("3_5c0jm")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxFlat_x3aqc")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_8cth5")
@@ -124,14 +87,14 @@ offset_left = -68.0
 offset_top = 32.0
 offset_right = -28.0
 offset_bottom = 72.0
-script = ExtResource("3_wi06b")
+script = ExtResource("4_qjtbx")
 
 [node name="SimulationMode" type="Button" parent="."]
 offset_left = 360.0
 offset_top = 510.0
 offset_right = 604.0
 offset_bottom = 566.0
-theme_override_fonts/font = ExtResource("2_md8o1")
+theme_override_fonts/font = ExtResource("3_5c0jm")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxFlat_10yl6")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_8uh0c")
@@ -146,7 +109,7 @@ offset_left = -68.0
 offset_top = 32.0
 offset_right = -28.0
 offset_bottom = 72.0
-script = ExtResource("4_md8o1")
+script = ExtResource("5_bjsw2")
 
 [node name="ReplayTheater" type="Button" parent="."]
 offset_left = 700.0
@@ -154,7 +117,7 @@ offset_top = 447.0
 offset_right = 924.0
 offset_bottom = 503.0
 theme = SubResource("Theme_c717f")
-theme_override_fonts/font = ExtResource("2_md8o1")
+theme_override_fonts/font = ExtResource("3_5c0jm")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxFlat_4fi6j")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_x3aqc")
@@ -167,7 +130,7 @@ offset_left = 720.0
 offset_top = 510.0
 offset_right = 847.0
 offset_bottom = 566.0
-theme_override_fonts/font = ExtResource("2_md8o1")
+theme_override_fonts/font = ExtResource("3_5c0jm")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxFlat_nlpve")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_10yl6")
@@ -179,14 +142,14 @@ alignment = 0
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(620, 451)
 scale = Vector2(0.299039, 0.326724)
-texture = ExtResource("6_em4a5")
+texture = ExtResource("6_cjj3t")
 texture_scale = Vector2(2, 2)
 polygon = PackedVector2Array(48, 7.15256e-07, 3.0827, 150.924, 199.17, 151.78, 240, -2.6226e-06)
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
 position = Vector2(639, 512)
 scale = Vector2(0.299039, 0.326724)
-texture = ExtResource("6_em4a5")
+texture = ExtResource("6_cjj3t")
 texture_scale = Vector2(2, 2)
 polygon = PackedVector2Array(48, 7.15256e-07, 3.0827, 150.924, 199.17, 151.78, 240, -2.6226e-06)
 
@@ -195,35 +158,25 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("6_t2y3s")
+script = ExtResource("7_f6dvr")
 
 [node name="Control2" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("7_t2y3s")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1151.0
-offset_bottom = 651.0
-mouse_filter = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
-libraries = {
-&"": SubResource("AnimationLibrary_8cth5")
-}
+script = ExtResource("8_aiqmj")
 
 [node name="Delay" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_c717f")
+stream = ExtResource("9_j7tbh")
 parameters/looping = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_8cth5")
+stream = ExtResource("10_6km2y")
 
 [connection signal="mouse_entered" from="QuickArcade" to="." method="_on_quick_arcade_mouse_entered"]
 [connection signal="pressed" from="QuickArcade" to="." method="_on_quick_arcade_pressed"]

@@ -34,4 +34,4 @@ func _on_button_6_mouse_entered() -> void:
 
 
 func _on_button_7_pressed() -> void:
-	get_tree().change_scene_to_file("res://GTTITLE.tscn")
+	get_tree().change_scene_to_file("res://GTTITLE2.tscn")
