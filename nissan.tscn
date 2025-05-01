@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ohjpu0a7ruu"]
+[gd_scene load_steps=33 format=3 uid="uid://ohjpu0a7ruu"]
 
 [ext_resource type="PackedScene" uid="uid://1hhansk38k7e" path="res://nissan_fairlady_300zx_z32_1989/scene.gltf" id="1_uaxmc"]
 [ext_resource type="Script" uid="uid://viby6qc61roi" path="res://NissanSelect.gd" id="1_wlja0"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dhj31wcojh0qk" path="res://1997_nissan_skyline_gt-r_v-spec_r33/spin.gd" id="5_61hu4"]
 [ext_resource type="FontFile" uid="uid://cn46clxwe5nq3" path="res://CarFonts/NissanOpti-Italic.otf" id="5_v1aji"]
 [ext_resource type="PackedScene" uid="uid://caea0poj4ak8b" path="res://1997_nissan_skyline_gt-r_v-spec_r33/scene.gltf" id="6_1ttyt"]
+[ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="9_5dy4g"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_uaxmc"]
 
@@ -63,6 +64,15 @@ bg_color = Color(0, 0, 0.384314, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksi66"]
 bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_35ssq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03smx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fycxc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kty5j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wlja0")
@@ -201,6 +211,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="SkylineLabels"]
+layout_mode = 0
 offset_left = 363.0
 offset_top = 137.0
 offset_right = 875.0
@@ -251,6 +262,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="300zx" type="TextureRect" parent="300zxLabels"]
+layout_mode = 0
 offset_left = 348.0
 offset_top = 135.0
 offset_right = 860.0
@@ -258,6 +270,7 @@ offset_bottom = 647.0
 texture = SubResource("ViewportTexture_uaxmc")
 
 [node name="Fairlady2" type="Label" parent="300zxLabels"]
+layout_mode = 0
 offset_left = 465.0
 offset_top = 284.0
 offset_right = 751.0
@@ -324,6 +337,28 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_g5ajk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ksi66")
 text = "START"
 
+[node name="Button9" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 184.0
+offset_top = 61.0
+offset_right = 339.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("9_5dy4g")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_35ssq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_03smx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fycxc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kty5j")
+text = "Return"
+
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button9" to="." method="_on_button_9_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bdfucqaunr4ku"]
+[gd_scene load_steps=34 format=3 uid="uid://bdfucqaunr4ku"]
 
 [ext_resource type="Script" uid="uid://2d5khp0516v6" path="res://manu_select.gd" id="1_2to41"]
 [ext_resource type="Texture2D" uid="uid://cel34agjrkbpq" path="res://image-Photoroom.png" id="1_3sisg"]
@@ -51,6 +51,15 @@ Button/colors/font_color = Color(0.854902, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_el6j0"]
 Button/colors/font_color = Color(0, 0.603922, 0.831373, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2to41"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4q2w5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7atio"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8s3j3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2to41")
@@ -197,4 +206,27 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_sn7sb")
 text = "BMW"
 icon = ExtResource("16_im1x7")
 
+[node name="Button9" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -445.0
+offset_top = -277.5
+offset_right = -290.0
+offset_bottom = -210.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_vakvn")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2to41")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4q2w5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7atio")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8s3j3")
+text = "Return"
+
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button9" to="." method="_on_button_9_pressed"]

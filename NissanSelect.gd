@@ -15,26 +15,22 @@ func _physics_process(delta: float) -> void:
 		nissanzx = true
 		back.hide()
 		forward.show()
+		nissanzxmod.show()
+		nissanzxlab.show()
+		skylinemod.hide()
+		skylinelab.hide()
 	if current_car == 2:
 		skyline = true
+		nissanzxmod.hide()
+		nissanzxlab.hide()
+		skylinemod.show()
+		skylinelab.show()
 		forward.hide()
 		back.show()
 	if current_car == 3:
 		current_car = 0
 	if current_car == 0:
 		current_car = 1
-	if nissanzx == true:
-		nissanzxmod.show()
-		nissanzxlab.show()
-	elif nissanzx == false:
-		nissanzxmod.hide()
-		nissanzxlab.hide()
-	if skyline == true:
-		skylinemod.show()
-		skylinelab.show()
-	elif skyline == false:
-		skylinemod.hide()
-		skylinelab.hide()
 
 func _on_button_2_pressed() -> void:
 	nissanzx = false
@@ -52,3 +48,7 @@ func _on_button_pressed() -> void:
 		pass
 	if nissanzx == false:
 		pass
+
+
+func _on_button_9_pressed() -> void:
+	get_tree().change_scene_to_file("res://ManuSelect.tscn")
