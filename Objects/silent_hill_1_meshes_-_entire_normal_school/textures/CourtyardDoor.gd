@@ -49,7 +49,8 @@ func interact():
 	if has_key == false:
 		print("interacted with CourtyardDoor")
 		text.show()
-		door_lock.play()
+		if dialogue_index == 0:
+			door_lock.play()
 	elif has_key == true:
 		tween = create_tween()
 		tween.tween_property(door, "rotation_degrees:y", tilt_angle_degrees, tilt_duration)

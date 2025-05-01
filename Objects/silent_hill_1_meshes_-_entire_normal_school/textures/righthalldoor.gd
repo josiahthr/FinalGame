@@ -27,7 +27,8 @@ var dialogue_index := 0
 func interact():
 	print("interacted with RightHallDoor")
 	text.show()
-	door_lock.play()
+	if dialogue_index == 0:
+		door_lock.play()
 	
 func get_dialogue_data():
 	if dialogue_index < dialogue_line.size():
