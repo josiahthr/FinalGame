@@ -23,6 +23,8 @@ func _ready() -> void:
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	current_lap += 1
-	print ("Current Lap:", current_lap )
-	current_lap_label.text = str(current_lap)
+	if CheckpointCount.checkpoint == "4":
+		current_lap += 1
+		print ("Current Lap:", current_lap )
+		current_lap_label.text = str(current_lap)
+		CheckpointCount.checkpoint = "0"

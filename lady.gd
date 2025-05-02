@@ -5,6 +5,7 @@ extends VehicleBody3D
 @export var engine_power = 100.0
 @export var speed_scale = 3.6
 @onready var timer: Timer = get_node("../AnimationTimer")
+@onready var GoTimer: Timer = get_node("../GoTimer")
 @export var orbit_duration = 5.0
 
 var current_steering = 0.0
@@ -13,6 +14,7 @@ var current_steering = 0.0
 @onready var camera: Camera3D = get_node("Node3D/Camera3D")
 @onready var camera_pivot: Node3D = get_node("Node3D")
 @onready var start_timer: Label = get_node("../../HUDLayer/StartTimer")
+@onready var GO: Label = get_node("../../HUDLayer/GO")
 
 var is_animating_camera: bool = true
 var frozen = true
@@ -31,6 +33,8 @@ func _ready():
 	tween.kill()
 	is_animating_camera = false
 	print("animation is done starting start timer")
+	start_timer.show()
+	
 	timer.start()
 	await timer.timeout
 	_on_timer_timeout()
@@ -69,5 +73,9 @@ func time_to_start():
 	
 func _on_timer_timeout():
 	print("we unfrozen")
-	frozen = false
 	start_timer.hide()
+	frozen = false
+	GO.show()
+	GoTimer.start()
+	await GoTimer.timeout
+	GO.hide()
