@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wheels
+* source:	https://sketchfab.com/3d-models/wheels-2feccdb562f5417c8dff4d5b5623de50
+* author:	Wasi204 (https://sketchfab.com/hafizzwaseem88)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wheels" (https://sketchfab.com/3d-models/wheels-2feccdb562f5417c8dff4d5b5623de50) by Wasi204 (https://sketchfab.com/hafizzwaseem88) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
