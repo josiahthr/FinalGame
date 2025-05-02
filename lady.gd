@@ -5,15 +5,15 @@ extends VehicleBody3D
 @export var engine_power = 100.0
 @export var speed_scale = 3.6 
 @export var current_lap = 0
-@onready var timer = $"../Timer"
+@onready var timer: Timer = get_node("../../Timer")
 @export var orbit_duration = 5.0
 
 var current_steering = 0.0
-@onready var speedometer_label: Label = get_node("../HUDLayer/speedometer_label")
-@onready var current_lap_label: Label = get_node("../HUDLayer/Lap/Max Lap/Current Lap")
+@onready var speedometer_label: Label = get_node("../../HUDLayer/speedometer_label")
+@onready var current_lap_label: Label = get_node("../../HUDLayer/Lap/Max Lap/Current Lap")
 @onready var camera: Camera3D = get_node("Node3D/Camera3D")
 @onready var camera_pivot: Node3D = get_node("Node3D")
-@onready var start_timer: Label = get_node("../HUDLayer/StartTimer")
+@onready var start_timer: Label = get_node("../../HUDLayer/StartTimer")
 
 var is_animating_camera: bool = true
 
@@ -67,5 +67,3 @@ func time_to_start():
 	
 func _on_timer_timeout():
 	start_timer.hide()
-	
-	

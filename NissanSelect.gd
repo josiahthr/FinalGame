@@ -13,6 +13,7 @@ var current_car := 0
 func _physics_process(delta: float) -> void:
 	if current_car == 1:
 		nissanzx = true
+		skyline = false
 		back.hide()
 		forward.show()
 		nissanzxmod.show()
@@ -21,6 +22,7 @@ func _physics_process(delta: float) -> void:
 		skylinelab.hide()
 	if current_car == 2:
 		skyline = true
+		nissanzx = false
 		nissanzxmod.hide()
 		nissanzxlab.hide()
 		skylinemod.show()
@@ -45,9 +47,13 @@ func _on_button_3_pressed() -> void:
 
 func _on_button_pressed() -> void:
 	if nissanzx == true:
-		pass
+		print("we should be goin")
+		CarSelection.selected_car_scene = "res://fairlady2.tscn"
+		
+		get_tree().change_scene_to_file("res://hyundai_pony_ps1_style/cartest.tscn")
 	if nissanzx == false:
-		pass
+		CarSelection.selected_car_scene = "res://Cars/Skyline.tscn"
+
 
 
 func _on_button_9_pressed() -> void:
