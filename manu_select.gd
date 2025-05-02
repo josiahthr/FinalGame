@@ -7,3 +7,7 @@ func _on_button_pressed() -> void:
 
 func _on_button_9_pressed() -> void:
 	get_tree().change_scene_to_file("res://SingleRace.tscn")
+
+
+func _on_button_8_pressed() -> void:
+	get_tree().change_scene_to_file("res://wheels/BMW.tscn")

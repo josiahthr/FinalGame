@@ -1,0 +1,11 @@
+Model Information:
+* title:	1990 BMW E30 M3 Sport Evolution
+* source:	https://sketchfab.com/3d-models/1990-bmw-e30-m3-sport-evolution-ab2574c2d1414062bedc6a5457443757
+* author:	Ddiaz Design (https://sketchfab.com/ddiaz-design)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "1990 BMW E30 M3 Sport Evolution" (https://sketchfab.com/3d-models/1990-bmw-e30-m3-sport-evolution-ab2574c2d1414062bedc6a5457443757) by Ddiaz Design (https://sketchfab.com/ddiaz-design) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)

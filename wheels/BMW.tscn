@@ -1,0 +1,230 @@
+[gd_scene load_steps=12 format=3 uid="uid://8853qbug1gy8"]
+
+[ext_resource type="Script" uid="uid://dq0mjtyltxlx7" path="res://wheels/bmw.gd" id="1_vlndw"]
+[ext_resource type="PackedScene" uid="uid://dnm27ahey2sy7" path="res://1990_bmw_e30_m3_sport_evolution/scene.gltf" id="1_xulkl"]
+[ext_resource type="Script" uid="uid://vjknj1xxueip" path="res://1990_bmw_e30_m3_sport_evolution/spin.gd" id="2_xta6s"]
+[ext_resource type="FontFile" uid="uid://bvmukupjysw20" path="res://CarFonts/BMWHelvetica-Bold.otf" id="3_8r0jo"]
+[ext_resource type="Texture2D" uid="uid://b810q0jv4jiqp" path="res://CarFonts/BMW_logo_(gray).svg.png" id="4_vlndw"]
+[ext_resource type="PackedScene" uid="uid://dg6okbx8p2flh" path="res://2003_bmw_m5_e39/scene.gltf" id="6_64a7q"]
+[ext_resource type="Script" uid="uid://cwem5c3baq6eo" path="res://2003_bmw_m5_e39/spin.gd" id="7_parlt"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_24ex3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64a7q"]
+transparency = 1
+albedo_color = Color(0.52549, 0.52549, 0.52549, 0.647059)
+metallic = 1.0
+roughness = 0.0
+refraction_enabled = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xta6s"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8r0jo"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_vlndw")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.0299148, -0.219233, 0.975214, 0.00672183, 0.975672, 0.21913, -0.99953, -1.86352e-09, 0.0306607, 12.5287, 6.59875, -31.6137)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(-0.0140496, -0.143003, 0.989622, 0.00121263, 0.989717, 0.143034, -0.999901, 0.00320961, -0.0137317, 9.59669, 4.50477, -0.915972)
+
+[node name="E30" type="Node3D" parent="."]
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="E30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50428, 2.60401, -6.41122)
+light_energy = 7.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="E30"]
+transform = Transform3D(9.14702, 0, 0, 0, 1, 0, 0, 0, 10.013, -0.398246, 0, -0.0968595)
+mesh = SubResource("PlaneMesh_24ex3")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_64a7q")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="E30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.28355, 0)
+light_energy = 7.02
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="E30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38974, 1.76309, 0)
+light_energy = 7.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="E30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.740989, 1.76309, -10.5757)
+light_energy = 7.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="E30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.740989, 1.76309, 7.8168)
+light_energy = 7.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="E30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89402, 1.76309, 6.32944)
+light_energy = 7.0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="E30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.448557, 1.78101, -1.7227)
+light_energy = 7.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="E30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13688, 2.60401, -8.30065)
+light_energy = 7.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="E30"]
+transform = Transform3D(1, 0, 0, 0, 0.740335, 0.672238, 0, -0.672238, 0.740335, 0, 4.94202, 6.00634)
+light_energy = 4.0
+spot_range = 8.195
+
+[node name="Sketchfab_Scene3" parent="E30" instance=ExtResource("1_xulkl")]
+transform = Transform3D(220, 0, 0, 0, 220, 0, 0, 0, 220, 0, 0.406436, -0.323368)
+script = ExtResource("2_xta6s")
+
+[node name="Sketchfab_Scene4" parent="E30" instance=ExtResource("1_xulkl")]
+transform = Transform3D(-220, -1.9233e-05, 0, 1.9233e-05, -220, 0, 0, 0, 220, 0, 0.426085, -0.323368)
+script = ExtResource("2_xta6s")
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="E30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.08606, 1.76309, 0)
+light_energy = 7.0
+
+[node name="E39" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -31.6496)
+visible = false
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="E39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50428, 2.60401, -6.41122)
+light_energy = 7.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="E39"]
+transform = Transform3D(9.14702, 0, 0, 0, 1, 0, 0, 0, 10.013, -0.398246, 0, -0.0968595)
+mesh = SubResource("PlaneMesh_24ex3")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_64a7q")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="E39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.28355, 0)
+light_energy = 7.02
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="E39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38974, 1.76309, 0)
+light_energy = 7.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="E39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.740989, 1.76309, -10.5757)
+light_energy = 7.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="E39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.740989, 1.76309, 7.8168)
+light_energy = 7.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="E39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89402, 1.76309, 6.32944)
+light_energy = 7.0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="E39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.448557, 1.78101, -1.7227)
+light_energy = 7.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="E39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13688, 2.60401, -8.30065)
+light_energy = 7.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="E39"]
+transform = Transform3D(1, 0, 0, 0, 0.740335, 0.672238, 0, -0.672238, 0.740335, 0, 4.94202, 6.00634)
+light_energy = 4.0
+spot_range = 8.195
+
+[node name="Sketchfab_Scene" parent="E39" instance=ExtResource("6_64a7q")]
+transform = Transform3D(-1.96701e-07, 0, 4.5, 0, 4.5, 0, -4.5, 0, -1.96701e-07, -0.195395, 1.77419, -0.41087)
+script = ExtResource("7_parlt")
+
+[node name="Sketchfab_Scene2" parent="E39" instance=ExtResource("6_64a7q")]
+transform = Transform3D(1.96701e-07, -1.71962e-14, -4.5, -3.93403e-07, -4.5, 0, -4.5, 3.93403e-07, -1.96701e-07, -0.195395, -1.63237, -0.41087)
+script = ExtResource("7_parlt")
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="E39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.08606, 1.76309, 0)
+light_energy = 7.0
+
+[node name="E30Labels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="E30Labels"]
+offset_left = 330.0
+offset_top = 133.0
+offset_right = 842.0
+offset_bottom = 645.0
+texture = SubResource("ViewportTexture_xta6s")
+
+[node name="Label" type="Label" parent="E30Labels"]
+offset_left = 471.0
+offset_top = 175.0
+offset_right = 688.0
+offset_bottom = 239.0
+theme_override_fonts/font = ExtResource("3_8r0jo")
+theme_override_font_sizes/font_size = 50
+text = "1990 M3"
+
+[node name="Label2" type="Label" parent="E30Labels"]
+offset_left = 375.0
+offset_top = 225.0
+offset_right = 808.0
+offset_bottom = 289.0
+theme_override_fonts/font = ExtResource("3_8r0jo")
+theme_override_font_sizes/font_size = 50
+text = "E30 Sport EVO II"
+
+[node name="Button9" type="Button" parent="."]
+offset_left = 460.0
+offset_top = 93.0
+offset_right = 689.0
+offset_bottom = 193.0
+mouse_filter = 2
+theme_override_constants/icon_max_width = 80
+theme_override_fonts/font = ExtResource("3_8r0jo")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8r0jo")
+text = "BMW"
+icon = ExtResource("4_vlndw")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 990.0
+offset_top = 282.0
+offset_right = 1081.0
+offset_bottom = 346.0
+text = "NEXT"
+
+[node name="E39Labels" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="E39Labels"]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 186.0
+offset_right = 686.0
+offset_bottom = 250.0
+theme_override_fonts/font = ExtResource("3_8r0jo")
+theme_override_font_sizes/font_size = 50
+text = "2003 M5"
+
+[node name="Label2" type="Label" parent="E39Labels"]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 242.0
+offset_right = 638.0
+offset_bottom = 306.0
+theme_override_fonts/font = ExtResource("3_8r0jo")
+theme_override_font_sizes/font_size = 50
+text = "E39"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

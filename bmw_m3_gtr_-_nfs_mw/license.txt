@@ -1,0 +1,11 @@
+Model Information:
+* title:	BMW M3 GTR - NFS MW
+* source:	https://sketchfab.com/3d-models/bmw-m3-gtr-nfs-mw-d90658fa572a48d7b4fff084f354bbde
+* author:	Q.SARDOR (https://sketchfab.com/qsardor57913)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "BMW M3 GTR - NFS MW" (https://sketchfab.com/3d-models/bmw-m3-gtr-nfs-mw-d90658fa572a48d7b4fff084f354bbde) by Q.SARDOR (https://sketchfab.com/qsardor57913) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

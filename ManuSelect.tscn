@@ -229,4 +229,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8s3j3")
 text = "Return"
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button8" to="." method="_on_button_8_pressed"]
 [connection signal="pressed" from="Panel/Button9" to="." method="_on_button_9_pressed"]
