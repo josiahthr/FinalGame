@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://8853qbug1gy8"]
+[gd_scene load_steps=17 format=3 uid="uid://8853qbug1gy8"]
 
 [ext_resource type="Script" uid="uid://dq0mjtyltxlx7" path="res://wheels/bmw.gd" id="1_vlndw"]
 [ext_resource type="PackedScene" uid="uid://dnm27ahey2sy7" path="res://1990_bmw_e30_m3_sport_evolution/scene.gltf" id="1_xulkl"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b810q0jv4jiqp" path="res://CarFonts/BMW_logo_(gray).svg.png" id="4_vlndw"]
 [ext_resource type="PackedScene" uid="uid://dg6okbx8p2flh" path="res://2003_bmw_m5_e39/scene.gltf" id="6_64a7q"]
 [ext_resource type="Script" uid="uid://cwem5c3baq6eo" path="res://2003_bmw_m5_e39/spin.gd" id="7_parlt"]
+[ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="8_parlt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_24ex3"]
 
@@ -21,6 +22,15 @@ refraction_enabled = true
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8r0jo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1mw1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0pq5w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mp4nm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_untbv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vlndw")
@@ -156,6 +166,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="E30Labels"]
+layout_mode = 0
 offset_left = 330.0
 offset_top = 133.0
 offset_right = 842.0
@@ -163,6 +174,7 @@ offset_bottom = 645.0
 texture = SubResource("ViewportTexture_xta6s")
 
 [node name="Label" type="Label" parent="E30Labels"]
+layout_mode = 0
 offset_left = 471.0
 offset_top = 175.0
 offset_right = 688.0
@@ -172,6 +184,7 @@ theme_override_font_sizes/font_size = 50
 text = "1990 M3"
 
 [node name="Label2" type="Label" parent="E30Labels"]
+layout_mode = 0
 offset_left = 375.0
 offset_top = 225.0
 offset_right = 808.0
@@ -227,4 +240,26 @@ theme_override_fonts/font = ExtResource("3_8r0jo")
 theme_override_font_sizes/font_size = 50
 text = "E39"
 
+[node name="Button10" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 184.0
+offset_top = 61.0
+offset_right = 339.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("8_parlt")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a1mw1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0pq5w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mp4nm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_untbv")
+text = "Return"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button10" to="." method="_on_button_10_pressed"]

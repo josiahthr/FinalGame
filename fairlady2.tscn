@@ -191,3 +191,6 @@ skeleton = NodePath("")
 
 [node name="Camera3D" type="Camera3D" parent="VehicleBody3D/Node3D"]
 transform = Transform3D(0.9998, 0.0199309, -0.00151965, -0.019173, 0.977719, 0.209042, 0.00565219, -0.208971, 0.977906, 0.109302, 1.32289, 4.71631)
+
+[node name="AnimationTimer" type="Timer" parent="."]
+wait_time = 4.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bdfucqaunr4ku"]
+[gd_scene load_steps=33 format=3 uid="uid://bdfucqaunr4ku"]
 
 [ext_resource type="Script" uid="uid://2d5khp0516v6" path="res://manu_select.gd" id="1_2to41"]
 [ext_resource type="Texture2D" uid="uid://cel34agjrkbpq" path="res://image-Photoroom.png" id="1_3sisg"]
@@ -26,17 +26,6 @@ texture = ExtResource("1_3sisg")
 font = ExtResource("2_vakvn")
 font_size = 70
 
-[sub_resource type="Theme" id="Theme_lo4os"]
-Button/colors/font_color = Color(0.831373, 0.803922, 0.831373, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4q2w5"]
-bg_color = Color(0, 0, 0.384314, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2to41"]
-bg_color = Color(0, 0, 0.384314, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sn7sb"]
-
 [sub_resource type="Theme" id="Theme_6ky6s"]
 Button/colors/font_color = Color(0, 0.239216, 0.67451, 1)
 
@@ -46,11 +35,19 @@ bg_color = Color(0, 0, 0.384314, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7atio"]
 bg_color = Color(0, 0, 0.384314, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sn7sb"]
+
 [sub_resource type="Theme" id="Theme_0s3fw"]
 Button/colors/font_color = Color(0.854902, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_el6j0"]
 Button/colors/font_color = Color(0, 0.603922, 0.831373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23153"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxu82"]
+bg_color = Color(0, 0, 0.384314, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2to41"]
 
@@ -86,30 +83,6 @@ label_settings = SubResource("LabelSettings_sn7sb")
 points = PackedVector2Array(328, 103, 807, 103)
 width = 5.0
 default_color = Color(0.862745, 0.0431373, 0.117647, 1)
-
-[node name="Button" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.5
-offset_top = -175.5
-offset_right = 150.5
-offset_bottom = -89.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_lo4os")
-theme_override_constants/icon_max_width = 80
-theme_override_fonts/font = ExtResource("3_sn7sb")
-theme_override_font_sizes/font_size = 40
-theme_override_icons/icon = ExtResource("4_6ky6s")
-theme_override_styles/focus = SubResource("StyleBoxFlat_4q2w5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2to41")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_sn7sb")
-text = "NISSAN"
-flat = true
 
 [node name="Button2" type="Button" parent="Panel"]
 layout_mode = 0
@@ -196,15 +169,32 @@ icon = ExtResource("14_mmlwb")
 [node name="Button8" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 464.0
-offset_top = 503.0
+offset_top = 511.0
 offset_right = 693.0
-offset_bottom = 603.0
+offset_bottom = 591.0
 theme_override_constants/icon_max_width = 80
 theme_override_fonts/font = ExtResource("10_lo4os")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_23153")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xxu82")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_sn7sb")
 text = "BMW"
 icon = ExtResource("16_im1x7")
+
+[node name="Button10" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 153.0
+offset_right = 731.0
+offset_bottom = 233.0
+theme_override_constants/icon_max_width = 80
+theme_override_fonts/font = ExtResource("3_sn7sb")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_23153")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xxu82")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sn7sb")
+text = "NISSAN"
+icon = ExtResource("4_6ky6s")
 
 [node name="Button9" type="Button" parent="Panel"]
 layout_mode = 1
@@ -228,6 +218,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_7atio")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8s3j3")
 text = "Return"
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="Panel/Button10" to="." method="_on_button_10_pressed"]
 [connection signal="pressed" from="Panel/Button9" to="." method="_on_button_9_pressed"]

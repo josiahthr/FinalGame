@@ -18,3 +18,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	current_car = 1
+
+
+func _on_button_10_pressed() -> void:
+	get_tree().change_scene_to_file("res://ManuSelect.tscn")

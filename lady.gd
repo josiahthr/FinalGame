@@ -4,7 +4,7 @@ extends VehicleBody3D
 @export var steering_speed = 2
 @export var engine_power = 100.0
 @export var speed_scale = 3.6
-@onready var timer: Timer = get_node("../../Timer")
+@onready var timer: Timer = get_node("../AnimationTimer")
 @export var orbit_duration = 5.0
 
 var current_steering = 0.0
@@ -15,10 +15,10 @@ var current_steering = 0.0
 @onready var start_timer: Label = get_node("../../HUDLayer/StartTimer")
 
 var is_animating_camera: bool = true
+var frozen = true
 
 func _ready():
-	set_physics_process(false)
-	set_process_input(false)
+	print("Timer:", timer)
 	camera_pivot.global_position = global_position + Vector3(0, 1, 0)
 	camera.transform.origin = Vector3(0.106, 0.243, 4.424)
 	var tween = create_tween()
@@ -30,16 +30,23 @@ func _ready():
 
 	tween.kill()
 	is_animating_camera = false
+	print("animation is done starting start timer")
 	timer.start()
-	timer.timeout.connect(_on_timer_timeout)
+	await timer.timeout
+	_on_timer_timeout()
 	set_physics_process(true)
 	set_process_input(true)
+	
 	if not speedometer_label:
 		printerr("Error: SpeedometerLabel not found in HUDLayer!")
 		
 
 func _physics_process(delta):
 	start_timer.text = "%2d" % time_to_start()
+	if frozen:
+		brake = 4
+	else:
+		brake = 0.0
 	var steering_input = Input.get_axis("right", "left")
 	var steering_target = steering_input * max_steering_angle
 	var steering_amount = abs(steering) / max_steering_angle
@@ -61,4 +68,6 @@ func time_to_start():
 	return [second]
 	
 func _on_timer_timeout():
+	print("we unfrozen")
+	frozen = false
 	start_timer.hide()
