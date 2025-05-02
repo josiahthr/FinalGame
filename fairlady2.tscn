@@ -50,10 +50,6 @@ shadow_mesh = SubResource("ArrayMesh_7ic2c")
 
 [node name="Node3D" type="Node3D"]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
-
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
 transform = Transform3D(-0.0104719, 0, -0.999945, 0, 1, 0, 0.999945, 0, -0.0104719, 0, 0.666799, 0)
 gravity_scale = 2.0
@@ -70,6 +66,7 @@ shape = SubResource("ConvexPolygonShape3D_geyfu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.885724, -0.359038, -1.37827)
 use_as_traction = true
 wheel_radius = 0.4
+wheel_rest_length = 0.06
 suspension_stiffness = 100.0
 damping_compression = 2.0
 damping_relaxation = 2.0
@@ -84,6 +81,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.883363, -0.323904, -1.3723)
 use_as_traction = true
 wheel_radius = 0.4
+wheel_rest_length = 0.06
 suspension_stiffness = 100.0
 damping_compression = 2.0
 damping_relaxation = 2.0
@@ -99,6 +97,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.874618, -0.314054, 1.13962
 steering = 3.14159
 use_as_steering = true
 wheel_radius = 0.4
+wheel_rest_length = 0.06
 suspension_stiffness = 100.0
 damping_compression = 2.0
 damping_relaxation = 2.0
@@ -114,13 +113,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.885874, -0.378958, 1.06214)
 steering = 3.14159
 use_as_steering = true
 wheel_radius = 0.4
+wheel_rest_length = 0.06
 suspension_stiffness = 100.0
 damping_compression = 2.0
 damping_relaxation = 2.0
 script = ExtResource("3_28mlt")
 
 [node name="tyre_Tyres_1" type="MeshInstance3D" parent="VehicleBody3D/VehicleWheel3D4"]
-transform = Transform3D(-1.04774e-08, 0, 0.1, 0, 0.3, 0, -0.3, 0, -4.42378e-09, 0, 0, 0)
+transform = Transform3D(-1.31134e-08, 0, 0.1, 0, 0.3, 0, -0.3, 0, -4.37114e-09, 0, 0, 0)
 mesh = SubResource("ArrayMesh_l2qs6")
 skeleton = NodePath("")
 

@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dih680dev3wpn" path="res://hyundai_pony_ps1_style/vehicle_wheel_3d.gd" id="3_sttnp"]
 [ext_resource type="Texture2D" uid="uid://b54f2h788d2f7" path="res://hyundai_pony_ps1_style/textures/Tyres_baseColor.png" id="4_wbdsn"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_geyfu"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7ic2c"]
 points = PackedVector3Array(0.75, 0.25, 1.5, 0.75, -0.25, 1.5, 0.75, 0.25, -1.5, -0.75, 0.25, 1.5, -0.75, -0.25, 1.5, 0.75, -0.25, -1.5, -0.75, 0.25, -1.5, -0.75, -0.25, -1.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n75mt"]
@@ -29,7 +29,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_l2qs6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_kmdlf"]
 resource_name = "Sketchfab_Scene_tyre_Tyres_0"
 _surfaces = [{
 "aabb": AABB(-0.866025, -1, -1, 1.73205, 2, 2),
@@ -51,7 +51,7 @@ shadow_mesh = SubResource("ArrayMesh_7ic2c")
 [node name="Node3D" type="Node3D"]
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
-transform = Transform3D(-0.0104719, 0, -0.999945, 0, 1, 0, 0.999945, 0, -0.0104719, 1.16621, 2.21698, 0.427649)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 gravity_scale = 2.0
 steering = 0.174533
 script = ExtResource("1_7ic2c")
@@ -60,7 +60,7 @@ script = ExtResource("1_7ic2c")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.576665, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VehicleBody3D"]
-shape = SubResource("ConvexPolygonShape3D_geyfu")
+shape = SubResource("ConvexPolygonShape3D_7ic2c")
 
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="VehicleBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.617175, -0.404969, -0.982817)
@@ -73,7 +73,7 @@ script = ExtResource("3_sttnp")
 
 [node name="tyre_Tyres_0" type="MeshInstance3D" parent="VehicleBody3D/VehicleWheel3D"]
 transform = Transform3D(-1.31134e-08, 0, 0.1, 0, 0.3, 0, -0.3, 0, -4.37114e-09, -0.134469, 0.0104065, 0.00306022)
-mesh = SubResource("ArrayMesh_l2qs6")
+mesh = SubResource("ArrayMesh_kmdlf")
 skeleton = NodePath("")
 
 [node name="VehicleWheel3D2" type="VehicleWheel3D" parent="VehicleBody3D"]
@@ -87,7 +87,7 @@ script = ExtResource("3_sttnp")
 
 [node name="tyre_Tyres_0" type="MeshInstance3D" parent="VehicleBody3D/VehicleWheel3D2"]
 transform = Transform3D(-1.31134e-08, 0, -0.1, 0, 0.3, 0, 0.3, 0, -4.37114e-09, 0.1, 0.01, 0.003)
-mesh = SubResource("ArrayMesh_l2qs6")
+mesh = SubResource("ArrayMesh_kmdlf")
 skeleton = NodePath("")
 
 [node name="VehicleWheel3D3" type="VehicleWheel3D" parent="VehicleBody3D"]
@@ -102,7 +102,7 @@ script = ExtResource("3_sttnp")
 
 [node name="tyre_Tyres_1" type="MeshInstance3D" parent="VehicleBody3D/VehicleWheel3D3"]
 transform = Transform3D(-1.31134e-08, 0, -0.1, 0, 0.3, 0, 0.3, 0, -4.37114e-09, 0.115, 0.01, 0.005)
-mesh = SubResource("ArrayMesh_l2qs6")
+mesh = SubResource("ArrayMesh_kmdlf")
 skeleton = NodePath("")
 
 [node name="VehicleWheel3D4" type="VehicleWheel3D" parent="VehicleBody3D"]
@@ -117,10 +117,10 @@ script = ExtResource("3_sttnp")
 
 [node name="tyre_Tyres_1" type="MeshInstance3D" parent="VehicleBody3D/VehicleWheel3D4"]
 transform = Transform3D(-1.31134e-08, 0, 0.1, 0, 0.3, 0, -0.3, 0, -4.37114e-09, -0.134, 0.01, -0.004)
-mesh = SubResource("ArrayMesh_l2qs6")
+mesh = SubResource("ArrayMesh_kmdlf")
 skeleton = NodePath("")
 
 [node name="Node3D" type="Node3D" parent="VehicleBody3D"]
 
 [node name="Camera3D" type="Camera3D" parent="VehicleBody3D/Node3D"]
-transform = Transform3D(0.99811, 0.00984659, 0.060653, -0.0179456, 0.990755, 0.134471, -0.0587682, -0.135306, 0.989059, 0.106242, 0.242998, 4.42415)
+transform = Transform3D(1, -1.10523e-08, -7.01476e-10, 1.10523e-08, 0.991976, 0.126424, -7.01434e-10, -0.126424, 0.991976, 0, 0.989572, 4.424)

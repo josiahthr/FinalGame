@@ -3,7 +3,7 @@ extends VehicleBody3D
 @export var max_steering_angle = 0.30
 @export var steering_speed = 2
 @export var engine_power = 100.0
-@export var speed_scale = 3.6 
+@export var speed_scale = 3.6
 @export var current_lap = 0
 @onready var timer: Timer = get_node("../../Timer")
 @export var orbit_duration = 5.0
