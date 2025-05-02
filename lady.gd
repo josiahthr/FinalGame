@@ -4,7 +4,6 @@ extends VehicleBody3D
 @export var steering_speed = 2
 @export var engine_power = 100.0
 @export var speed_scale = 3.6
-@export var current_lap = 0
 @onready var timer: Timer = get_node("../../Timer")
 @export var orbit_duration = 5.0
 
@@ -37,6 +36,7 @@ func _ready():
 	set_process_input(true)
 	if not speedometer_label:
 		printerr("Error: SpeedometerLabel not found in HUDLayer!")
+		
 
 func _physics_process(delta):
 	start_timer.text = "%2d" % time_to_start()
@@ -54,11 +54,6 @@ func update_speedometer():
 	if speedometer_label:
 		speedometer_label.text = str(int(speed)) + " "
 
-
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	current_lap += 1
-	print ("Current Lap:", current_lap )
-	current_lap_label.text = str(current_lap)
 
 func time_to_start():
 	var time_left = timer.time_left

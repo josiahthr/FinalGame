@@ -16,7 +16,6 @@ var current_steering = 0.0
 @onready var start_timer: Label = get_node("../../HUDLayer/StartTimer")
 
 var is_animating_camera: bool = true
-
 func _ready():
 	set_physics_process(false)
 	set_process_input(false)
@@ -67,5 +66,3 @@ func time_to_start():
 	
 func _on_timer_timeout():
 	start_timer.hide()
-	
-	

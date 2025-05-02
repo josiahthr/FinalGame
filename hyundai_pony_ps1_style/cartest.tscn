@@ -1,15 +1,13 @@
-[gd_scene load_steps=24 format=3 uid="uid://cg386p8aegn4j"]
+[gd_scene load_steps=22 format=3 uid="uid://cg386p8aegn4j"]
 
 [ext_resource type="Script" uid="uid://dlu80yg28s5ce" path="res://hyundai_pony_ps1_style/carspawn.gd" id="1_wi6l0"]
 [ext_resource type="PackedScene" uid="uid://bmng84bq06kcy" path="res://track.tscn" id="5_1pp2q"]
+[ext_resource type="Script" uid="uid://dhn7dgxrhpkk8" path="res://hyundai_pony_ps1_style/area_3d.gd" id="6_wi6l0"]
 [ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="7_gkglb"]
 [ext_resource type="AudioStream" uid="uid://bqxaotq7ofq3l" path="res://Garbage - As Heaven Is Wide.mp3" id="7_hkt2a"]
 [ext_resource type="FontFile" uid="uid://b116j0xgr4xw1" path="res://pixelpro_2p/pixelpro-2p.ttf" id="7_incj8"]
-[ext_resource type="PackedScene" uid="uid://dbwgdwriq3o13" path="res://ponydrive.tscn" id="8_incj8"]
-[ext_resource type="Script" uid="uid://eqx2beu0o47h" path="res://hyundai_pony_ps1_style/checkerflag.gd" id="9_incj8"]
 [ext_resource type="PackedScene" uid="uid://sv3wnmojmjqg" path="res://nissan_silvia_varietta_s15_00/scene.gltf" id="10_wi6l0"]
 [ext_resource type="Texture2D" uid="uid://dn72jb517qj36" path="res://textures/rural_asphalt_road_4k.png" id="11_adloo"]
-[ext_resource type="PackedScene" uid="uid://bhnnyoiuwsxqs" path="res://fairlady2.tscn" id="12_arjbi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hkt2a"]
 font = ExtResource("7_gkglb")
@@ -180,15 +178,16 @@ vertical_alignment = 1
 
 [node name="RaceTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_hkt2a")
+volume_db = -80.0
 autoplay = true
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(-0.927243, 0, 0.374461, 0, 1, 0, -0.374461, 0, -0.927243, 0, 2.58446, 0)
+script = ExtResource("6_wi6l0")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="checkpoint_area" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(0.79946, 0, 0.600747, 0, 1, 0, -0.600747, 0, 0.79946, 0.978345, -1.05843, 1.51897)
 shape = SubResource("BoxShape3D_incj8")
-script = ExtResource("9_incj8")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 8.0
@@ -205,8 +204,4 @@ transform = Transform3D(-31.4804, 0, 94.9157, 0, 100, 0, -94.9157, 0, -31.4804, 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_68v0s")
 
-[node name="Node3D2" parent="." instance=ExtResource("8_incj8")]
-transform = Transform3D(-0.328998, 0, 0.944331, 0, 1, 0, -0.944331, 0, -0.328998, 0, 0.981786, 0)
-
-[node name="Node3D" parent="." instance=ExtResource("12_arjbi")]
-transform = Transform3D(0.995939, -0.0495984, -0.0751311, 0.0520147, 0.998179, 0.0305531, 0.0734788, -0.0343369, 0.996705, 11.6392, 0.196135, -2.83853)
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
