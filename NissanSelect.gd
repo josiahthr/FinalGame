@@ -53,8 +53,10 @@ func _on_button_pressed() -> void:
 		CarSelection.selected_car_scene = "res://fairlady2.tscn"
 		
 		get_tree().change_scene_to_file("res://hyundai_pony_ps1_style/cartest.tscn")
-	if nissanzx == false:
-		CarSelection.selected_car_scene = "res://Cars/Skyline.tscn"
+	if skyline == true:
+		print("we should be goin skyline edition")
+		CarSelection.selected_car_scene = "res://Skyline.tscn"
+		get_tree().change_scene_to_file("res://hyundai_pony_ps1_style/cartest.tscn")
 
 
 

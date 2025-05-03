@@ -4,7 +4,6 @@ extends Node3D
 
 
 func _ready() -> void:
-	if CarSelection.selected_car_scene == "res://fairlady2.tscn":
 		var car_scene = load(CarSelection.selected_car_scene)
 		var car_instance = car_scene.instantiate()
 
