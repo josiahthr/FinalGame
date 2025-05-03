@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://8853qbug1gy8"]
+[gd_scene load_steps=20 format=3 uid="uid://8853qbug1gy8"]
 
 [ext_resource type="Script" uid="uid://dq0mjtyltxlx7" path="res://wheels/bmw.gd" id="1_vlndw"]
 [ext_resource type="PackedScene" uid="uid://dnm27ahey2sy7" path="res://1990_bmw_e30_m3_sport_evolution/scene.gltf" id="1_xulkl"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dg6okbx8p2flh" path="res://2003_bmw_m5_e39/scene.gltf" id="6_64a7q"]
 [ext_resource type="Script" uid="uid://cwem5c3baq6eo" path="res://2003_bmw_m5_e39/spin.gd" id="7_parlt"]
 [ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="8_parlt"]
+[ext_resource type="FontFile" uid="uid://db654gvwuv7yr" path="res://CarFonts/NissanOpti.otf" id="9_a1mw1"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_24ex3"]
 
@@ -31,6 +32,12 @@ viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_untbv"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pq5w"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mp4nm"]
+bg_color = Color(0, 0, 0.384314, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_vlndw")
@@ -261,5 +268,17 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_mp4nm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_untbv")
 text = "Return"
 
+[node name="Button2" type="Button" parent="."]
+offset_left = 821.0
+offset_top = 519.0
+offset_right = 1140.0
+offset_bottom = 628.0
+theme_override_fonts/font = ExtResource("9_a1mw1")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/hover = SubResource("StyleBoxFlat_0pq5w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mp4nm")
+text = "START"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
