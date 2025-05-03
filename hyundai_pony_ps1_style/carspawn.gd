@@ -28,3 +28,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		print ("Current Lap:", current_lap )
 		current_lap_label.text = str(current_lap)
 		CheckpointCount.checkpoint = "0"
+		if body.has_method("reset_lap_timer"):
+			body.reset_lap_timer()

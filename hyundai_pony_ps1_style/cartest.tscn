@@ -156,12 +156,32 @@ label_settings = SubResource("LabelSettings_arjbi")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Total_time" type="Label" parent="HUDLayer"]
+offset_left = 32.0
+offset_top = 180.0
+offset_right = 211.0
+offset_bottom = 218.0
+text = "0:00:00"
+label_settings = SubResource("LabelSettings_arjbi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Label3" type="Label" parent="HUDLayer"]
 offset_left = 27.0
 offset_top = 228.0
 offset_right = 206.0
 offset_bottom = 266.0
 text = "Lap     Time"
+label_settings = SubResource("LabelSettings_arjbi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LapTime" type="Label" parent="HUDLayer"]
+offset_left = 27.0
+offset_top = 260.0
+offset_right = 206.0
+offset_bottom = 298.0
+text = "0:00:00"
 label_settings = SubResource("LabelSettings_arjbi")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -204,7 +224,6 @@ vertical_alignment = 1
 
 [node name="RaceTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_hkt2a")
-volume_db = -80.0
 autoplay = true
 
 [node name="Area3D" type="Area3D" parent="."]

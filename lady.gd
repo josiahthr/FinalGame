@@ -6,16 +6,20 @@ extends VehicleBody3D
 @export var speed_scale = 3.6
 @onready var timer: Timer = get_node("../AnimationTimer")
 @onready var GoTimer: Timer = get_node("../GoTimer")
+@onready var RaceTimer: Timer = get_node("../RaceTimer")
+@onready var LapTime: Label = get_node("../../HUDLayer/LapTime")
 @export var orbit_duration = 5.0
 
 var current_steering = 0.0
 @onready var speedometer_label: Label = get_node("../../HUDLayer/speedometer_label")
+@onready var Total_time: Label = get_node("../../HUDLayer/Total_time")
 @onready var current_lap_label: Label = get_node("../../HUDLayer/Lap/Max Lap/Current Lap")
 @onready var camera: Camera3D = get_node("Node3D/Camera3D")
 @onready var camera_pivot: Node3D = get_node("Node3D")
 @onready var start_timer: Label = get_node("../../HUDLayer/StartTimer")
 @onready var GO: Label = get_node("../../HUDLayer/GO")
-
+var race_elapsed_time = 0
+var race_lap_time = 0
 var is_animating_camera: bool = true
 var frozen = true
 
@@ -48,9 +52,13 @@ func _ready():
 func _physics_process(delta):
 	start_timer.text = "%2d" % time_to_start()
 	if frozen:
-		brake = 4
+		brake = 5
 	else:
 		brake = 0.0
+		race_elapsed_time += delta
+		race_lap_time += delta
+		Total_time.text = format_time(race_elapsed_time)
+		LapTime.text = format_time(race_lap_time)
 	var steering_input = Input.get_axis("right", "left")
 	var steering_target = steering_input * max_steering_angle
 	var steering_amount = abs(steering) / max_steering_angle
@@ -71,7 +79,14 @@ func time_to_start():
 	var second = int(time_left) % 60
 	return [second]
 	
+func format_time(time_in_seconds: float) -> String:
+	var minutes = int(time_in_seconds) / 60
+	var seconds = int(time_in_seconds) % 60
+	var milliseconds = int((time_in_seconds - int(time_in_seconds)) * 100)
+	return "%02d:%02d.%02d" % [minutes, seconds, milliseconds]
+	
 func _on_timer_timeout():
+	RaceTimer.start()
 	print("we unfrozen")
 	start_timer.hide()
 	frozen = false
@@ -79,3 +94,6 @@ func _on_timer_timeout():
 	GoTimer.start()
 	await GoTimer.timeout
 	GO.hide()
+	
+func reset_lap_timer():
+	race_lap_time = 0

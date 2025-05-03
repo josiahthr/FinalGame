@@ -9,6 +9,7 @@ extends Node2D
 var nissanzx = true
 var skyline = false
 var current_car := 0
+var gt_theme_stream = preload("res://Gran Turismo 1 Menu Soundtrack - Arcade Mode Select [EURUSA].mp3")
 
 func _physics_process(delta: float) -> void:
 	if current_car == 1:
@@ -46,6 +47,7 @@ func _on_button_3_pressed() -> void:
 
 
 func _on_button_pressed() -> void:
+	MainMenu.stop_music()
 	if nissanzx == true:
 		print("we should be goin")
 		CarSelection.selected_car_scene = "res://fairlady2.tscn"

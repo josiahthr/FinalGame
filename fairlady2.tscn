@@ -196,3 +196,6 @@ transform = Transform3D(0.9998, 0.0199309, -0.00151965, -0.019173, 0.977719, 0.2
 wait_time = 4.0
 
 [node name="GoTimer" type="Timer" parent="."]
+
+[node name="RaceTimer" type="Timer" parent="."]
+wait_time = 1000.0
