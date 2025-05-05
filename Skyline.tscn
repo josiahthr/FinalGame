@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=4 uid="uid://r71pb6ns6jhw"]
+[gd_scene load_steps=17 format=4 uid="uid://r71pb6ns6jhw"]
 
 [ext_resource type="Script" uid="uid://cpl3sj1p5wkbc" path="res://lady.gd" id="1_yaw0l"]
 [ext_resource type="PackedScene" uid="uid://tqmktw1dodnc" path="res://1997_nissan_skyline_gt-r_v-spec_r33/skylinewheelless.tscn" id="2_5hs1w"]
 [ext_resource type="Script" uid="uid://b6cck6a4q8wvr" path="res://vehicle_wheel_3d.gd" id="3_5hs1w"]
 [ext_resource type="Texture2D" uid="uid://c1vnci67xtoii" path="res://1997_nissan_skyline_gt-r_v-spec_r33/textures/r33Vehicle_Exterior_mm_tyre1_baseColor.png" id="4_5hs1w"]
 [ext_resource type="Texture2D" uid="uid://bc5nceleia25d" path="res://1997_nissan_skyline_gt-r_v-spec_r33/textures/r33Vehicle_Exterior_mm_wheel1_baseColor.png" id="5_qgp57"]
+[ext_resource type="Texture2D" uid="uid://dd1dxwtu4rjpe" path="res://needle-removebg-preview.png" id="6_gywws"]
+[ext_resource type="Script" uid="uid://dh4oa42esrmau" path="res://NeedlePivot.gd" id="7_gkb71"]
+[ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="8_n57is"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_geyfu"]
 points = PackedVector3Array(0.75, 0.25, 1.5, 0.75, -0.25, 1.5, 0.75, 0.25, -1.5, -0.75, 0.25, 1.5, -0.75, -0.25, 1.5, 0.75, -0.25, -1.5, -0.75, 0.25, -1.5, -0.75, -0.25, -1.5)
@@ -90,6 +93,12 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_iby5o")
+
+[sub_resource type="LabelSettings" id="LabelSettings_kymxj"]
+font = ExtResource("8_n57is")
+font_size = 30
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -198,6 +207,77 @@ skeleton = NodePath("")
 
 [node name="Camera3D" type="Camera3D" parent="VehicleBody3D/Node3D"]
 transform = Transform3D(0.9998, 0.0199309, -0.00151965, -0.019173, 0.977719, 0.209042, 0.00565219, -0.208971, 0.977906, 0.109302, 1.32289, 4.71631)
+
+[node name="Sprite2D" type="Sprite2D" parent="VehicleBody3D"]
+position = Vector2(942, 540)
+rotation = 0.131601
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_gywws")
+centered = false
+offset = Vector2(-400, -215)
+script = ExtResource("7_gkb71")
+
+[node name="Control" type="Control" parent="VehicleBody3D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VehicleBody3D/Control"]
+offset_left = 758.0
+offset_top = 535.0
+offset_right = 782.0
+offset_bottom = 579.0
+text = "0"
+label_settings = SubResource("LabelSettings_kymxj")
+
+[node name="Label2" type="Label" parent="VehicleBody3D/Control"]
+offset_left = 876.0
+offset_top = 365.0
+offset_right = 900.0
+offset_bottom = 409.0
+text = "6"
+label_settings = SubResource("LabelSettings_kymxj")
+
+[node name="Label3" type="Label" parent="VehicleBody3D/Control"]
+offset_left = 765.0
+offset_top = 496.0
+offset_right = 789.0
+offset_bottom = 540.0
+text = "1"
+label_settings = SubResource("LabelSettings_kymxj")
+
+[node name="Label4" type="Label" parent="VehicleBody3D/Control"]
+offset_left = 774.0
+offset_top = 459.0
+offset_right = 798.0
+offset_bottom = 503.0
+text = "2"
+label_settings = SubResource("LabelSettings_kymxj")
+
+[node name="Label5" type="Label" parent="VehicleBody3D/Control"]
+offset_left = 791.0
+offset_top = 425.0
+offset_right = 815.0
+offset_bottom = 469.0
+text = "3"
+label_settings = SubResource("LabelSettings_kymxj")
+
+[node name="Label6" type="Label" parent="VehicleBody3D/Control"]
+offset_left = 812.0
+offset_top = 395.0
+offset_right = 836.0
+offset_bottom = 439.0
+text = "4"
+label_settings = SubResource("LabelSettings_kymxj")
+
+[node name="Label7" type="Label" parent="VehicleBody3D/Control"]
+offset_left = 841.0
+offset_top = 372.0
+offset_right = 865.0
+offset_bottom = 416.0
+text = "5"
+label_settings = SubResource("LabelSettings_kymxj")
 
 [node name="AnimationTimer" type="Timer" parent="."]
 wait_time = 4.0

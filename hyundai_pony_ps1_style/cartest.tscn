@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cg386p8aegn4j"]
+[gd_scene load_steps=27 format=3 uid="uid://cg386p8aegn4j"]
 
 [ext_resource type="Script" uid="uid://dlu80yg28s5ce" path="res://hyundai_pony_ps1_style/carspawn.gd" id="1_wi6l0"]
 [ext_resource type="PackedScene" uid="uid://bmng84bq06kcy" path="res://track.tscn" id="5_1pp2q"]
@@ -60,6 +60,10 @@ font_size = 80
 font_color = Color(1, 1, 0.180392, 1)
 outline_size = 15
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_68v0s"]
+font_size = 50
+font_color = Color(0.917647, 0.470588, 0.0862745, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_incj8"]
 size = Vector3(0.0546875, 3.10498, 24.9572)
@@ -222,16 +226,28 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RPM" type="Label" parent="HUDLayer"]
-offset_left = 1019.0
-offset_top = 413.0
-offset_right = 1068.0
-offset_bottom = 496.0
+offset_left = 1018.0
+offset_top = 385.0
+offset_right = 1067.0
+offset_bottom = 468.0
+text = "RPM"
+
+[node name="ColorRect" type="ColorRect" parent="HUDLayer"]
+offset_left = 1048.0
+offset_top = 434.0
+offset_right = 1090.0
+offset_bottom = 500.0
+color = Color(0, 0, 0, 1)
 
 [node name="Gear" type="Label" parent="HUDLayer"]
-offset_left = 100.0
-offset_top = 394.0
-offset_right = 210.0
-offset_bottom = 470.0
+offset_left = 1057.0
+offset_top = 436.0
+offset_right = 1090.0
+offset_bottom = 497.0
+theme_override_fonts/font = ExtResource("7_gkglb")
+theme_override_font_sizes/font_size = 50
+text = "0"
+label_settings = SubResource("LabelSettings_68v0s")
 
 [node name="RaceTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_hkt2a")

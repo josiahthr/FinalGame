@@ -77,9 +77,9 @@ func _physics_process(delta):
 
 	if (current_rpm >= max_rpm * 0.9 and current_gear < 5) and (Time.get_ticks_msec() - last_shift_time >= shift_delay * 1000):
 		current_gear += 1
-		current_rpm = lerp(current_rpm, idle_rpm + 1000, 0.1)
+		current_rpm = 1500
 		last_shift_time = Time.get_ticks_msec()
-	elif (current_rpm < idle_rpm + 500 and current_gear > 0) and (Time.get_ticks_msec() - last_shift_time >= shift_delay * 1000):
+	elif (current_rpm < idle_rpm + 3000 and current_gear > 0) and (Time.get_ticks_msec() - last_shift_time >= shift_delay * 1000):
 		current_gear -= 1
 		current_rpm = max(idle_rpm, current_rpm)
 		last_shift_time = Time.get_ticks_msec()
@@ -109,7 +109,7 @@ func update_speedometer():
 	if RPM:
 		RPM.text = str(int(current_rpm)) + " RPM"
 	if Gear:
-		Gear.text = str(int(current_rpm)) + " RPM | Gear: " + str(current_gear + 1)
+		Gear.text = str(current_gear + 1)
 
 
 func time_to_start():

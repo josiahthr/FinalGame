@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=4 uid="uid://bhnnyoiuwsxqs"]
+[gd_scene load_steps=16 format=4 uid="uid://bhnnyoiuwsxqs"]
 
 [ext_resource type="Script" uid="uid://cpl3sj1p5wkbc" path="res://lady.gd" id="1_28mlt"]
 [ext_resource type="PackedScene" uid="uid://d31pxcpiwbaxq" path="res://nissan_fairlady_300zx_z32_1989/ladynowheels.tscn" id="2_28mlt"]
+[ext_resource type="Script" uid="uid://dh4oa42esrmau" path="res://NeedlePivot.gd" id="2_fejh1"]
 [ext_resource type="Script" uid="uid://b6cck6a4q8wvr" path="res://vehicle_wheel_3d.gd" id="3_28mlt"]
+[ext_resource type="Texture2D" uid="uid://dd1dxwtu4rjpe" path="res://needle-removebg-preview.png" id="3_fejh1"]
 [ext_resource type="Texture2D" uid="uid://wplvx1go6gjj" path="res://wheels/textures/wheel_10_metal_baseColor.png" id="5_rsgsh"]
+[ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="7_7ww1e"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_geyfu"]
 points = PackedVector3Array(0.75, 0.25, 1.5, 0.75, -0.25, 1.5, 0.75, 0.25, -1.5, -0.75, 0.25, 1.5, -0.75, -0.25, 1.5, 0.75, -0.25, -1.5, -0.75, 0.25, -1.5, -0.75, -0.25, -1.5)
@@ -88,6 +91,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_h0f6h")
 
+[sub_resource type="LabelSettings" id="LabelSettings_kop36"]
+font = ExtResource("7_7ww1e")
+font_size = 30
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
@@ -95,6 +104,15 @@ transform = Transform3D(-0.0104719, 0, -0.999945, 0, 1, 0, 0.999945, 0, -0.01047
 gravity_scale = 2.0
 steering = 0.174533
 script = ExtResource("1_28mlt")
+
+[node name="Sprite2D" type="Sprite2D" parent="VehicleBody3D"]
+position = Vector2(942, 540)
+rotation = 0.131601
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_fejh1")
+centered = false
+offset = Vector2(-400, -215)
+script = ExtResource("2_fejh1")
 
 [node name="Sketchfab_Scene" parent="VehicleBody3D" instance=ExtResource("2_28mlt")]
 transform = Transform3D(0.399978, 0, 0.00418874, 0, 0.4, 0, -0.00418874, 0, 0.399978, 0, -0.666799, 0)
@@ -191,6 +209,75 @@ skeleton = NodePath("")
 
 [node name="Camera3D" type="Camera3D" parent="VehicleBody3D/Node3D"]
 transform = Transform3D(0.9998, 0.0199309, -0.00151965, -0.019173, 0.977719, 0.209042, 0.00565219, -0.208971, 0.977906, 0.109302, 1.32289, 4.71631)
+
+[node name="Control" type="Control" parent="VehicleBody3D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VehicleBody3D/Control"]
+layout_mode = 0
+offset_left = 758.0
+offset_top = 535.0
+offset_right = 782.0
+offset_bottom = 579.0
+text = "0"
+label_settings = SubResource("LabelSettings_kop36")
+
+[node name="Label2" type="Label" parent="VehicleBody3D/Control"]
+layout_mode = 0
+offset_left = 876.0
+offset_top = 365.0
+offset_right = 900.0
+offset_bottom = 409.0
+text = "6"
+label_settings = SubResource("LabelSettings_kop36")
+
+[node name="Label3" type="Label" parent="VehicleBody3D/Control"]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 496.0
+offset_right = 789.0
+offset_bottom = 540.0
+text = "1"
+label_settings = SubResource("LabelSettings_kop36")
+
+[node name="Label4" type="Label" parent="VehicleBody3D/Control"]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 459.0
+offset_right = 798.0
+offset_bottom = 503.0
+text = "2"
+label_settings = SubResource("LabelSettings_kop36")
+
+[node name="Label5" type="Label" parent="VehicleBody3D/Control"]
+layout_mode = 0
+offset_left = 791.0
+offset_top = 425.0
+offset_right = 815.0
+offset_bottom = 469.0
+text = "3"
+label_settings = SubResource("LabelSettings_kop36")
+
+[node name="Label6" type="Label" parent="VehicleBody3D/Control"]
+layout_mode = 0
+offset_left = 812.0
+offset_top = 395.0
+offset_right = 836.0
+offset_bottom = 439.0
+text = "4"
+label_settings = SubResource("LabelSettings_kop36")
+
+[node name="Label7" type="Label" parent="VehicleBody3D/Control"]
+layout_mode = 0
+offset_left = 841.0
+offset_top = 372.0
+offset_right = 865.0
+offset_bottom = 416.0
+text = "5"
+label_settings = SubResource("LabelSettings_kop36")
 
 [node name="AnimationTimer" type="Timer" parent="."]
 wait_time = 4.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://b32ydhh8j5l86"]
+[gd_scene load_steps=25 format=4 uid="uid://b32ydhh8j5l86"]
 
 [ext_resource type="Script" uid="uid://cpl3sj1p5wkbc" path="res://lady.gd" id="1_ucwps"]
 [ext_resource type="PackedScene" uid="uid://dip2ftkvqdnsh" path="res://wheels/mitsubishi_lancer_evolution_6___www.vecarz.com/EVOWheelless.tscn" id="2_rvxnj"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cpptraniliujs" path="res://wheels/mitsubishi_lancer_evolution_6___www.vecarz.com/textures/misc_baseColor.png" id="5_e3ldi"]
 [ext_resource type="Texture2D" uid="uid://pq8fao20epoo" path="res://wheels/mitsubishi_lancer_evolution_6___www.vecarz.com/textures/tire_baseColor.png" id="6_vjtfn"]
 [ext_resource type="Texture2D" uid="uid://cdxo8svxaibfq" path="res://wheels/mitsubishi_lancer_evolution_6___www.vecarz.com/textures/wheel_baseColor.png" id="7_5iwof"]
+[ext_resource type="Texture2D" uid="uid://dd1dxwtu4rjpe" path="res://needle-removebg-preview.png" id="8_vjtfn"]
+[ext_resource type="Script" uid="uid://dh4oa42esrmau" path="res://NeedlePivot.gd" id="9_5iwof"]
+[ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="10_wsefb"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_geyfu"]
 points = PackedVector3Array(0.75, 0.25, 1.5, 0.75, -0.25, 1.5, 0.75, 0.25, -1.5, -0.75, 0.25, 1.5, -0.75, -0.25, 1.5, 0.75, -0.25, -1.5, -0.75, 0.25, -1.5, -0.75, -0.25, -1.5)
@@ -174,6 +177,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_agp2j")
 
+[sub_resource type="LabelSettings" id="LabelSettings_abu63"]
+font = ExtResource("10_wsefb")
+font_size = 30
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
@@ -317,6 +326,84 @@ skeleton = NodePath("")
 
 [node name="Camera3D" type="Camera3D" parent="VehicleBody3D/Node3D"]
 transform = Transform3D(0.9998, 0.0199309, -0.00151965, -0.019173, 0.977719, 0.209042, 0.00565219, -0.208971, 0.977906, 0.109302, 1.32289, 4.71631)
+
+[node name="Sprite2D" type="Sprite2D" parent="VehicleBody3D"]
+position = Vector2(942, 540)
+rotation = 0.131601
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_vjtfn")
+centered = false
+offset = Vector2(-400, -215)
+script = ExtResource("9_5iwof")
+
+[node name="Control" type="Control" parent="VehicleBody3D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VehicleBody3D/Control"]
+layout_mode = 0
+offset_left = 758.0
+offset_top = 535.0
+offset_right = 782.0
+offset_bottom = 579.0
+text = "0"
+label_settings = SubResource("LabelSettings_abu63")
+
+[node name="Label2" type="Label" parent="VehicleBody3D/Control"]
+layout_mode = 0
+offset_left = 876.0
+offset_top = 365.0
+offset_right = 900.0
+offset_bottom = 409.0
+text = "6"
+label_settings = SubResource("LabelSettings_abu63")
+
+[node name="Label3" type="Label" parent="VehicleBody3D/Control"]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 496.0
+offset_right = 789.0
+offset_bottom = 540.0
+text = "1"
+label_settings = SubResource("LabelSettings_abu63")
+
+[node name="Label4" type="Label" parent="VehicleBody3D/Control"]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 459.0
+offset_right = 798.0
+offset_bottom = 503.0
+text = "2"
+label_settings = SubResource("LabelSettings_abu63")
+
+[node name="Label5" type="Label" parent="VehicleBody3D/Control"]
+layout_mode = 0
+offset_left = 791.0
+offset_top = 425.0
+offset_right = 815.0
+offset_bottom = 469.0
+text = "3"
+label_settings = SubResource("LabelSettings_abu63")
+
+[node name="Label6" type="Label" parent="VehicleBody3D/Control"]
+layout_mode = 0
+offset_left = 812.0
+offset_top = 395.0
+offset_right = 836.0
+offset_bottom = 439.0
+text = "4"
+label_settings = SubResource("LabelSettings_abu63")
+
+[node name="Label7" type="Label" parent="VehicleBody3D/Control"]
+layout_mode = 0
+offset_left = 841.0
+offset_top = 372.0
+offset_right = 865.0
+offset_bottom = 416.0
+text = "5"
+label_settings = SubResource("LabelSettings_abu63")
 
 [node name="AnimationTimer" type="Timer" parent="."]
 wait_time = 4.0
