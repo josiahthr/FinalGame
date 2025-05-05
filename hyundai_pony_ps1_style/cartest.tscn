@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cg386p8aegn4j"]
+[gd_scene load_steps=26 format=3 uid="uid://cg386p8aegn4j"]
 
 [ext_resource type="Script" uid="uid://dlu80yg28s5ce" path="res://hyundai_pony_ps1_style/carspawn.gd" id="1_wi6l0"]
 [ext_resource type="PackedScene" uid="uid://bmng84bq06kcy" path="res://track.tscn" id="5_1pp2q"]
@@ -8,7 +8,6 @@
 [ext_resource type="FontFile" uid="uid://b116j0xgr4xw1" path="res://pixelpro_2p/pixelpro-2p.ttf" id="7_incj8"]
 [ext_resource type="Script" uid="uid://bp4ow28oac3td" path="res://hyundai_pony_ps1_style/check1.gd" id="9_incj8"]
 [ext_resource type="Script" uid="uid://budgx6cetlfay" path="res://hyundai_pony_ps1_style/Checkpoint2.gd" id="10_adloo"]
-[ext_resource type="PackedScene" uid="uid://sv3wnmojmjqg" path="res://nissan_silvia_varietta_s15_00/scene.gltf" id="10_wi6l0"]
 [ext_resource type="Texture2D" uid="uid://dn72jb517qj36" path="res://textures/rural_asphalt_road_4k.png" id="11_adloo"]
 [ext_resource type="Script" uid="uid://ct54sbjgn6ie" path="res://hyundai_pony_ps1_style/Checkpoint3.gd" id="11_arjbi"]
 [ext_resource type="Script" uid="uid://bfr6w1s4kl688" path="res://hyundai_pony_ps1_style/Checkpoint4.gd" id="12_arjbi"]
@@ -222,8 +221,21 @@ label_settings = SubResource("LabelSettings_bapmy")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="RPM" type="Label" parent="HUDLayer"]
+offset_left = 1019.0
+offset_top = 413.0
+offset_right = 1068.0
+offset_bottom = 496.0
+
+[node name="Gear" type="Label" parent="HUDLayer"]
+offset_left = 100.0
+offset_top = 394.0
+offset_right = 210.0
+offset_bottom = 470.0
+
 [node name="RaceTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_hkt2a")
+volume_db = -14.054
 autoplay = true
 
 [node name="Area3D" type="Area3D" parent="."]
@@ -242,9 +254,6 @@ one_shot = true
 libraries = {
 &"": SubResource("AnimationLibrary_wi6l0")
 }
-
-[node name="Sketchfab_Scene2" parent="." instance=ExtResource("10_wi6l0")]
-transform = Transform3D(-31.4804, 0, 94.9157, 0, 100, 0, -94.9157, 0, -31.4804, 26.7978, 3.23263, -8.25575)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_68v0s")

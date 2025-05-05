@@ -1,0 +1,11 @@
+Model Information:
+* title:	1990 Corvette C4
+* source:	https://sketchfab.com/3d-models/1990-corvette-c4-2d005bd8f19b4959b5196e69defebae7
+* author:	Ricy (https://sketchfab.com/ngon_3d)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "1990 Corvette C4" (https://sketchfab.com/3d-models/1990-corvette-c4-2d005bd8f19b4959b5196e69defebae7) by Ricy (https://sketchfab.com/ngon_3d) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,188 @@
+[gd_scene load_steps=18 format=3 uid="uid://dp0yhlrx412gp"]
+
+[ext_resource type="Script" uid="uid://di25nt644hoft" path="res://wheels/mitsubishi.gd" id="1_piqks"]
+[ext_resource type="Script" uid="uid://ckdqbbdwvd5ye" path="res://wheels/mitsubishi_lancer_evolution_6___www.vecarz.com/spin.gd" id="3_58bah"]
+[ext_resource type="FontFile" uid="uid://bq1pusbnq2b6a" path="res://CarFonts/MITSUBISHI.TTF" id="6_piqks"]
+[ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="8_lhmrn"]
+[ext_resource type="FontFile" uid="uid://db654gvwuv7yr" path="res://CarFonts/NissanOpti.otf" id="9_dgat5"]
+[ext_resource type="PackedScene" uid="uid://2duq58ticjak" path="res://wheels/mitsubishi_lancer_evolution_6___www.vecarz.com/scene.gltf" id="10_piqks"]
+[ext_resource type="Texture2D" uid="uid://chbjg0m8mcnr4" path="res://CarFonts/Mitsubishi-Logo-1970-present(1).png" id="10_qdfat"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_24ex3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64a7q"]
+transparency = 1
+albedo_color = Color(0.52549, 0.52549, 0.52549, 0.647059)
+metallic = 1.0
+roughness = 0.0
+refraction_enabled = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xta6s"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1mw1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0pq5w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mp4nm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_untbv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pq5w"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mp4nm"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_58bah"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_piqks")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.0299148, -0.219233, 0.975214, 0.00672183, 0.975672, 0.21913, -0.99953, -1.86352e-09, 0.0306607, 12.5287, 6.59875, -31.6137)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(-0.0140496, -0.143003, 0.989622, 0.00121263, 0.989717, 0.143034, -0.999901, 0.00320961, -0.0137317, 9.59669, 4.50477, -0.915972)
+
+[node name="EVO" type="Node3D" parent="."]
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="EVO"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50428, 2.60401, -6.41122)
+light_energy = 7.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EVO"]
+transform = Transform3D(9.14702, 0, 0, 0, 1, 0, 0, 0, 10.013, -0.398246, 0, -0.0968595)
+mesh = SubResource("PlaneMesh_24ex3")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_64a7q")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="EVO"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.28355, 0)
+light_energy = 7.02
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="EVO"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38974, 1.76309, 0)
+light_energy = 7.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="EVO"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.740989, 1.76309, -10.5757)
+light_energy = 7.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="EVO"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.740989, 1.76309, 7.8168)
+light_energy = 7.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="EVO"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89402, 1.76309, 6.32944)
+light_energy = 7.0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="EVO"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.448557, 1.78101, -1.7227)
+light_energy = 7.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="EVO"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13688, 2.60401, -8.30065)
+light_energy = 7.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="EVO"]
+transform = Transform3D(1, 0, 0, 0, 0.740335, 0.672238, 0, -0.672238, 0.740335, 0, 4.94202, 6.00634)
+light_energy = 4.0
+spot_range = 8.195
+
+[node name="Sketchfab_Scene5" parent="EVO" instance=ExtResource("10_piqks")]
+transform = Transform3D(240, 0, 0, 0, 240, 0, 0, 0, 240, -0.0446796, 0.238192, -0.398129)
+script = ExtResource("3_58bah")
+
+[node name="Sketchfab_Scene6" parent="EVO" instance=ExtResource("10_piqks")]
+transform = Transform3D(-240, 2.09815e-05, 0, -2.09815e-05, -240, 0, 0, 0, 240, -0.0446796, 0.10422, -0.398129)
+script = ExtResource("3_58bah")
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="EVO"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.08606, 1.76309, 0)
+light_energy = 7.0
+
+[node name="EVOLabels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="EVOLabels"]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 133.0
+offset_right = 842.0
+offset_bottom = 645.0
+texture = SubResource("ViewportTexture_xta6s")
+
+[node name="Label" type="Label" parent="EVOLabels"]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 170.0
+offset_right = 753.0
+offset_bottom = 234.0
+theme_override_fonts/font = ExtResource("6_piqks")
+theme_override_font_sizes/font_size = 50
+text = "2001 Lancer"
+
+[node name="Label2" type="Label" parent="EVOLabels"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 210.0
+offset_right = 747.0
+offset_bottom = 274.0
+theme_override_fonts/font = ExtResource("6_piqks")
+theme_override_font_sizes/font_size = 50
+text = "Evolution 6"
+
+[node name="Button10" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 184.0
+offset_top = 61.0
+offset_right = 339.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("8_lhmrn")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a1mw1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0pq5w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mp4nm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_untbv")
+text = "Return"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 821.0
+offset_top = 519.0
+offset_right = 1140.0
+offset_bottom = 628.0
+theme_override_fonts/font = ExtResource("9_dgat5")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/hover = SubResource("StyleBoxFlat_0pq5w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mp4nm")
+text = "START"
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 440.0
+offset_top = 126.0
+offset_right = 748.0
+offset_bottom = 184.0
+mouse_filter = 2
+theme_override_constants/icon_max_width = 40
+theme_override_fonts/font = ExtResource("6_piqks")
+theme_override_font_sizes/font_size = 50
+theme_override_icons/icon = ExtResource("10_qdfat")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_58bah")
+text = "MITSUBISHI"
+
+[connection signal="pressed" from="Button10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

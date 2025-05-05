@@ -1,0 +1,297 @@
+[gd_scene load_steps=24 format=3 uid="uid://bi3n1ngwx800c"]
+
+[ext_resource type="Script" uid="uid://4a246y6ptn8x" path="res://wheels/honda.gd" id="1_umg34"]
+[ext_resource type="Script" uid="uid://b3u1ecr0vi26i" path="res://honda_integra_db8_type-r/spin.gd" id="3_7ee7u"]
+[ext_resource type="Script" uid="uid://ckubxjo1brra0" path="res://spin.gd" id="5_bgwcd"]
+[ext_resource type="PackedScene" uid="uid://bqmgxramuhqgw" path="res://2001_honda_s2000/S2000show.tscn" id="6_6bj03"]
+[ext_resource type="FontFile" uid="uid://bvmukupjysw20" path="res://CarFonts/BMWHelvetica-Bold.otf" id="6_bgwcd"]
+[ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="8_08dph"]
+[ext_resource type="FontFile" uid="uid://db654gvwuv7yr" path="res://CarFonts/NissanOpti.otf" id="9_1orrw"]
+[ext_resource type="FontFile" uid="uid://bp3sded2b3nst" path="res://CarFonts/hondafont.ttf" id="9_umg34"]
+[ext_resource type="Texture2D" uid="uid://cir2we1yg1t56" path="res://CarFonts/Untitled_design-removebg-preview.png" id="10_6bj03"]
+[ext_resource type="PackedScene" uid="uid://qpct3bcoln3c" path="res://honda_integra_db8_type-r/scene.gltf" id="10_umg34"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_24ex3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64a7q"]
+transparency = 1
+albedo_color = Color(0.52549, 0.52549, 0.52549, 0.647059)
+metallic = 1.0
+roughness = 0.0
+refraction_enabled = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xta6s"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1mw1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0pq5w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mp4nm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_untbv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pq5w"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mp4nm"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="Theme" id="Theme_7ee7u"]
+Button/colors/font_color = Color(0, 0.239216, 0.67451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e64oj"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgwcd"]
+bg_color = Color(0, 0, 0.384314, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_olltg"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_umg34")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.0299148, -0.219233, 0.975214, 0.00672183, 0.975672, 0.21913, -0.99953, -1.86352e-09, 0.0306607, 12.5287, 6.59875, -31.6137)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(-0.0140496, -0.143003, 0.989622, 0.00121263, 0.989717, 0.143034, -0.999901, 0.00320961, -0.0137317, 9.59669, 4.50477, -0.915972)
+
+[node name="Integra" type="Node3D" parent="."]
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Integra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50428, 2.60401, -6.41122)
+light_energy = 7.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Integra"]
+transform = Transform3D(9.14702, 0, 0, 0, 1, 0, 0, 0, 10.013, -0.398246, 0, -0.0968595)
+mesh = SubResource("PlaneMesh_24ex3")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_64a7q")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Integra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.28355, 0)
+light_energy = 7.02
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Integra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38974, 1.76309, 0)
+light_energy = 7.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Integra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.740989, 1.76309, -10.5757)
+light_energy = 7.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Integra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.740989, 1.76309, 7.8168)
+light_energy = 7.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Integra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89402, 1.76309, 6.32944)
+light_energy = 7.0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Integra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.448557, 1.78101, -1.7227)
+light_energy = 7.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Integra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13688, 2.60401, -8.30065)
+light_energy = 7.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Integra"]
+transform = Transform3D(1, 0, 0, 0, 0.740335, 0.672238, 0, -0.672238, 0.740335, 0, 4.94202, 6.00634)
+light_energy = 4.0
+spot_range = 8.195
+
+[node name="Sketchfab_Scene" parent="Integra" instance=ExtResource("10_umg34")]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, -0.209507, -0.0169692, -0.342584)
+script = ExtResource("3_7ee7u")
+
+[node name="Sketchfab_Scene2" parent="Integra" instance=ExtResource("10_umg34")]
+transform = Transform3D(-3.5, 3.0598e-07, 0, -3.0598e-07, -3.5, 0, 0, 0, 3.5, -0.209507, 0.0130104, -0.342584)
+script = ExtResource("3_7ee7u")
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Integra"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.08606, 1.76309, 0)
+light_energy = 7.0
+
+[node name="S2K" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -31.6496)
+visible = false
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="S2K"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50428, 2.60401, -6.41122)
+light_energy = 7.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="S2K"]
+transform = Transform3D(9.14702, 0, 0, 0, 1, 0, 0, 0, 10.013, -0.398246, 0, -0.0968595)
+mesh = SubResource("PlaneMesh_24ex3")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_64a7q")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="S2K"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.28355, 0)
+light_energy = 7.02
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="S2K"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38974, 1.76309, 0)
+light_energy = 7.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="S2K"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.740989, 1.76309, -10.5757)
+light_energy = 7.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="S2K"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.740989, 1.76309, 7.8168)
+light_energy = 7.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="S2K"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89402, 1.76309, 6.32944)
+light_energy = 7.0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="S2K"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.448557, 1.78101, -1.7227)
+light_energy = 7.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="S2K"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13688, 2.60401, -8.30065)
+light_energy = 7.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="S2K"]
+transform = Transform3D(1, 0, 0, 0, 0.740335, 0.672238, 0, -0.672238, 0.740335, 0, 4.94202, 6.00634)
+light_energy = 4.0
+spot_range = 8.195
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="S2K"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.08606, 1.76309, 0)
+light_energy = 7.0
+
+[node name="Sketchfab_Scene" parent="S2K" instance=ExtResource("6_6bj03")]
+transform = Transform3D(220, 0, 0, 0, 220, 0, 0, 0, 220, 0, 0, 0)
+script = ExtResource("5_bgwcd")
+
+[node name="Sketchfab_Scene2" parent="S2K" instance=ExtResource("6_6bj03")]
+transform = Transform3D(-220, -1.9233e-05, 0, 1.9233e-05, -220, 0, 0, 0, 220, 0.00290155, -0.0263187, 0)
+script = ExtResource("5_bgwcd")
+
+[node name="IntegraLabels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="IntegraLabels"]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 133.0
+offset_right = 842.0
+offset_bottom = 645.0
+texture = SubResource("ViewportTexture_xta6s")
+
+[node name="Label" type="Label" parent="IntegraLabels"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 175.0
+offset_right = 755.0
+offset_bottom = 239.0
+theme_override_fonts/font = ExtResource("6_bgwcd")
+theme_override_font_sizes/font_size = 50
+text = "2001 Integra"
+
+[node name="Label2" type="Label" parent="IntegraLabels"]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 225.0
+offset_right = 764.0
+offset_bottom = 289.0
+theme_override_fonts/font = ExtResource("6_bgwcd")
+theme_override_font_sizes/font_size = 50
+text = "Type-R (DB8)"
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 990.0
+offset_top = 282.0
+offset_right = 1081.0
+offset_bottom = 346.0
+text = "NEXT"
+
+[node name="S2KLabels" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="S2KLabels"]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 181.0
+offset_right = 733.0
+offset_bottom = 245.0
+theme_override_fonts/font = ExtResource("6_bgwcd")
+theme_override_font_sizes/font_size = 50
+text = "2001 s2000"
+
+[node name="Button10" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 184.0
+offset_top = 61.0
+offset_right = 339.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("8_08dph")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a1mw1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0pq5w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mp4nm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_untbv")
+text = "Return"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 821.0
+offset_top = 519.0
+offset_right = 1140.0
+offset_bottom = 628.0
+theme_override_fonts/font = ExtResource("9_1orrw")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/hover = SubResource("StyleBoxFlat_0pq5w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mp4nm")
+text = "START"
+
+[node name="Button3" type="Button" parent="."]
+visible = false
+offset_left = 71.0
+offset_top = 279.0
+offset_right = 168.0
+offset_bottom = 418.0
+text = "BACK"
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 439.0
+offset_top = 130.0
+offset_right = 735.0
+offset_bottom = 188.0
+mouse_filter = 2
+theme = SubResource("Theme_7ee7u")
+theme_override_constants/icon_max_width = 45
+theme_override_fonts/font = ExtResource("9_umg34")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_e64oj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bgwcd")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_olltg")
+text = "HONDA"
+icon = ExtResource("10_6bj03")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

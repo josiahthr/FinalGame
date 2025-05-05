@@ -1,0 +1,11 @@
+Model Information:
+* title:	Honda Integra (DB8) Type-R
+* source:	https://sketchfab.com/3d-models/honda-integra-db8-type-r-06f0eba84e9745e9aec41a985ccac915
+* author:	Myedsu (https://sketchfab.com/myedsu)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Honda Integra (DB8) Type-R" (https://sketchfab.com/3d-models/honda-integra-db8-type-r-06f0eba84e9745e9aec41a985ccac915) by Myedsu (https://sketchfab.com/myedsu) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

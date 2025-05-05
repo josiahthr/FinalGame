@@ -1,0 +1,11 @@
+Model Information:
+* title:	'65 Chevy Malibu
+* source:	https://sketchfab.com/3d-models/65-chevy-malibu-170df9c498a84dcea040985871ee4e67
+* author:	Joko_P (https://sketchfab.com/joko_p)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "'65 Chevy Malibu" (https://sketchfab.com/3d-models/65-chevy-malibu-170df9c498a84dcea040985871ee4e67) by Joko_P (https://sketchfab.com/joko_p) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
