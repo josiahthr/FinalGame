@@ -1,6 +1,4 @@
 extends VehicleBody3D
-
-
 @export var max_rpm := 6000.0
 @export var idle_rpm := 800.0
 @export var rpm_sensitivity := 100.0
@@ -25,8 +23,8 @@ var current_steering = 0.0
 @onready var camera_pivot: Node3D = get_node("Node3D")
 @onready var start_timer: Label = get_node("../../HUDLayer/StartTimer")
 @onready var GO: Label = get_node("../../HUDLayer/GO")
-@onready var RPM: Label = get_node("../../HUDLayer/RPM")
 @onready var Gear: Label = get_node("../../HUDLayer/Gear")
+@onready var finish: AudioStreamPlayer = get_node("../Finish")
 @export var wheel_radius := 0.4
 var race_elapsed_time = 0
 var race_lap_time = 0
@@ -34,10 +32,12 @@ var is_animating_camera: bool = true
 var frozen = true
 var current_rpm := 1000.0
 var current_gear = 0
-var shift_delay := 3
+var shift_up_delay := 3
+var shift_down_delay := .5
 var last_shift_time := 0.0
 
 func _ready():
+	
 	print("Timer:", timer)
 	camera_pivot.global_position = global_position + Vector3(0, 1, 0)
 	camera.transform.origin = Vector3(0.106, 0.243, 4.424)
@@ -64,6 +64,11 @@ func _ready():
 		
 
 func _physics_process(delta):
+	if CheckpointCount.finished != false:
+		frozen = true
+
+		
+		
 	start_timer.text = "%2d" % time_to_start()
 	if frozen:
 		brake = 5
@@ -75,13 +80,15 @@ func _physics_process(delta):
 		Total_time.text = format_time(race_elapsed_time)
 		LapTime.text = format_time(race_lap_time)
 
-	if (current_rpm >= max_rpm * 0.9 and current_gear < 5) and (Time.get_ticks_msec() - last_shift_time >= shift_delay * 1000):
+	if (current_rpm >= max_rpm * 0.9 and current_gear < 5) and (Time.get_ticks_msec() - last_shift_time >= shift_up_delay * 1000):
 		current_gear += 1
-		current_rpm = 1500
+		current_rpm = 200
 		last_shift_time = Time.get_ticks_msec()
-	elif (current_rpm < idle_rpm + 3000 and current_gear > 0) and (Time.get_ticks_msec() - last_shift_time >= shift_delay * 1000):
+	elif (current_rpm < idle_rpm + 3000 and current_gear > 0) and (Time.get_ticks_msec() - last_shift_time >= shift_down_delay * 1000):
 		current_gear -= 1
-		current_rpm = max(idle_rpm, current_rpm)
+		var wheel_speed = linear_velocity.length() / wheel_radius
+		current_rpm = ((wheel_speed * 60.0) / (2.0 * PI)) * gear_ratio * final_drive_ratio
+		current_rpm = clamp(current_rpm, idle_rpm, max_rpm)
 		last_shift_time = Time.get_ticks_msec()
 	var throttle = Input.get_axis("back", "forward")
 	throttle = clamp(throttle, -0.3, 0.3)
@@ -106,8 +113,6 @@ func update_speedometer():
 	var speed = current_velocity.length() * speed_scale
 	if speedometer_label:
 		speedometer_label.text = str(int(speed)) + " "
-	if RPM:
-		RPM.text = str(int(current_rpm)) + " RPM"
 	if Gear:
 		Gear.text = str(current_gear + 1)
 

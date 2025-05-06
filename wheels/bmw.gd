@@ -33,6 +33,7 @@ func _on_button_10_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
+	MainMenu.stop_music()
 	if current_car == 0:
 		print("we should be goin")
 		CarSelection.selected_car_scene = "res://E30.tscn"

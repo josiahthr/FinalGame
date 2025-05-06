@@ -61,4 +61,5 @@ func _on_button_pressed() -> void:
 
 
 func _on_button_9_pressed() -> void:
+	CheckpointCount.finished = false
 	get_tree().change_scene_to_file("res://ManuSelect.tscn")

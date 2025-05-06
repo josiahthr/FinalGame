@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bhnnyoiuwsxqs"]
+[gd_scene load_steps=17 format=4 uid="uid://bhnnyoiuwsxqs"]
 
 [ext_resource type="Script" uid="uid://cpl3sj1p5wkbc" path="res://lady.gd" id="1_28mlt"]
 [ext_resource type="PackedScene" uid="uid://d31pxcpiwbaxq" path="res://nissan_fairlady_300zx_z32_1989/ladynowheels.tscn" id="2_28mlt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dd1dxwtu4rjpe" path="res://needle-removebg-preview.png" id="3_fejh1"]
 [ext_resource type="Texture2D" uid="uid://wplvx1go6gjj" path="res://wheels/textures/wheel_10_metal_baseColor.png" id="5_rsgsh"]
 [ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="7_7ww1e"]
+[ext_resource type="AudioStream" uid="uid://tssmofdge3yc" path="res://Gran Turismo OST - 22 - Race Finish #1.mp3" id="8_kop36"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_geyfu"]
 points = PackedVector3Array(0.75, 0.25, 1.5, 0.75, -0.25, 1.5, 0.75, 0.25, -1.5, -0.75, 0.25, 1.5, -0.75, -0.25, 1.5, 0.75, -0.25, -1.5, -0.75, 0.25, -1.5, -0.75, -0.25, -1.5)
@@ -286,3 +287,6 @@ wait_time = 4.0
 
 [node name="RaceTimer" type="Timer" parent="."]
 wait_time = 1000.0
+
+[node name="Finish" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_kop36")
