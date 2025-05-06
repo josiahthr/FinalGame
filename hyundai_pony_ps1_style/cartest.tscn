@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cg386p8aegn4j"]
+[gd_scene load_steps=33 format=3 uid="uid://cg386p8aegn4j"]
 
 [ext_resource type="Script" uid="uid://dlu80yg28s5ce" path="res://hyundai_pony_ps1_style/carspawn.gd" id="1_wi6l0"]
 [ext_resource type="PackedScene" uid="uid://bmng84bq06kcy" path="res://track.tscn" id="5_1pp2q"]
@@ -64,6 +64,25 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_68v0s"]
 font_size = 50
 font_color = Color(0.917647, 0.470588, 0.0862745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arjbi"]
+bg_color = Color(0.34902, 0.34902, 0.156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bapmy"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68v0s"]
+bg_color = Color(0.34902, 0.34902, 0.156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4i66s"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4i66s"]
+font = ExtResource("7_gkglb")
+font_size = 30
+font_color = Color(0.917647, 0.470588, 0.0862745, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_incj8"]
 size = Vector3(0.0546875, 3.10498, 24.9572)
@@ -262,19 +281,34 @@ label_settings = SubResource("LabelSettings_68v0s")
 
 [node name="Button" type="Button" parent="HUDLayer"]
 visible = false
-offset_left = 371.0
-offset_top = 387.0
-offset_right = 438.0
-offset_bottom = 424.0
+offset_left = 606.0
+offset_top = 544.0
+offset_right = 796.0
+offset_bottom = 579.0
+theme_override_fonts/font = ExtResource("7_gkglb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_arjbi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bapmy")
 text = "NEXT"
 
 [node name="Button2" type="Button" parent="HUDLayer"]
 visible = false
-offset_left = 724.0
-offset_top = 387.0
-offset_right = 791.0
-offset_bottom = 424.0
-text = "REPLAY"
+offset_left = 411.0
+offset_top = 544.0
+offset_right = 601.0
+offset_bottom = 579.0
+theme_override_fonts/font = ExtResource("7_gkglb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_68v0s")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4i66s")
+text = "Replay"
+
+[node name="Label4" type="Label" parent="HUDLayer"]
+visible = false
+offset_left = 428.0
+offset_top = 174.0
+offset_right = 604.0
+offset_bottom = 211.0
+text = "BEST TIME"
+label_settings = SubResource("LabelSettings_4i66s")
 
 [node name="RaceTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_hkt2a")

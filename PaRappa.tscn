@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://jerew3mi1vkn"]
+[gd_scene load_steps=5 format=3 uid="uid://jerew3mi1vkn"]
 
 [ext_resource type="ArrayMesh" uid="uid://bfarrgynw2ejg" path="res://PlayStation 2 - PaRappa the Rapper 2 - Fruites Dojo/Fruites Dojo/dojyo.obj" id="1_o5in6"]
 [ext_resource type="ArrayMesh" uid="uid://dnffg68hj4vli" path="res://PlayStation 2 - PaRappa the Rapper 2 - Fruites Dojo/Fruites Dojo/PlayStation 2 - PaRappa the Rapper 2 - Kotamanegi/Onion/ktmA.spmout.obj" id="2_3b8si"]
+
+[sub_resource type="Sky" id="Sky_3b8si"]
+
+[sub_resource type="Environment" id="Environment_juxh7"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_3b8si")
 
 [node name="Node3D" type="Node3D"]
 
@@ -14,4 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.24931, -1.19209e-07, -26.6
 mesh = ExtResource("2_3b8si")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.8029, 4.04784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.74894, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_juxh7")

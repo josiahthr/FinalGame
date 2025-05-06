@@ -145,3 +145,7 @@ func get_torque(rpm: float) -> float:
 	var x = (rpm - peak_rpm) / peak_rpm
 	var torque = max_torque * (1.0 - x * x)
 	return max(torque, 0.0)
+
+
+func get_lap_time() -> float:
+	return race_lap_time
