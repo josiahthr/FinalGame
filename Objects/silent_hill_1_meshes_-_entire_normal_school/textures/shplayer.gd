@@ -10,14 +10,19 @@ var current_target = null
 var has_key: bool = false
 
 @onready var gun := $Neck/Camera3D/Sketchfab_Scene
+@onready var gun_sight := $Neck/Camera3D/Sketchfab_Scene/RayCast3D
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
 @onready var _dialog : Control = $"../CanvasLayer/Dialog"
 @onready var yes_button := $"../CanvasLayer/Dialog/Yes"
 @onready var no_button := $"../CanvasLayer/Dialog/Button2"
+@onready var flash := $Neck/Camera3D/Sketchfab_Scene/MeshInstance3D
 @onready var god_light := $"../Sketchfab_model/root/GLTF_SceneRootNode/SM_InnerCourtyard_83/OmniLight3D"
+@export var tilt_angle_degrees: float = 20.0
+@export var tilt_duration: float = 0.05
 var current_yes_button : Button
 var current_no_button : Button
+var tween: Tween
 
 func _ready():
 	_dialog.continue_pressed.connect(_on_dialog_continue)
@@ -145,4 +150,17 @@ func _on_key_taken(picked_up: bool):
 		print("Could not find the door or method missing.")
 
 func gun_shoot():
-	print("shoot")
+	flash.show()
+	if tween and tween.is_running():
+		tween.kill()
+	tween = create_tween()
+	tween.tween_property(gun, "rotation_degrees:x", tilt_angle_degrees, tilt_duration)
+	tween.tween_property(gun, "rotation_degrees:x", 0.0, tilt_duration)
+	await get_tree().create_timer(0.5).timeout
+	flash.hide()
+	if gun_sight.is_colliding():
+		var target = gun_sight.get_collider()
+		if is_instance_valid(target):
+			if target.has_method("shot"):
+				print("shooting")
+				target.shot()

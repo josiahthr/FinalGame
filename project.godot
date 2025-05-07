@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 MainMenu="*res://MainMenu.tscn"
 CarSelection="*res://CarSelection.gd"
 CheckpointCount="*res://CheckpointCount.gd"
+Groanerstatus="*res://groanerstatus.gd"
 
 [input]
 
