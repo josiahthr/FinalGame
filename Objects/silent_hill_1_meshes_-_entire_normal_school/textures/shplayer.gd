@@ -9,6 +9,7 @@ var in_dialogue = false
 var current_target = null
 var has_key: bool = false
 
+@onready var gun := $Neck/Camera3D/Sketchfab_Scene
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
 @onready var _dialog : Control = $"../CanvasLayer/Dialog"
@@ -22,6 +23,8 @@ func _ready():
 	_dialog.continue_pressed.connect(_on_dialog_continue)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("shoot"):
+		gun_shoot()
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
@@ -140,3 +143,6 @@ func _on_key_taken(picked_up: bool):
 		door.set_has_key(true)
 	else:
 		print("Could not find the door or method missing.")
+
+func gun_shoot():
+	print("shoot")
