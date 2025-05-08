@@ -23,6 +23,7 @@ var has_key: bool = false
 var current_yes_button : Button
 var current_no_button : Button
 var tween: Tween
+var health = 20
 
 func _ready():
 	_dialog.continue_pressed.connect(_on_dialog_continue)
@@ -70,6 +71,8 @@ func _on_area_connect():
 		get_tree().change_scene_to_file("res://Scenes/I7.tscn")
 
 func _physics_process(delta: float) -> void:
+	if health <= 0:
+		print("player death")
 	if in_dialogue:
 		velocity.x = 0
 		velocity.z = 0
