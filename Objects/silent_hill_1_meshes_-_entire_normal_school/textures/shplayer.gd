@@ -26,7 +26,7 @@ var has_key: bool = false
 var current_yes_button : Button
 var current_no_button : Button
 var tween: Tween
-var health = 5
+var health = 20
 var death = false
 
 func _ready():
