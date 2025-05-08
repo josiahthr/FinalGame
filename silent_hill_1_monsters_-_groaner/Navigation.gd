@@ -14,3 +14,4 @@ func _physics_process(delta: float) -> void:
 		if direction.length() > 0.1:
 			look_at(next_position, Vector3.UP)
 		global_translate(direction * speed * delta)
+		
