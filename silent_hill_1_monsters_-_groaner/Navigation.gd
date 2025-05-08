@@ -12,13 +12,13 @@ var jump_end_time: float = 10
 var can_jump := true
 var jump_cooldown := 3.0
 var is_jumping := false
+var can_move = true
 
 func _physics_process(delta: float) -> void:
-	if player_in_sight and player and navigation:
+	if player_in_sight and player and navigation and can_move:
 		var distance_to_player = global_transform.origin.distance_to(player.global_transform.origin)
 		if distance_to_player <= 6:
 			start_jump_async()
-
 		navigation.set_target_position(player.global_transform.origin)
 		var next_position = navigation.get_next_path_position()
 		var direction = (next_position - global_transform.origin).normalized()

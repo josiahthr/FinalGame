@@ -12,6 +12,8 @@ var has_key: bool = false
 @onready var gun := $Neck/Camera3D/Sketchfab_Scene
 @onready var gun_sight := $Neck/Camera3D/Sketchfab_Scene/RayCast3D
 @onready var neck := $Neck
+@onready var gameover := $"../Control"
+@onready var dog := $"../NavigationRegion3D/Sketchfab_Scene3"
 @onready var camera := $Neck/Camera3D
 @onready var _dialog : Control = $"../CanvasLayer/Dialog"
 @onready var yes_button := $"../CanvasLayer/Dialog/Yes"
@@ -72,7 +74,9 @@ func _on_area_connect():
 
 func _physics_process(delta: float) -> void:
 	if health <= 0:
-		print("player death")
+		dog.can_move = false
+		await get_tree().create_timer(1).timeout
+		gameover.show()
 	if in_dialogue:
 		velocity.x = 0
 		velocity.z = 0

@@ -2,7 +2,7 @@ extends StaticBody3D
 
 signal dead
 
-var health = 15
+var health = 20
  
 
 
