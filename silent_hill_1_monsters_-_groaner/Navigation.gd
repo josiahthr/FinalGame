@@ -15,7 +15,7 @@ var is_jumping := false
 var can_move = true
 
 func _physics_process(delta: float) -> void:
-	if player_in_sight and player and navigation and can_move:
+	if player_in_sight and player and navigation and Groanerstatus.can_move == true:
 		var distance_to_player = global_transform.origin.distance_to(player.global_transform.origin)
 		if distance_to_player <= 6:
 			start_jump_async()

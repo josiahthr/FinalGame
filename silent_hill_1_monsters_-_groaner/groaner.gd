@@ -19,10 +19,11 @@ var idle = true
 func _ready() -> void:
 	if is_instance_valid(hitbox):
 		hitbox.dead.connect(on_enemy_dead)
+	
 	anim_player.play(current_animation)
 	anim_player.seek(idle_start_time, true)
 	set_process(true)
-	
+
 func _process(delta):
 	if anim_player.current_animation_position >= idle_end_time:
 		anim_player.seek(idle_start_time, true)

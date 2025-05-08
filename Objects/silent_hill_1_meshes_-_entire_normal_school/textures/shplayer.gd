@@ -12,7 +12,8 @@ var has_key: bool = false
 @onready var gun := $Neck/Camera3D/Sketchfab_Scene
 @onready var gun_sight := $Neck/Camera3D/Sketchfab_Scene/RayCast3D
 @onready var neck := $Neck
-@onready var gameover := $"../Control"
+@onready var fade_player := $"../Control/ColorRect/AnimationPlayer"
+@onready var fade_player_heading := $"../Control/Label/AnimationPlayer"
 @onready var dog := $"../NavigationRegion3D/Sketchfab_Scene3"
 @onready var camera := $Neck/Camera3D
 @onready var _dialog : Control = $"../CanvasLayer/Dialog"
@@ -25,7 +26,8 @@ var has_key: bool = false
 var current_yes_button : Button
 var current_no_button : Button
 var tween: Tween
-var health = 20
+var health = 5
+var death = false
 
 func _ready():
 	_dialog.continue_pressed.connect(_on_dialog_continue)
@@ -73,10 +75,10 @@ func _on_area_connect():
 		get_tree().change_scene_to_file("res://Scenes/I7.tscn")
 
 func _physics_process(delta: float) -> void:
-	if health <= 0:
-		dog.can_move = false
-		await get_tree().create_timer(1).timeout
-		gameover.show()
+	if health <= 0 and death == false:
+		print("we should be dying")
+		death = true
+		gameover_show()
 	if in_dialogue:
 		velocity.x = 0
 		velocity.z = 0
@@ -171,3 +173,11 @@ func gun_shoot():
 			if target.has_method("shot"):
 				print("shooting")
 				target.shot()
+				
+func gameover_show():
+	if death == true:
+		Groanerstatus.can_move = false
+		await get_tree().create_timer(1).timeout
+		print("were dying")
+		fade_player.play("fade_to_black")
+		fade_player_heading.play("Heading")
