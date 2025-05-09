@@ -15,6 +15,9 @@ var current_target = null
 @onready var ItemPickup := $"../ItemPickup"
 @onready var Item1 := $"../Sprite3D"
 @onready var Item2 := $"../Sprite3D2"
+@onready var Health := $"../Control/HEALTH"
+@onready var Armor := $"../Control/ARMOR"
+@onready var Ammo := $"../Control/AMMO"
 @onready var pistolfire := $"../Control/TextureRect2"
 var health = 100
 var armor = 0
@@ -61,7 +64,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		#get_tree().change_scene_to_file("res://Scenes/I7.tscn")
 
 func _physics_process(delta: float) -> void:
-	
+	Health.text = str(health, "%")
+	Armor.text = str(armor, "%")
+	Ammo.text = str(pistolammo)
 	if $Neck/Camera3D/SeeCast.is_colliding():
 		var target = $Neck/Camera3D/SeeCast.get_collider()
 		#uncomment for hovers
@@ -104,13 +109,17 @@ func gun_shoot():
 	await get_tree().create_timer(.1).timeout
 	pistolfire.hide()
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	Item1.queue_free()
-	ItemPickup.play()
-	print("health bonus")
 
-
-func _on_item_2_body_entered(body: Node3D) -> void:
-	Item2.queue_free()
-	ItemPickup.play()
-	print("health bonus")
+func apply_item_pickup(item_type: String, value: int) -> void:
+	match item_type:
+		"bonushealth":
+			health = health + value
+			print("Picked up health:", value)
+		"bonusarmor":
+			armor = armor + value
+			print("Picked up armor:", value)
+		"ammo":
+			pistolammo += value
+			print("Picked up ammo:", value)
+		_:
+			print("Unknown item type:", item_type)

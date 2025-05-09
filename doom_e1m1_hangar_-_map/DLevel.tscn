@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cfaih7n0xdf07"]
+[gd_scene load_steps=24 format=3 uid="uid://cfaih7n0xdf07"]
 
 [ext_resource type="PackedScene" uid="uid://cafinps2obi3" path="res://doom_e1m1_hangar_-_map/DoomMap.tscn" id="1_unj4t"]
 [ext_resource type="Script" uid="uid://2grrfwy2dib1" path="res://doom_e1m1_hangar_-_map/DoomPlayer.gd" id="2_3tvde"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://b35uhy3n5ckal" path="res://PistolFlash.png" id="8_qi2e7"]
 [ext_resource type="Texture2D" uid="uid://bexf7povikce" path="res://HealthBonus.png" id="12_v4s42"]
 [ext_resource type="AudioStream" uid="uid://cm2v04f0iapmj" path="res://dsitemup.wav" id="13_30qu6"]
+[ext_resource type="Script" uid="uid://cxmo125ah0u8y" path="res://doom_e1m1_hangar_-_map/BonusHealth.gd" id="13_dt05m"]
+[ext_resource type="Texture2D" uid="uid://ch8dk2mkh78id" path="res://ArmorBonus.png" id="14_sk7l1"]
+[ext_resource type="Script" uid="uid://cvprjlnj2ktye" path="res://doom_e1m1_hangar_-_map/BonusArmor.gd" id="15_skjf6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bmtwv"]
 
@@ -166,6 +169,7 @@ billboard = 1
 texture = ExtResource("12_v4s42")
 
 [node name="Area3D" type="Area3D" parent="Sprite3D"]
+script = ExtResource("13_dt05m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
@@ -177,14 +181,92 @@ billboard = 1
 texture = ExtResource("12_v4s42")
 
 [node name="Item2" type="Area3D" parent="Sprite3D2"]
+script = ExtResource("13_dt05m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D2/Item2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -5.62741, 0.541379, -168.531)
+billboard = 1
+texture = ExtResource("12_v4s42")
+
+[node name="Item3" type="Area3D" parent="Sprite3D3"]
+script = ExtResource("13_dt05m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D3/Item3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -6.6594, 0.541379, -165.226)
+billboard = 1
+texture = ExtResource("12_v4s42")
+
+[node name="Item4" type="Area3D" parent="Sprite3D4"]
+script = ExtResource("13_dt05m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D4/Item4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -6.6594, 0.541379, -158.008)
+billboard = 1
+texture = ExtResource("12_v4s42")
+
+[node name="Item4" type="Area3D" parent="Sprite3D5"]
+script = ExtResource("13_dt05m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D5/Item4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -5.79805, 0.541379, -154.987)
+billboard = 1
+texture = ExtResource("12_v4s42")
+
+[node name="Item4" type="Area3D" parent="Sprite3D6"]
+script = ExtResource("13_dt05m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D6/Item4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
+[node name="Sprite3D7" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -3.28623, 6.35127, -161.55)
+billboard = 1
+texture = ExtResource("14_sk7l1")
+
+[node name="Item4" type="Area3D" parent="Sprite3D7"]
+script = ExtResource("15_skjf6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D7/Item4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
+[node name="Sprite3D8" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, 2.43928, 6.35127, -161.55)
+billboard = 1
+texture = ExtResource("14_sk7l1")
+
+[node name="Item4" type="Area3D" parent="Sprite3D8"]
+script = ExtResource("15_skjf6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D8/Item4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
 shape = SubResource("BoxShape3D_v4s42")
 
 [node name="ItemPickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_30qu6")
 
-[connection signal="area_entered" from="Sprite3D/Area3D" to="CharacterBody3D" method="_on_area_3d_area_entered"]
-[connection signal="body_entered" from="Sprite3D/Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered"]
-[connection signal="body_entered" from="Sprite3D2/Item2" to="CharacterBody3D" method="_on_item_2_body_entered"]
+[connection signal="body_entered" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D2/Item2" to="Sprite3D2/Item2" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D3/Item3" to="Sprite3D3/Item3" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D4/Item4" to="Sprite3D4/Item4" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D5/Item4" to="Sprite3D5/Item4" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D6/Item4" to="Sprite3D6/Item4" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D7/Item4" to="Sprite3D7/Item4" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D8/Item4" to="Sprite3D8/Item4" method="_on_body_entered"]
