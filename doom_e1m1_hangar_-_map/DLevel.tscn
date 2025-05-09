@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cfaih7n0xdf07"]
+[gd_scene load_steps=26 format=3 uid="uid://cfaih7n0xdf07"]
 
 [ext_resource type="PackedScene" uid="uid://cafinps2obi3" path="res://doom_e1m1_hangar_-_map/DoomMap.tscn" id="1_unj4t"]
 [ext_resource type="Script" uid="uid://2grrfwy2dib1" path="res://doom_e1m1_hangar_-_map/DoomPlayer.gd" id="2_3tvde"]
@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://cxmo125ah0u8y" path="res://doom_e1m1_hangar_-_map/BonusHealth.gd" id="13_dt05m"]
 [ext_resource type="Texture2D" uid="uid://ch8dk2mkh78id" path="res://ArmorBonus.png" id="14_sk7l1"]
 [ext_resource type="Script" uid="uid://cvprjlnj2ktye" path="res://doom_e1m1_hangar_-_map/BonusArmor.gd" id="15_skjf6"]
+[ext_resource type="Texture2D" uid="uid://chige06k6aq81" path="res://Armor.png" id="16_skjf6"]
+[ext_resource type="Script" path="res://doom_e1m1_hangar_-_map/Armor.gd" id="17_d841k"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bmtwv"]
 
@@ -259,6 +261,18 @@ script = ExtResource("15_skjf6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
 shape = SubResource("BoxShape3D_v4s42")
 
+[node name="Sprite3D9" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, 11.2509, 7.19136, -161.829)
+billboard = 1
+texture = ExtResource("16_skjf6")
+
+[node name="Item4" type="Area3D" parent="Sprite3D9"]
+script = ExtResource("17_d841k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D9/Item4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
 [node name="ItemPickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_30qu6")
 
@@ -270,3 +284,4 @@ stream = ExtResource("13_30qu6")
 [connection signal="body_entered" from="Sprite3D6/Item4" to="Sprite3D6/Item4" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D7/Item4" to="Sprite3D7/Item4" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D8/Item4" to="Sprite3D8/Item4" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D9/Item4" to="Sprite3D9/Item4" method="_on_body_entered"]

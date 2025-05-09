@@ -114,12 +114,15 @@ func apply_item_pickup(item_type: String, value: int) -> void:
 	match item_type:
 		"bonushealth":
 			health = health + value
-			print("Picked up health:", value)
+			print("Picked up bonushealth:",  value)
 		"bonusarmor":
 			armor = armor + value
-			print("Picked up armor:", value)
+			print("Picked up bonusarmor:", value)
 		"ammo":
 			pistolammo += value
 			print("Picked up ammo:", value)
+		"armor":
+			armor = clamp(armor + value, 0, 100)
+			print("Picked up armor:", value)
 		_:
 			print("Unknown item type:", item_type)
