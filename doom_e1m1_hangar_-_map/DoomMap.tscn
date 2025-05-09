@@ -1,9 +1,11 @@
-[gd_scene load_steps=288 format=4 uid="uid://cafinps2obi3"]
+[gd_scene load_steps=290 format=4 uid="uid://cafinps2obi3"]
 
 [ext_resource type="Texture2D" uid="uid://dv0ank72407aa" path="res://doom_e1m1_hangar_-_map/textures/BIGDOOR2_baseColor.png" id="1_6p8ah"]
 [ext_resource type="Script" uid="uid://bxpb1s6ygauyg" path="res://doom_e1m1_hangar_-_map/Door1.gd" id="2_5u03r"]
 [ext_resource type="Texture2D" uid="uid://o6qoj3uiixke" path="res://doom_e1m1_hangar_-_map/textures/BIGDOOR4_baseColor.png" id="2_cyjs0"]
+[ext_resource type="AudioStream" uid="uid://cqadjvj1bnk5q" path="res://dsdoropn.wav" id="2_g6mnx"]
 [ext_resource type="Texture2D" uid="uid://uh10j2tln8xp" path="res://doom_e1m1_hangar_-_map/textures/BRNBIGC_baseColor.png" id="3_5u03r"]
+[ext_resource type="AudioStream" uid="uid://dyq0vb7n3uucy" path="res://dsdorcls.wav" id="3_m2ev5"]
 [ext_resource type="Texture2D" uid="uid://k4rinc7dcfdj" path="res://doom_e1m1_hangar_-_map/textures/BRNBIGL_baseColor.png" id="4_g6mnx"]
 [ext_resource type="Texture2D" uid="uid://cxbio77p5l45v" path="res://doom_e1m1_hangar_-_map/textures/BRNBIGR_baseColor.png" id="5_m2ev5"]
 [ext_resource type="Texture2D" uid="uid://b8x6vuaqcgokx" path="res://doom_e1m1_hangar_-_map/textures/BROWN1_baseColor.png" id="6_3qxch"]
@@ -2422,6 +2424,14 @@ transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 0, 0, 0)
 [node name="Object_2" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles"]
 mesh = SubResource("ArrayMesh_tipn3")
 skeleton = NodePath("")
+
+[node name="DoorOpen" type="AudioStreamPlayer" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_2"]
+stream = ExtResource("2_g6mnx")
+volume_db = -28.108
+
+[node name="DoorClose" type="AudioStreamPlayer" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_2"]
+stream = ExtResource("3_m2ev5")
+volume_db = -33.73
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_2"]
 script = ExtResource("2_5u03r")

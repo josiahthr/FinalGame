@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://css4ux5gbyjr0"]
+[gd_scene load_steps=35 format=3 uid="uid://css4ux5gbyjr0"]
 
 [ext_resource type="Script" uid="uid://dknk1vvoko8a0" path="res://Scenes/TitleCard.gd" id="1_18r7l"]
 [ext_resource type="Texture2D" uid="uid://cvxwamcv2nck0" path="res://textures/grey-barcode-carpet-stack-7087-in-architextures.jpg" id="1_a5pq2"]
@@ -75,6 +75,10 @@ viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i2e5a"]
 size = Vector3(7.98701, 3.13135, 4.59436)
+
+[sub_resource type="Environment" id="Environment_18r7l"]
+background_mode = 1
+background_color = Color(0.223103, 0.223103, 0.223103, 1)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_18r7l")
@@ -216,6 +220,9 @@ texture = SubResource("ViewportTexture_i2e5a")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MattressArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111591, 1.77244, -4.83296)
 shape = SubResource("BoxShape3D_i2e5a")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_18r7l")
 
 [connection signal="body_exited" from="MattressArea" to="Door/StaticBody3D2" method="_on_mattress_area_body_exited"]
 [connection signal="body_exited" from="MattressArea" to="Mattress/StaticBody3D" method="_on_mattress_area_body_exited"]

@@ -1,12 +1,69 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfaih7n0xdf07"]
+[gd_scene load_steps=21 format=3 uid="uid://cfaih7n0xdf07"]
 
 [ext_resource type="PackedScene" uid="uid://cafinps2obi3" path="res://doom_e1m1_hangar_-_map/DoomMap.tscn" id="1_unj4t"]
-[ext_resource type="Script" uid="uid://dc2eadqnjsrb2" path="res://Scripts/1splayer.gd" id="2_3ft0x"]
+[ext_resource type="Script" uid="uid://2grrfwy2dib1" path="res://doom_e1m1_hangar_-_map/DoomPlayer.gd" id="2_3tvde"]
+[ext_resource type="Texture2D" uid="uid://ckly0n3fre8mc" path="res://SNES - DOOM - HUD(1).png" id="3_3ft0x"]
+[ext_resource type="Texture2D" uid="uid://cc7nkcj8sxcwp" path="res://Pistol2.png" id="3_3nrio"]
+[ext_resource type="Texture2D" uid="uid://b82jef1mkugen" path="res://Pistol1.png" id="3_3tvde"]
+[ext_resource type="FontFile" uid="uid://dxk3snbbyvrm0" path="res://Dico.ttf" id="4_4rqas"]
+[ext_resource type="Texture2D" uid="uid://cg5736eegp6v8" path="res://Pistol3.png" id="5_v4s42"]
+[ext_resource type="Texture2D" uid="uid://ifbrrtgklcos" path="res://Pistol4.png" id="6_30qu6"]
+[ext_resource type="AudioStream" uid="uid://450amb4byfvs" path="res://dspistol.wav" id="6_j83yc"]
+[ext_resource type="Texture2D" uid="uid://q68sqodxjpbg" path="res://Pistol5.png" id="7_dt05m"]
+[ext_resource type="Texture2D" uid="uid://b35uhy3n5ckal" path="res://PistolFlash.png" id="8_qi2e7"]
+[ext_resource type="Texture2D" uid="uid://bexf7povikce" path="res://HealthBonus.png" id="12_v4s42"]
+[ext_resource type="AudioStream" uid="uid://cm2v04f0iapmj" path="res://dsitemup.wav" id="13_30qu6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bmtwv"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_apiq0"]
 points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
+
+[sub_resource type="Animation" id="Animation_skjf6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_3nrio")]
+}
+
+[sub_resource type="Animation" id="Animation_sk7l1"]
+resource_name = "shooting"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.7, 1.16667, 1.5, 1.82, 2.14, 2.52, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_30qu6"), ExtResource("3_3nrio"), ExtResource("5_v4s42"), ExtResource("6_30qu6"), ExtResource("7_dt05m"), ExtResource("7_dt05m"), ExtResource("5_v4s42"), ExtResource("5_v4s42"), ExtResource("3_3tvde")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d841k"]
+_data = {
+&"RESET": SubResource("Animation_skjf6"),
+&"shooting": SubResource("Animation_sk7l1")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_3tvde"]
+font = ExtResource("4_4rqas")
+font_size = 70
+font_color = Color(1, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v4s42"]
+size = Vector3(1.3385, 1.30066, 1.44678)
 
 [node name="Node3D" type="Node3D"]
 
@@ -15,7 +72,7 @@ transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -44.1228, 1.32407, -175.214)
-script = ExtResource("2_3ft0x")
+script = ExtResource("2_3tvde")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 mesh = SubResource("CapsuleMesh_bmtwv")
@@ -30,3 +87,104 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.621444, 0)
 
 [node name="SeeCast" type="RayCast3D" parent="CharacterBody3D/Neck/Camera3D"]
 transform = Transform3D(1.2576, 0, 0, 0, -1.4049e-07, -1.2576, 0, 3.21405, -5.49714e-08, 0, -0.0214442, 0)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect4" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 311.0
+offset_right = 684.0
+offset_bottom = 654.0
+mouse_filter = 2
+texture = ExtResource("3_3nrio")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/TextureRect4"]
+libraries = {
+&"": SubResource("AnimationLibrary_d841k")
+}
+speed_scale = 5.0
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 516.0
+offset_top = 236.0
+offset_right = 664.0
+offset_bottom = 415.0
+mouse_filter = 2
+texture = ExtResource("8_qi2e7")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 528.0
+offset_right = 301.0
+offset_bottom = 568.0
+scale = Vector2(3, 3)
+mouse_filter = 2
+texture = ExtResource("3_3ft0x")
+
+[node name="AMMO" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 544.0
+offset_right = 168.0
+offset_bottom = 623.0
+text = "200"
+label_settings = SubResource("LabelSettings_3tvde")
+
+[node name="HEALTH" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 546.0
+offset_right = 400.0
+offset_bottom = 625.0
+text = "100%"
+label_settings = SubResource("LabelSettings_3tvde")
+
+[node name="ARMOR" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 543.0
+offset_right = 882.0
+offset_bottom = 622.0
+text = "200%"
+label_settings = SubResource("LabelSettings_3tvde")
+
+[node name="PistolShoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_j83yc")
+volume_db = -29.982
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -63.8813, 0.991942, -175.649)
+billboard = 1
+texture = ExtResource("12_v4s42")
+
+[node name="Area3D" type="Area3D" parent="Sprite3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -37.0098, 0.991942, -175.649)
+billboard = 1
+texture = ExtResource("12_v4s42")
+
+[node name="Item2" type="Area3D" parent="Sprite3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D2/Item2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
+[node name="ItemPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_30qu6")
+
+[connection signal="area_entered" from="Sprite3D/Area3D" to="CharacterBody3D" method="_on_area_3d_area_entered"]
+[connection signal="body_entered" from="Sprite3D/Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Sprite3D2/Item2" to="CharacterBody3D" method="_on_item_2_body_entered"]

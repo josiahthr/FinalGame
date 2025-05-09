@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c05rcbl6qhemr"]
+[gd_scene load_steps=35 format=3 uid="uid://c05rcbl6qhemr"]
 
 [ext_resource type="Texture2D" uid="uid://cvxwamcv2nck0" path="res://textures/grey-barcode-carpet-stack-7087-in-architextures.jpg" id="1_afdoe"]
 [ext_resource type="Script" uid="uid://dknk1vvoko8a0" path="res://Scenes/TitleCard.gd" id="1_c0bmx"]
@@ -84,6 +84,10 @@ points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.
 albedo_texture = ExtResource("4_qrpcf")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_p8edm"]
+
+[sub_resource type="Environment" id="Environment_xpw8u"]
+background_mode = 1
+background_color = Color(0.458405, 0.458405, 0.458405, 1)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_c0bmx")
@@ -208,3 +212,6 @@ transform = Transform3D(-0.299996, 0, 0.00150794, 0, 0.3, 0, -0.00150794, 0, -0.
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_xpw8u")
 volume_db = -6.933
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xpw8u")

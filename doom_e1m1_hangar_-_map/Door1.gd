@@ -4,6 +4,8 @@ var is_tilted: bool = false
 @export var tilt_angle_degrees: float = 3.0
 @export var tilt_duration: float = 2
 @onready var door :=  $".."
+@onready var dooropen :=  $"../DoorOpen"
+@onready var doorclose :=  $"../DoorClose"
 var tween: Tween
 
 func interact():
@@ -13,13 +15,11 @@ func interact():
 
 	tween = create_tween()
 	if not is_tilted:
+		dooropen.play()
 		tween.tween_property(door, "rotation_degrees:y", tilt_angle_degrees, tilt_duration)
 		is_tilted = true
-
-		await get_tree().create_timer(5).timeout  # Wait 5 seconds
+		await get_tree().create_timer(5).timeout
 		tween = create_tween()
-		tween.tween_property(door, "rotation_degrees:y", 0.0, tilt_duration)
-		is_tilted = false
-	else:
+		doorclose.play()
 		tween.tween_property(door, "rotation_degrees:y", 0.0, tilt_duration)
 		is_tilted = false

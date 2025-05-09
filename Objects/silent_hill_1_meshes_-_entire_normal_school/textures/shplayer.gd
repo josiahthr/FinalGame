@@ -15,6 +15,7 @@ var has_key: bool = false
 @onready var fade_player := $"../Control/ColorRect/AnimationPlayer"
 @onready var fade_player_heading := $"../Control/Label/AnimationPlayer"
 @onready var dog := $"../NavigationRegion3D/Sketchfab_Scene3"
+@onready var Gun := $"../GunShot"
 @onready var camera := $Neck/Camera3D
 @onready var _dialog : Control = $"../CanvasLayer/Dialog"
 @onready var yes_button := $"../CanvasLayer/Dialog/Yes"
@@ -35,6 +36,7 @@ func _ready():
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot"):
 		gun_shoot()
+
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
@@ -160,6 +162,7 @@ func _on_key_taken(picked_up: bool):
 
 func gun_shoot():
 	flash.show()
+	Gun.play()
 	if tween and tween.is_running():
 		tween.kill()
 	tween = create_tween()

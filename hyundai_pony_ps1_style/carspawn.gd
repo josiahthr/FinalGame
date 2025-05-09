@@ -16,20 +16,14 @@ var best_lap_time = 0.0
 func _ready() -> void:
 		var car_scene = load(CarSelection.selected_car_scene)
 		var car_instance = car_scene.instantiate()
-
 		var position = Vector3(11.639, 0.196, -2.839)
-
 		var rotation_degrees = Vector3(-1.8, -4.3, 3.0)
 		var rotation_radians = rotation_degrees * (PI / 180.0)
 		var rotation = rotation_degrees * (PI / 180.0)
 		var basis = Basis.from_euler(rotation_radians)
-
-
 		var transform = Transform3D(basis, position)
 		car_instance.global_transform = transform
-
 		add_child(car_instance)
-
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.has_method("get_lap_time"):
@@ -55,9 +49,8 @@ func _physics_process(delta: float) -> void:
 	if current_lap == 2 and not has_finished:
 		finish_race()
 
-
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://PaRappa.tscn")
+	get_tree().change_scene_to_file("res://doom_e1m1_hangar_-_map/DLevel.tscn")
 	
 func finish_race():
 	has_finished = true
@@ -74,8 +67,6 @@ func finish_race():
 	else:
 		print("Audio stream player not valid.")
 	
-
-
 func _on_button_2_pressed() -> void:
 	CheckpointCount.finished = false
 	get_tree().change_scene_to_file("res://hyundai_pony_ps1_style/cartest.tscn")
