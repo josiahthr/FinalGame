@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cfaih7n0xdf07"]
+[gd_scene load_steps=54 format=3 uid="uid://cfaih7n0xdf07"]
 
 [ext_resource type="PackedScene" uid="uid://cafinps2obi3" path="res://doom_e1m1_hangar_-_map/DoomMap.tscn" id="1_unj4t"]
 [ext_resource type="Script" uid="uid://2grrfwy2dib1" path="res://doom_e1m1_hangar_-_map/DoomPlayer.gd" id="2_3tvde"]
@@ -29,7 +29,14 @@
 [ext_resource type="Texture2D" uid="uid://ch0kp14wvmebb" path="res://WoundGuy2.png" id="19_wpb2l"]
 [ext_resource type="AudioStream" uid="uid://bxwvq45foykgk" path="res://dsoof.wav" id="20_78j3l"]
 [ext_resource type="Texture2D" uid="uid://clp120fd65yxn" path="res://WoundGuy3.png" id="20_e2mb2"]
+[ext_resource type="Texture2D" uid="uid://bvm58oml1dcb2" path="res://InjuredGuy1.png" id="21_4dwvj"]
 [ext_resource type="AudioStream" uid="uid://b836nlxu4mc3q" path="res://dspldeth.wav" id="21_twxs6"]
+[ext_resource type="Texture2D" uid="uid://bb88482nwecw" path="res://InjuredGuy2.png" id="22_uqtuy"]
+[ext_resource type="Texture2D" uid="uid://5s6sag12gxl7" path="res://InjuredGuy3.png" id="23_2mv2o"]
+[ext_resource type="Texture2D" uid="uid://c60n0e01w7eq2" path="res://DyingGuy1.png" id="24_uqtuy"]
+[ext_resource type="Texture2D" uid="uid://hid42rjimsjc" path="res://DyingGuy2.png" id="25_2mv2o"]
+[ext_resource type="Texture2D" uid="uid://cg2rqereoi2l7" path="res://DyingGuy3.png" id="26_2hgeb"]
+[ext_resource type="Texture2D" uid="uid://cnwdephwyq33l" path="res://DeadGuy.png" id="27_lhwqt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d841k"]
 size = Vector3(721.709, 5.96918, 617.99)
@@ -145,11 +152,61 @@ tracks/0/keys = {
 "values": [ExtResource("18_dj578"), ExtResource("19_wpb2l"), ExtResource("20_e2mb2")]
 }
 
+[sub_resource type="Animation" id="Animation_2hgeb"]
+resource_name = "injured"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.46667, 2.56667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("21_4dwvj"), ExtResource("22_uqtuy"), ExtResource("23_2mv2o")]
+}
+
+[sub_resource type="Animation" id="Animation_2mv2o"]
+resource_name = "dying"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3, 2.63333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("24_uqtuy"), ExtResource("25_2mv2o"), ExtResource("26_2hgeb")]
+}
+
+[sub_resource type="Animation" id="Animation_lhwqt"]
+resource_name = "dead"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("27_lhwqt")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lp0fj"]
 _data = {
 &"RESET": SubResource("Animation_uc1y8"),
+&"dead": SubResource("Animation_lhwqt"),
+&"dying": SubResource("Animation_2mv2o"),
 &"hurt": SubResource("Animation_lp0fj"),
 &"idle": SubResource("Animation_21ukj"),
+&"injured": SubResource("Animation_2hgeb"),
 &"wounded": SubResource("Animation_lht71")
 }
 

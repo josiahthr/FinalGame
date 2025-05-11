@@ -77,6 +77,8 @@ func _process(_delta):
 	face_anim.get_animation("idle").loop = true
 	face_anim.get_animation("hurt").loop = true
 	face_anim.get_animation("wounded").loop = true
+	face_anim.get_animation("injured").loop = true
+	face_anim.get_animation("dying").loop = true
 
 func _physics_process(delta: float) -> void:
 	if health == 0:
@@ -176,8 +178,14 @@ func update_face_animation():
 		new_anim = "idle"
 	elif health >= 60 and health <= 79:
 		new_anim = "hurt"
-	else:
+	elif health >= 40 and health <= 59:
 		new_anim = "wounded"
+	elif health >= 20 and health <= 39:
+		new_anim = "injured"
+	elif health >= 1 and health <= 19:
+		new_anim = "dying"
+	elif health == 0:
+		new_anim = "dead"
 
 	if new_anim != current_face_anim:
 		current_face_anim = new_anim
