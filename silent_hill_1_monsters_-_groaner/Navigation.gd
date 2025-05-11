@@ -13,6 +13,8 @@ var can_jump := true
 var jump_cooldown := 3.0
 var is_jumping := false
 var can_move = true
+var idle_start_time = 15.5
+var idle_end_time = 16.5
 
 func _physics_process(delta: float) -> void:
 	if player_in_sight and player and navigation and Groanerstatus.can_move == true:
@@ -47,7 +49,8 @@ func start_jump_async() -> void:
 		local_anim.play(current_animation)
 		local_anim.seek(jump_start_time, true)
 		await get_tree().create_timer(1.5).timeout 
-		local_anim.stop()
+		local_anim.seek(idle_start_time, true)
+		local_anim.play(current_animation)
 		is_jumping = false
 		await get_tree().create_timer(jump_cooldown).timeout
 		can_jump = true
