@@ -1,4 +1,4 @@
-[gd_scene load_steps=290 format=4 uid="uid://cafinps2obi3"]
+[gd_scene load_steps=291 format=4 uid="uid://cafinps2obi3"]
 
 [ext_resource type="Texture2D" uid="uid://dv0ank72407aa" path="res://doom_e1m1_hangar_-_map/textures/BIGDOOR2_baseColor.png" id="1_6p8ah"]
 [ext_resource type="Script" uid="uid://bxpb1s6ygauyg" path="res://doom_e1m1_hangar_-_map/Door1.gd" id="2_5u03r"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dinqpvvxyikpj" path="res://doom_e1m1_hangar_-_map/textures/CEIL3_5_baseColor.png" id="10_1ymin"]
 [ext_resource type="Texture2D" uid="uid://cbyto57kx6ojv" path="res://doom_e1m1_hangar_-_map/textures/CEIL5_1_baseColor.png" id="11_ar2sp"]
 [ext_resource type="Texture2D" uid="uid://bpja80kt84tvm" path="res://doom_e1m1_hangar_-_map/textures/CEIL5_2_baseColor.png" id="12_fbdep"]
+[ext_resource type="Script" uid="uid://c8wasoiqsa4up" path="res://doom_e1m1_hangar_-_map/HiddenDoor.gd" id="12_m2ev5"]
 [ext_resource type="Texture2D" uid="uid://cmnnfgpc6mdoo" path="res://doom_e1m1_hangar_-_map/textures/COMPSPAN_baseColor.png" id="13_tl7py"]
 [ext_resource type="Texture2D" uid="uid://n0bwrmwiay25" path="res://doom_e1m1_hangar_-_map/textures/COMPTALL_baseColor.png" id="14_mv4bg"]
 [ext_resource type="Texture2D" uid="uid://duiw4erf3pfwb" path="res://doom_e1m1_hangar_-_map/textures/COMPTILE_baseColor.png" id="15_mgb3u"]
@@ -2416,6 +2417,14 @@ data = PackedVector3Array(-2240, 4096, -24, -2368, 3968, -24, -2240, 3968, -24, 
 [node name="Sketchfab_Scene" type="Node3D"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 0, 0)
 
+[node name="DoorClose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m2ev5")
+volume_db = -33.73
+
+[node name="DoorOpen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_g6mnx")
+volume_db = -28.108
+
 [node name="Sketchfab_model" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 0, 0, 0)
 
@@ -2424,14 +2433,6 @@ transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 0, 0, 0)
 [node name="Object_2" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles"]
 mesh = SubResource("ArrayMesh_tipn3")
 skeleton = NodePath("")
-
-[node name="DoorOpen" type="AudioStreamPlayer" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_2"]
-stream = ExtResource("2_g6mnx")
-volume_db = -28.108
-
-[node name="DoorClose" type="AudioStreamPlayer" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_2"]
-stream = ExtResource("3_m2ev5")
-volume_db = -33.73
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_2"]
 script = ExtResource("2_5u03r")
@@ -2444,6 +2445,7 @@ mesh = SubResource("ArrayMesh_46qhp")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_3"]
+script = ExtResource("2_5u03r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_5u03r")
@@ -2498,6 +2500,7 @@ mesh = SubResource("ArrayMesh_iylnk")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_9"]
+script = ExtResource("12_m2ev5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_9/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_a2d0s")

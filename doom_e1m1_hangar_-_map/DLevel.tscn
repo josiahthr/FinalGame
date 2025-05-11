@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://cfaih7n0xdf07"]
+[gd_scene load_steps=30 format=3 uid="uid://cfaih7n0xdf07"]
 
 [ext_resource type="PackedScene" uid="uid://cafinps2obi3" path="res://doom_e1m1_hangar_-_map/DoomMap.tscn" id="1_unj4t"]
 [ext_resource type="Script" uid="uid://2grrfwy2dib1" path="res://doom_e1m1_hangar_-_map/DoomPlayer.gd" id="2_3tvde"]
+[ext_resource type="Script" uid="uid://bs5dimishadt3" path="res://doom_e1m1_hangar_-_map/acid.gd" id="2_xid2a"]
 [ext_resource type="Texture2D" uid="uid://ckly0n3fre8mc" path="res://SNES - DOOM - HUD(1).png" id="3_3ft0x"]
 [ext_resource type="Texture2D" uid="uid://cc7nkcj8sxcwp" path="res://Pistol2.png" id="3_3nrio"]
 [ext_resource type="Texture2D" uid="uid://b82jef1mkugen" path="res://Pistol1.png" id="3_3tvde"]
@@ -18,6 +19,11 @@
 [ext_resource type="Script" uid="uid://cvprjlnj2ktye" path="res://doom_e1m1_hangar_-_map/BonusArmor.gd" id="15_skjf6"]
 [ext_resource type="Texture2D" uid="uid://chige06k6aq81" path="res://Armor.png" id="16_skjf6"]
 [ext_resource type="Script" path="res://doom_e1m1_hangar_-_map/Armor.gd" id="17_d841k"]
+[ext_resource type="AudioStream" uid="uid://bxwvq45foykgk" path="res://dsoof.wav" id="20_78j3l"]
+[ext_resource type="AudioStream" uid="uid://b836nlxu4mc3q" path="res://dspldeth.wav" id="21_twxs6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d841k"]
+size = Vector3(721.709, 5.96918, 617.99)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bmtwv"]
 
@@ -74,6 +80,22 @@ size = Vector3(1.3385, 1.30066, 1.44678)
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_unj4t")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+
+[node name="ACID" type="Area3D" parent="Sketchfab_Scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2849.14, 0, -3188.7)
+script = ExtResource("2_xid2a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/ACID"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -263.935, -46.6452, -128.924)
+shape = SubResource("BoxShape3D_d841k")
+
+[node name="ACID2" type="Area3D" parent="Sketchfab_Scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1525.32, -24.2007, -3188.7)
+script = ExtResource("2_xid2a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/ACID2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -263.935, -46.6452, -128.924)
+shape = SubResource("BoxShape3D_d841k")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -44.1228, 1.32407, -175.214)
@@ -249,6 +271,54 @@ script = ExtResource("15_skjf6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
 shape = SubResource("BoxShape3D_v4s42")
 
+[node name="Sprite3D10" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -22.879, 0.310465, -155.779)
+billboard = 1
+texture = ExtResource("14_sk7l1")
+
+[node name="Item4" type="Area3D" parent="Sprite3D10"]
+script = ExtResource("15_skjf6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D10/Item4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
+[node name="Sprite3D12" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -36.2341, 0.455575, -148.441)
+billboard = 1
+texture = ExtResource("14_sk7l1")
+
+[node name="Item4" type="Area3D" parent="Sprite3D12"]
+script = ExtResource("15_skjf6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D12/Item4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
+[node name="Sprite3D13" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -48.0209, 0.455575, -145.696)
+billboard = 1
+texture = ExtResource("14_sk7l1")
+
+[node name="Item4" type="Area3D" parent="Sprite3D13"]
+script = ExtResource("15_skjf6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D13/Item4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
+[node name="Sprite3D11" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -22.879, 0.310465, -167.684)
+billboard = 1
+texture = ExtResource("14_sk7l1")
+
+[node name="Item4" type="Area3D" parent="Sprite3D11"]
+script = ExtResource("15_skjf6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D11/Item4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
 [node name="Sprite3D8" type="Sprite3D" parent="."]
 transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, 2.43928, 6.35127, -161.55)
 billboard = 1
@@ -276,6 +346,18 @@ shape = SubResource("BoxShape3D_v4s42")
 [node name="ItemPickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_30qu6")
 
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AcidDamage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_78j3l")
+volume_db = -29.045
+
+[node name="Death1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_twxs6")
+volume_db = -32.793
+
+[connection signal="body_entered" from="Sketchfab_Scene/ACID" to="Sketchfab_Scene/ACID" method="_on_body_entered"]
+[connection signal="body_entered" from="Sketchfab_Scene/ACID2" to="Sketchfab_Scene/ACID2" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D2/Item2" to="Sprite3D2/Item2" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D3/Item3" to="Sprite3D3/Item3" method="_on_body_entered"]
@@ -283,5 +365,9 @@ stream = ExtResource("13_30qu6")
 [connection signal="body_entered" from="Sprite3D5/Item4" to="Sprite3D5/Item4" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D6/Item4" to="Sprite3D6/Item4" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D7/Item4" to="Sprite3D7/Item4" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D10/Item4" to="Sprite3D10/Item4" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D12/Item4" to="Sprite3D12/Item4" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D13/Item4" to="Sprite3D13/Item4" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D11/Item4" to="Sprite3D11/Item4" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D8/Item4" to="Sprite3D8/Item4" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D9/Item4" to="Sprite3D9/Item4" method="_on_body_entered"]
