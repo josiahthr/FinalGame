@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cfaih7n0xdf07"]
+[gd_scene load_steps=44 format=3 uid="uid://cfaih7n0xdf07"]
 
 [ext_resource type="PackedScene" uid="uid://cafinps2obi3" path="res://doom_e1m1_hangar_-_map/DoomMap.tscn" id="1_unj4t"]
 [ext_resource type="Script" uid="uid://2grrfwy2dib1" path="res://doom_e1m1_hangar_-_map/DoomPlayer.gd" id="2_3tvde"]
@@ -12,14 +12,23 @@
 [ext_resource type="AudioStream" uid="uid://450amb4byfvs" path="res://dspistol.wav" id="6_j83yc"]
 [ext_resource type="Texture2D" uid="uid://q68sqodxjpbg" path="res://Pistol5.png" id="7_dt05m"]
 [ext_resource type="Texture2D" uid="uid://b35uhy3n5ckal" path="res://PistolFlash.png" id="8_qi2e7"]
+[ext_resource type="Texture2D" uid="uid://2v37la0cfix4" path="res://DoomGuy.png" id="12_urdma"]
 [ext_resource type="Texture2D" uid="uid://bexf7povikce" path="res://HealthBonus.png" id="12_v4s42"]
+[ext_resource type="Texture2D" uid="uid://j15nyikyr11v" path="res://DoomGuy2.png" id="13_25u56"]
 [ext_resource type="AudioStream" uid="uid://cm2v04f0iapmj" path="res://dsitemup.wav" id="13_30qu6"]
 [ext_resource type="Script" uid="uid://cxmo125ah0u8y" path="res://doom_e1m1_hangar_-_map/BonusHealth.gd" id="13_dt05m"]
+[ext_resource type="Texture2D" uid="uid://clktmv31t0kxs" path="res://DoomGuy3.png" id="14_08yq8"]
 [ext_resource type="Texture2D" uid="uid://ch8dk2mkh78id" path="res://ArmorBonus.png" id="14_sk7l1"]
+[ext_resource type="Texture2D" uid="uid://dfcnccttt4xim" path="res://HurtGuy1.png" id="15_21ukj"]
 [ext_resource type="Script" uid="uid://cvprjlnj2ktye" path="res://doom_e1m1_hangar_-_map/BonusArmor.gd" id="15_skjf6"]
 [ext_resource type="Texture2D" uid="uid://chige06k6aq81" path="res://Armor.png" id="16_skjf6"]
+[ext_resource type="Texture2D" uid="uid://by3l1rlwuja4s" path="res://HurtGuy2.png" id="16_uc1y8"]
 [ext_resource type="Script" path="res://doom_e1m1_hangar_-_map/Armor.gd" id="17_d841k"]
+[ext_resource type="Texture2D" uid="uid://cuoq780fxejkh" path="res://HurtGuy3.png" id="17_uc1y8"]
+[ext_resource type="Texture2D" uid="uid://dplucbvcoigc6" path="res://WoundGuy1.png" id="18_dj578"]
+[ext_resource type="Texture2D" uid="uid://ch0kp14wvmebb" path="res://WoundGuy2.png" id="19_wpb2l"]
 [ext_resource type="AudioStream" uid="uid://bxwvq45foykgk" path="res://dsoof.wav" id="20_78j3l"]
+[ext_resource type="Texture2D" uid="uid://clp120fd65yxn" path="res://WoundGuy3.png" id="20_e2mb2"]
 [ext_resource type="AudioStream" uid="uid://b836nlxu4mc3q" path="res://dspldeth.wav" id="21_twxs6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d841k"]
@@ -72,6 +81,77 @@ font = ExtResource("4_4rqas")
 font_size = 70
 font_color = Color(1, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_21ukj"]
+resource_name = "idle"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3, 2.4, 3.46667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("12_urdma"), ExtResource("13_25u56"), ExtResource("12_urdma"), ExtResource("14_08yq8")]
+}
+
+[sub_resource type="Animation" id="Animation_uc1y8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_urdma")]
+}
+
+[sub_resource type="Animation" id="Animation_lp0fj"]
+resource_name = "hurt"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.26667, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("15_21ukj"), ExtResource("16_uc1y8"), ExtResource("17_uc1y8")]
+}
+
+[sub_resource type="Animation" id="Animation_lht71"]
+resource_name = "wounded"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 2.76667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_dj578"), ExtResource("19_wpb2l"), ExtResource("20_e2mb2")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lp0fj"]
+_data = {
+&"RESET": SubResource("Animation_uc1y8"),
+&"hurt": SubResource("Animation_lp0fj"),
+&"idle": SubResource("Animation_21ukj"),
+&"wounded": SubResource("Animation_lht71")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v4s42"]
 size = Vector3(1.3385, 1.30066, 1.44678)
@@ -182,6 +262,20 @@ offset_right = 882.0
 offset_bottom = 622.0
 text = "200%"
 label_settings = SubResource("LabelSettings_3tvde")
+
+[node name="TextureRect3" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 533.0
+offset_right = 463.0
+offset_bottom = 571.0
+scale = Vector2(3, 3)
+texture = ExtResource("12_urdma")
+
+[node name="IDLE" type="AnimationPlayer" parent="Control/TextureRect3"]
+libraries = {
+&"": SubResource("AnimationLibrary_lp0fj")
+}
 
 [node name="PistolShoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_j83yc")

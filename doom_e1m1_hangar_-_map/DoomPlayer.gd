@@ -23,12 +23,14 @@ var current_target = null
 @onready var pistolfire := $"../Control/TextureRect2"
 @onready var AcidDamage := $"../AcidDamage"
 @onready var Death1 := $"../Death1"
-var health = 5
+@onready var face_anim := $"../Control/TextureRect3/IDLE"
+var health = 100
 var armor = 0
 var pistolammo = 50
 var acid = false
 var dead = false
 var firstdead = false
+var current_face_anim = ""
 #@onready var _dialog : Control = $"../CanvasLayer/Dialog"
 
 #func _ready():
@@ -69,6 +71,12 @@ func _unhandled_input(event: InputEvent) -> void:
 #func _on_area_connect():
 	#if current_target and current_target.has_method("change_area"):
 		#get_tree().change_scene_to_file("res://Scenes/I7.tscn")
+
+func _process(_delta):
+	update_face_animation()
+	face_anim.get_animation("idle").loop = true
+	face_anim.get_animation("hurt").loop = true
+	face_anim.get_animation("wounded").loop = true
 
 func _physics_process(delta: float) -> void:
 	if health == 0:
@@ -160,3 +168,17 @@ func lowergun():
 	var target_ui_pos = pistol.position + Vector2(0, 220)
 	tween = create_tween()
 	tween.tween_property(pistol, "position", target_ui_pos, tilt_duration)
+	
+func update_face_animation():
+	var new_anim = ""
+
+	if health >= 80:
+		new_anim = "idle"
+	elif health >= 60 and health <= 79:
+		new_anim = "hurt"
+	else:
+		new_anim = "wounded"
+
+	if new_anim != current_face_anim:
+		current_face_anim = new_anim
+		face_anim.play(current_face_anim)
