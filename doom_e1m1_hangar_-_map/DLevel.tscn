@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cfaih7n0xdf07"]
+[gd_scene load_steps=55 format=3 uid="uid://cfaih7n0xdf07"]
 
 [ext_resource type="PackedScene" uid="uid://cafinps2obi3" path="res://doom_e1m1_hangar_-_map/DoomMap.tscn" id="1_unj4t"]
 [ext_resource type="Script" uid="uid://2grrfwy2dib1" path="res://doom_e1m1_hangar_-_map/DoomPlayer.gd" id="2_3tvde"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://hid42rjimsjc" path="res://DyingGuy2.png" id="25_2mv2o"]
 [ext_resource type="Texture2D" uid="uid://cg2rqereoi2l7" path="res://DyingGuy3.png" id="26_2hgeb"]
 [ext_resource type="Texture2D" uid="uid://cnwdephwyq33l" path="res://DeadGuy.png" id="27_lhwqt"]
+[ext_resource type="AudioStream" uid="uid://dmtgfoib0l0uu" path="res://Doom OST - E1M1 - At Doom's Gate.mp3" id="38_tix41"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d841k"]
 size = Vector3(721.709, 5.96918, 617.99)
@@ -506,6 +507,12 @@ volume_db = -29.045
 [node name="Death1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_twxs6")
 volume_db = -32.793
+
+[node name="DoomMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("38_tix41")
+volume_db = -32.793
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Sketchfab_Scene/ACID" to="Sketchfab_Scene/ACID" method="_on_body_entered"]
 [connection signal="body_entered" from="Sketchfab_Scene/ACID2" to="Sketchfab_Scene/ACID2" method="_on_body_entered"]
