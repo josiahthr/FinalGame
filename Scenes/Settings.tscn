@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnt72rm6geo0j"]
+[gd_scene load_steps=9 format=3 uid="uid://bnt72rm6geo0j"]
 
-[ext_resource type="FontFile" uid="uid://ddk7sbjn2qits" path="res://Fonts/QuentonSerif_PERSONAL_USE_ONLY.ttf" id="1_bvb5x"]
 [ext_resource type="Script" uid="uid://dmgc25u1d1la7" path="res://Scenes/settingseffect.gd" id="1_ppjuv"]
 [ext_resource type="Texture2D" uid="uid://cc8ktasvwsl17" path="res://Images/Untitled.png" id="2_mx4kw"]
 [ext_resource type="Texture2D" uid="uid://bahyb06l536jt" path="res://Images/click.png" id="3_37a8j"]
@@ -9,8 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://bddnpm6vwdmhh" path="res://menu.mp3" id="7_ipgag"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2fv1l"]
-font = ExtResource("1_bvb5x")
-font_size = 35
+font_size = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_mjqtt"]
 font_size = 30
@@ -38,6 +36,15 @@ offset_left = 471.0
 offset_top = 36.0
 offset_right = 667.0
 offset_bottom = 117.0
+text = "Settings"
+label_settings = SubResource("LabelSettings_2fv1l")
+
+[node name="Value" type="Label" parent="."]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 189.0
+offset_right = 342.0
+offset_bottom = 270.0
 text = "Settings"
 label_settings = SubResource("LabelSettings_2fv1l")
 
@@ -74,5 +81,6 @@ label_settings = SubResource("LabelSettings_mjqtt")
 stream = ExtResource("7_ipgag")
 volume_db = -7.924
 
+[connection signal="drag_ended" from="HSlider" to="HSlider" method="_on_drag_ended"]
 [connection signal="mouse_exited" from="HSlider" to="HSlider" method="_on_mouse_exited"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

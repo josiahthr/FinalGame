@@ -1,6 +1,8 @@
 extends Node
 
 @onready var player: AudioStreamPlayer = $AudioStreamPlayer
+var sensitivity: float = 0.0025
+
 
 func play_music(stream: AudioStream, force_restart := false) -> void:
 	if force_restart or player.stream != stream:

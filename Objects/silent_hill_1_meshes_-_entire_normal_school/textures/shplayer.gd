@@ -4,7 +4,7 @@ extends CharacterBody3D
 var SPEED = 10.0
 const JUMP_VELOCITY = 10
 
-@export var mouse_sensitivity: float = 0.002
+@export var mouse_sensitivity: = MainMenu.sensitivity
 var in_dialogue = false
 var current_target = null
 var has_key: bool = false
@@ -14,9 +14,12 @@ var has_key: bool = false
 @onready var neck := $Neck
 @onready var fade_player := $"../Control/ColorRect/AnimationPlayer"
 @onready var fade_player_heading := $"../Control/Label/AnimationPlayer"
+@onready var fade_player_button := $"../Control/Button/AnimationPlayer"
+@onready var fade_player_button2 := $"../Control/Button2/AnimationPlayer"
 @onready var dog := $"../NavigationRegion3D/Sketchfab_Scene3"
 @onready var Gun := $"../GunShot"
 @onready var camera := $Neck/Camera3D
+@onready var gameover := $"../Control/Label"
 @onready var _dialog : Control = $"../CanvasLayer/Dialog"
 @onready var yes_button := $"../CanvasLayer/Dialog/Yes"
 @onready var no_button := $"../CanvasLayer/Dialog/Button2"
@@ -27,10 +30,13 @@ var has_key: bool = false
 var current_yes_button : Button
 var current_no_button : Button
 var tween: Tween
-var health = 20
+var health = 5
 var death = false
 
 func _ready():
+	Groanerstatus.alive = true
+	Groanerstatus.can_move = true
+	gameover.hide()
 	_dialog.continue_pressed.connect(_on_dialog_continue)
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -182,5 +188,8 @@ func gameover_show():
 		Groanerstatus.can_move = false
 		await get_tree().create_timer(1).timeout
 		print("were dying")
+		gameover.show()
 		fade_player.play("fade_to_black")
 		fade_player_heading.play("Heading")
+		fade_player_button.play("new_animation")
+		fade_player_button2.play("new_animation")

@@ -4,7 +4,7 @@ extends CharacterBody3D
 var SPEED = 10
 const JUMP_VELOCITY = 6
 
-@export var mouse_sensitivity: float = 0.002
+@export var mouse_sensitivity: = MainMenu.sensitivity
 var in_dialogue = false
 var current_target = null
 var end_dialogue = false
@@ -13,6 +13,7 @@ var end_dialogue = false
 @onready var _dialog : Control = $"../CanvasLayer/Dialog"
 
 func _ready():
+	print(MainMenu.sensitivity)
 	_dialog.continue_pressed.connect(_on_dialog_continue)
 
 func _unhandled_input(event: InputEvent) -> void:

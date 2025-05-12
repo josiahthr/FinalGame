@@ -7,7 +7,7 @@ const JUMP_VELOCITY = 6
 
 @export var tilt_duration: float = 1.5
 var tween: Tween
-@export var mouse_sensitivity: float = 0.002
+@export var mouse_sensitivity: = MainMenu.sensitivity
 var current_target = null
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
