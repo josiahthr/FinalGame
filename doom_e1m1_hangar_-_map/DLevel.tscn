@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cfaih7n0xdf07"]
+[gd_scene load_steps=63 format=3 uid="uid://cfaih7n0xdf07"]
 
 [ext_resource type="PackedScene" uid="uid://cafinps2obi3" path="res://doom_e1m1_hangar_-_map/DoomMap.tscn" id="1_unj4t"]
 [ext_resource type="Script" uid="uid://2grrfwy2dib1" path="res://doom_e1m1_hangar_-_map/DoomPlayer.gd" id="2_3tvde"]
@@ -37,7 +37,14 @@
 [ext_resource type="Texture2D" uid="uid://hid42rjimsjc" path="res://DyingGuy2.png" id="25_2mv2o"]
 [ext_resource type="Texture2D" uid="uid://cg2rqereoi2l7" path="res://DyingGuy3.png" id="26_2hgeb"]
 [ext_resource type="Texture2D" uid="uid://cnwdephwyq33l" path="res://DeadGuy.png" id="27_lhwqt"]
+[ext_resource type="Texture2D" uid="uid://dt1dm52fomt2n" path="res://CombatArmor.png" id="31_8st2l"]
+[ext_resource type="Script" uid="uid://byt0ugnw0gq1g" path="res://doom_e1m1_hangar_-_map/CombatArmor.gd" id="32_vsu4m"]
 [ext_resource type="AudioStream" uid="uid://dmtgfoib0l0uu" path="res://Doom OST - E1M1 - At Doom's Gate.mp3" id="38_tix41"]
+[ext_resource type="Texture2D" uid="uid://814ymfdd4ms7" path="res://Zombie1.png" id="41_vsu4m"]
+[ext_resource type="Script" uid="uid://cirabv3n715ca" path="res://doom_e1m1_hangar_-_map/Zombie.gd" id="42_pmxf6"]
+[ext_resource type="Texture2D" uid="uid://pj7qy5w066vp" path="res://Zombie2.png" id="43_4qmp8"]
+[ext_resource type="Texture2D" uid="uid://dvgwkn1vq8tdc" path="res://Zombie3.png" id="43_wpaoj"]
+[ext_resource type="Texture2D" uid="uid://cwnk8b5vsqege" path="res://Zombie4.png" id="44_5yw5j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d841k"]
 size = Vector3(721.709, 5.96918, 617.99)
@@ -90,22 +97,6 @@ font_size = 70
 font_color = Color(1, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Animation" id="Animation_21ukj"]
-resource_name = "idle"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.3, 2.4, 3.46667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("12_urdma"), ExtResource("13_25u56"), ExtResource("12_urdma"), ExtResource("14_08yq8")]
-}
-
 [sub_resource type="Animation" id="Animation_uc1y8"]
 length = 0.001
 tracks/0/type = "value"
@@ -121,9 +112,8 @@ tracks/0/keys = {
 "values": [ExtResource("12_urdma")]
 }
 
-[sub_resource type="Animation" id="Animation_lp0fj"]
-resource_name = "hurt"
-length = 4.0
+[sub_resource type="Animation" id="Animation_lhwqt"]
+resource_name = "dead"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -131,42 +121,10 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.26667, 2.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("15_21ukj"), ExtResource("16_uc1y8"), ExtResource("17_uc1y8")]
-}
-
-[sub_resource type="Animation" id="Animation_lht71"]
-resource_name = "wounded"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.4, 2.76667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("18_dj578"), ExtResource("19_wpb2l"), ExtResource("20_e2mb2")]
-}
-
-[sub_resource type="Animation" id="Animation_2hgeb"]
-resource_name = "injured"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.46667, 2.56667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("21_4dwvj"), ExtResource("22_uqtuy"), ExtResource("23_2mv2o")]
+"values": [ExtResource("27_lhwqt")]
 }
 
 [sub_resource type="Animation" id="Animation_2mv2o"]
@@ -185,8 +143,9 @@ tracks/0/keys = {
 "values": [ExtResource("24_uqtuy"), ExtResource("25_2mv2o"), ExtResource("26_2hgeb")]
 }
 
-[sub_resource type="Animation" id="Animation_lhwqt"]
-resource_name = "dead"
+[sub_resource type="Animation" id="Animation_lp0fj"]
+resource_name = "hurt"
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -194,10 +153,58 @@ tracks/0/path = NodePath(".:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.26667, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("27_lhwqt")]
+"values": [ExtResource("15_21ukj"), ExtResource("16_uc1y8"), ExtResource("17_uc1y8")]
+}
+
+[sub_resource type="Animation" id="Animation_21ukj"]
+resource_name = "idle"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3, 2.4, 3.46667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("12_urdma"), ExtResource("13_25u56"), ExtResource("12_urdma"), ExtResource("14_08yq8")]
+}
+
+[sub_resource type="Animation" id="Animation_2hgeb"]
+resource_name = "injured"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.46667, 2.56667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("21_4dwvj"), ExtResource("22_uqtuy"), ExtResource("23_2mv2o")]
+}
+
+[sub_resource type="Animation" id="Animation_lht71"]
+resource_name = "wounded"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 2.76667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("18_dj578"), ExtResource("19_wpb2l"), ExtResource("20_e2mb2")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lp0fj"]
@@ -213,6 +220,10 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v4s42"]
 size = Vector3(1.3385, 1.30066, 1.44678)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_5yw5j"]
+vertices = PackedVector3Array(-13.4155, 1, -2.12524, -13.4155, 1, 11.6248, 5.33447, 1, 11.6248, 5.33447, 1, -2.12524)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [node name="Node3D" type="Node3D"]
 
@@ -236,7 +247,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -263.935, -46.6452, -128.924)
 shape = SubResource("BoxShape3D_d841k")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -44.1228, 1.32407, -175.214)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -93.0695, 1.32407, -123.799)
 script = ExtResource("2_3tvde")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
@@ -348,6 +359,18 @@ texture = ExtResource("12_v4s42")
 script = ExtResource("13_dt05m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
+[node name="Sprite3D14" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -91.3169, -3.27007, -162.388)
+billboard = 1
+texture = ExtResource("31_8st2l")
+
+[node name="Area3D" type="Area3D" parent="Sprite3D14"]
+script = ExtResource("32_vsu4m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D14/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
 shape = SubResource("BoxShape3D_v4s42")
 
@@ -514,9 +537,34 @@ volume_db = -32.793
 autoplay = true
 parameters/looping = true
 
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.186, 0, -126.261)
+navigation_mesh = SubResource("NavigationMesh_5yw5j")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.04321, 0, 4.73145)
+use_collision = true
+size = Vector3(19.7446, 1, 14.7134)
+
+[node name="Node3D" type="Node3D" parent="NavigationRegion3D"]
+transform = Transform3D(-0.0479953, 0, -4.99977, 0, 5, 0, 4.99977, 0, -0.0479953, -8.52016, 2.56245, 1.98656)
+script = ExtResource("42_pmxf6")
+front_texture = ExtResource("44_5yw5j")
+back_texture = ExtResource("43_4qmp8")
+left_texture = ExtResource("43_wpaoj")
+right_texture = ExtResource("41_vsu4m")
+
+[node name="Sprite3D15" type="Sprite3D" parent="NavigationRegion3D/Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+billboard = 1
+texture = ExtResource("41_vsu4m")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="NavigationRegion3D/Node3D/Sprite3D15"]
+
 [connection signal="body_entered" from="Sketchfab_Scene/ACID" to="Sketchfab_Scene/ACID" method="_on_body_entered"]
 [connection signal="body_entered" from="Sketchfab_Scene/ACID2" to="Sketchfab_Scene/ACID2" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D14/Area3D" to="Sprite3D14/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D2/Item2" to="Sprite3D2/Item2" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D3/Item3" to="Sprite3D3/Item3" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D4/Item4" to="Sprite3D4/Item4" method="_on_body_entered"]

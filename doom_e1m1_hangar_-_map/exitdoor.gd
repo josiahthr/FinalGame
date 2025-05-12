@@ -1,15 +1,15 @@
 extends StaticBody3D
 
 var is_tilted: bool = false
-@export var tilt_angle_degrees: float = 2.0
-@export var tilt_duration: float = 1.5
+@export var tilt_angle_degrees: float = 3.0
+@export var tilt_duration: float = 2
 @onready var door :=  $".."
 @onready var dooropen :=  $"../../../../DoorOpen"
 @onready var doorclose :=  $"../../../../DoorClose"
 var tween: Tween
 
 func interact():
-	print("interacted with HiddenDoor")
+	print("interacted with Door")
 	if tween and tween.is_running():
 		tween.kill()
 

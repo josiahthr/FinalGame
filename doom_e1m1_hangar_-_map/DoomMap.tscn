@@ -1,4 +1,4 @@
-[gd_scene load_steps=291 format=4 uid="uid://cafinps2obi3"]
+[gd_scene load_steps=300 format=4 uid="uid://cafinps2obi3"]
 
 [ext_resource type="Texture2D" uid="uid://dv0ank72407aa" path="res://doom_e1m1_hangar_-_map/textures/BIGDOOR2_baseColor.png" id="1_6p8ah"]
 [ext_resource type="Script" uid="uid://bxpb1s6ygauyg" path="res://doom_e1m1_hangar_-_map/Door1.gd" id="2_5u03r"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://cdu7xp81shsyh" path="res://doom_e1m1_hangar_-_map/textures/FLAT14_baseColor.png" id="23_2c55f"]
 [ext_resource type="Texture2D" uid="uid://dgpqquo0iydsq" path="res://doom_e1m1_hangar_-_map/textures/FLAT18_baseColor.png" id="24_02l2u"]
 [ext_resource type="Texture2D" uid="uid://cmkrosffdxglq" path="res://doom_e1m1_hangar_-_map/textures/FLAT20_baseColor.png" id="25_13ppg"]
+[ext_resource type="Script" uid="uid://d0egyt4iayov1" path="res://doom_e1m1_hangar_-_map/exitdoor.gd" id="26_3qxch"]
 [ext_resource type="Texture2D" uid="uid://cn0geixirsgxy" path="res://doom_e1m1_hangar_-_map/textures/FLAT23_baseColor.png" id="26_qst7x"]
 [ext_resource type="Texture2D" uid="uid://bs66j5w4m447a" path="res://doom_e1m1_hangar_-_map/textures/FLAT5_5_baseColor.png" id="27_6yyda"]
 [ext_resource type="Texture2D" uid="uid://cau330pkaxe5t" path="res://doom_e1m1_hangar_-_map/textures/FLOOR1_1_baseColor.png" id="28_xea83"]
@@ -353,6 +354,15 @@ shadow_mesh = SubResource("ArrayMesh_jk3u0")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0fony"]
 data = PackedVector3Array(-1672, 3104, -80, -1520, 3168, -56, -1672, 3104, -56, -1672, 3104, -80, -1520, 3168, -80, -1520, 3168, -56, -1896, 3104, -80, -1672, 3104, -56, -1896, 3104, -56, -1896, 3104, -80, -1672, 3104, -80, -1672, 3104, -56, -2040, 3144, -80, -1896, 3104, -56, -2040, 3144, -56, -2040, 3144, -80, -1896, 3104, -80, -1896, 3104, -56, -2128, 3272, -80, -2040, 3144, -56, -2128, 3272, -56, -2128, 3272, -80, -2040, 3144, -80, -2040, 3144, -56, -2064, 3408, -80, -2128, 3272, -56, -2064, 3408, -56, -2064, 3408, -80, -2128, 3272, -80, -2128, 3272, -56, -1784, 3448, -80, -2064, 3408, -56, -1784, 3448, -56, -1784, 3448, -80, -2064, 3408, -80, -2064, 3408, -56, -1544, 3384, -80, -1784, 3448, -56, -1544, 3384, -56, -1544, 3384, -80, -1784, 3448, -80, -1784, 3448, -56, -1520, 3168, -80, -1544, 3384, -56, -1520, 3168, -56, -1520, 3168, -80, -1544, 3384, -80, -1544, 3384, -56, -1376, 3648, -56, -1528, 3680, 24, -1376, 3648, 24, -1376, 3648, -56, -1528, 3680, -56, -1528, 3680, 24, -1528, 3680, -56, -1672, 3744, 24, -1528, 3680, 24, -1528, 3680, -56, -1672, 3744, -56, -1672, 3744, 24, -1672, 3744, -56, -1984, 3776, 24, -1672, 3744, 24, -1672, 3744, -56, -1984, 3776, -56, -1984, 3776, 24, 640, 3648, 0, -64, 3648, 128, 640, 3648, 128, 640, 3648, 0, -64, 3648, 0, -64, 3648, 128, 768, 3520, 0, 640, 3648, 128, 768, 3520, 128, 768, 3520, 0, 640, 3648, 0, 640, 3648, 128, 768, 2944, 0, 768, 3520, 128, 768, 2944, 128, 768, 2944, 0, 768, 3520, 0, 768, 3520, 128, 640, 2816, 0, 768, 2944, 128, 640, 2816, 128, 640, 2816, 0, 768, 2944, 0, 768, 2944, 128, -64, 2816, 0, 640, 2816, 128, -64, 2816, 128, -64, 2816, 0, 640, 2816, 0, 640, 2816, 128, -2488, 3744, -56, -2736, 3648, 24, -2488, 3744, 24, -2488, 3744, -56, -2736, 3648, -56, -2736, 3648, 24, -2240, 3776, -56, -2488, 3744, 24, -2240, 3776, 24, -2240, 3776, -56, -2488, 3744, -56, -2488, 3744, 24)
+
+[sub_resource type="BoxMesh" id="BoxMesh_86127"]
+size = Vector3(30, 1, 100)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0fony"]
+points = PackedVector3Array(15, 0.5, 50, 15, -0.5, 50, 15, 0.5, -50, -15, 0.5, 50, -15, -0.5, 50, 15, -0.5, -50, -15, 0.5, -50, -15, -0.5, -50)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_86127"]
+points = PackedVector3Array(15, 0.5, 50, 15, -0.5, 50, 15, 0.5, -50, -15, 0.5, 50, -15, -0.5, 50, 15, -0.5, -50, -15, 0.5, -50, -15, -0.5, -50)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7mrt"]
 resource_name = "BROWN96"
@@ -968,6 +978,15 @@ shadow_mesh = SubResource("ArrayMesh_x6fir")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2c55f"]
 data = PackedVector3Array(-2976, 4608, -24, -2976, 4632, 48, -2976, 4608, 48, -2976, 4608, -24, -2976, 4632, -24, -2976, 4632, 48, -3040, 4632, -24, -3040, 4608, 48, -3040, 4632, 48, -3040, 4632, -24, -3040, 4608, -24, -3040, 4608, 48, -2976, 4632, -24, -3040, 4632, 48, -2976, 4632, 48, -2976, 4632, -24, -3040, 4632, -24, -3040, 4632, 48, -3040, 4672, -24, -3040, 4648, 48, -3040, 4672, 48, -3040, 4672, -24, -3040, 4648, -24, -3040, 4648, 48, -2976, 4648, -24, -2976, 4672, 48, -2976, 4648, 48, -2976, 4648, -24, -2976, 4672, -24, -2976, 4672, 48, -3040, 4648, -24, -2976, 4648, 48, -3040, 4648, 48, -3040, 4648, -24, -2976, 4648, -24, -2976, 4648, 48)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_3qxch"]
+size = Vector2(50, 50)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ydg32"]
+data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_kvhdp"]
+data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckl5o"]
 resource_name = "EXITSIGN"
 cull_mode = 2
@@ -1336,6 +1355,12 @@ shadow_mesh = SubResource("ArrayMesh_w3rr6")
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xtq6m"]
 data = PackedVector3Array(-2048, 3920, -136, -2240.01, 4096, -136, -2112.01, 4032, -136, -2048, 3904, -136, -2240.01, 4096, -136, -2048, 3920, -136, -2048, 3904, -136, -2176.01, 3920, -136, -2240.01, 4096, -136, -2176.01, 3920, -136, -2048, 3904, -136, -2176.01, 3904, -136, -2240.01, 4096, -136, -2176.01, 3920, -136, -2240.01, 3968, -136, -2240.01, 3968, -136, -2368, 4096, -136, -2240.01, 4096, -136, -2240.01, 3968, -136, -2368, 3968, -136, -2368, 4096, -136, -2368, 3968, -136, -2672.01, 3920, -136, -2368, 4096, -136, -2616.01, 3792, -136, -2672.01, 3920, -136, -2368, 3968, -136, -2632.01, 3792, -136, -2672.01, 3920, -136, -2616.01, 3792, -136, -2688.01, 3920, -136, -2672.01, 3920, -136, -2632.01, 3792, -136, -2048, 3872, -120.001, -2176.01, 3904, -120.001, -2048, 3904, -120.001, -2048, 3872, -120.001, -2176.01, 3872, -120.001, -2176.01, 3904, -120.001, -2048, 3840, -104, -2176.01, 3872, -104, -2048, 3872, -104, -2048, 3840, -104, -2176.01, 3840, -104, -2176.01, 3872, -104, -2048, 3808, -88.0007, -2176.01, 3840, -88.0007, -2048, 3840, -88.0007, -2048, 3808, -88.0007, -2176.01, 3808, -88.0007, -2176.01, 3840, -88.0007, -2048, 3776, -72, -2176.01, 3808, -72, -2048, 3808, -72, -2048, 3776, -72, -2176.01, 3776, -72, -2176.01, 3808, -72, -2688.01, 3776, -104, -2752, 3904, -104, -2720.01, 3904, -104, -2688.01, 3776, -104, -2752, 3776, -104, -2752, 3904, -104, -2752, 3776, -88.0007, -2784.01, 3904, -88.0007, -2752, 3904, -88.0007, -2752, 3776, -88.0007, -2784.01, 3776, -88.0007, -2784.01, 3904, -88.0007, -2784.01, 3776, -72, -2816, 3904, -72, -2784.01, 3904, -72, -2784.01, 3776, -72, -2816, 3776, -72, -2816, 3904, -72, -2816, 3776, -56.0007, -2848.01, 3904, -56.0007, -2816, 3904, -56.0007, -2816, 3776, -56.0007, -2848.01, 3776, -56.0007, -2848.01, 3904, -56.0007, -2848.01, 3776, -40, -2880, 3904, -40, -2848.01, 3904, -40, -2848.01, 3776, -40, -2880, 3776, -40, -2880, 3904, -40, -2688.01, 3776, -120.001, -2688.01, 3920, -120.001, -2632.01, 3792, -120.001, -2688.01, 3776, -120.001, -2720.01, 3904, -120.001, -2688.01, 3920, -120.001)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3qxch"]
+size = Vector3(150, 60, 5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3qxch"]
+points = PackedVector3Array(75, 30, 2.5, 75, 30, -2.5, -75, 30, 2.5, 75, -30, 2.5, 75, -30, -2.5, -75, 30, -2.5, -75, -30, 2.5, -75, -30, -2.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ky8b0"]
 resource_name = "FLOOR5_2"
@@ -2495,6 +2520,28 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_8/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_0fony")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.85288e-22, 0, 1.85288e-22, 1, -2927.12, 3904.78, 4.49499)
+visible = false
+mesh = SubResource("BoxMesh_86127")
+skeleton = NodePath("../Object_9")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_0fony")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.85288e-22, 0, 1.85288e-22, 1, -2927.12, 3775.57, 15.7156)
+visible = false
+mesh = SubResource("BoxMesh_86127")
+skeleton = NodePath("../Object_9")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_86127")
+
 [node name="Object_9" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles"]
 mesh = SubResource("ArrayMesh_iylnk")
 skeleton = NodePath("")
@@ -2627,9 +2674,28 @@ mesh = SubResource("ArrayMesh_cbgta")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_23"]
+script = ExtResource("26_3qxch")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_23/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_2c55f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_23"]
+transform = Transform3D(-5.32114e-08, 1, 0, -1.21733, -4.37114e-08, -3.17637e-22, -1.32349e-22, -3.9443e-30, 3.91806, -3041.26, 4641.46, 9.55433)
+mesh = SubResource("PlaneMesh_3qxch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_23/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_23/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ydg32")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_23"]
+transform = Transform3D(-5.32114e-08, -1, 0, 1.21733, -4.37114e-08, -5.29396e-23, 2.64698e-23, -7.88861e-31, 3.91806, -2975.15, 4641.46, 9.55433)
+mesh = SubResource("PlaneMesh_3qxch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_23/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_23/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_kvhdp")
 
 [node name="Object_24" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles"]
 mesh = SubResource("ArrayMesh_k27v1")
@@ -2711,6 +2777,126 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xtq6m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32"]
+transform = Transform3D(-0.397133, -0.917763, 6.54363e-16, 0.917763, -0.397133, 9.96153e-16, -2.03784e-16, 3.10227e-16, 3.21105, -2687.09, 3844.55, -127.142)
+visible = false
+mesh = SubResource("BoxMesh_3qxch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3qxch")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32"]
+transform = Transform3D(-0.240093, -0.970752, 6.92145e-16, 0.970752, -0.240093, 8.84183e-16, -2.1555e-16, 2.75357e-16, 3.21105, -2733.74, 3841.15, -111.128)
+visible = false
+mesh = SubResource("BoxMesh_3qxch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3qxch")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32"]
+transform = Transform3D(-0.00528844, -0.999989, 7.1299e-16, 0.999989, -0.00528844, 7.16767e-16, -2.22042e-16, 2.2322e-16, 3.21105, -2780.98, 3841.15, -95.6041)
+visible = false
+mesh = SubResource("BoxMesh_3qxch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3qxch")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32"]
+transform = Transform3D(-0.00528844, -0.999989, 7.1299e-16, 0.999989, -0.00528844, 7.16767e-16, -2.22042e-16, 2.2322e-16, 3.21105, -2813.37, 3841.15, -79.2729)
+visible = false
+mesh = SubResource("BoxMesh_3qxch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3qxch")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32"]
+transform = Transform3D(-0.00528844, -0.999989, 7.1299e-16, 0.999989, -0.00528844, 7.16767e-16, -2.22042e-16, 2.2322e-16, 3.21105, -2845.05, 3841.15, -62.4238)
+visible = false
+mesh = SubResource("BoxMesh_3qxch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3qxch")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32"]
+transform = Transform3D(-0.00528844, -0.999989, 7.1299e-16, 0.999989, -0.00528844, 7.16767e-16, -2.22042e-16, 2.2322e-16, 3.21105, -2876.93, 3841.15, -47.8116)
+visible = false
+mesh = SubResource("BoxMesh_3qxch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3qxch")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32"]
+transform = Transform3D(-0.00528844, -0.999989, 7.1299e-16, 0.999989, -0.00528844, 7.16767e-16, -2.22042e-16, 2.2322e-16, 3.21105, -2908.96, 3841.15, -31.8844)
+visible = false
+mesh = SubResource("BoxMesh_3qxch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3qxch")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32"]
+transform = Transform3D(-0.999959, 0.0093899, -6.69261e-18, -0.0093899, -0.999959, 1.42597e-15, 2.0857e-18, 4.44082e-16, 3.21105, -2109.77, 3874.65, -127.175)
+visible = false
+mesh = SubResource("BoxMesh_3qxch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3qxch")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32"]
+transform = Transform3D(-0.999959, 0.0093899, -6.69261e-18, -0.0093899, -0.999959, 1.42597e-15, 2.0857e-18, 4.44082e-16, 3.21105, -2109.77, 3843.17, -111.55)
+visible = false
+mesh = SubResource("BoxMesh_3qxch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D9/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3qxch")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32"]
+transform = Transform3D(-0.999959, 0.0093899, -6.69261e-18, -0.0093899, -0.999959, 1.42597e-15, 2.0857e-18, 4.44082e-16, 3.21105, -2109.77, 3811.49, -95.4258)
+visible = false
+mesh = SubResource("BoxMesh_3qxch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D10/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3qxch")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32"]
+transform = Transform3D(-0.999959, 0.0093899, -6.69261e-18, -0.0093899, -0.999959, 1.42597e-15, 2.0857e-18, 4.44082e-16, 3.21105, -2109.77, 3779.67, -79.7161)
+visible = false
+mesh = SubResource("BoxMesh_3qxch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D11/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3qxch")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32"]
+transform = Transform3D(-0.999959, 0.0093899, -6.69261e-18, -0.0093899, -0.999959, 1.42597e-15, 2.0857e-18, 4.44082e-16, 3.21105, -2109.77, 3746.84, -64.1645)
+visible = false
+mesh = SubResource("BoxMesh_3qxch")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_32/MeshInstance3D12/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3qxch")
 
 [node name="Object_33" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles"]
 mesh = SubResource("ArrayMesh_t17vs")

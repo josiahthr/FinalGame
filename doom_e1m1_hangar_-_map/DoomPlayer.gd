@@ -148,6 +148,9 @@ func apply_item_pickup(item_type: String, value: int) -> void:
 		"armor":
 			armor = clamp(armor + value, 0, 100)
 			print("Picked up armor:", value)
+		"combatarmor":
+			armor = clamp(armor + value, 0, 200)
+			print("Picked up combatarmor:", value)
 		_:
 			print("Unknown item type:", item_type)
 
