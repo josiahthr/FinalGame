@@ -24,6 +24,7 @@ var current_target = null
 @onready var AcidDamage := $"../AcidDamage"
 @onready var Death1 := $"../Death1"
 @onready var face_anim := $"../Control/TextureRect3/IDLE"
+@onready var sight := $Neck/Camera3D/SeeCast
 var health = 100
 var armor = 0
 var pistolammo = 50
@@ -125,6 +126,10 @@ func _physics_process(delta: float) -> void:
 func gun_shoot():
 	if dead == false:
 		if pistolammo > 0:
+			if $Neck/Camera3D/SeeCast.is_colliding():
+					var target = $Neck/Camera3D/SeeCast.get_collider()
+					if target.has_method("shot"):
+						target.shot()
 			pistolanim.play("shooting")
 			await get_tree().create_timer(.3).timeout
 			pistolammo = pistolammo - 1
