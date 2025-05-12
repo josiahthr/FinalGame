@@ -8,16 +8,23 @@ extends Node3D
 @export var right_texture: Texture2D
 @export var speed: float = 2.0
 @export var stop_distance: float = 1.5
+@export var sprite_update_cooldown: float = 1.5
 @onready var navigation: NavigationAgent3D = $Sprite3D15/NavigationAgent3D
+
+var accumulated_time: float = 0.0
 
 func _physics_process(delta: float) -> void:
 	var distance_to_player = global_transform.origin.distance_to(player.global_transform.origin)
 	navigation.set_target_position(player.global_transform.origin)
 	var next_position = navigation.get_next_path_position()
 	var direction = (next_position - global_transform.origin).normalized()
-	look_at(next_position, Vector3.UP)
-	update_sprite_relative_to_player()
-
+	
+	accumulated_time += delta
+	print(accumulated_time)
+	if accumulated_time >= sprite_update_cooldown:
+		print("paisjdbnfpoiajsdngfopiujasbndgoijbasdpoigjbaspdiujgnaosidjgniajsgd")
+		update_sprite_relative_to_player()
+		accumulated_time = 0.0
 
 	if Groanerstatus.alive == true:
 		global_translate(direction * speed * delta)
@@ -27,6 +34,10 @@ func _physics_process(delta: float) -> void:
 		global_translate(direction * speed * delta)
 
 func update_sprite_relative_to_player():
+	print("we updating")
+	var next_position = navigation.get_next_path_position()
+	look_at(next_position, Vector3.UP)
+	var direction = (next_position - global_transform.origin).normalized()
 	var to_player = player.global_transform.origin - global_transform.origin
 	var local_to_player = transform.basis.inverse() * to_player
 	var angle_rad = atan2(local_to_player.x, -local_to_player.z)
