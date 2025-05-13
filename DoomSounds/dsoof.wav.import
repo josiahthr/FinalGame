@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cqadjvj1bnk5q"
-path="res://.godot/imported/dsdoropn.wav-b1bb25652bae1bf947b7c9663cf7d78f.sample"
+uid="uid://bxwvq45foykgk"
+path="res://.godot/imported/dsoof.wav-c5caffc49d1738d2ac2ada2cac3806ef.sample"
 
 [deps]
 
-source_file="res://dsdoropn.wav"
-dest_files=["res://.godot/imported/dsdoropn.wav-b1bb25652bae1bf947b7c9663cf7d78f.sample"]
+source_file="res://DoomSounds/dsoof.wav"
+dest_files=["res://.godot/imported/dsoof.wav-c5caffc49d1738d2ac2ada2cac3806ef.sample"]
 
 [params]
 

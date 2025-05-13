@@ -3,6 +3,11 @@ extends Node3D
 @onready var player := $"../../CharacterBody3D"
 @onready var sprite := $Sprite3D15
 @onready var animation := $Sprite3D15/AnimationPlayer
+@onready var shoot := $ZombieShoot
+@onready var sight := $ZombieSight
+@onready var nearby := $ZombieSight
+@onready var ammo := $Sprite3D16
+@onready var body := $Sprite3D15
 @export var front_texture: Texture2D
 @export var back_texture: Texture2D
 @export var left_texture: Texture2D
@@ -39,9 +44,19 @@ func _physics_process(delta: float) -> void:
 	if Groanerstatus.Zalive != true:
 		var speed = 0
 		animation.play("dying")
-		await get_tree().create_timer(1).timeout 
+		await get_tree().create_timer(1).timeout
+		if is_instance_valid(ammo):
+			ammo.get_parent().remove_child(ammo)
+			var forward_dir = -global_transform.basis.z.normalized()
+			get_tree().current_scene.add_child(ammo)
+			var drop_position = global_transform.origin + forward_dir * 2.0
+			var new_transform = ammo.global_transform
+			new_transform.origin = drop_position
+			ammo.global_transform = new_transform
+			ammo.scale = Vector3(1, 1, 1)
+			ammo.visible = true 
 		global_transform.origin.y = .3
-		await get_tree().create_timer(10).timeout 
+		await get_tree().create_timer(10).timeout
 		queue_free()
 
 func update_sprite_relative_to_player():
@@ -70,6 +85,7 @@ func update_sprite_relative_to_player():
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.has_method("gun_shoot"):
+		sight.play()
 		print("player is visible")
 		see_player = true
 
@@ -80,6 +96,7 @@ func shoot_player():
 	can_shoot = false
 	animation.play("shoot")
 	await get_tree().create_timer(.5).timeout
+	shoot.play()
 	player.health -= 10
 	print("Enemy shoots!")
 	await get_tree().create_timer(shoot_cooldown).timeout

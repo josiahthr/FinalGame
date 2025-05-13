@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://cfaih7n0xdf07"]
+[gd_scene load_steps=85 format=3 uid="uid://cfaih7n0xdf07"]
 
 [ext_resource type="PackedScene" uid="uid://cafinps2obi3" path="res://doom_e1m1_hangar_-_map/DoomMap.tscn" id="1_unj4t"]
 [ext_resource type="Script" uid="uid://2grrfwy2dib1" path="res://doom_e1m1_hangar_-_map/DoomPlayer.gd" id="2_3tvde"]
@@ -9,24 +9,31 @@
 [ext_resource type="FontFile" uid="uid://dxk3snbbyvrm0" path="res://Dico.ttf" id="4_4rqas"]
 [ext_resource type="Texture2D" uid="uid://cg5736eegp6v8" path="res://DoomSprites/Pistol3.png" id="5_v4s42"]
 [ext_resource type="Texture2D" uid="uid://ifbrrtgklcos" path="res://DoomSprites/Pistol4.png" id="6_30qu6"]
-[ext_resource type="AudioStream" uid="uid://450amb4byfvs" path="res://dspistol.wav" id="6_j83yc"]
+[ext_resource type="AudioStream" uid="uid://450amb4byfvs" path="res://DoomSounds/dspistol.wav" id="6_j83yc"]
 [ext_resource type="Texture2D" uid="uid://q68sqodxjpbg" path="res://DoomSprites/Pistol5.png" id="7_dt05m"]
 [ext_resource type="Texture2D" uid="uid://b35uhy3n5ckal" path="res://DoomSprites/PistolFlash.png" id="8_qi2e7"]
 [ext_resource type="Texture2D" uid="uid://bexf7povikce" path="res://DoomSprites/HealthBonus.png" id="12_v4s42"]
-[ext_resource type="AudioStream" uid="uid://cm2v04f0iapmj" path="res://dsitemup.wav" id="13_30qu6"]
+[ext_resource type="AudioStream" uid="uid://cm2v04f0iapmj" path="res://DoomSounds/dsitemup.wav" id="13_30qu6"]
 [ext_resource type="Script" uid="uid://cxmo125ah0u8y" path="res://doom_e1m1_hangar_-_map/BonusHealth.gd" id="13_dt05m"]
 [ext_resource type="Texture2D" uid="uid://ch8dk2mkh78id" path="res://DoomSprites/ArmorBonus.png" id="14_sk7l1"]
 [ext_resource type="Script" uid="uid://cvprjlnj2ktye" path="res://doom_e1m1_hangar_-_map/BonusArmor.gd" id="15_skjf6"]
 [ext_resource type="Texture2D" uid="uid://chige06k6aq81" path="res://DoomSprites/Armor.png" id="16_skjf6"]
 [ext_resource type="Script" path="res://doom_e1m1_hangar_-_map/Armor.gd" id="17_d841k"]
-[ext_resource type="AudioStream" uid="uid://bxwvq45foykgk" path="res://dsoof.wav" id="20_78j3l"]
-[ext_resource type="AudioStream" uid="uid://b836nlxu4mc3q" path="res://dspldeth.wav" id="21_twxs6"]
+[ext_resource type="Texture2D" uid="uid://bacqwdfpch543" path="res://DoomSprites/AmmoClip.png" id="18_vsu4m"]
+[ext_resource type="Script" uid="uid://cphm5fltq4da6" path="res://doom_e1m1_hangar_-_map/AmmoClip.gd" id="19_pmxf6"]
+[ext_resource type="AudioStream" uid="uid://bxwvq45foykgk" path="res://DoomSounds/dsoof.wav" id="20_78j3l"]
+[ext_resource type="AudioStream" uid="uid://b836nlxu4mc3q" path="res://DoomSounds/dspldeth.wav" id="21_twxs6"]
 [ext_resource type="Texture2D" uid="uid://25akpe6hhjf8" path="res://DoomSprites/Shoot1.png" id="28_00ypx"]
 [ext_resource type="Texture2D" uid="uid://dt1dm52fomt2n" path="res://DoomSprites/CombatArmor.png" id="31_8st2l"]
 [ext_resource type="Script" uid="uid://byt0ugnw0gq1g" path="res://doom_e1m1_hangar_-_map/CombatArmor.gd" id="32_vsu4m"]
 [ext_resource type="Texture2D" uid="uid://bafbcyauh61w1" path="res://DoomSprites/ZombieShoot1.png" id="33_2mv2o"]
 [ext_resource type="Texture2D" uid="uid://ctdam05vwp3b2" path="res://DoomSprites/ZombieShoot2.png" id="34_2hgeb"]
-[ext_resource type="AudioStream" uid="uid://dmtgfoib0l0uu" path="res://Doom OST - E1M1 - At Doom's Gate.mp3" id="38_tix41"]
+[ext_resource type="AudioStream" uid="uid://cpwiu40rcng5e" path="res://DoomSprites/dsshotgn.wav" id="36_2hgeb"]
+[ext_resource type="AudioStream" uid="uid://cnotv1wqyegaf" path="res://DoomSounds/dsposit1.wav" id="37_lhwqt"]
+[ext_resource type="AudioStream" uid="uid://d0va3qdvueo0g" path="res://DoomSounds/dspopain.wav" id="38_re6i6"]
+[ext_resource type="AudioStream" uid="uid://dmtgfoib0l0uu" path="res://DoomSounds/Doom OST - E1M1 - At Doom's Gate.mp3" id="38_tix41"]
+[ext_resource type="AudioStream" uid="uid://ci104oqhenvqn" path="res://DoomSounds/dspodth1.wav" id="39_re6i6"]
+[ext_resource type="AudioStream" uid="uid://dxyakvm8xh28m" path="res://DoomSounds/dsposact.wav" id="40_8st2l"]
 [ext_resource type="Texture2D" uid="uid://bvnu8ha5cjei6" path="res://DoomSprites/Zombie1.png" id="41_vsu4m"]
 [ext_resource type="Script" uid="uid://cirabv3n715ca" path="res://doom_e1m1_hangar_-_map/Zombie.gd" id="42_pmxf6"]
 [ext_resource type="Texture2D" uid="uid://d3hdqe5ysco76" path="res://DoomSprites/Zombie2.png" id="43_4qmp8"]
@@ -709,6 +716,19 @@ back_texture = ExtResource("43_wpaoj")
 left_texture = ExtResource("43_4qmp8")
 right_texture = ExtResource("44_5yw5j")
 
+[node name="Sprite3D16" type="Sprite3D" parent="NavigationRegion3D/Node3D"]
+transform = Transform3D(0.0536696, 0, 0.192664, 0, 0.2, 0, -0.192664, 0, 0.0536696, -0.105974, -0.104693, -0.722654)
+visible = false
+billboard = 1
+texture = ExtResource("18_vsu4m")
+
+[node name="Item2" type="Area3D" parent="NavigationRegion3D/Node3D/Sprite3D16"]
+script = ExtResource("19_pmxf6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Node3D/Sprite3D16/Item2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
 [node name="Sprite3D15" type="Sprite3D" parent="NavigationRegion3D/Node3D"]
 transform = Transform3D(1, 0, 0.00120425, 0, 1, 0, -0.00120425, 0, 1, 0, 0, 0)
 texture = SubResource("CompressedTexture2D_e2mb2")
@@ -738,6 +758,21 @@ shape = SubResource("ConcavePolygonShape3D_xcyj8")
 transform = Transform3D(3.1563, 0, -3.72529e-09, 0, 3.1563, 0, 3.72529e-09, 0, 3.1563, 0.46966, 0, -1.19555)
 shape = SubResource("BoxShape3D_4dwvj")
 
+[node name="ZombieShoot" type="AudioStreamPlayer3D" parent="NavigationRegion3D/Node3D"]
+stream = ExtResource("36_2hgeb")
+
+[node name="ZombieSight" type="AudioStreamPlayer3D" parent="NavigationRegion3D/Node3D"]
+stream = ExtResource("37_lhwqt")
+
+[node name="ZombieDamage" type="AudioStreamPlayer3D" parent="NavigationRegion3D/Node3D"]
+stream = ExtResource("38_re6i6")
+
+[node name="ZombieDead" type="AudioStreamPlayer3D" parent="NavigationRegion3D/Node3D"]
+stream = ExtResource("39_re6i6")
+
+[node name="ZombieNearby" type="AudioStreamPlayer3D" parent="NavigationRegion3D/Node3D"]
+stream = ExtResource("40_8st2l")
+
 [connection signal="body_entered" from="Sketchfab_Scene/ACID" to="Sketchfab_Scene/ACID" method="_on_body_entered"]
 [connection signal="body_entered" from="Sketchfab_Scene/ACID2" to="Sketchfab_Scene/ACID2" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_body_entered"]
@@ -754,4 +789,5 @@ shape = SubResource("BoxShape3D_4dwvj")
 [connection signal="body_entered" from="Sprite3D11/Item4" to="Sprite3D11/Item4" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D8/Item4" to="Sprite3D8/Item4" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D9/Item4" to="Sprite3D9/Item4" method="_on_body_entered"]
+[connection signal="body_entered" from="NavigationRegion3D/Node3D/Sprite3D16/Item2" to="NavigationRegion3D/Node3D/Sprite3D16/Item2" method="_on_body_entered"]
 [connection signal="body_entered" from="NavigationRegion3D/Node3D/Area3D" to="NavigationRegion3D/Node3D" method="_on_area_3d_body_entered"]

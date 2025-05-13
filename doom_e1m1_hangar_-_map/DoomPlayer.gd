@@ -99,7 +99,8 @@ func _physics_process(delta: float) -> void:
 						#_dialog.display_line(data["text"], data["speaker"])
 						#in_dialogue = true
 						#current_target = target
-				
+			else:
+				pass
 		if not is_on_floor():
 			velocity += get_gravity() * delta
 
@@ -156,6 +157,9 @@ func apply_item_pickup(item_type: String, value: int) -> void:
 		"combatarmor":
 			armor = clamp(armor + value, 0, 200)
 			print("Picked up combatarmor:", value)
+		"ammoclip":
+			pistolammo = pistolammo + value
+			print("Picked up ammoclip:", value)
 		_:
 			print("Unknown item type:", item_type)
 

@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://450amb4byfvs"
-path="res://.godot/imported/dspistol.wav-f24fda33558b4a24380fbba818d9c882.sample"
+uid="uid://b836nlxu4mc3q"
+path="res://.godot/imported/dspldeth.wav-e954d25abb2a8fb9cce608c759f56655.sample"
 
 [deps]
 
-source_file="res://dspistol.wav"
-dest_files=["res://.godot/imported/dspistol.wav-f24fda33558b4a24380fbba818d9c882.sample"]
+source_file="res://DoomSounds/dspldeth.wav"
+dest_files=["res://.godot/imported/dspldeth.wav-e954d25abb2a8fb9cce608c759f56655.sample"]
 
 [params]
 
