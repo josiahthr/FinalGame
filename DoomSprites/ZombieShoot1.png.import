@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvnu8ha5cjei6"
-path.s3tc="res://.godot/imported/Zombie1.png-4ce44ba1cd85a346af6941dce88145b3.s3tc.ctex"
+uid="uid://bafbcyauh61w1"
+path.s3tc="res://.godot/imported/ZombieShoot1.png-e4a3135e7e1eeecbce04aef139d72c80.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://DoomSprites/Zombie1.png"
-dest_files=["res://.godot/imported/Zombie1.png-4ce44ba1cd85a346af6941dce88145b3.s3tc.ctex"]
+source_file="res://DoomSprites/ZombieShoot1.png"
+dest_files=["res://.godot/imported/ZombieShoot1.png-e4a3135e7e1eeecbce04aef139d72c80.s3tc.ctex"]
 
 [params]
 

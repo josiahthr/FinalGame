@@ -180,7 +180,6 @@ func lowergun():
 	tween.tween_property(pistol, "position", target_ui_pos, tilt_duration)
 	
 func update_face_animation():
-	print("updating")
 	var new_anim = ""
 
 	if health >= 80:

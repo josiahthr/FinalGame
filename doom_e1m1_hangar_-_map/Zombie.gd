@@ -12,24 +12,29 @@ extends Node3D
 @export var stop_distance: float = 1.5
 @export var sprite_update_cooldown: float = 1.5
 @onready var navigation: NavigationAgent3D = $Sprite3D15/NavigationAgent3D
-
+var see_player = false
 var accumulated_time: float = 0.0
+var can_shoot = true
+@export var shoot_cooldown: float = 3
+@export var shoot_range: float = 10.0
 
 func _physics_process(delta: float) -> void:
-	var distance_to_player = global_transform.origin.distance_to(player.global_transform.origin)
-	navigation.set_target_position(player.global_transform.origin)
-	var next_position = navigation.get_next_path_position()
-	var direction = (next_position - global_transform.origin).normalized()
-	
-	accumulated_time += delta
-	print(accumulated_time)
-	if accumulated_time >= sprite_update_cooldown:
-		print("paisjdbnfpoiajsdngfopiujasbndgoijbasdpoigjbaspdiujgnaosidjgniajsgd")
-		update_sprite_relative_to_player()
-		accumulated_time = 0.0
-
-	if Groanerstatus.Zalive == true:
-		global_translate(direction * speed * delta)
+	if see_player and Groanerstatus.Zalive:
+		var distance_to_player = global_transform.origin.distance_to(player.global_transform.origin)
+		if distance_to_player > stop_distance:
+			navigation.set_target_position(player.global_transform.origin)
+			var next_position = navigation.get_next_path_position()
+			var direction = (next_position - global_transform.origin).normalized()
+			global_translate(direction * speed * delta)
+			accumulated_time += delta
+			
+		if distance_to_player <= shoot_range:
+			shoot_player()
+		if accumulated_time >= sprite_update_cooldown:
+			print("paisjdbnfpoiajsdngfopiujasbndgoijbasdpoigjbaspdiujgnaosidjgniajsgd")
+			update_sprite_relative_to_player()
+			accumulated_time = 0.0
+			
 
 	if Groanerstatus.Zalive != true:
 		var speed = 0
@@ -38,7 +43,6 @@ func _physics_process(delta: float) -> void:
 		global_transform.origin.y = .3
 		await get_tree().create_timer(10).timeout 
 		queue_free()
-		global_translate(direction * speed * delta)
 
 func update_sprite_relative_to_player():
 	if Groanerstatus.Zalive == true:
@@ -62,3 +66,21 @@ func update_sprite_relative_to_player():
 			sprite.texture = left_texture
 		else:
 			sprite.texture = front_texture
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.has_method("gun_shoot"):
+		print("player is visible")
+		see_player = true
+
+
+func shoot_player():
+	if not can_shoot:
+		return
+	can_shoot = false
+	animation.play("shoot")
+	await get_tree().create_timer(.5).timeout
+	player.health -= 10
+	print("Enemy shoots!")
+	await get_tree().create_timer(shoot_cooldown).timeout
+	can_shoot = true
