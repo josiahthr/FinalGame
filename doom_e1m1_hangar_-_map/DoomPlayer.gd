@@ -14,6 +14,7 @@ var current_target = null
 @onready var pistolshot := $"../PistolShoot"
 @onready var pistolanim := $"../Control/TextureRect4/AnimationPlayer"
 @onready var ItemPickup := $"../ItemPickup"
+@onready var Face := $"../Control/TextureRect3"
 @onready var Item1 := $"../Sprite3D"
 @onready var Item2 := $"../Sprite3D2"
 @onready var Health := $"../Control/HEALTH"
@@ -32,10 +33,7 @@ var acid = false
 var dead = false
 var firstdead = false
 var current_face_anim = ""
-#@onready var _dialog : Control = $"../CanvasLayer/Dialog"
-
-#func _ready():
-	#_dialog.continue_pressed.connect(_on_dialog_continue)
+var is_shooting = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -102,7 +100,6 @@ func _physics_process(delta: float) -> void:
 						#in_dialogue = true
 						#current_target = target
 				
-				
 		if not is_on_floor():
 			velocity += get_gravity() * delta
 
@@ -130,13 +127,16 @@ func gun_shoot():
 					var target = $Neck/Camera3D/SeeCast.get_collider()
 					if target.has_method("shot"):
 						target.shot()
+			is_shooting = true
 			pistolanim.play("shooting")
+			face_anim.play("shoot")
 			await get_tree().create_timer(.3).timeout
 			pistolammo = pistolammo - 1
 			pistolfire.show()
 			pistolshot.play()
 			await get_tree().create_timer(.1).timeout
 			pistolfire.hide()
+			is_shooting = false
 
 
 func apply_item_pickup(item_type: String, value: int) -> void:
@@ -180,6 +180,7 @@ func lowergun():
 	tween.tween_property(pistol, "position", target_ui_pos, tilt_duration)
 	
 func update_face_animation():
+	print("updating")
 	var new_anim = ""
 
 	if health >= 80:
@@ -194,6 +195,8 @@ func update_face_animation():
 		new_anim = "dying"
 	elif health == 0:
 		new_anim = "dead"
+	if is_shooting == true:
+		new_anim = "shoot"
 
 	if new_anim != current_face_anim:
 		current_face_anim = new_anim

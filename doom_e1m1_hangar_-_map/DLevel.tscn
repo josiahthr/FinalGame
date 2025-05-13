@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://cfaih7n0xdf07"]
+[gd_scene load_steps=73 format=3 uid="uid://cfaih7n0xdf07"]
 
 [ext_resource type="PackedScene" uid="uid://cafinps2obi3" path="res://doom_e1m1_hangar_-_map/DoomMap.tscn" id="1_unj4t"]
 [ext_resource type="Script" uid="uid://2grrfwy2dib1" path="res://doom_e1m1_hangar_-_map/DoomPlayer.gd" id="2_3tvde"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://hid42rjimsjc" path="res://DoomSprites/DyingGuy2.png" id="25_2mv2o"]
 [ext_resource type="Texture2D" uid="uid://cg2rqereoi2l7" path="res://DoomSprites/DyingGuy3.png" id="26_2hgeb"]
 [ext_resource type="Texture2D" uid="uid://cnwdephwyq33l" path="res://DoomSprites/DeadGuy.png" id="27_lhwqt"]
+[ext_resource type="Texture2D" uid="uid://25akpe6hhjf8" path="res://DoomSprites/Shoot1.png" id="28_00ypx"]
 [ext_resource type="Texture2D" uid="uid://dt1dm52fomt2n" path="res://DoomSprites/CombatArmor.png" id="31_8st2l"]
 [ext_resource type="Script" uid="uid://byt0ugnw0gq1g" path="res://doom_e1m1_hangar_-_map/CombatArmor.gd" id="32_vsu4m"]
 [ext_resource type="AudioStream" uid="uid://dmtgfoib0l0uu" path="res://Doom OST - E1M1 - At Doom's Gate.mp3" id="38_tix41"]
@@ -47,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://cwnk8b5vsqege" path="res://DoomSprites/Zombie4.png" id="44_5yw5j"]
 [ext_resource type="Script" uid="uid://df2b24t784oy1" path="res://doom_e1m1_hangar_-_map/ZombieHitbox.gd" id="46_2dxyd"]
 [ext_resource type="Texture2D" uid="uid://7giqt8kq3l05" path="res://DoomSprites/ZombieDying.png" id="46_xcyj8"]
+[ext_resource type="Texture2D" uid="uid://c8hrsykvnytdk" path="res://DoomSprites/ZombieDead.png" id="47_ps1di"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d841k"]
 size = Vector3(721.709, 5.96918, 617.99)
@@ -209,6 +211,21 @@ tracks/0/keys = {
 "values": [ExtResource("18_dj578"), ExtResource("19_wpb2l"), ExtResource("20_e2mb2")]
 }
 
+[sub_resource type="Animation" id="Animation_5jmwd"]
+resource_name = "shoot"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("28_00ypx")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lp0fj"]
 _data = {
 &"RESET": SubResource("Animation_uc1y8"),
@@ -217,6 +234,7 @@ _data = {
 &"hurt": SubResource("Animation_lp0fj"),
 &"idle": SubResource("Animation_21ukj"),
 &"injured": SubResource("Animation_2hgeb"),
+&"shoot": SubResource("Animation_5jmwd"),
 &"wounded": SubResource("Animation_lht71")
 }
 
@@ -226,6 +244,43 @@ size = Vector3(1.3385, 1.30066, 1.44678)
 [sub_resource type="NavigationMesh" id="NavigationMesh_5yw5j"]
 vertices = PackedVector3Array(-13.4433, 1.05524, -3.7486, -11.6933, 1.05524, -3.9986, -11.9433, 1.05524, -11.2486, -34.1933, 1.05524, -11.2486, -7.19325, 1.05524, 20.5014, -7.44325, 1.05524, 11.7514, -11.6933, 1.05524, 11.5014, -34.1933, 1.05524, 20.5014, -11.6933, 1.05524, -1.2486, -13.4433, 1.05524, -1.4986, -2.69325, 1.05524, -3.9986, -2.44325, 1.05524, -11.2486, -9.19325, 1.55524, -1.2486, -9.19325, 1.55524, 0.501404, -7.44325, 1.55524, 0.751404, -1.19325, 1.05524, -1.2486, -7.44325, 1.55524, 3.2514, -9.19325, 1.55524, 3.5014, -10.6933, 1.55524, 3.7514, -10.6933, 1.55524, 10.7514, -5.94325, 1.30524, 10.7514, -5.94325, 1.05524, 11.7514, 27.5567, 1.05524, 20.5014, 27.5567, 1.05524, -11.2486, -0.943253, 1.05524, -3.7486, -12.4433, 11.8052, -2.9986, -12.4433, 11.8052, -2.2486, -1.94325, 11.8052, -2.2486, -1.94325, 11.8052, -2.9986, -9.69325, 1.55524, 3.2514, -9.69325, 1.55524, 0.751404, -10.6933, 1.55524, -1.2486)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(9, 8, 6), PackedInt32Array(6, 7, 9), PackedInt32Array(9, 7, 3), PackedInt32Array(3, 0, 9), PackedInt32Array(1, 2, 10), PackedInt32Array(10, 2, 11), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(19, 16, 20), PackedInt32Array(21, 15, 4), PackedInt32Array(4, 15, 22), PackedInt32Array(22, 15, 23), PackedInt32Array(10, 11, 24), PackedInt32Array(24, 11, 23), PackedInt32Array(14, 15, 16), PackedInt32Array(16, 15, 20), PackedInt32Array(21, 20, 15), PackedInt32Array(15, 24, 23), PackedInt32Array(4, 5, 21), PackedInt32Array(28, 27, 25), PackedInt32Array(25, 27, 26), PackedInt32Array(17, 18, 29), PackedInt32Array(13, 30, 12), PackedInt32Array(12, 30, 31), PackedInt32Array(29, 18, 30), PackedInt32Array(30, 18, 31)]
+
+[sub_resource type="Animation" id="Animation_i5pgc"]
+length = 11.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NavigationRegion3D/Node3D/Sprite3D15:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("41_vsu4m")]
+}
+
+[sub_resource type="Animation" id="Animation_00ypx"]
+resource_name = "dying"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NavigationRegion3D/Node3D/Sprite3D15:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.71),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("41_vsu4m"), ExtResource("46_xcyj8"), ExtResource("47_ps1di")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5jmwd"]
+_data = {
+&"RESET": SubResource("Animation_i5pgc"),
+&"dying": SubResource("Animation_00ypx")
+}
 
 [sub_resource type="BoxMesh" id="BoxMesh_5yw5j"]
 
@@ -560,6 +615,18 @@ transform = Transform3D(11.3107, 0, 0, 0, 14.2314, 0, 0, 0, 1.53643, -7.11145, 4
 visible = false
 use_collision = true
 
+[node name="CSGBox3D6" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(-4.94406e-07, 0, -1.53643, 0, 14.2314, 0, 11.3107, 0, -6.71595e-08, -11.8268, 4.42092, 4.65122)
+visible = false
+use_collision = true
+size = Vector3(1.40918, 1, 1)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(-11.3107, 0, -1.34319e-07, 0, 14.2314, 0, 9.88813e-07, 0, -1.53643, -7.09613, 4.42092, 11.7005)
+visible = false
+use_collision = true
+size = Vector3(0.957458, 1, 1.48035)
+
 [node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86362, 0.198644, 4.60303)
 visible = false
@@ -585,11 +652,16 @@ front_texture = ExtResource("41_vsu4m")
 back_texture = ExtResource("43_wpaoj")
 left_texture = ExtResource("43_4qmp8")
 right_texture = ExtResource("44_5yw5j")
-dying_texture = ExtResource("46_xcyj8")
 
 [node name="Sprite3D15" type="Sprite3D" parent="NavigationRegion3D/Node3D"]
 transform = Transform3D(1, 0, 0.00120425, 0, 1, 0, -0.00120425, 0, 1, 0, 0, 0)
 texture = ExtResource("41_vsu4m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NavigationRegion3D/Node3D/Sprite3D15"]
+root_node = NodePath("../../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_5jmwd")
+}
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="NavigationRegion3D/Node3D/Sprite3D15"]
 
