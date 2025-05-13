@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnfvfhgxe7jsp"
-path="res://.godot/imported/MS-DOS - DOOM DOOM II - Doom Guy(8)-Photoroom.png-ee46fabae16ccb26f282fe89d21cff05.ctex"
+uid="uid://b82jef1mkugen"
+path="res://.godot/imported/Pistol17.png-b033442268d6c870a734deec01a7f597.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DoomSprites/MS-DOS - DOOM DOOM II - Doom Guy(8)-Photoroom.png"
-dest_files=["res://.godot/imported/MS-DOS - DOOM DOOM II - Doom Guy(8)-Photoroom.png-ee46fabae16ccb26f282fe89d21cff05.ctex"]
+source_file="res://DoomSprites/Pistol17.png"
+dest_files=["res://.godot/imported/Pistol17.png-b033442268d6c870a734deec01a7f597.ctex"]
 
 [params]
 

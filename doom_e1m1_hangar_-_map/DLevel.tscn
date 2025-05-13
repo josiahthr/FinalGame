@@ -1,51 +1,35 @@
-[gd_scene load_steps=73 format=3 uid="uid://cfaih7n0xdf07"]
+[gd_scene load_steps=74 format=3 uid="uid://cfaih7n0xdf07"]
 
 [ext_resource type="PackedScene" uid="uid://cafinps2obi3" path="res://doom_e1m1_hangar_-_map/DoomMap.tscn" id="1_unj4t"]
 [ext_resource type="Script" uid="uid://2grrfwy2dib1" path="res://doom_e1m1_hangar_-_map/DoomPlayer.gd" id="2_3tvde"]
 [ext_resource type="Script" uid="uid://bs5dimishadt3" path="res://doom_e1m1_hangar_-_map/acid.gd" id="2_xid2a"]
 [ext_resource type="Texture2D" uid="uid://ckly0n3fre8mc" path="res://SNES - DOOM - HUD(1).png" id="3_3ft0x"]
 [ext_resource type="Texture2D" uid="uid://cc7nkcj8sxcwp" path="res://DoomSprites/Pistol2.png" id="3_3nrio"]
-[ext_resource type="Texture2D" uid="uid://b82jef1mkugen" path="res://DoomSprites/Pistol1.png" id="3_3tvde"]
+[ext_resource type="Texture2D" uid="uid://b82jef1mkugen" path="res://DoomSprites/Pistol17.png" id="3_3tvde"]
 [ext_resource type="FontFile" uid="uid://dxk3snbbyvrm0" path="res://Dico.ttf" id="4_4rqas"]
 [ext_resource type="Texture2D" uid="uid://cg5736eegp6v8" path="res://DoomSprites/Pistol3.png" id="5_v4s42"]
 [ext_resource type="Texture2D" uid="uid://ifbrrtgklcos" path="res://DoomSprites/Pistol4.png" id="6_30qu6"]
 [ext_resource type="AudioStream" uid="uid://450amb4byfvs" path="res://dspistol.wav" id="6_j83yc"]
 [ext_resource type="Texture2D" uid="uid://q68sqodxjpbg" path="res://DoomSprites/Pistol5.png" id="7_dt05m"]
 [ext_resource type="Texture2D" uid="uid://b35uhy3n5ckal" path="res://DoomSprites/PistolFlash.png" id="8_qi2e7"]
-[ext_resource type="Texture2D" uid="uid://2v37la0cfix4" path="res://DoomSprites/DoomGuy.png" id="12_urdma"]
 [ext_resource type="Texture2D" uid="uid://bexf7povikce" path="res://DoomSprites/HealthBonus.png" id="12_v4s42"]
-[ext_resource type="Texture2D" uid="uid://j15nyikyr11v" path="res://DoomSprites/DoomGuy2.png" id="13_25u56"]
 [ext_resource type="AudioStream" uid="uid://cm2v04f0iapmj" path="res://dsitemup.wav" id="13_30qu6"]
 [ext_resource type="Script" uid="uid://cxmo125ah0u8y" path="res://doom_e1m1_hangar_-_map/BonusHealth.gd" id="13_dt05m"]
-[ext_resource type="Texture2D" uid="uid://clktmv31t0kxs" path="res://DoomSprites/DoomGuy3.png" id="14_08yq8"]
 [ext_resource type="Texture2D" uid="uid://ch8dk2mkh78id" path="res://DoomSprites/ArmorBonus.png" id="14_sk7l1"]
-[ext_resource type="Texture2D" uid="uid://dfcnccttt4xim" path="res://DoomSprites/HurtGuy1.png" id="15_21ukj"]
 [ext_resource type="Script" uid="uid://cvprjlnj2ktye" path="res://doom_e1m1_hangar_-_map/BonusArmor.gd" id="15_skjf6"]
 [ext_resource type="Texture2D" uid="uid://chige06k6aq81" path="res://DoomSprites/Armor.png" id="16_skjf6"]
-[ext_resource type="Texture2D" uid="uid://by3l1rlwuja4s" path="res://DoomSprites/HurtGuy2.png" id="16_uc1y8"]
 [ext_resource type="Script" path="res://doom_e1m1_hangar_-_map/Armor.gd" id="17_d841k"]
-[ext_resource type="Texture2D" uid="uid://cuoq780fxejkh" path="res://DoomSprites/HurtGuy3.png" id="17_uc1y8"]
-[ext_resource type="Texture2D" uid="uid://dplucbvcoigc6" path="res://DoomSprites/WoundGuy1.png" id="18_dj578"]
-[ext_resource type="Texture2D" uid="uid://ch0kp14wvmebb" path="res://DoomSprites/WoundGuy2.png" id="19_wpb2l"]
 [ext_resource type="AudioStream" uid="uid://bxwvq45foykgk" path="res://dsoof.wav" id="20_78j3l"]
-[ext_resource type="Texture2D" uid="uid://clp120fd65yxn" path="res://DoomSprites/WoundGuy3.png" id="20_e2mb2"]
-[ext_resource type="Texture2D" uid="uid://bvm58oml1dcb2" path="res://DoomSprites/InjuredGuy1.png" id="21_4dwvj"]
 [ext_resource type="AudioStream" uid="uid://b836nlxu4mc3q" path="res://dspldeth.wav" id="21_twxs6"]
-[ext_resource type="Texture2D" uid="uid://bb88482nwecw" path="res://DoomSprites/InjuredGuy2.png" id="22_uqtuy"]
-[ext_resource type="Texture2D" uid="uid://5s6sag12gxl7" path="res://DoomSprites/InjuredGuy3.png" id="23_2mv2o"]
-[ext_resource type="Texture2D" uid="uid://c60n0e01w7eq2" path="res://DoomSprites/DyingGuy1.png" id="24_uqtuy"]
-[ext_resource type="Texture2D" uid="uid://hid42rjimsjc" path="res://DoomSprites/DyingGuy2.png" id="25_2mv2o"]
-[ext_resource type="Texture2D" uid="uid://cg2rqereoi2l7" path="res://DoomSprites/DyingGuy3.png" id="26_2hgeb"]
-[ext_resource type="Texture2D" uid="uid://cnwdephwyq33l" path="res://DoomSprites/DeadGuy.png" id="27_lhwqt"]
 [ext_resource type="Texture2D" uid="uid://25akpe6hhjf8" path="res://DoomSprites/Shoot1.png" id="28_00ypx"]
 [ext_resource type="Texture2D" uid="uid://dt1dm52fomt2n" path="res://DoomSprites/CombatArmor.png" id="31_8st2l"]
 [ext_resource type="Script" uid="uid://byt0ugnw0gq1g" path="res://doom_e1m1_hangar_-_map/CombatArmor.gd" id="32_vsu4m"]
 [ext_resource type="AudioStream" uid="uid://dmtgfoib0l0uu" path="res://Doom OST - E1M1 - At Doom's Gate.mp3" id="38_tix41"]
-[ext_resource type="Texture2D" uid="uid://814ymfdd4ms7" path="res://DoomSprites/Zombie1.png" id="41_vsu4m"]
+[ext_resource type="Texture2D" uid="uid://bvnu8ha5cjei6" path="res://DoomSprites/Zombie1.png" id="41_vsu4m"]
 [ext_resource type="Script" uid="uid://cirabv3n715ca" path="res://doom_e1m1_hangar_-_map/Zombie.gd" id="42_pmxf6"]
-[ext_resource type="Texture2D" uid="uid://pj7qy5w066vp" path="res://DoomSprites/Zombie2.png" id="43_4qmp8"]
-[ext_resource type="Texture2D" uid="uid://dvgwkn1vq8tdc" path="res://DoomSprites/Zombie3.png" id="43_wpaoj"]
-[ext_resource type="Texture2D" uid="uid://cwnk8b5vsqege" path="res://DoomSprites/Zombie4.png" id="44_5yw5j"]
+[ext_resource type="Texture2D" uid="uid://d3hdqe5ysco76" path="res://DoomSprites/Zombie2.png" id="43_4qmp8"]
+[ext_resource type="Texture2D" uid="uid://yd3y5lpg6eod" path="res://DoomSprites/Zombie3.png" id="43_wpaoj"]
+[ext_resource type="Texture2D" uid="uid://v6syjiln3i2a" path="res://DoomSprites/Zombie4.png" id="44_5yw5j"]
 [ext_resource type="Script" uid="uid://df2b24t784oy1" path="res://doom_e1m1_hangar_-_map/ZombieHitbox.gd" id="46_2dxyd"]
 [ext_resource type="Texture2D" uid="uid://7giqt8kq3l05" path="res://DoomSprites/ZombieDying.png" id="46_xcyj8"]
 [ext_resource type="Texture2D" uid="uid://c8hrsykvnytdk" path="res://DoomSprites/ZombieDead.png" id="47_ps1di"]
@@ -101,6 +85,9 @@ font_size = 70
 font_color = Color(1, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 1)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ps1di"]
+load_path = "res://.godot/imported/DoomGuy.png-e6b604e31cdfa1bac422be270da48d40.ctex"
+
 [sub_resource type="Animation" id="Animation_uc1y8"]
 length = 0.001
 tracks/0/type = "value"
@@ -113,8 +100,11 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("12_urdma")]
+"values": [SubResource("CompressedTexture2D_ps1di")]
 }
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4dwvj"]
+load_path = "res://.godot/imported/DeadGuy.png-4c4de38ca3ce0a2bf788d2d3aa79351e.ctex"
 
 [sub_resource type="Animation" id="Animation_lhwqt"]
 resource_name = "dead"
@@ -128,8 +118,17 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("27_lhwqt")]
+"values": [SubResource("CompressedTexture2D_4dwvj")]
 }
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uqtuy"]
+load_path = "res://.godot/imported/DyingGuy1.png-ed5b5fb3e983a9786837d6b6a938c17b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2mv2o"]
+load_path = "res://.godot/imported/DyingGuy2.png-2b614918a7f0cbb14e2411c4679c26b5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2hgeb"]
+load_path = "res://.godot/imported/DyingGuy3.png-51a9269707ad6d7e8a4d89c2177d866c.ctex"
 
 [sub_resource type="Animation" id="Animation_2mv2o"]
 resource_name = "dying"
@@ -144,8 +143,17 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.3, 2.63333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("24_uqtuy"), ExtResource("25_2mv2o"), ExtResource("26_2hgeb")]
+"values": [SubResource("CompressedTexture2D_uqtuy"), SubResource("CompressedTexture2D_2mv2o"), SubResource("CompressedTexture2D_2hgeb")]
 }
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5yw5j"]
+load_path = "res://.godot/imported/HurtGuy1.png-47307a7900318038ca16827e1fc4be5c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4qmp8"]
+load_path = "res://.godot/imported/HurtGuy2.png-37d4d7fe7ea56be1a3b5e6ab16b91759.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wpaoj"]
+load_path = "res://.godot/imported/HurtGuy3.png-abc0f9a0efb4f0f3bccb496ee554275c.ctex"
 
 [sub_resource type="Animation" id="Animation_lp0fj"]
 resource_name = "hurt"
@@ -160,8 +168,14 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.26667, 2.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("15_21ukj"), ExtResource("16_uc1y8"), ExtResource("17_uc1y8")]
+"values": [SubResource("CompressedTexture2D_5yw5j"), SubResource("CompressedTexture2D_4qmp8"), SubResource("CompressedTexture2D_wpaoj")]
 }
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xcyj8"]
+load_path = "res://.godot/imported/DoomGuy2.png-872deb284b3f53c656a54b04337934f7.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2dxyd"]
+load_path = "res://.godot/imported/DoomGuy3.png-e04d6886ab73ca1de762eed09766700c.ctex"
 
 [sub_resource type="Animation" id="Animation_21ukj"]
 resource_name = "idle"
@@ -176,8 +190,17 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.3, 2.4, 3.46667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("12_urdma"), ExtResource("13_25u56"), ExtResource("12_urdma"), ExtResource("14_08yq8")]
+"values": [SubResource("CompressedTexture2D_ps1di"), SubResource("CompressedTexture2D_xcyj8"), SubResource("CompressedTexture2D_ps1di"), SubResource("CompressedTexture2D_2dxyd")]
 }
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lhwqt"]
+load_path = "res://.godot/imported/InjuredGuy1.png-027df151423608f494df8e3736b6424a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tix41"]
+load_path = "res://.godot/imported/InjuredGuy2.png-5e399e0dc1490c0b1bfcc46639f722cc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_re6i6"]
+load_path = "res://.godot/imported/InjuredGuy3.png-765ef441a34dd408ef28c9be415684ff.ctex"
 
 [sub_resource type="Animation" id="Animation_2hgeb"]
 resource_name = "injured"
@@ -192,23 +215,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.46667, 2.56667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("21_4dwvj"), ExtResource("22_uqtuy"), ExtResource("23_2mv2o")]
-}
-
-[sub_resource type="Animation" id="Animation_lht71"]
-resource_name = "wounded"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.4, 2.76667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("18_dj578"), ExtResource("19_wpb2l"), ExtResource("20_e2mb2")]
+"values": [SubResource("CompressedTexture2D_lhwqt"), SubResource("CompressedTexture2D_tix41"), SubResource("CompressedTexture2D_re6i6")]
 }
 
 [sub_resource type="Animation" id="Animation_5jmwd"]
@@ -224,6 +231,31 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("28_00ypx")]
+}
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8st2l"]
+load_path = "res://.godot/imported/WoundGuy1.png-a871189026ff437c1c2f0426dd51a649.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vsu4m"]
+load_path = "res://.godot/imported/WoundGuy2.png-f9f6ae7d5ae6394efb22c6dca0d42f7a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pmxf6"]
+load_path = "res://.godot/imported/WoundGuy3.png-ef8229671cac1ee0c25b325cf04adaa0.ctex"
+
+[sub_resource type="Animation" id="Animation_lht71"]
+resource_name = "wounded"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 2.76667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [SubResource("CompressedTexture2D_8st2l"), SubResource("CompressedTexture2D_vsu4m"), SubResource("CompressedTexture2D_pmxf6")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lp0fj"]
@@ -245,6 +277,9 @@ size = Vector3(1.3385, 1.30066, 1.44678)
 vertices = PackedVector3Array(-13.4433, 1.05524, -3.7486, -11.6933, 1.05524, -3.9986, -11.9433, 1.05524, -11.2486, -34.1933, 1.05524, -11.2486, -7.19325, 1.05524, 20.5014, -7.44325, 1.05524, 11.7514, -11.6933, 1.05524, 11.5014, -34.1933, 1.05524, 20.5014, -11.6933, 1.05524, -1.2486, -13.4433, 1.05524, -1.4986, -2.69325, 1.05524, -3.9986, -2.44325, 1.05524, -11.2486, -9.19325, 1.55524, -1.2486, -9.19325, 1.55524, 0.501404, -7.44325, 1.55524, 0.751404, -1.19325, 1.05524, -1.2486, -7.44325, 1.55524, 3.2514, -9.19325, 1.55524, 3.5014, -10.6933, 1.55524, 3.7514, -10.6933, 1.55524, 10.7514, -5.94325, 1.30524, 10.7514, -5.94325, 1.05524, 11.7514, 27.5567, 1.05524, 20.5014, 27.5567, 1.05524, -11.2486, -0.943253, 1.05524, -3.7486, -12.4433, 11.8052, -2.9986, -12.4433, 11.8052, -2.2486, -1.94325, 11.8052, -2.2486, -1.94325, 11.8052, -2.9986, -9.69325, 1.55524, 3.2514, -9.69325, 1.55524, 0.751404, -10.6933, 1.55524, -1.2486)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(9, 8, 6), PackedInt32Array(6, 7, 9), PackedInt32Array(9, 7, 3), PackedInt32Array(3, 0, 9), PackedInt32Array(1, 2, 10), PackedInt32Array(10, 2, 11), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(19, 16, 20), PackedInt32Array(21, 15, 4), PackedInt32Array(4, 15, 22), PackedInt32Array(22, 15, 23), PackedInt32Array(10, 11, 24), PackedInt32Array(24, 11, 23), PackedInt32Array(14, 15, 16), PackedInt32Array(16, 15, 20), PackedInt32Array(21, 20, 15), PackedInt32Array(15, 24, 23), PackedInt32Array(4, 5, 21), PackedInt32Array(28, 27, 25), PackedInt32Array(25, 27, 26), PackedInt32Array(17, 18, 29), PackedInt32Array(13, 30, 12), PackedInt32Array(12, 30, 31), PackedInt32Array(29, 18, 30), PackedInt32Array(30, 18, 31)]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e2mb2"]
+load_path = "res://.godot/imported/Zombie1.png-4ce44ba1cd85a346af6941dce88145b3.s3tc.ctex"
+
 [sub_resource type="Animation" id="Animation_i5pgc"]
 length = 11.0
 tracks/0/type = "value"
@@ -257,7 +292,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("41_vsu4m")]
+"values": [SubResource("CompressedTexture2D_e2mb2")]
 }
 
 [sub_resource type="Animation" id="Animation_00ypx"]
@@ -273,7 +308,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.35, 0.71),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("41_vsu4m"), ExtResource("46_xcyj8"), ExtResource("47_ps1di")]
+"values": [SubResource("CompressedTexture2D_e2mb2"), ExtResource("46_xcyj8"), ExtResource("47_ps1di")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5jmwd"]
@@ -401,7 +436,7 @@ offset_top = 533.0
 offset_right = 463.0
 offset_bottom = 571.0
 scale = Vector2(3, 3)
-texture = ExtResource("12_urdma")
+texture = SubResource("CompressedTexture2D_ps1di")
 
 [node name="IDLE" type="AnimationPlayer" parent="Control/TextureRect3"]
 libraries = {
@@ -655,7 +690,7 @@ right_texture = ExtResource("44_5yw5j")
 
 [node name="Sprite3D15" type="Sprite3D" parent="NavigationRegion3D/Node3D"]
 transform = Transform3D(1, 0, 0.00120425, 0, 1, 0, -0.00120425, 0, 1, 0, 0, 0)
-texture = ExtResource("41_vsu4m")
+texture = SubResource("CompressedTexture2D_e2mb2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NavigationRegion3D/Node3D/Sprite3D15"]
 root_node = NodePath("../../../..")
