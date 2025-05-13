@@ -6,6 +6,8 @@ extends Node3D
 @export var back_texture: Texture2D
 @export var left_texture: Texture2D
 @export var right_texture: Texture2D
+@export var dead_texture: Texture2D
+@export var dying_texture: Texture2D
 @export var speed: float = 2.0
 @export var stop_distance: float = 1.5
 @export var sprite_update_cooldown: float = 1.5
@@ -26,11 +28,12 @@ func _physics_process(delta: float) -> void:
 		update_sprite_relative_to_player()
 		accumulated_time = 0.0
 
-	if Groanerstatus.alive == true:
+	if Groanerstatus.Zalive == true:
 		global_translate(direction * speed * delta)
 
-	if Groanerstatus.alive != true:
+	if Groanerstatus.Zalive != true:
 		var speed = 0
+		sprite.texture = dying_texture
 		global_translate(direction * speed * delta)
 
 func update_sprite_relative_to_player():

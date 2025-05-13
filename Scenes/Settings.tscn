@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnt72rm6geo0j"]
+[gd_scene load_steps=14 format=3 uid="uid://bnt72rm6geo0j"]
 
 [ext_resource type="Script" uid="uid://dmgc25u1d1la7" path="res://Scenes/settingseffect.gd" id="1_ppjuv"]
 [ext_resource type="Texture2D" uid="uid://cc8ktasvwsl17" path="res://Images/Untitled.png" id="2_mx4kw"]
 [ext_resource type="Texture2D" uid="uid://bahyb06l536jt" path="res://Images/click.png" id="3_37a8j"]
 [ext_resource type="Script" uid="uid://ca3jq50mdyjkh" path="res://Scripts/h_slider.gd" id="4_37a8j"]
+[ext_resource type="Script" uid="uid://b8dc43xo6iq1m" path="res://Scenes/SoundSettings.gd" id="5_ipgag"]
 [ext_resource type="Script" uid="uid://du4fggmi1gih5" path="res://Scenes/settingsescape.gd" id="5_mjqtt"]
 [ext_resource type="AudioStream" uid="uid://bddnpm6vwdmhh" path="res://menu.mp3" id="7_ipgag"]
 
@@ -11,6 +12,18 @@
 font_size = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_mjqtt"]
+font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_646k0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppjuv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ipgag"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ppjuv"]
 font_size = 30
 
 [node name="Control" type="Control"]
@@ -41,11 +54,21 @@ label_settings = SubResource("LabelSettings_2fv1l")
 
 [node name="Value" type="Label" parent="."]
 layout_mode = 0
-offset_left = 224.0
-offset_top = 189.0
-offset_right = 342.0
-offset_bottom = 270.0
-text = "Settings"
+offset_left = 266.0
+offset_top = 179.0
+offset_right = 384.0
+offset_bottom = 260.0
+text = "20"
+label_settings = SubResource("LabelSettings_2fv1l")
+
+[node name="Value2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 384.0
+offset_right = 403.0
+offset_bottom = 465.0
+text = "1
+"
 label_settings = SubResource("LabelSettings_2fv1l")
 
 [node name="HSlider" type="HSlider" parent="."]
@@ -56,8 +79,23 @@ offset_right = 716.0
 offset_bottom = 301.0
 theme_override_icons/grabber = ExtResource("2_mx4kw")
 theme_override_icons/grabber_highlight = ExtResource("3_37a8j")
+value = 20.0
 tick_count = 10
 script = ExtResource("4_37a8j")
+
+[node name="HSlider2" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 300.0
+offset_right = 716.0
+offset_bottom = 505.0
+theme_override_icons/grabber = ExtResource("2_mx4kw")
+theme_override_icons/grabber_highlight = ExtResource("3_37a8j")
+max_value = 2.0
+step = 0.1
+value = 1.0
+tick_count = 10
+script = ExtResource("5_ipgag")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -77,10 +115,52 @@ offset_bottom = 175.0
 text = "Sensitivity"
 label_settings = SubResource("LabelSettings_mjqtt")
 
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 340.0
+offset_right = 606.0
+offset_bottom = 382.0
+text = "Volume"
+label_settings = SubResource("LabelSettings_mjqtt")
+horizontal_alignment = 1
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_ipgag")
 volume_db = -7.924
 
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 265.0
+offset_right = 479.0
+offset_bottom = 289.0
+scale = Vector2(2, 2)
+theme_override_styles/focus = SubResource("StyleBoxFlat_646k0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ppjuv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ipgag")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 266.0
+offset_right = 420.0
+offset_bottom = 308.0
+text = "Full Screen"
+label_settings = SubResource("LabelSettings_ppjuv")
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 276.0
+offset_right = 872.0
+offset_bottom = 299.0
+text = "*Full Screen may result in poor visual quality"
+
 [connection signal="drag_ended" from="HSlider" to="HSlider" method="_on_drag_ended"]
 [connection signal="mouse_exited" from="HSlider" to="HSlider" method="_on_mouse_exited"]
+[connection signal="drag_ended" from="HSlider2" to="HSlider2" method="_on_drag_ended"]
+[connection signal="mouse_exited" from="HSlider2" to="HSlider2" method="_on_mouse_exited"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]

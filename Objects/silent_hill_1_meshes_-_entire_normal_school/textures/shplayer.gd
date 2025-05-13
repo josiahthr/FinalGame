@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-var SPEED = 10.0
+var SPEED = 6.0
 const JUMP_VELOCITY = 10
 
 @export var mouse_sensitivity: = MainMenu.sensitivity
@@ -30,7 +30,7 @@ var has_key: bool = false
 var current_yes_button : Button
 var current_no_button : Button
 var tween: Tween
-var health = 5
+var health = 20
 var death = false
 
 func _ready():

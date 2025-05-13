@@ -3,6 +3,10 @@ extends HSlider
 @onready var slider := $"."
 @onready var Value := $"../Value"
 
+func _ready() -> void:
+	slider.value = MainMenu.sensitivity * 10000
+	Value.text = str(slider.value)
+
 func _on_mouse_exited() -> void:
 	self.release_focus()
 

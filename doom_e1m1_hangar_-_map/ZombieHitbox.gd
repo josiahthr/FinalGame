@@ -11,5 +11,5 @@ func shot():
 	health -= 5
 	print("health =", health)
 	if health <= 0:
-		Groanerstatus.alive = false
+		Groanerstatus.Zalive = false
 		emit_signal("dead")

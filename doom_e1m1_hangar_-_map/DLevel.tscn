@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://cfaih7n0xdf07"]
+[gd_scene load_steps=67 format=3 uid="uid://cfaih7n0xdf07"]
 
 [ext_resource type="PackedScene" uid="uid://cafinps2obi3" path="res://doom_e1m1_hangar_-_map/DoomMap.tscn" id="1_unj4t"]
 [ext_resource type="Script" uid="uid://2grrfwy2dib1" path="res://doom_e1m1_hangar_-_map/DoomPlayer.gd" id="2_3tvde"]
@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://dvgwkn1vq8tdc" path="res://Zombie3.png" id="43_wpaoj"]
 [ext_resource type="Texture2D" uid="uid://cwnk8b5vsqege" path="res://Zombie4.png" id="44_5yw5j"]
 [ext_resource type="Script" uid="uid://df2b24t784oy1" path="res://doom_e1m1_hangar_-_map/ZombieHitbox.gd" id="46_2dxyd"]
+[ext_resource type="Texture2D" uid="uid://7giqt8kq3l05" path="res://ZombieDying.png" id="46_xcyj8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d841k"]
 size = Vector3(721.709, 5.96918, 617.99)
@@ -584,6 +585,7 @@ front_texture = ExtResource("41_vsu4m")
 back_texture = ExtResource("43_wpaoj")
 left_texture = ExtResource("43_4qmp8")
 right_texture = ExtResource("44_5yw5j")
+dying_texture = ExtResource("46_xcyj8")
 
 [node name="Sprite3D15" type="Sprite3D" parent="NavigationRegion3D/Node3D"]
 transform = Transform3D(1, 0, 0.00120425, 0, 1, 0, -0.00120425, 0, 1, 0, 0, 0)
