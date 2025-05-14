@@ -10,6 +10,7 @@ extends Node3D
 @onready var pain := $"../../Control/ColorRect/AnimationPlayer"
 @onready var ammo := $Sprite3D16
 @onready var body := $Sprite3D15
+@onready var raycast := $Sprite3D15/RayCast3D
 @export var front_texture: Texture2D
 @export var back_texture: Texture2D
 @export var left_texture: Texture2D
@@ -26,6 +27,7 @@ var can_shoot = true
 @export var shoot_range: float = 10.0
 
 func _physics_process(delta: float) -> void:
+	var target = raycast.get_collider()
 	if see_player and Groanerstatus.Zalive:
 		var distance_to_player = global_transform.origin.distance_to(player.global_transform.origin)
 		if distance_to_player > stop_distance:
@@ -34,8 +36,7 @@ func _physics_process(delta: float) -> void:
 			var direction = (next_position - global_transform.origin).normalized()
 			global_translate(direction * speed * delta)
 			accumulated_time += delta
-			
-		if distance_to_player <= shoot_range:
+		if distance_to_player <= shoot_range and target == player: 
 			shoot_player()
 		if accumulated_time >= sprite_update_cooldown:
 			print("paisjdbnfpoiajsdngfopiujasbndgoijbasdpoigjbaspdiujgnaosidjgniajsgd")
