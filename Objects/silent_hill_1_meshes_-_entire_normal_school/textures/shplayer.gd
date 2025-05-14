@@ -12,6 +12,7 @@ var has_key: bool = false
 @onready var gun := $Neck/Camera3D/Sketchfab_Scene
 @onready var gun_sight := $Neck/Camera3D/Sketchfab_Scene/RayCast3D
 @onready var neck := $Neck
+@onready var HUD := $"../Control2"
 @onready var fade_player := $"../Control/ColorRect/AnimationPlayer"
 @onready var fade_player_heading := $"../Control/Label/AnimationPlayer"
 @onready var fade_player_button := $"../Control/Button/AnimationPlayer"
@@ -32,6 +33,7 @@ var current_no_button : Button
 var tween: Tween
 var health = 20
 var death = false
+var pause_screen = false
 
 func _ready():
 	Groanerstatus.alive = true
@@ -46,6 +48,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
+		pause_screen = true
+		pause_menu()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		if in_dialogue and is_instance_valid(current_target) and current_target.has_signal("choice"):
 			if current_no_button and is_instance_valid(current_no_button):
@@ -83,6 +87,7 @@ func _on_area_connect():
 		get_tree().change_scene_to_file("res://Scenes/I7.tscn")
 
 func _physics_process(delta: float) -> void:
+	mouse_sensitivity = MainMenu.sensitivity
 	if health <= 0 and death == false:
 		print("we should be dying")
 		death = true
@@ -193,3 +198,14 @@ func gameover_show():
 		fade_player_heading.play("Heading")
 		fade_player_button.play("new_animation")
 		fade_player_button2.play("new_animation")
+		
+func pause_menu():
+	if pause_screen == true:
+		HUD.show()
+	if pause_screen == false:
+		HUD.hide()
+
+
+func _on_button_pressed() -> void:
+	pause_screen = false
+	pause_menu()

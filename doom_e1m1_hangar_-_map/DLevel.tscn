@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=3 uid="uid://cfaih7n0xdf07"]
+[gd_scene load_steps=135 format=3 uid="uid://cfaih7n0xdf07"]
 
 [ext_resource type="PackedScene" uid="uid://cafinps2obi3" path="res://doom_e1m1_hangar_-_map/DoomMap.tscn" id="1_unj4t"]
 [ext_resource type="Script" uid="uid://2grrfwy2dib1" path="res://doom_e1m1_hangar_-_map/DoomPlayer.gd" id="2_3tvde"]
@@ -49,10 +49,12 @@
 [ext_resource type="Texture2D" uid="uid://c8hrsykvnytdk" path="res://DoomSprites/ZombieDead.png" id="47_ps1di"]
 [ext_resource type="Texture2D" uid="uid://c22ejh2hvr2xv" path="res://DoomSprites/SKYE1Doom.png" id="48_ps1di"]
 [ext_resource type="Texture2D" uid="uid://djqpx4t0yuuf1" path="res://DoomSprites/MS-DOS - DOOM DOOM II - Widescre(1).png" id="49_00ypx"]
+[ext_resource type="Script" uid="uid://bmvvyrra7ouuw" path="res://doom_e1m1_hangar_-_map/Pause.gd" id="49_bh74y"]
 [ext_resource type="Texture2D" uid="uid://cc8ktasvwsl17" path="res://Images/Untitled.png" id="50_170wj"]
 [ext_resource type="Texture2D" uid="uid://bahyb06l536jt" path="res://Images/click.png" id="51_k6rre"]
 [ext_resource type="Script" uid="uid://ca3jq50mdyjkh" path="res://Scripts/h_slider.gd" id="52_tk175"]
 [ext_resource type="Script" uid="uid://b8dc43xo6iq1m" path="res://Scenes/SoundSettings.gd" id="53_k6rre"]
+[ext_resource type="FontFile" uid="uid://b116j0xgr4xw1" path="res://pixelpro_2p/pixelpro-2p.ttf" id="53_tk175"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d841k"]
 size = Vector3(721.709, 5.96918, 617.99)
@@ -523,7 +525,31 @@ sky_material = SubResource("PanoramaSkyMaterial_00ypx")
 background_mode = 2
 sky = SubResource("Sky_i5pgc")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tk175"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bh74y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2u2b7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_753b7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u46kr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2u1h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tnqp0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d4uph"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t811w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3qdfb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jfqc3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="LabelSettings" id="LabelSettings_170wj"]
+font = ExtResource("53_tk175")
 font_size = 30
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_170wj"]
@@ -536,15 +562,22 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bh74y"]
+font = ExtResource("53_tk175")
 font_size = 30
 
+[sub_resource type="LabelSettings" id="LabelSettings_u46kr"]
+font = ExtResource("53_tk175")
+
 [sub_resource type="LabelSettings" id="LabelSettings_tk175"]
+font = ExtResource("53_tk175")
 font_size = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_2u2b7"]
+font = ExtResource("53_tk175")
 font_size = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_753b7"]
+font = ExtResource("53_tk175")
 font_size = 25
 
 [node name="Node3D" type="Node3D"]
@@ -733,6 +766,30 @@ script = ExtResource("13_dt05m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
 shape = SubResource("BoxShape3D_v4s42")
 
+[node name="Sprite3D15" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -138.397, 0.456289, -130.903)
+billboard = 1
+texture = ExtResource("12_v4s42")
+
+[node name="Item2" type="Area3D" parent="Sprite3D15"]
+script = ExtResource("13_dt05m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D15/Item2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
+[node name="Sprite3D16" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -132.855, 0.456289, -136.228)
+billboard = 1
+texture = ExtResource("12_v4s42")
+
+[node name="Item2" type="Area3D" parent="Sprite3D16"]
+script = ExtResource("13_dt05m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D16/Item2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
 [node name="Sprite3D3" type="Sprite3D" parent="."]
 transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -5.62741, 0.541379, -168.531)
 billboard = 1
@@ -790,6 +847,30 @@ texture = ExtResource("14_sk7l1")
 script = ExtResource("15_skjf6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D7/Item4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
+[node name="Sprite3D17" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -153.17, -0.158893, -240.109)
+billboard = 1
+texture = ExtResource("14_sk7l1")
+
+[node name="Item4" type="Area3D" parent="Sprite3D17"]
+script = ExtResource("15_skjf6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D17/Item4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
+shape = SubResource("BoxShape3D_v4s42")
+
+[node name="Sprite3D18" type="Sprite3D" parent="."]
+transform = Transform3D(0.268348, 0, 0.963322, 0, 1, 0, -0.963322, 0, 0.268348, -148.914, -0.158893, -235.706)
+billboard = 1
+texture = ExtResource("14_sk7l1")
+
+[node name="Item4" type="Area3D" parent="Sprite3D18"]
+script = ExtResource("15_skjf6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D18/Item4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0567932, 0.15033, 0.0822601)
 shape = SubResource("BoxShape3D_v4s42")
 
@@ -1194,6 +1275,7 @@ anchors_preset = 0
 offset_left = -5.0
 offset_right = 1159.0
 offset_bottom = 654.0
+script = ExtResource("49_bh74y")
 
 [node name="TextureRect" type="TextureRect" parent="Control2"]
 layout_mode = 0
@@ -1209,6 +1291,21 @@ offset_left = 26.0
 offset_top = 26.0
 offset_right = 152.0
 offset_bottom = 71.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("53_tk175")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tk175")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_bh74y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2u2b7")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_753b7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_u46kr")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_x2u1h")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tnqp0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_d4uph")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_t811w")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_3qdfb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jfqc3")
 text = "RETURN"
 
 [node name="HSlider" type="HSlider" parent="Control2"]
@@ -1225,11 +1322,11 @@ script = ExtResource("52_tk175")
 
 [node name="Label2" type="Label" parent="Control2"]
 layout_mode = 0
-offset_left = 497.0
-offset_top = 146.0
-offset_right = 645.0
-offset_bottom = 188.0
-text = "Sensitivity"
+offset_left = 495.0
+offset_top = 149.0
+offset_right = 678.0
+offset_bottom = 191.0
+text = "SENSITIVITY"
 label_settings = SubResource("LabelSettings_170wj")
 
 [node name="CheckButton" type="CheckButton" parent="Control2"]
@@ -1245,11 +1342,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_tk175")
 
 [node name="Label3" type="Label" parent="Control2"]
 layout_mode = 0
-offset_left = 262.0
-offset_top = 266.0
-offset_right = 420.0
-offset_bottom = 308.0
-text = "Full Screen"
+offset_left = 251.0
+offset_top = 272.0
+offset_right = 435.0
+offset_bottom = 314.0
+text = "FULL SCREEN"
 label_settings = SubResource("LabelSettings_bh74y")
 
 [node name="Label4" type="Label" parent="Control2"]
@@ -1258,14 +1355,15 @@ offset_left = 527.0
 offset_top = 276.0
 offset_right = 872.0
 offset_bottom = 299.0
-text = "*Full Screen may result in poor visual quality"
+text = "*FULL SCREEN MAY RESULT IN POOR VISUAL QUALITY"
+label_settings = SubResource("LabelSettings_u46kr")
 
 [node name="Value2" type="Label" parent="Control2"]
 layout_mode = 0
-offset_left = 285.0
-offset_top = 384.0
-offset_right = 403.0
-offset_bottom = 465.0
+offset_left = 287.0
+offset_top = 389.0
+offset_right = 405.0
+offset_bottom = 470.0
 text = "1
 "
 label_settings = SubResource("LabelSettings_tk175")
@@ -1290,16 +1388,16 @@ offset_left = 458.0
 offset_top = 340.0
 offset_right = 606.0
 offset_bottom = 382.0
-text = "Volume"
+text = "VOLUME"
 label_settings = SubResource("LabelSettings_2u2b7")
 horizontal_alignment = 1
 
 [node name="Value" type="Label" parent="Control2"]
 layout_mode = 0
-offset_left = 316.0
-offset_top = 198.0
-offset_right = 434.0
-offset_bottom = 279.0
+offset_left = 319.0
+offset_top = 206.0
+offset_right = 437.0
+offset_bottom = 287.0
 text = "20"
 label_settings = SubResource("LabelSettings_753b7")
 
@@ -1308,11 +1406,15 @@ label_settings = SubResource("LabelSettings_753b7")
 [connection signal="body_entered" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D14/Area3D" to="Sprite3D14/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D2/Item2" to="Sprite3D2/Item2" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D15/Item2" to="Sprite3D15/Item2" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D16/Item2" to="Sprite3D16/Item2" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D3/Item3" to="Sprite3D3/Item3" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D4/Item4" to="Sprite3D4/Item4" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D5/Item4" to="Sprite3D5/Item4" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D6/Item4" to="Sprite3D6/Item4" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D7/Item4" to="Sprite3D7/Item4" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D17/Item4" to="Sprite3D17/Item4" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D18/Item4" to="Sprite3D18/Item4" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D10/Item4" to="Sprite3D10/Item4" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D12/Item4" to="Sprite3D12/Item4" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D13/Item4" to="Sprite3D13/Item4" method="_on_body_entered"]
@@ -1328,5 +1430,7 @@ label_settings = SubResource("LabelSettings_753b7")
 [connection signal="pressed" from="Control2/Button" to="CharacterBody3D" method="_on_button_pressed"]
 [connection signal="drag_ended" from="Control2/HSlider" to="Control2/HSlider" method="_on_drag_ended"]
 [connection signal="mouse_exited" from="Control2/HSlider" to="Control2/HSlider" method="_on_mouse_exited"]
+[connection signal="pressed" from="Control2/CheckButton" to="Control2" method="_on_check_button_pressed"]
+[connection signal="toggled" from="Control2/CheckButton" to="Control2" method="_on_check_button_toggled"]
 [connection signal="drag_ended" from="Control2/HSlider2" to="Control2/HSlider2" method="_on_drag_ended"]
 [connection signal="mouse_exited" from="Control2/HSlider2" to="Control2/HSlider2" method="_on_mouse_exited"]
