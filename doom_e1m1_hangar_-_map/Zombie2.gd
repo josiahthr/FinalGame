@@ -26,7 +26,7 @@ var can_shoot = true
 @export var shoot_range: float = 10.0
 
 func _physics_process(delta: float) -> void:
-	if see_player and Groanerstatus.Zalive:
+	if see_player and Groanerstatus.Zalive1:
 		var distance_to_player = global_transform.origin.distance_to(player.global_transform.origin)
 		if distance_to_player > stop_distance:
 			navigation.set_target_position(player.global_transform.origin)
@@ -43,7 +43,9 @@ func _physics_process(delta: float) -> void:
 			accumulated_time = 0.0
 			
 
-	if Groanerstatus.Zalive != true:
+	if Groanerstatus.Zalive1 == false:
+		print("zombie 2 dead")
+		var speed = 0
 		animation.play("dying")
 		await get_tree().create_timer(1).timeout
 		if is_instance_valid(ammo):
@@ -61,8 +63,8 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 
 func update_sprite_relative_to_player():
-	if Groanerstatus.Zalive == true:
-		#print("we updating")
+	if Groanerstatus.Zalive1 == true:
+		print("we updating part 2")
 		var next_position = navigation.get_next_path_position()
 		look_at(next_position, Vector3.UP)
 		var direction = (next_position - global_transform.origin).normalized()
