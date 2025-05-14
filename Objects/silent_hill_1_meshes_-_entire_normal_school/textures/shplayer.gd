@@ -28,6 +28,13 @@ var has_key: bool = false
 @onready var god_light := $"../Sketchfab_model/root/GLTF_SceneRootNode/SM_InnerCourtyard_83/OmniLight3D"
 @export var tilt_angle_degrees: float = 20.0
 @export var tilt_duration: float = 0.05
+
+@onready var left_foot_sound := $AudioStreamPlayer3D
+@onready var right_foot_sound := $AudioStreamPlayer3D2
+var is_left_foot = true
+var footstep_interval = 0.5
+var time_since_last_step = 0.0
+
 var current_yes_button : Button
 var current_no_button : Button
 var tween: Tween
@@ -107,6 +114,16 @@ func _physics_process(delta: float) -> void:
 		if direction:
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
+			time_since_last_step += delta  # Increment time
+
+			# Play footstep sound
+			if time_since_last_step >= footstep_interval:
+				if is_left_foot:
+					left_foot_sound.play()
+				else:
+					right_foot_sound.play()
+				is_left_foot = !is_left_foot  # Toggle foot
+				time_since_last_step = 0.0  # Reset timer
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
