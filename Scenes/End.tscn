@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=3 uid="uid://cavvdej2i3ei8"]
+
+[ext_resource type="Script" uid="uid://c44wuxc4e2xug" path="res://Scenes/enddoom.gd" id="1_67ibq"]
+[ext_resource type="Texture2D" uid="uid://sykig0h5rrty" path="res://DoomSprites/MS-DOS - DOOM DOOM II - Widescre.png" id="1_lm0ep"]
+[ext_resource type="FontFile" uid="uid://b116j0xgr4xw1" path="res://pixelpro_2p/pixelpro-2p.ttf" id="3_03b8h"]
+[ext_resource type="FontFile" uid="uid://bvmukupjysw20" path="res://CarFonts/BMWHelvetica-Bold.otf" id="4_x8vyd"]
+[ext_resource type="AudioStream" uid="uid://ditcpupfl4ax3" path="res://DoomSounds/Doom OST - E2M3 - Intermission from Doom.mp3" id="5_x8vyd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dut67"]
+font = ExtResource("3_03b8h")
+font_size = 100
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wwss2"]
+font = ExtResource("3_03b8h")
+font_size = 50
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vbw3r"]
+font = ExtResource("4_x8vyd")
+font_size = 30
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_67ibq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -9.0
+offset_top = -7.0
+offset_right = 1172.0
+offset_bottom = 663.0
+texture = ExtResource("1_lm0ep")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 443.0
+offset_top = -5.0
+offset_right = 665.0
+offset_bottom = 107.0
+text = "DOOM"
+label_settings = SubResource("LabelSettings_dut67")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 364.0
+offset_top = 77.0
+offset_right = 753.0
+offset_bottom = 133.0
+text = "LEVEL FINISHED"
+label_settings = SubResource("LabelSettings_wwss2")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 31.0
+offset_top = 123.0
+offset_right = 340.0
+offset_bottom = 254.0
+text = "This is all the game 
+I could make in a 
+month "
+label_settings = SubResource("LabelSettings_vbw3r")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 455.0
+offset_top = 216.0
+offset_right = 618.0
+offset_bottom = 265.0
+text = "RETURN TO MENU"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 455.0
+offset_top = 300.0
+offset_right = 618.0
+offset_bottom = 349.0
+text = "REPLAY LEVEL"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 455.0
+offset_top = 380.0
+offset_right = 618.0
+offset_bottom = 429.0
+text = "REPLAY IAN GAME"
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 455.0
+offset_top = 460.0
+offset_right = 618.0
+offset_bottom = 509.0
+text = "START FROM SH"
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 455.0
+offset_top = 540.0
+offset_right = 618.0
+offset_bottom = 589.0
+text = "START FROM GT"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_x8vyd")
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]

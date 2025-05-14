@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://cfaih7n0xdf07"]
+[gd_scene load_steps=108 format=3 uid="uid://cfaih7n0xdf07"]
 
 [ext_resource type="PackedScene" uid="uid://cafinps2obi3" path="res://doom_e1m1_hangar_-_map/DoomMap.tscn" id="1_unj4t"]
 [ext_resource type="Script" uid="uid://2grrfwy2dib1" path="res://doom_e1m1_hangar_-_map/DoomPlayer.gd" id="2_3tvde"]
@@ -48,7 +48,6 @@
 [ext_resource type="Texture2D" uid="uid://7giqt8kq3l05" path="res://DoomSprites/ZombieDying.png" id="46_xcyj8"]
 [ext_resource type="Texture2D" uid="uid://c8hrsykvnytdk" path="res://DoomSprites/ZombieDead.png" id="47_ps1di"]
 [ext_resource type="Texture2D" uid="uid://c22ejh2hvr2xv" path="res://DoomSprites/SKYE1Doom.png" id="48_ps1di"]
-[ext_resource type="Texture2D" uid="uid://djqpx4t0yuuf1" path="res://DoomSprites/MS-DOS - DOOM DOOM II - Widescre(1).png" id="49_00ypx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d841k"]
 size = Vector3(721.709, 5.96918, 617.99)
@@ -1159,28 +1158,11 @@ stream = ExtResource("40_8st2l")
 environment = SubResource("Environment_5jmwd")
 
 [node name="Control2" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -5.0
 offset_right = 1159.0
 offset_bottom = 654.0
-
-[node name="TextureRect" type="TextureRect" parent="Control2"]
-layout_mode = 0
-offset_left = -9.0
-offset_top = -14.0
-offset_right = 1171.0
-offset_bottom = 667.0
-texture = ExtResource("49_00ypx")
-
-[node name="Button" type="Button" parent="Control2"]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 26.0
-offset_right = 152.0
-offset_bottom = 71.0
-text = "RETURN"
 
 [connection signal="body_entered" from="Sketchfab_Scene/ACID" to="Sketchfab_Scene/ACID" method="_on_body_entered"]
 [connection signal="body_entered" from="Sketchfab_Scene/ACID2" to="Sketchfab_Scene/ACID2" method="_on_body_entered"]
@@ -1204,4 +1186,3 @@ text = "RETURN"
 [connection signal="body_entered" from="NavigationRegion3D/Node3D2/Area3D" to="NavigationRegion3D/Node3D2" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="NavigationRegion3D2/Node3D2/Sprite3D16/Item2" to="NavigationRegion3D2/Node3D2/Sprite3D16/Item2" method="_on_body_entered"]
 [connection signal="body_entered" from="NavigationRegion3D2/Node3D2/Area3D" to="NavigationRegion3D2/Node3D2" method="_on_area_3d_body_entered"]
-[connection signal="pressed" from="Control2/Button" to="CharacterBody3D" method="_on_button_pressed"]

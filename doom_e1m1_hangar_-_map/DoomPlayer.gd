@@ -19,6 +19,8 @@ var current_target = null
 @onready var Item2 := $"../Sprite3D2"
 @onready var Health := $"../Control/HEALTH"
 @onready var Armor := $"../Control/ARMOR"
+@onready var HUD := $"../Control"
+@onready var pause := $"../Control2"
 @onready var Ammo := $"../Control/AMMO"
 @onready var pistol := $"../Control/TextureRect4"
 @onready var pistolfire := $"../Control/TextureRect2"
@@ -34,12 +36,15 @@ var dead = false
 var firstdead = false
 var current_face_anim = ""
 var is_shooting = false
+var pause_menu = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		pause_menu = true
+		pause_screen()
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion and dead == false:
 			neck.rotate_y(-event.relative.x * mouse_sensitivity)
@@ -47,29 +52,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(40))
 	if event.is_action_pressed("shoot"):
 		gun_shoot()
-
-#func _on_dialog_continue():
-	#if not in_dialogue or current_target == null:
-		#return
-	#var end_dialogue := false
-	#if current_target.has_method("get_dialogue_data"):
-		#var data = current_target.get_dialogue_data()
-		#if data != null:
-			#_dialog.display_line(data["text"], data["speaker"])
-			#return
-		#else:
-			#end_dialogue = true
-	#if current_target.has_method("this_is_random"):
-		#end_dialogue = true
-	#if end_dialogue == true:
-		#_dialog.close()
-		#in_dialogue = false
-		#end_dialogue = false
-		#current_target = null
-
-#func _on_area_connect():
-	#if current_target and current_target.has_method("change_area"):
-		#get_tree().change_scene_to_file("res://Scenes/I7.tscn")
 
 func _process(_delta):
 	update_face_animation()
@@ -107,7 +89,6 @@ func _physics_process(delta: float) -> void:
 		#[wave], [shake], [color]
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
-
 		var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 		var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction:
@@ -122,7 +103,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 func gun_shoot():
-	if dead == false:
+	if dead == false and Groanerstatus.paused == false:
 		if pistolammo > 0:
 			if $Neck/Camera3D/SeeCast.is_colliding():
 					var target = $Neck/Camera3D/SeeCast.get_collider()
@@ -164,7 +145,7 @@ func apply_item_pickup(item_type: String, value: int) -> void:
 			print("Unknown item type:", item_type)
 
 func apply_toxic_damage(amount: int):
-	if dead == false:
+	if dead == false and Groanerstatus.paused == false:
 		health = max(health - amount, 0)
 		AcidDamage.play()
 	
@@ -204,3 +185,17 @@ func update_face_animation():
 	if new_anim != current_face_anim:
 		current_face_anim = new_anim
 		face_anim.play(current_face_anim)
+		
+func pause_screen():
+	if pause_menu == true:
+		Groanerstatus.paused = true
+		HUD.hide()
+		pause.show()
+	if pause_menu == false:
+		Groanerstatus.paused = false
+		HUD.show()
+		pause.hide()
+
+func _on_button_pressed() -> void:
+	pause_menu = false
+	pause_screen()

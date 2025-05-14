@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ditcpupfl4ax3"
+path="res://.godot/imported/Doom OST - E2M3 - Intermission from Doom.mp3-e84ce63a92d206fbdef9b8460e0443fc.mp3str"
+
+[deps]
+
+source_file="res://DoomSounds/Doom OST - E2M3 - Intermission from Doom.mp3"
+dest_files=["res://.godot/imported/Doom OST - E2M3 - Intermission from Doom.mp3-e84ce63a92d206fbdef9b8460e0443fc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

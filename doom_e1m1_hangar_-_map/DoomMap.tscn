@@ -1,4 +1,4 @@
-[gd_scene load_steps=302 format=4 uid="uid://cafinps2obi3"]
+[gd_scene load_steps=304 format=4 uid="uid://cafinps2obi3"]
 
 [ext_resource type="Texture2D" uid="uid://dv0ank72407aa" path="res://doom_e1m1_hangar_-_map/textures/BIGDOOR2_baseColor.png" id="1_6p8ah"]
 [ext_resource type="Script" uid="uid://bxpb1s6ygauyg" path="res://doom_e1m1_hangar_-_map/Door1.gd" id="2_5u03r"]
@@ -1900,6 +1900,12 @@ shadow_mesh = SubResource("ArrayMesh_tparn")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v31ow"]
 data = PackedVector3Array(-3040, 4608, -24, -3072, 4608, 71.9985, -3040, 4608, 71.9985, -3040, 4608, -24, -3072, 4608, -24, -3072, 4608, 71.9985, -2944, 4608, -24, -2976, 4608, 71.9985, -2944, 4608, 71.9985, -2944, 4608, -24, -2976, 4608, -24, -2976, 4608, 71.9985, -2976, 4608, 47.9989, -3040, 4608, 71.9985, -2976, 4608, 71.9985, -2976, 4608, 47.9989, -3040, 4608, 47.9989, -3040, 4608, 71.9985, -3104, 4672, -24, -3040, 4672, 88, -3104, 4672, 88, -3104, 4672, -24, -3040, 4672, -24, -3040, 4672, 88, -2976, 4672, -24, -2912, 4672, 88, -2976, 4672, 88, -2976, 4672, -24, -2912, 4672, -24, -2912, 4672, 88, -3104, 4864, -24, -3104, 4672, 88, -3104, 4864, 88, -3104, 4864, -24, -3104, 4672, -24, -3104, 4672, 88, -2912, 4800, -24, -2912, 4864, 88, -2912, 4800, 88, -2912, 4800, -24, -2912, 4864, -24, -2912, 4864, 88, -2912, 4672, -24, -2912, 4736, 88, -2912, 4672, 88, -2912, 4672, -24, -2912, 4736, -24, -2912, 4736, 88, -2912, 4864, -24, -3104, 4864, 88, -2912, 4864, 88, -2912, 4864, -24, -3104, 4864, -24, -3104, 4864, 88, -3040, 4672, 47.9989, -2976, 4672, 88, -3040, 4672, 88, -3040, 4672, 47.9989, -2976, 4672, 47.9989, -2976, 4672, 88)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_0fony"]
+size = Vector2(100, 100)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_i8v1x"]
+data = PackedVector3Array(50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ergs7"]
 resource_name = "STARTAN3"
 cull_mode = 2
@@ -3018,6 +3024,24 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_45/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_v31ow")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_45"]
+transform = Transform3D(-1.72299e-08, 1, 0, -0.394174, -4.37114e-08, -1.85288e-22, -6.61744e-23, -7.09975e-30, 1, -3040.44, 4627.7, 25.2215)
+mesh = SubResource("PlaneMesh_0fony")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_45/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_45/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_i8v1x")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_45"]
+transform = Transform3D(-1.72299e-08, -1, 0, 0.394174, -4.37114e-08, 0, 0, 0, 1, -2975.41, 4627.7, 25.2215)
+mesh = SubResource("PlaneMesh_0fony")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_45/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles/Object_45/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_i8v1x")
 
 [node name="Object_46" type="MeshInstance3D" parent="Sketchfab_model/doom_E1M1_obj_cleaner_materialmerger_gles"]
 mesh = SubResource("ArrayMesh_pyees")

@@ -28,7 +28,7 @@ var can_shoot = true
 
 func _physics_process(delta: float) -> void:
 	var target = raycast.get_collider()
-	if see_player and Groanerstatus.Zalive:
+	if see_player and Groanerstatus.Zalive and Groanerstatus.paused == false:
 		var distance_to_player = global_transform.origin.distance_to(player.global_transform.origin)
 		if distance_to_player > stop_distance:
 			navigation.set_target_position(player.global_transform.origin)
@@ -95,16 +95,17 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func shoot_player():
 	if not can_shoot:
 		return
-	can_shoot = false
-	animation.play("shoot")
-	await get_tree().create_timer(.5).timeout
-	painim.visible = true
-	pain.play("new_animation")
-	await get_tree().create_timer(.5).timeout
-	pain.stop()
-	painim.visible = false
-	shoot.play()
-	player.health -= 10
-	print("Enemy shoots!")
-	await get_tree().create_timer(shoot_cooldown).timeout
-	can_shoot = true
+	if Groanerstatus.paused == false:
+		can_shoot = false
+		animation.play("shoot")
+		await get_tree().create_timer(.5).timeout
+		painim.visible = true
+		pain.play("new_animation")
+		await get_tree().create_timer(.5).timeout
+		pain.stop()
+		painim.visible = false
+		shoot.play()
+		player.health -= 10
+		print("Enemy shoots!")
+		await get_tree().create_timer(shoot_cooldown).timeout
+		can_shoot = true

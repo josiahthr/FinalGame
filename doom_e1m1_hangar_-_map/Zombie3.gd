@@ -28,7 +28,7 @@ var can_shoot = true
 
 func _physics_process(delta: float) -> void:
 	var target = raycast.get_collider()
-	if see_player and Groanerstatus.Zalive1 and Groanerstatus.paused == false:
+	if see_player and Groanerstatus.Zalive2 and Groanerstatus.paused == false:
 		var distance_to_player = global_transform.origin.distance_to(player.global_transform.origin)
 		if distance_to_player > stop_distance:
 			navigation.set_target_position(player.global_transform.origin)
@@ -45,8 +45,8 @@ func _physics_process(delta: float) -> void:
 			accumulated_time = 0.0
 			
 
-	if Groanerstatus.Zalive1 == false:
-		print("zombie 2 dead")
+	if Groanerstatus.Zalive2 == false:
+		print("zombie 3 dead")
 		var speed = 0
 		animation.play("dying")
 		await get_tree().create_timer(1).timeout
@@ -60,13 +60,13 @@ func _physics_process(delta: float) -> void:
 			ammo.global_transform = new_transform
 			ammo.scale = Vector3(1, 1, 1)
 			ammo.visible = true 
-		global_transform.origin.y = .3
+		global_transform.origin.y = -.9
 		await get_tree().create_timer(10).timeout
 		queue_free()
 
 func update_sprite_relative_to_player():
-	if Groanerstatus.Zalive1 == true:
-		print("we updating part 2")
+	if Groanerstatus.Zalive2 == true:
+		print("we updating part 3")
 		var next_position = navigation.get_next_path_position()
 		look_at(next_position, Vector3.UP)
 		var direction = (next_position - global_transform.origin).normalized()
