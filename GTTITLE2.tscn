@@ -100,6 +100,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_10yl6")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_8uh0c")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_nlpve")
 theme_override_styles/normal = SubResource("StyleBoxFlat_iuoff")
+disabled = true
 text = "Simulation Mode"
 
 [node name="Control2" type="Control" parent="SimulationMode"]
@@ -123,6 +124,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_4fi6j")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_x3aqc")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_gcaq8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8cth5")
+disabled = true
 text = "Replay Theater"
 
 [node name="Options" type="Button" parent="."]
@@ -136,6 +138,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_nlpve")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_10yl6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_muokb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8uh0c")
+disabled = true
 text = "Options"
 alignment = 0
 

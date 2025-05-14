@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://clmik3757q11s"]
+[gd_scene load_steps=44 format=3 uid="uid://clmik3757q11s"]
 
 [ext_resource type="Script" uid="uid://cn6uijtdcp6f8" path="res://Arcade.gd" id="1_ilclh"]
 [ext_resource type="Texture2D" uid="uid://b5dh0am6wgfs1" path="res://image-Photoroom_cleanup_cleanup.png" id="1_pk7nq"]
@@ -23,6 +23,16 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8j8rp"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y0arm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_twb1s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j325q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mhnue"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dpopa"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_82stj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_khq6o"]
@@ -31,6 +41,10 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qo8q5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6lma"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6xj7d"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gna1g"]
 
@@ -41,6 +55,10 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_my7yy"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sy0ms"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ovsum"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rkmnv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qunk7"]
@@ -50,6 +68,10 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1chmk"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fb12d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qpspw"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23xhq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nkbtn"]
@@ -58,6 +80,10 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0b4pn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s2e4f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aqac0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1xdqw"]
 
@@ -120,9 +146,15 @@ theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("2_hvwyj")
 theme_override_font_sizes/font_size = 70
 theme_override_styles/focus = SubResource("StyleBoxEmpty_8j8rp")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_y0arm")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_twb1s")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_j325q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_mhnue")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_dpopa")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_82stj")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_khq6o")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ilclh")
+disabled = true
 text = "Time Trial"
 
 [node name="Button3" type="Button" parent="Panel"]
@@ -139,9 +171,12 @@ theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("2_hvwyj")
 theme_override_font_sizes/font_size = 70
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qo8q5")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_b6lma")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6xj7d")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_gna1g")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_v4nrk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_t6jwj")
+disabled = true
 text = "2 Player Battle"
 
 [node name="Button4" type="Button" parent="Panel"]
@@ -158,9 +193,12 @@ theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("2_hvwyj")
 theme_override_font_sizes/font_size = 70
 theme_override_styles/focus = SubResource("StyleBoxEmpty_my7yy")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_sy0ms")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ovsum")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_rkmnv")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_qunk7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8j8rp")
+disabled = true
 text = "Bonus Items"
 
 [node name="Button5" type="Button" parent="Panel"]
@@ -180,9 +218,12 @@ theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("2_hvwyj")
 theme_override_font_sizes/font_size = 70
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1chmk")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_fb12d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qpspw")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_23xhq")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_nkbtn")
 theme_override_styles/normal = SubResource("StyleBoxFlat_82stj")
+disabled = true
 text = "Load Game"
 
 [node name="Button6" type="Button" parent="Panel"]
@@ -202,9 +243,12 @@ theme_override_constants/outline_size = 14
 theme_override_fonts/font = ExtResource("2_hvwyj")
 theme_override_font_sizes/font_size = 70
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0b4pn")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_s2e4f")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_aqac0")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_1xdqw")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ng2ny")
 theme_override_styles/normal = SubResource("StyleBoxFlat_khq6o")
+disabled = true
 text = "Save Game"
 
 [node name="Button7" type="Button" parent="Panel"]

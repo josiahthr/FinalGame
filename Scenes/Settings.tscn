@@ -91,9 +91,9 @@ offset_right = 716.0
 offset_bottom = 505.0
 theme_override_icons/grabber = ExtResource("2_mx4kw")
 theme_override_icons/grabber_highlight = ExtResource("3_37a8j")
-max_value = 2.0
+max_value = 10.0
 step = 0.1
-value = 1.0
+value = 3.0
 tick_count = 10
 script = ExtResource("5_ipgag")
 

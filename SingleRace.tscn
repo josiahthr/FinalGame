@@ -1894,6 +1894,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_cwv0y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_c3f0q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_uyys8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_f75ms")
+disabled = true
 text = "NORMAL"
 
 [node name="Button3" type="Button" parent="Panel"]
@@ -1915,6 +1916,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_mjv3f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wuiah")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xc5uk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_avth2")
+disabled = true
 text = "DIFFICULT"
 
 [node name="Button7" type="Button" parent="Panel"]

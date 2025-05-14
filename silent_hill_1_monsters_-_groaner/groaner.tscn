@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://daxgxw3las2wh"]
+[gd_scene load_steps=13 format=4 uid="uid://daxgxw3las2wh"]
 
 [ext_resource type="Script" uid="uid://cswucghqwj1y4" path="res://silent_hill_1_monsters_-_groaner/groaner.gd" id="1_f81oa"]
 [ext_resource type="Texture2D" uid="uid://cx02u0vcrttav" path="res://silent_hill_1_monsters_-_groaner/textures/material_baseColor.png" id="2_sw7al"]
 [ext_resource type="Script" uid="uid://cihli2qnd2x6y" path="res://silent_hill_1_monsters_-_groaner/groanerhitbox.gd" id="3_sw7al"]
+[ext_resource type="AudioStream" uid="uid://dmeu5u8bxim3y" path="res://silenthillsounds/SH Radio 01.mp3" id="4_1thk3"]
+[ext_resource type="AudioStream" uid="uid://3ifvj8sol7yo" path="res://silenthillsounds/SH Demon Dog Kicked.mp3" id="4_ocm0t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k2l7o"]
 resource_name = "material"
@@ -776,6 +778,15 @@ script = ExtResource("3_sw7al")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/DOG_fbx/Object_2/RootNode/DOG_skeleton/Object_5/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_sw7al")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sketchfab_model/DOG_fbx/Object_2/RootNode/DOG_skeleton/Object_5/MeshInstance3D/StaticBody3D/CollisionShape3D"]
+stream = ExtResource("4_1thk3")
+autoplay = true
+max_distance = 30.0
+parameters/looping = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Sketchfab_model/DOG_fbx/Object_2/RootNode/DOG_skeleton/Object_5"]
+stream = ExtResource("4_ocm0t")
 
 [node name="DOG" type="Node3D" parent="Sketchfab_model/DOG_fbx/Object_2/RootNode"]
 transform = Transform3D(100, 1.76759e-23, 1.76758e-23, -1.76758e-23, -2.38419e-05, 100, 1.76759e-23, -100, -2.38419e-05, 0, 0, 0)

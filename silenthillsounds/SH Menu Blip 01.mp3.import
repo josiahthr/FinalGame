@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blnr71kwlw3fd"
+path="res://.godot/imported/SH Menu Blip 01.mp3-9939af9bf810ccb4f5f83d73f24bcf85.mp3str"
+
+[deps]
+
+source_file="res://silenthillsounds/SH Menu Blip 01.mp3"
+dest_files=["res://.godot/imported/SH Menu Blip 01.mp3-9939af9bf810ccb4f5f83d73f24bcf85.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

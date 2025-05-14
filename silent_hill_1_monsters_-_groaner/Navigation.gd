@@ -3,6 +3,7 @@ extends Node3D
 
 @onready var navigation: NavigationAgent3D = $NavigationAgent3D
 @onready var local_anim: AnimationPlayer = get_node("AnimationPlayer2")
+@onready var jumpsound = $AudioStreamPlayer3D
 var current_animation: String = "DOG_skeleton|DOG_skeleton|DOG_skeleton|DOG_anm"
 @export var speed: float = 6.0
 @onready var player: CharacterBody3D = get_node("../../Player") 
@@ -17,7 +18,7 @@ var idle_start_time = 15.5
 var idle_end_time = 16.5
 
 func _physics_process(delta: float) -> void:
-	if player_in_sight and player and navigation and Groanerstatus.can_move == true:
+	if player_in_sight and player and navigation and Groanerstatus.can_move == true and Groanerstatus.paused == false:
 		var distance_to_player = global_transform.origin.distance_to(player.global_transform.origin)
 		if distance_to_player <= 6:
 			start_jump_async()
@@ -41,12 +42,13 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		player_in_sight = false
 
 func start_jump_async() -> void:
-	if can_jump and not is_jumping and Groanerstatus.alive == true:
+	if can_jump and not is_jumping and Groanerstatus.alive == true and Groanerstatus.paused == false:
 		is_jumping = true
 		can_jump = false
 		print("jump")
 		player.health -= 5 
 		local_anim.play(current_animation)
+		jumpsound.play()
 		local_anim.seek(jump_start_time, true)
 		await get_tree().create_timer(1.5).timeout 
 		local_anim.seek(idle_start_time, true)

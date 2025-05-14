@@ -4,6 +4,7 @@ extends Skeleton3D
 @onready var anim_player: AnimationPlayer = get_node("../../../../../../../AnimationPlayer")
 @onready var hitbox = $"../MeshInstance3D/StaticBody3D"
 @onready var collision = $"../MeshInstance3D"
+@onready var dead = $"../AudioStreamPlayer3D"
 
 var idle_start_time: float = 15.5
 var idle_end_time: float = 16.5
@@ -31,6 +32,7 @@ func _process(delta):
 func on_enemy_dead():
 	anim_player.play(current_animation)
 	anim_player.seek(death_start_time, true)
+	dead.play()
 	await get_tree().create_timer(3).timeout
 	queue_free()
 	collision.queue_free()

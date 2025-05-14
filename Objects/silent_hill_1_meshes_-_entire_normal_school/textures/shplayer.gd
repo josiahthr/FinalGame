@@ -201,8 +201,10 @@ func gameover_show():
 		
 func pause_menu():
 	if pause_screen == true:
+		Groanerstatus.paused = true
 		HUD.show()
 	if pause_screen == false:
+		Groanerstatus.paused = false
 		HUD.hide()
 
 
