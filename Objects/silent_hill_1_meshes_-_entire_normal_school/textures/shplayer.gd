@@ -9,6 +9,7 @@ var in_dialogue = false
 var current_target = null
 var has_key: bool = false
 
+@onready var player := $"."
 @onready var gun := $Neck/Camera3D/Sketchfab_Scene
 @onready var gun_sight := $Neck/Camera3D/Sketchfab_Scene/RayCast3D
 @onready var neck := $Neck
@@ -35,12 +36,16 @@ var is_left_foot = true
 var footstep_interval = 0.5
 var time_since_last_step = 0.0
 
+@onready var outdoor_left_sound = $AudioStreamPlayer3D3
+@onready var outdoor_right_sound = $AudioStreamPlayer3D4
+
 var current_yes_button : Button
 var current_no_button : Button
 var tween: Tween
 var health = 20
 var death = false
 var pause_screen = false
+var indoors = false
 
 func _ready():
 	Groanerstatus.alive = true
@@ -114,16 +119,21 @@ func _physics_process(delta: float) -> void:
 		if direction:
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
-			time_since_last_step += delta  # Increment time
+			time_since_last_step += delta 
 
-			# Play footstep sound
 			if time_since_last_step >= footstep_interval:
 				if is_left_foot:
-					left_foot_sound.play()
+					if indoors:
+						outdoor_left_sound.play()
+					else:
+						left_foot_sound.play()
 				else:
-					right_foot_sound.play()
-				is_left_foot = !is_left_foot  # Toggle foot
-				time_since_last_step = 0.0  # Reset timer
+					if indoors:
+						outdoor_right_sound.play()
+					else:
+						right_foot_sound.play()
+				is_left_foot = !is_left_foot
+				time_since_last_step = 0.0
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -228,3 +238,20 @@ func pause_menu():
 func _on_button_pressed() -> void:
 	pause_screen = false
 	pause_menu()
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body == player:
+		indoors = true
+		print("indoors")
+		update_footstep_sounds()
+
+
+
+func update_footstep_sounds():
+	if indoors:
+		left_foot_sound.stream = outdoor_left_sound.stream
+		right_foot_sound.stream = outdoor_right_sound.stream
+	else:
+		left_foot_sound.stream = left_foot_sound.stream
+		right_foot_sound.stream = right_foot_sound.stream

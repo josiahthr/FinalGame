@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://q0ropr8vhsaf"
+path="res://.godot/imported/SH Footstep Wood Soft.mp3-2d07afe431aee4a75e229d5822100c71.mp3str"
+
+[deps]
+
+source_file="res://silenthillsounds/SH Footstep Wood Soft.mp3"
+dest_files=["res://.godot/imported/SH Footstep Wood Soft.mp3-2d07afe431aee4a75e229d5822100c71.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
