@@ -10,7 +10,9 @@ var current_target = null
 var end_dialogue = false
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera3D
+@onready var HUD := $"../Control"
 @onready var _dialog : Control = $"../CanvasLayer/Dialog"
+var paused = false
 
 func _ready():
 	print(MainMenu.sensitivity)
@@ -21,6 +23,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		paused = true
+		pause_menu()
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * mouse_sensitivity)
@@ -51,7 +55,7 @@ func _on_area_connect():
 		get_tree().change_scene_to_file("res://Scenes/I7.tscn")
 
 func _physics_process(delta: float) -> void:
-#
+	mouse_sensitivity = MainMenu.sensitivity
 	if $Neck/Camera3D/SeeCast.is_colliding():
 		var target = $Neck/Camera3D/SeeCast.get_collider()
 		#uncomment for hovers
@@ -83,3 +87,19 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+func pause_menu():
+	if paused == true:
+		HUD.show()
+	if paused == false:
+		HUD.hide()
+
+
+func _on_button_pressed() -> void:
+	paused = false
+	pause_menu()
+
+
+func _on_button_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")

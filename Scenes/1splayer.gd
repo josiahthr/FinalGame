@@ -10,14 +10,17 @@ var current_target = null
 
 @onready var neck := $Neck
 @onready var camera := $Neck/Camera
+@onready var HUD := $"../Control"
 @onready var _dialog : Control = $"../CanvasLayer/Dialog"
-
+var paused = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		paused = true
+		pause_menu()
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * mouse_sensitivity)
@@ -27,7 +30,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
-			
+	mouse_sensitivity = MainMenu.sensitivity
 			
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -57,3 +60,15 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 	
 func move_to_position(target_position: Vector3):
 	global_position = target_position
+	
+func pause_menu():
+	if paused == true:
+		HUD.show()
+	if paused == false:
+		HUD.hide()
+		
+
+
+func _on_button_pressed() -> void:
+	paused = false
+	pause_menu()

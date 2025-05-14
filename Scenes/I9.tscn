@@ -72,6 +72,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_osjjm")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28872, 0, -25.3249)
 stream = ExtResource("8_s4cal")
+volume_db = 80.0
 autoplay = true
 max_distance = 30.0
 parameters/looping = true

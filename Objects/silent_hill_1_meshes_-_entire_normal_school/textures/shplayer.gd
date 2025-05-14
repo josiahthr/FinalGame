@@ -223,6 +223,7 @@ func gameover_show():
 		gameover.show()
 		fade_player.play("fade_to_black")
 		fade_player_heading.play("Heading")
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		fade_player_button.play("new_animation")
 		fade_player_button2.play("new_animation")
 		
@@ -247,7 +248,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		update_footstep_sounds()
 
 
-
 func update_footstep_sounds():
 	if indoors:
 		left_foot_sound.stream = outdoor_left_sound.stream
@@ -255,3 +255,10 @@ func update_footstep_sounds():
 	else:
 		left_foot_sound.stream = left_foot_sound.stream
 		right_foot_sound.stream = right_foot_sound.stream
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if body == player:
+		indoors = false
+		print("outdoors")
+		update_footstep_sounds()

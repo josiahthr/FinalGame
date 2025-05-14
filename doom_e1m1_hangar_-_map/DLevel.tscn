@@ -1308,6 +1308,29 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_3qdfb")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jfqc3")
 text = "RETURN"
 
+[node name="Button2" type="Button" parent="Control2"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 485.0
+offset_right = 176.0
+offset_bottom = 530.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("53_tk175")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tk175")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_bh74y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2u2b7")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_753b7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_u46kr")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_x2u1h")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tnqp0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_d4uph")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_t811w")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_3qdfb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jfqc3")
+text = "MAIN MENU"
+
 [node name="HSlider" type="HSlider" parent="Control2"]
 layout_mode = 0
 offset_left = 361.0
@@ -1358,11 +1381,24 @@ offset_bottom = 299.0
 text = "*FULL SCREEN MAY RESULT IN POOR VISUAL QUALITY"
 label_settings = SubResource("LabelSettings_u46kr")
 
+[node name="Label6" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = -78.0
+offset_top = 529.0
+offset_right = 330.0
+offset_bottom = 614.0
+text = "I couldn't be bothered
+to put a save function
+so all progress will be 
+lost"
+label_settings = SubResource("LabelSettings_u46kr")
+horizontal_alignment = 1
+
 [node name="Value2" type="Label" parent="Control2"]
 layout_mode = 0
-offset_left = 287.0
+offset_left = 277.0
 offset_top = 389.0
-offset_right = 405.0
+offset_right = 395.0
 offset_bottom = 470.0
 text = "1
 "
@@ -1394,9 +1430,9 @@ horizontal_alignment = 1
 
 [node name="Value" type="Label" parent="Control2"]
 layout_mode = 0
-offset_left = 319.0
+offset_left = 306.0
 offset_top = 206.0
-offset_right = 437.0
+offset_right = 424.0
 offset_bottom = 287.0
 text = "20"
 label_settings = SubResource("LabelSettings_753b7")
@@ -1428,6 +1464,8 @@ label_settings = SubResource("LabelSettings_753b7")
 [connection signal="body_entered" from="NavigationRegion3D2/Node3D2/Sprite3D16/Item2" to="NavigationRegion3D2/Node3D2/Sprite3D16/Item2" method="_on_body_entered"]
 [connection signal="body_entered" from="NavigationRegion3D2/Node3D2/Area3D" to="NavigationRegion3D2/Node3D2" method="_on_area_3d_body_entered"]
 [connection signal="pressed" from="Control2/Button" to="CharacterBody3D" method="_on_button_pressed"]
+[connection signal="pressed" from="Control2/Button2" to="CharacterBody3D" method="_on_button_pressed"]
+[connection signal="pressed" from="Control2/Button2" to="Control2" method="_on_button_2_pressed"]
 [connection signal="drag_ended" from="Control2/HSlider" to="Control2/HSlider" method="_on_drag_ended"]
 [connection signal="mouse_exited" from="Control2/HSlider" to="Control2/HSlider" method="_on_mouse_exited"]
 [connection signal="pressed" from="Control2/CheckButton" to="Control2" method="_on_check_button_pressed"]

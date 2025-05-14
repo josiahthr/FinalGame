@@ -1,4 +1,4 @@
-[gd_scene load_steps=222 format=3 uid="uid://u1l8ijq845w2"]
+[gd_scene load_steps=259 format=3 uid="uid://u1l8ijq845w2"]
 
 [ext_resource type="Texture2D" uid="uid://bpmm2417t0xo3" path="res://Images/images.png" id="1_3u44n"]
 [ext_resource type="Script" uid="uid://dknk1vvoko8a0" path="res://Scenes/TitleCard.gd" id="1_dr6p7"]
@@ -12,6 +12,12 @@
 [ext_resource type="Script" uid="uid://bxa48fv4alivj" path="res://Scenes/water.gd" id="6_rtjjs"]
 [ext_resource type="AudioStream" uid="uid://bp6u4usx0v6w1" path="res://frog - Copy.mp3" id="7_0mfmm"]
 [ext_resource type="Texture2D" uid="uid://btr6grpncye44" path="res://textures/bark_willow_02_diff_4k.jpg" id="8_h52je"]
+[ext_resource type="Script" uid="uid://7d0dtb4x5qur" path="res://Scenes/Pause.gd" id="13_s8oih"]
+[ext_resource type="FontFile" uid="uid://cfinroaghwgd7" path="res://klein-headline/KleinHeadline-BoldOblique.ttf" id="14_4ygfe"]
+[ext_resource type="Texture2D" uid="uid://cc8ktasvwsl17" path="res://Images/Untitled.png" id="15_g5xbt"]
+[ext_resource type="Texture2D" uid="uid://bahyb06l536jt" path="res://Images/click.png" id="16_mdqnu"]
+[ext_resource type="Script" uid="uid://ca3jq50mdyjkh" path="res://Scripts/h_slider.gd" id="17_ksnkf"]
+[ext_resource type="Script" uid="uid://b8dc43xo6iq1m" path="res://Scenes/SoundSettings.gd" id="18_ywia4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dr6p7"]
 bg_color = Color(0, 0, 0, 1)
@@ -695,6 +701,79 @@ size = Vector3(90, 1, 20)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lpt7s"]
 data = PackedVector3Array(-45, 0.5, 10, 45, 0.5, 10, -45, -0.5, 10, 45, 0.5, 10, 45, -0.5, 10, -45, -0.5, 10, 45, 0.5, -10, -45, 0.5, -10, 45, -0.5, -10, -45, 0.5, -10, -45, -0.5, -10, 45, -0.5, -10, 45, 0.5, 10, 45, 0.5, -10, 45, -0.5, 10, 45, 0.5, -10, 45, -0.5, -10, 45, -0.5, 10, -45, 0.5, -10, -45, 0.5, 10, -45, -0.5, -10, -45, 0.5, 10, -45, -0.5, 10, -45, -0.5, -10, 45, 0.5, 10, -45, 0.5, 10, 45, 0.5, -10, -45, 0.5, 10, -45, 0.5, -10, 45, 0.5, -10, -45, -0.5, 10, 45, -0.5, 10, -45, -0.5, -10, 45, -0.5, 10, 45, -0.5, -10, -45, -0.5, -10)
+
+[sub_resource type="LabelSettings" id="LabelSettings_77wgu"]
+font = ExtResource("14_4ygfe")
+font_size = 100
+font_color = Color(1, 1, 0.0156863, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m0y7v"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_lpt7s"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_1qt35"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_uunjl"]
+font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bsrx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ds34g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stbn8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fmojd"]
+font_size = 30
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mn810"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylmhj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1gf6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rj2bd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s1l7x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8c0bg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p2004"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fjxsp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1tiih"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wm62p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rybg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s8oih"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ygfe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g5xbt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mdqnu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ksnkf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ywia4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_77wgu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0y7v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpt7s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1qt35"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uunjl"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_dr6p7")
@@ -1781,9 +1860,178 @@ shape = SubResource("ConcavePolygonShape3D_lpt7s")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_0mfmm")
-volume_db = -20.613
+volume_db = -10.0
 autoplay = true
 parameters/looping = true
 
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -12.0
+offset_top = -8.0
+offset_right = 1162.0
+offset_bottom = 654.0
+script = ExtResource("13_s8oih")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 1182.0
+offset_bottom = 668.0
+color = Color(0.0724512, 0.702557, 0.789269, 1)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 414.0
+offset_top = 1.0
+offset_right = 767.0
+offset_bottom = 123.0
+text = "Paused"
+label_settings = SubResource("LabelSettings_77wgu")
+
+[node name="Value" type="Label" parent="Control"]
+offset_left = 319.0
+offset_top = 196.0
+offset_right = 437.0
+offset_bottom = 277.0
+text = "20"
+label_settings = SubResource("LabelSettings_m0y7v")
+
+[node name="HSlider" type="HSlider" parent="Control"]
+offset_left = 375.0
+offset_top = 113.0
+offset_right = 769.0
+offset_bottom = 318.0
+theme_override_icons/grabber = ExtResource("15_g5xbt")
+theme_override_icons/grabber_highlight = ExtResource("16_mdqnu")
+value = 20.0
+tick_count = 10
+script = ExtResource("17_ksnkf")
+
+[node name="Label2" type="Label" parent="Control"]
+offset_left = 511.0
+offset_top = 150.0
+offset_right = 659.0
+offset_bottom = 192.0
+text = "Sensitivity"
+label_settings = SubResource("LabelSettings_lpt7s")
+
+[node name="Value2" type="Label" parent="Control"]
+offset_left = 331.0
+offset_top = 386.0
+offset_right = 449.0
+offset_bottom = 467.0
+text = "1
+"
+label_settings = SubResource("LabelSettings_1qt35")
+
+[node name="HSlider2" type="HSlider" parent="Control"]
+offset_left = 368.0
+offset_top = 302.0
+offset_right = 762.0
+offset_bottom = 507.0
+theme_override_icons/grabber = ExtResource("15_g5xbt")
+theme_override_icons/grabber_highlight = ExtResource("16_mdqnu")
+max_value = 10.0
+step = 0.1
+value = 3.0
+tick_count = 10
+script = ExtResource("18_ywia4")
+
+[node name="Label5" type="Label" parent="Control"]
+offset_left = 504.0
+offset_top = 342.0
+offset_right = 652.0
+offset_bottom = 384.0
+text = "Volume"
+label_settings = SubResource("LabelSettings_uunjl")
+horizontal_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="Control"]
+offset_left = 481.0
+offset_top = 267.0
+offset_right = 525.0
+offset_bottom = 291.0
+scale = Vector2(2, 2)
+theme_override_styles/focus = SubResource("StyleBoxFlat_2bsrx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ds34g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_stbn8")
+
+[node name="Label3" type="Label" parent="Control"]
+offset_left = 308.0
+offset_top = 268.0
+offset_right = 466.0
+offset_bottom = 310.0
+text = "Full Screen"
+label_settings = SubResource("LabelSettings_fmojd")
+
+[node name="Label4" type="Label" parent="Control"]
+offset_left = 573.0
+offset_top = 278.0
+offset_right = 918.0
+offset_bottom = 301.0
+text = "*Full Screen may result in poor visual quality"
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 37.0
+offset_right = 206.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(1, 1, 0.0156863, 1)
+theme_override_fonts/font = ExtResource("14_4ygfe")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mn810")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ylmhj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y1gf6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_rj2bd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_s1l7x")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_8c0bg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p2004")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_fjxsp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1tiih")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_wm62p")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1rybg")
+text = "RETURN"
+
+[node name="Label6" type="Label" parent="Control"]
+offset_left = -19.0
+offset_top = 541.0
+offset_right = 326.0
+offset_bottom = 642.0
+text = "I couldn't be bothered
+to put a save function
+so all progress will be 
+lost"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="Control"]
+offset_left = 78.0
+offset_top = 487.0
+offset_right = 227.0
+offset_bottom = 551.0
+theme_override_colors/font_color = Color(1, 1, 0.0156863, 1)
+theme_override_fonts/font = ExtResource("14_4ygfe")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_s8oih")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_4ygfe")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_g5xbt")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_mdqnu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ksnkf")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ywia4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_77wgu")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_m0y7v")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lpt7s")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_1qt35")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uunjl")
+text = "MAIN MENU"
+
 [connection signal="area_entered" from="Car1/PathFollow3D/MeshInstance3D/Area3D" to="Character" method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Car1/PathFollow3D/MeshInstance3D/Area3D" to="Car1/PathFollow3D" method="_on_area_3d_body_entered"]
+[connection signal="drag_ended" from="Control/HSlider" to="Control/HSlider" method="_on_drag_ended"]
+[connection signal="mouse_exited" from="Control/HSlider" to="Control/HSlider" method="_on_mouse_exited"]
+[connection signal="drag_ended" from="Control/HSlider2" to="Control/HSlider2" method="_on_drag_ended"]
+[connection signal="mouse_exited" from="Control/HSlider2" to="Control/HSlider2" method="_on_mouse_exited"]
+[connection signal="toggled" from="Control/CheckButton" to="Control" method="_on_check_button_toggled"]
+[connection signal="pressed" from="Control/Button" to="Character" method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button2" to="Control" method="_on_button_2_pressed"]

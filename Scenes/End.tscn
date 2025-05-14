@@ -1,27 +1,137 @@
-[gd_scene load_steps=9 format=3 uid="uid://cavvdej2i3ei8"]
+[gd_scene load_steps=64 format=3 uid="uid://cavvdej2i3ei8"]
 
-[ext_resource type="Script" uid="uid://c44wuxc4e2xug" path="res://Scenes/enddoom.gd" id="1_67ibq"]
 [ext_resource type="Texture2D" uid="uid://sykig0h5rrty" path="res://DoomSprites/MS-DOS - DOOM DOOM II - Widescre.png" id="1_lm0ep"]
-[ext_resource type="FontFile" uid="uid://b116j0xgr4xw1" path="res://pixelpro_2p/pixelpro-2p.ttf" id="3_03b8h"]
-[ext_resource type="FontFile" uid="uid://bvmukupjysw20" path="res://CarFonts/BMWHelvetica-Bold.otf" id="4_x8vyd"]
-[ext_resource type="AudioStream" uid="uid://ditcpupfl4ax3" path="res://DoomSounds/Doom OST - E2M3 - Intermission from Doom.mp3" id="5_x8vyd"]
+[ext_resource type="Script" uid="uid://c44wuxc4e2xug" path="res://Scenes/enddoom.gd" id="1_oufnp"]
+[ext_resource type="FontFile" uid="uid://b116j0xgr4xw1" path="res://pixelpro_2p/pixelpro-2p.ttf" id="3_bxfto"]
+[ext_resource type="FontFile" uid="uid://bvmukupjysw20" path="res://CarFonts/BMWHelvetica-Bold.otf" id="4_x4165"]
+[ext_resource type="AudioStream" uid="uid://ditcpupfl4ax3" path="res://DoomSounds/Doom OST - E2M3 - Intermission from Doom.mp3" id="5_4p6m0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dut67"]
-font = ExtResource("3_03b8h")
+font = ExtResource("3_bxfto")
 font_size = 100
 font_color = Color(1, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_wwss2"]
-font = ExtResource("3_03b8h")
+font = ExtResource("3_bxfto")
 font_size = 50
 font_color = Color(1, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vbw3r"]
-font = ExtResource("4_x8vyd")
+font = ExtResource("4_x4165")
 font_size = 30
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_checf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tyei3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fw8k1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vf25b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wgnk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ydmae"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2pbrh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pe1eg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t6rgl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eeld2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bu0hh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oufnp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bxfto"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x4165"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4p6m0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4fp6e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k3w7p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hc45y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fpkbe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_caw82"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4yd5g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d8ljy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yr0ug"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y60ma"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ujy01"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mb3j6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6al0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g17wh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8d1d0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mt0vi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_esaxy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ndngr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h8uj2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tu5ty"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kqyha"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1m0rp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b3uqs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28car"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nla2l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_brfkt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tp5mp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7lcvb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_438dr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l25jm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n0g5d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4f7fe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yyigv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jm8dv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3j4y0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lm342"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vff1x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i7lle"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7i8ee"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g0o5s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wly1t"]
+
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_67ibq")
+script = ExtResource("1_oufnp")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -9.0
@@ -58,42 +168,112 @@ label_settings = SubResource("LabelSettings_vbw3r")
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
-offset_left = 455.0
-offset_top = 216.0
-offset_right = 618.0
-offset_bottom = 265.0
+offset_left = 398.0
+offset_top = 212.0
+offset_right = 670.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bxfto")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_checf")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_tyei3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fw8k1")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_vf25b")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_5wgnk")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ydmae")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2pbrh")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_pe1eg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_t6rgl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_eeld2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bu0hh")
 text = "RETURN TO MENU"
 
 [node name="Button2" type="Button" parent="."]
-offset_left = 455.0
-offset_top = 300.0
-offset_right = 618.0
-offset_bottom = 349.0
+offset_left = 420.0
+offset_top = 301.0
+offset_right = 662.0
+offset_bottom = 350.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bxfto")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oufnp")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_bxfto")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_x4165")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_4p6m0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_4fp6e")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_k3w7p")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hc45y")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_fpkbe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_caw82")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_4yd5g")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d8ljy")
 text = "REPLAY LEVEL"
 
 [node name="Button3" type="Button" parent="."]
-offset_left = 455.0
-offset_top = 380.0
-offset_right = 618.0
-offset_bottom = 429.0
+offset_left = 394.0
+offset_top = 377.0
+offset_right = 694.0
+offset_bottom = 426.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bxfto")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yr0ug")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_y60ma")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ujy01")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_mb3j6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_l6al0")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_g17wh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8d1d0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_mt0vi")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_esaxy")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_ndngr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h8uj2")
 text = "REPLAY IAN GAME"
 
 [node name="Button4" type="Button" parent="."]
-offset_left = 455.0
-offset_top = 460.0
-offset_right = 618.0
-offset_bottom = 509.0
+offset_left = 405.0
+offset_top = 456.0
+offset_right = 665.0
+offset_bottom = 505.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bxfto")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tu5ty")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_kqyha")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1m0rp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_b3uqs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_28car")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_nla2l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_brfkt")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_tp5mp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7lcvb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_438dr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_l25jm")
 text = "START FROM SH"
 
 [node name="Button5" type="Button" parent="."]
-offset_left = 455.0
+offset_left = 411.0
 offset_top = 540.0
-offset_right = 618.0
+offset_right = 671.0
 offset_bottom = 589.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bxfto")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n0g5d")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_4f7fe")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_yyigv")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_jm8dv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_3j4y0")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_lm342")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vff1x")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_i7lle")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7i8ee")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_g0o5s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wly1t")
 text = "START FROM GT"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_x8vyd")
+stream = ExtResource("5_4p6m0")
 autoplay = true
 parameters/looping = true
 

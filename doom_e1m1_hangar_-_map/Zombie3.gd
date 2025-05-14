@@ -16,7 +16,7 @@ extends Node3D
 @export var left_texture: Texture2D
 @export var right_texture: Texture2D
 @export var dead_texture: Texture2D
-@export var speed: float = 2.0
+@export var speed: float = 5
 @export var stop_distance: float = 1.5
 @export var sprite_update_cooldown: float = 1.5
 @onready var navigation: NavigationAgent3D = $Sprite3D15/NavigationAgent3D

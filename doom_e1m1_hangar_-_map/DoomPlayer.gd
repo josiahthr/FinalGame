@@ -39,6 +39,16 @@ var is_shooting = false
 var pause_menu = false
 var first_click = true
 
+
+func _ready() -> void:
+	Groanerstatus.Zalive = true
+	Groanerstatus.Zcan_move = true
+	Groanerstatus.Zalive1 = true
+	Groanerstatus.Zcan_move1 = true
+	Groanerstatus.Zalive2 = true
+	Groanerstatus.Zcan_move2 = true
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -78,6 +88,7 @@ func _physics_process(delta: float) -> void:
 			#if target != null and target.has_method("interact"):
 			if target.has_method("interact") and Input.is_action_just_pressed("interact"):
 				target.interact()
+				print("interacting")
 				#if target.has_method("get_dialogue_data"):
 					#var data = target.get_dialogue_data()
 					#if data != null:
@@ -164,6 +175,8 @@ func death():
 		var target_position = camera.position - Vector3(0, 1.5, 0)
 		tween = create_tween()
 		tween.tween_property(camera, "position", target_position, tilt_duration)
+		await get_tree().create_timer(5).timeout
+		get_tree().change_scene_to_file("res://doom_e1m1_hangar_-_map/DLevel.tscn")
 
 
 func lowergun():

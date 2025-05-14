@@ -208,7 +208,6 @@ offset_bottom = 40.0
 script = ExtResource("7_t2y3s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 offset_right = 1151.0
 offset_bottom = 651.0
 mouse_filter = 2

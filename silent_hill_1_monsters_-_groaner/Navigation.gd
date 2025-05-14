@@ -5,7 +5,7 @@ extends Node3D
 @onready var local_anim: AnimationPlayer = get_node("AnimationPlayer2")
 @onready var jumpsound = $AudioStreamPlayer3D
 var current_animation: String = "DOG_skeleton|DOG_skeleton|DOG_skeleton|DOG_anm"
-@export var speed: float = 6.0
+@export var speed: float = 4
 @onready var player: CharacterBody3D = get_node("../../Player") 
 var player_in_sight = false
 var jump_start_time: float = 8.5
