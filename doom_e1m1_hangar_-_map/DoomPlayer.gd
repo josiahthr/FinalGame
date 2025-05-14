@@ -37,12 +37,14 @@ var firstdead = false
 var current_face_anim = ""
 var is_shooting = false
 var pause_menu = false
+var first_click = true
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		first_click = true
 		pause_menu = true
 		pause_screen()
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -62,6 +64,7 @@ func _process(_delta):
 	face_anim.get_animation("dying").loop = true
 
 func _physics_process(delta: float) -> void:
+	mouse_sensitivity = MainMenu.sensitivity
 	if health == 0:
 		dead = true
 		death()
@@ -103,7 +106,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 func gun_shoot():
-	if dead == false and Groanerstatus.paused == false:
+	if dead == false and Groanerstatus.paused == false and first_click == false:
 		if pistolammo > 0:
 			if $Neck/Camera3D/SeeCast.is_colliding():
 					var target = $Neck/Camera3D/SeeCast.get_collider()
@@ -119,6 +122,10 @@ func gun_shoot():
 			await get_tree().create_timer(.1).timeout
 			pistolfire.hide()
 			is_shooting = false
+	else:
+		print(dead, Groanerstatus.paused, first_click)
+		first_click = false
+		print(first_click)
 
 
 func apply_item_pickup(item_type: String, value: int) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://cfaih7n0xdf07"]
+[gd_scene load_steps=121 format=3 uid="uid://cfaih7n0xdf07"]
 
 [ext_resource type="PackedScene" uid="uid://cafinps2obi3" path="res://doom_e1m1_hangar_-_map/DoomMap.tscn" id="1_unj4t"]
 [ext_resource type="Script" uid="uid://2grrfwy2dib1" path="res://doom_e1m1_hangar_-_map/DoomPlayer.gd" id="2_3tvde"]
@@ -49,6 +49,10 @@
 [ext_resource type="Texture2D" uid="uid://c8hrsykvnytdk" path="res://DoomSprites/ZombieDead.png" id="47_ps1di"]
 [ext_resource type="Texture2D" uid="uid://c22ejh2hvr2xv" path="res://DoomSprites/SKYE1Doom.png" id="48_ps1di"]
 [ext_resource type="Texture2D" uid="uid://djqpx4t0yuuf1" path="res://DoomSprites/MS-DOS - DOOM DOOM II - Widescre(1).png" id="49_00ypx"]
+[ext_resource type="Texture2D" uid="uid://cc8ktasvwsl17" path="res://Images/Untitled.png" id="50_170wj"]
+[ext_resource type="Texture2D" uid="uid://bahyb06l536jt" path="res://Images/click.png" id="51_k6rre"]
+[ext_resource type="Script" uid="uid://ca3jq50mdyjkh" path="res://Scripts/h_slider.gd" id="52_tk175"]
+[ext_resource type="Script" uid="uid://b8dc43xo6iq1m" path="res://Scenes/SoundSettings.gd" id="53_k6rre"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d841k"]
 size = Vector3(721.709, 5.96918, 617.99)
@@ -519,6 +523,30 @@ sky_material = SubResource("PanoramaSkyMaterial_00ypx")
 background_mode = 2
 sky = SubResource("Sky_i5pgc")
 
+[sub_resource type="LabelSettings" id="LabelSettings_170wj"]
+font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_170wj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6rre"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tk175"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bh74y"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_tk175"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_2u2b7"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_753b7"]
+font_size = 25
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_unj4t")]
@@ -839,6 +867,7 @@ shape = SubResource("BoxShape3D_v4s42")
 
 [node name="ItemPickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_30qu6")
+volume_db = 9.369
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -1182,6 +1211,98 @@ offset_right = 152.0
 offset_bottom = 71.0
 text = "RETURN"
 
+[node name="HSlider" type="HSlider" parent="Control2"]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 120.0
+offset_right = 755.0
+offset_bottom = 325.0
+theme_override_icons/grabber = ExtResource("50_170wj")
+theme_override_icons/grabber_highlight = ExtResource("51_k6rre")
+value = 20.0
+tick_count = 10
+script = ExtResource("52_tk175")
+
+[node name="Label2" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 146.0
+offset_right = 645.0
+offset_bottom = 188.0
+text = "Sensitivity"
+label_settings = SubResource("LabelSettings_170wj")
+
+[node name="CheckButton" type="CheckButton" parent="Control2"]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 265.0
+offset_right = 479.0
+offset_bottom = 289.0
+scale = Vector2(2, 2)
+theme_override_styles/focus = SubResource("StyleBoxFlat_170wj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k6rre")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tk175")
+
+[node name="Label3" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 266.0
+offset_right = 420.0
+offset_bottom = 308.0
+text = "Full Screen"
+label_settings = SubResource("LabelSettings_bh74y")
+
+[node name="Label4" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 276.0
+offset_right = 872.0
+offset_bottom = 299.0
+text = "*Full Screen may result in poor visual quality"
+
+[node name="Value2" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 384.0
+offset_right = 403.0
+offset_bottom = 465.0
+text = "1
+"
+label_settings = SubResource("LabelSettings_tk175")
+
+[node name="HSlider2" type="HSlider" parent="Control2"]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 300.0
+offset_right = 716.0
+offset_bottom = 505.0
+theme_override_icons/grabber = ExtResource("50_170wj")
+theme_override_icons/grabber_highlight = ExtResource("51_k6rre")
+max_value = 2.0
+step = 0.1
+value = 1.0
+tick_count = 10
+script = ExtResource("53_k6rre")
+
+[node name="Label5" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 340.0
+offset_right = 606.0
+offset_bottom = 382.0
+text = "Volume"
+label_settings = SubResource("LabelSettings_2u2b7")
+horizontal_alignment = 1
+
+[node name="Value" type="Label" parent="Control2"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 198.0
+offset_right = 434.0
+offset_bottom = 279.0
+text = "20"
+label_settings = SubResource("LabelSettings_753b7")
+
 [connection signal="body_entered" from="Sketchfab_Scene/ACID" to="Sketchfab_Scene/ACID" method="_on_body_entered"]
 [connection signal="body_entered" from="Sketchfab_Scene/ACID2" to="Sketchfab_Scene/ACID2" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_body_entered"]
@@ -1205,3 +1326,7 @@ text = "RETURN"
 [connection signal="body_entered" from="NavigationRegion3D2/Node3D2/Sprite3D16/Item2" to="NavigationRegion3D2/Node3D2/Sprite3D16/Item2" method="_on_body_entered"]
 [connection signal="body_entered" from="NavigationRegion3D2/Node3D2/Area3D" to="NavigationRegion3D2/Node3D2" method="_on_area_3d_body_entered"]
 [connection signal="pressed" from="Control2/Button" to="CharacterBody3D" method="_on_button_pressed"]
+[connection signal="drag_ended" from="Control2/HSlider" to="Control2/HSlider" method="_on_drag_ended"]
+[connection signal="mouse_exited" from="Control2/HSlider" to="Control2/HSlider" method="_on_mouse_exited"]
+[connection signal="drag_ended" from="Control2/HSlider2" to="Control2/HSlider2" method="_on_drag_ended"]
+[connection signal="mouse_exited" from="Control2/HSlider2" to="Control2/HSlider2" method="_on_mouse_exited"]
